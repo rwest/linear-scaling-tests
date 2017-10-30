@@ -242,20 +242,20 @@ run_simulation(experiment)
 
 # Revised range
 plt.xlim(-7.5,-2)
-plt.ylim(-5.5,-1)
+plt.ylim(-6.5,-1.5)
 
 
-# In[291]:
+# In[303]:
 
 # Revised range
 carbon_range = (-7.5, -2)
-oxygen_range = (-5.5, -1)
+oxygen_range = (-6.5, -1.5)
 grid_size = 9
 mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:oxygen_range[1]:grid_size*1j]
 mesh
 
 
-# In[292]:
+# In[304]:
 
 experiments = mesh.reshape((2,-1)).T
 experiments
@@ -504,11 +504,11 @@ plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[ ]:
+# In[296]:
 
 # (1)	Medford, A. J.; Lausche, A. C.; Abild-Pedersen, F.; Temel, B.; Schjødt, N. C.; Nørskov, J. K.; Studt, F. Activity and Selectivity Trends in Synthesis Gas Conversion to Higher Alcohols. Topics in Catalysis 2014, 57 (1-4), 135–142 DOI: 10.1007/s11244-013-0169-0.
 
-binding_energies = { # Carbon, then Oxygen
+medford_energies = { # Carbon, then Oxygen
 'Ru': ( 0.010349288486416697, -2.8153856448231256),
 'Rh': ( 0.16558861578266493, -2.546620868091181),
 'Ni': ( 0.3001293661060802, -2.5881741535441853),
@@ -521,16 +521,16 @@ binding_energies = { # Carbon, then Oxygen
 }
 
 
-# In[201]:
+# In[297]:
 
-
-wayne_ni = np.array([-5.997, -4.485])
-old_ni = np.array(binding_energies['Ni'])
-shifted_energies = {metal: tuple(wayne_ni + np.array(E)-old_ni) for metal,E in binding_energies.items()}
+# Shift medford's energies so that Ni matches Wayne Blaylock's Ni
+blaylock_ni = np.array([-5.997, -4.485])
+old_ni = np.array(medford_energies['Ni'])
+shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E in medford_energies.items()}
 shifted_energies
 
 
-# In[205]:
+# In[298]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
 for metal, coords in shifted_energies.iteritems():
@@ -540,9 +540,31 @@ plt.xlim(-7.5,-2)
 plt.ylim(-5.5,-1)
 
 
-# In[ ]:
+# In[299]:
+
+# For close packed surfaces from
+# Abild-Pedersen, F.; Greeley, J.; Studt, F.; Rossmeisl, J.; Munter, T. R.; Moses, P. G.; Skúlason, E.; Bligaard, T.; Norskov, J. K. Scaling Properties of Adsorption Energies for Hydrogen-Containing Molecules on Transition-Metal Surfaces. Phys. Rev. Lett. 2007, 99 (1), 016105 DOI: 10.1103/PhysRevLett.99.016105.
+abildpedersen_energies = { # Carbon, then Oxygen
+'Ru': ( -6.397727272727272, -5.104763568600047),
+'Rh': ( -6.5681818181818175, -4.609771721406942),
+'Ni': ( -6.045454545454545, -4.711681807593758),
+'Ir': ( -6.613636363636363, -5.94916142557652),
+'Pd': ( -6, -3.517877940833916),
+'Pt': ( -6.363636363636363, -3.481481481481482),
+'Cu': ( -4.159090909090907, -3.85272536687631),
+'Ag': ( -2.9545454545454533, -2.9282552993244817),
+'Au': ( -3.7499999999999973, -2.302236198462614),
+}
 
 
+# In[302]:
+
+plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
+for metal, coords in abildpedersen_energies.iteritems():
+    plt.plot(coords[0], coords[1], 'ok')
+    plt.text(coords[0], coords[1], metal)
+plt.xlim(-7.5,-2)
+plt.ylim(-6.5,-1.5)
 
 
 # # STOP HERE.
