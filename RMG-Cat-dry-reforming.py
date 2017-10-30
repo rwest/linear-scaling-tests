@@ -57,6 +57,8 @@ import os
 import re
 import pandas as pd
 import numpy as np
+import shutil
+import subprocess
 
 
 # In[5]:
@@ -175,6 +177,124 @@ total_sites = max(data1['X'])
 with sns.color_palette('Set3',len(surface)):
     (data1[surface]/total_sites).plot.area(legend='reverse')
     plt.ylabel('site fraction')
+
+
+# # Effect of binding energies
+
+# In[124]:
+
+# First, make a series of input files in separate directories
+
+with open(os.path.join('base', 'input.py')) as infile:
+    input_file = infile.read()
+    
+base_directory = 'binding_energies'
+def directory(carbon,oxygen):
+    return os.path.join(base_directory, "c{:.3f}o{:.3f}".format(carbon,oxygen))
+
+def make_input(binding_energies):
+    """
+    Make an input file for the given (carbon,oxygen) tuple (or iterable) of binding energies
+    and return the name of the directory in which it is saved.
+    """
+    carbon, oxygen = binding_energies
+    output = input_file
+    out_dir = directory(carbon, oxygen)
+    carbon_string = "'C':({:f}, 'eV/molecule')".format(carbon)
+    output = re.sub("'C':\(.*?, 'eV/molecule'\)", carbon_string, output)
+    oxygen_string = "'O':({:f}, 'eV/molecule')".format(oxygen)
+    output = re.sub("'O':\(.*?, 'eV/molecule'\)", oxygen_string, output)
+    os.path.exists(out_dir) or os.makedirs(out_dir)
+    out_file = os.path.join(out_dir, 'input.py')
+    with open(out_file,'w') as outfile:
+        outfile.write(output)
+    shutil.copy(os.path.join('base','run.sh'), out_dir)
+    return out_dir
+
+    
+print make_input(-8,-3.5)
+    
+
+
+# In[137]:
+
+def run_simulation(carbon, oxygen):
+    """
+    Assuming a job file already exists, run it.  This one is local.
+    """
+    job_directory = directory(carbon, oxygen)
+    print job_directory
+    assert os.path.exists(job_directory)
+    return subprocess.check_call('./run.sh', cwd=job_directory)
+
+
+# In[138]:
+
+make_input(-8,-3.5)
+run_simulation(-8, -3.5)
+
+
+# In[135]:
+
+
+
+
+# In[92]:
+
+directory(-8,-3.5)
+
+
+# In[79]:
+
+carbon_range = (-8, -3)
+oxygen_range = (-3.5, 0)
+grid_size = 5
+mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:oxygen_range[1]:grid_size*1j]
+mesh
+
+
+# In[80]:
+
+experiments = mesh.reshape((2,-1)).T
+experiments
+
+
+# In[156]:
+
+carbons, oxygens  = experiments.T
+carbons, oxygens
+
+
+# In[157]:
+
+map(make_input, carbons, oxygens)
+
+
+# In[158]:
+
+import multiprocessing
+pool = multiprocessing.Pool()
+pool.map_async(make_input, carbons, oxygens)
+
+
+# In[81]:
+
+answer = map(sum,experiments)
+
+
+# In[82]:
+
+rate = np.reshape(answer, (5,5))
+
+
+# In[83]:
+
+ax = sns.heatmap(rate)
+
+
+# In[86]:
+
+plt.imshow(rate, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
 
 
 # # STOP HERE.
