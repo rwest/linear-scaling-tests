@@ -11,7 +11,7 @@
 
 # First, we print what git commit we were on when we ran this notebook, for both the source code (RMG-Py) and the database. 
 
-# In[4]:
+# In[1]:
 
 get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --pretty=oneline\ncd ../RMG-database\npwd\ngit log -n1 --pretty=oneline')
 
@@ -20,7 +20,7 @@ get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --prett
 # We start with a base input file to generate a mechanism for CH4 plus CO2.
 # First we print the input file we'll use to generate the model.
 
-# In[5]:
+# In[2]:
 
 get_ipython().magic(u'cat base/input.py')
 
@@ -32,12 +32,12 @@ get_ipython().magic(u'cat base/input.py')
 get_ipython().run_cell_magic(u'bash', u'', u'python $RMGpy/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
 
 
-# There are 52 species and 135 reactions.
+# There are 59 species and 116 reactions (?)
 
 # ## Data processing
 # Next we will import some libraries and set things up to start importing and analyzing the simulation results.
 
-# In[6]:
+# In[3]:
 
 get_ipython().magic(u'matplotlib inline')
 from matplotlib import pyplot as plt
@@ -62,7 +62,7 @@ import subprocess
 import multiprocessing
 
 
-# In[7]:
+# In[4]:
 
 def get_last_csv_file(job_directory):
     """
@@ -81,14 +81,14 @@ get_last_csv_file(job_directory)
 
 # We will use Pandas to import the csv file
 
-# In[8]:
+# In[5]:
 
 last_csv_file = get_last_csv_file(job_directory)
 data = pd.read_csv(last_csv_file)
 data
 
 
-# In[9]:
+# In[6]:
 
 def get_pandas_data(job_directory):
     """
@@ -113,7 +113,7 @@ def get_pandas_data(job_directory):
     return data
 
 
-# In[10]:
+# In[7]:
 
 def rename_columns(data):
     """
@@ -135,14 +135,14 @@ def rename_columns(data):
     data.rename(columns=mapping, inplace=True)
 
 
-# In[11]:
+# In[8]:
 
 data1 = get_pandas_data('base')
 rename_columns(data1)
 data1.columns
 
 
-# In[12]:
+# In[9]:
 
 # Test it with some plots
 data1[['CH4', 'CO2']].plot.line()
@@ -150,7 +150,7 @@ data1[['CO', 'H2']].plot.line()
 data1[['H2O']].plot.line()
 
 
-# In[13]:
+# In[10]:
 
 species_names = data1.columns
 # just the gas phase species that aren't always zero:
@@ -162,7 +162,7 @@ data1[gas_phase].plot.line()
 data1[surface_phase].plot.line()
 
 
-# In[14]:
+# In[11]:
 
 print "Significant species (those that exceed 0.001 mol at some point)"
 significant = [n for n in data1.columns if(data1[n]>0.001).any()]
@@ -170,7 +170,7 @@ with sns.color_palette("hls", len(significant)):
     data1[significant].plot.area(legend='reverse')
 
 
-# In[15]:
+# In[12]:
 
 surface = [n for n in data1.columns if 'X' in n and n!='X' and (data1[n]>1e-6).any() ]
 print "The {} surface species that exceed 1e-6 mol at some point".format(len(surface))
@@ -182,7 +182,7 @@ with sns.color_palette('Set3',len(surface)):
 
 # # Effect of binding energies
 
-# In[16]:
+# In[13]:
 
 # First, make a series of input files in separate directories
 
@@ -217,7 +217,7 @@ print make_input((-8,-3.5))
     
 
 
-# In[17]:
+# In[14]:
 
 def run_simulation(binding_energies):
     """
@@ -231,43 +231,44 @@ def run_simulation(binding_energies):
     return subprocess.check_call('./run.sh', cwd=job_directory)
 
 
-# In[18]:
+# In[15]:
 
 experiment = (-8,-3.5)
 make_input(experiment)
 run_simulation(experiment)
 
 
-# In[ ]:
+# In[19]:
 
 # Revised range
 plt.xlim(-7.5,-2)
 plt.ylim(-6.5,-1.5)
 
 
-# In[303]:
+# In[20]:
 
 # Revised range
 carbon_range = (-7.5, -2)
 oxygen_range = (-6.5, -1.5)
-grid_size = 9
+grid_size = 3
 mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:oxygen_range[1]:grid_size*1j]
 mesh
 
 
-# In[304]:
+# In[21]:
 
 experiments = mesh.reshape((2,-1)).T
 experiments
 
 
-# In[293]:
+# In[22]:
 
 map(make_input, experiments)
 
 
-# In[33]:
+# In[ ]:
 
+# make those files again using a pool, just to check how using the pool works
 pool = multiprocessing.Pool()
 result = pool.map_async(make_input, experiments)
 result.wait()
@@ -276,23 +277,13 @@ result.get()
 
 # In[ ]:
 
-## Don't run this cell unless you have a while to wait!!
-
+# Now run the simulations using a pool.
+## Don't run this cell unless you have a while to wait!! ###
 pool = multiprocessing.Pool()
-result = pool.map_async(run_simulation, experiments)
-result.get()
+result = pool.map(run_simulation, experiments)
 
 
-# In[32]:
-
-data = get_pandas_data(directory(-8., -0.875))
-rename_columns(data)
-d=data[['CO']]
-ax = plt.axes()
-d.plot.line(ax=ax)
-
-
-# In[39]:
+# In[23]:
 
 def get_data(experiment):
     carbon, oxygen = experiment
@@ -302,17 +293,17 @@ def get_data(experiment):
     return data
 
 
-# In[42]:
+# In[24]:
 
 datas = {tuple(e): get_data(e) for e in experiments}
 
 
-# In[55]:
+# In[25]:
 
 datas.keys()
 
 
-# In[64]:
+# In[26]:
 
 def get_max_co(experiment):
     data = datas[tuple(experiment)]
@@ -320,28 +311,23 @@ def get_max_co(experiment):
 highest_co = max([float(get_max_co(e)) for e in experiments])
 
 
-# In[112]:
+# In[28]:
 
 ax = plt.axes()
-for experiment in experiments[10:11]:
+for experiment in experiments:
     print experiment
     data = get_data(experiment)
     (data[['CO']]/highest_co).plot.line(ax=ax)
 
 
-# In[87]:
-
-np.array(data.index)
-
-
-# In[284]:
+# In[31]:
 
 import seaborn as sns
 plt.figure(figsize=(5, 4))
-ax = plt.axes()
 num_lines = len(experiments)
 sns.set_palette(sns.color_palette("coolwarm",num_lines))
 
+ax = plt.axes()
 def make_label(experiment):
     return "{:+.1f}, {:+.1f}".format(*experiment)
 
@@ -359,13 +345,13 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO concentration')
 
 
-# In[282]:
+# In[32]:
 
 import seaborn as sns
 plt.figure(figsize=(5, 4))
-ax = plt.axes()
 num_lines = len(experiments)
 sns.set_palette(sns.color_palette("coolwarm",num_lines))
+ax = plt.axes()
 
 def make_label(experiment):
     return "{:+.1f}, {:+.1f}".format(*experiment)
@@ -395,7 +381,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO concentration')
 
 
-# In[212]:
+# In[33]:
 
 ax = plt.axes()
 for experiment in experiments:
@@ -407,7 +393,7 @@ for experiment in experiments:
     
 
 
-# In[218]:
+# In[34]:
 
 sns.set_palette('Set1')
 x_data = np.array(linearized.index)
@@ -429,7 +415,7 @@ plt.plot(x_data, x_data*slope+intercept)
 plt.show()
 
 
-# In[220]:
+# In[35]:
 
 sns.set_palette('Set1')
 
@@ -470,41 +456,43 @@ rates
     
 
 
-# In[183]:
+# In[37]:
 
 rates = np.array(rates)
 fixed_rates = rates * (rates>0) + (1e-9 * (rates<0))
 log_rates = np.log(fixed_rates)
+log_rates
 
 
-# In[ ]:
+# In[45]:
+
+experiments
 
 
+# In[38]:
+
+rate_grid = np.reshape(log_rates, (grid_size,grid_size))
 
 
-# In[184]:
-
-rate_grid = np.reshape(log_rates, (5,5))
-
-
-# In[185]:
+# In[39]:
 
 ax = sns.heatmap(rate_grid)
 
 
-# In[187]:
+# In[43]:
 
-plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
+extent = carbon_range + oxygen_range
+extent
 
 
-# In[192]:
+# In[46]:
 
-plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
+plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[296]:
+# In[47]:
 
 # (1)	Medford, A. J.; Lausche, A. C.; Abild-Pedersen, F.; Temel, B.; Schjødt, N. C.; Nørskov, J. K.; Studt, F. Activity and Selectivity Trends in Synthesis Gas Conversion to Higher Alcohols. Topics in Catalysis 2014, 57 (1-4), 135–142 DOI: 10.1007/s11244-013-0169-0.
 
@@ -521,7 +509,7 @@ medford_energies = { # Carbon, then Oxygen
 }
 
 
-# In[297]:
+# In[48]:
 
 # Shift medford's energies so that Ni matches Wayne Blaylock's Ni
 blaylock_ni = np.array([-5.997, -4.485])
@@ -530,17 +518,17 @@ shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E i
 shifted_energies
 
 
-# In[298]:
+# In[50]:
 
-plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
+plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 for metal, coords in shifted_energies.iteritems():
     plt.plot(coords[0], coords[1], 'ok')
     plt.text(coords[0], coords[1], metal)
-plt.xlim(-7.5,-2)
-plt.ylim(-5.5,-1)
+plt.xlim(carbon_range)
+plt.ylim(oxygen_range)
 
 
-# In[299]:
+# In[51]:
 
 # For close packed surfaces from
 # Abild-Pedersen, F.; Greeley, J.; Studt, F.; Rossmeisl, J.; Munter, T. R.; Moses, P. G.; Skúlason, E.; Bligaard, T.; Norskov, J. K. Scaling Properties of Adsorption Energies for Hydrogen-Containing Molecules on Transition-Metal Surfaces. Phys. Rev. Lett. 2007, 99 (1), 016105 DOI: 10.1103/PhysRevLett.99.016105.
@@ -557,14 +545,17 @@ abildpedersen_energies = { # Carbon, then Oxygen
 }
 
 
-# In[302]:
+# In[70]:
 
-plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=(-8,-3, -3.5,0), aspect='equal')
+plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 for metal, coords in abildpedersen_energies.iteritems():
-    plt.plot(coords[0], coords[1], 'ok')
-    plt.text(coords[0], coords[1], metal)
-plt.xlim(-7.5,-2)
-plt.ylim(-6.5,-1.5)
+    color = {'Ag':'w','Au':'w','Cu':'w'}.get(metal,'k')
+    plt.plot(coords[0], coords[1], 'o'+color)
+    plt.text(coords[0], coords[1], metal, color=color)
+plt.xlim(carbon_range)
+plt.ylim(oxygen_range)
+plt.xlabel('$\Delta E^C$ (eV)')
+plt.ylabel('$\Delta E^O$ (eV)')
 
 
 # # STOP HERE.
