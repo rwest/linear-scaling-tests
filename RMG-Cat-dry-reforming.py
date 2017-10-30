@@ -245,23 +245,23 @@ plt.xlim(-7.5,-2)
 plt.ylim(-6.5,-1.5)
 
 
-# In[20]:
+# In[72]:
 
 # Revised range
 carbon_range = (-7.5, -2)
 oxygen_range = (-6.5, -1.5)
-grid_size = 3
+grid_size = 9
 mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:oxygen_range[1]:grid_size*1j]
 mesh
 
 
-# In[21]:
+# In[73]:
 
 experiments = mesh.reshape((2,-1)).T
 experiments
 
 
-# In[22]:
+# In[74]:
 
 map(make_input, experiments)
 
@@ -273,6 +273,11 @@ pool = multiprocessing.Pool()
 result = pool.map_async(make_input, experiments)
 result.wait()
 result.get()
+
+
+# In[ ]:
+
+raise NotImplementedError("Stop here! (when running on cluster...)")
 
 
 # In[ ]:

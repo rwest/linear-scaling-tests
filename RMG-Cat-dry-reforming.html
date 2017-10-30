@@ -16946,13 +16946,13 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Revised range</span>
 <span class="n">carbon_range</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">7.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">oxygen_range</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">6.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
-<span class="n">grid_size</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">grid_size</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">mesh</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="n">carbon_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">carbon_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">grid_size</span><span class="o">*</span><span class="mi">1j</span><span class="p">,</span> <span class="n">oxygen_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">oxygen_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">grid_size</span><span class="o">*</span><span class="mi">1j</span><span class="p">]</span>
 <span class="n">mesh</span>
 </pre></div>
@@ -16966,18 +16966,48 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[20]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[[-7.5 , -7.5 , -7.5 ],
-        [-4.75, -4.75, -4.75],
-        [-2.  , -2.  , -2.  ]],
+<pre>array([[[-7.5   , -7.5   , -7.5   , -7.5   , -7.5   , -7.5   , -7.5   ,
+         -7.5   , -7.5   ],
+        [-6.8125, -6.8125, -6.8125, -6.8125, -6.8125, -6.8125, -6.8125,
+         -6.8125, -6.8125],
+        [-6.125 , -6.125 , -6.125 , -6.125 , -6.125 , -6.125 , -6.125 ,
+         -6.125 , -6.125 ],
+        [-5.4375, -5.4375, -5.4375, -5.4375, -5.4375, -5.4375, -5.4375,
+         -5.4375, -5.4375],
+        [-4.75  , -4.75  , -4.75  , -4.75  , -4.75  , -4.75  , -4.75  ,
+         -4.75  , -4.75  ],
+        [-4.0625, -4.0625, -4.0625, -4.0625, -4.0625, -4.0625, -4.0625,
+         -4.0625, -4.0625],
+        [-3.375 , -3.375 , -3.375 , -3.375 , -3.375 , -3.375 , -3.375 ,
+         -3.375 , -3.375 ],
+        [-2.6875, -2.6875, -2.6875, -2.6875, -2.6875, -2.6875, -2.6875,
+         -2.6875, -2.6875],
+        [-2.    , -2.    , -2.    , -2.    , -2.    , -2.    , -2.    ,
+         -2.    , -2.    ]],
 
-       [[-6.5 , -4.  , -1.5 ],
-        [-6.5 , -4.  , -1.5 ],
-        [-6.5 , -4.  , -1.5 ]]])</pre>
+       [[-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ],
+        [-6.5   , -5.875 , -5.25  , -4.625 , -4.    , -3.375 , -2.75  ,
+         -2.125 , -1.5   ]]])</pre>
 </div>
 
 </div>
@@ -16988,7 +17018,7 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">experiments</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
@@ -17004,20 +17034,92 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[73]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[-7.5 , -6.5 ],
-       [-7.5 , -4.  ],
-       [-7.5 , -1.5 ],
-       [-4.75, -6.5 ],
-       [-4.75, -4.  ],
-       [-4.75, -1.5 ],
-       [-2.  , -6.5 ],
-       [-2.  , -4.  ],
-       [-2.  , -1.5 ]])</pre>
+<pre>array([[-7.5   , -6.5   ],
+       [-7.5   , -5.875 ],
+       [-7.5   , -5.25  ],
+       [-7.5   , -4.625 ],
+       [-7.5   , -4.    ],
+       [-7.5   , -3.375 ],
+       [-7.5   , -2.75  ],
+       [-7.5   , -2.125 ],
+       [-7.5   , -1.5   ],
+       [-6.8125, -6.5   ],
+       [-6.8125, -5.875 ],
+       [-6.8125, -5.25  ],
+       [-6.8125, -4.625 ],
+       [-6.8125, -4.    ],
+       [-6.8125, -3.375 ],
+       [-6.8125, -2.75  ],
+       [-6.8125, -2.125 ],
+       [-6.8125, -1.5   ],
+       [-6.125 , -6.5   ],
+       [-6.125 , -5.875 ],
+       [-6.125 , -5.25  ],
+       [-6.125 , -4.625 ],
+       [-6.125 , -4.    ],
+       [-6.125 , -3.375 ],
+       [-6.125 , -2.75  ],
+       [-6.125 , -2.125 ],
+       [-6.125 , -1.5   ],
+       [-5.4375, -6.5   ],
+       [-5.4375, -5.875 ],
+       [-5.4375, -5.25  ],
+       [-5.4375, -4.625 ],
+       [-5.4375, -4.    ],
+       [-5.4375, -3.375 ],
+       [-5.4375, -2.75  ],
+       [-5.4375, -2.125 ],
+       [-5.4375, -1.5   ],
+       [-4.75  , -6.5   ],
+       [-4.75  , -5.875 ],
+       [-4.75  , -5.25  ],
+       [-4.75  , -4.625 ],
+       [-4.75  , -4.    ],
+       [-4.75  , -3.375 ],
+       [-4.75  , -2.75  ],
+       [-4.75  , -2.125 ],
+       [-4.75  , -1.5   ],
+       [-4.0625, -6.5   ],
+       [-4.0625, -5.875 ],
+       [-4.0625, -5.25  ],
+       [-4.0625, -4.625 ],
+       [-4.0625, -4.    ],
+       [-4.0625, -3.375 ],
+       [-4.0625, -2.75  ],
+       [-4.0625, -2.125 ],
+       [-4.0625, -1.5   ],
+       [-3.375 , -6.5   ],
+       [-3.375 , -5.875 ],
+       [-3.375 , -5.25  ],
+       [-3.375 , -4.625 ],
+       [-3.375 , -4.    ],
+       [-3.375 , -3.375 ],
+       [-3.375 , -2.75  ],
+       [-3.375 , -2.125 ],
+       [-3.375 , -1.5   ],
+       [-2.6875, -6.5   ],
+       [-2.6875, -5.875 ],
+       [-2.6875, -5.25  ],
+       [-2.6875, -4.625 ],
+       [-2.6875, -4.    ],
+       [-2.6875, -3.375 ],
+       [-2.6875, -2.75  ],
+       [-2.6875, -2.125 ],
+       [-2.6875, -1.5   ],
+       [-2.    , -6.5   ],
+       [-2.    , -5.875 ],
+       [-2.    , -5.25  ],
+       [-2.    , -4.625 ],
+       [-2.    , -4.    ],
+       [-2.    , -3.375 ],
+       [-2.    , -2.75  ],
+       [-2.    , -2.125 ],
+       [-2.    , -1.5   ]])</pre>
 </div>
 
 </div>
@@ -17028,7 +17130,7 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="nb">map</span><span class="p">(</span><span class="n">make_input</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
@@ -17043,19 +17145,91 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[74]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&#39;binding_energies/c-7.500o-6.500&#39;,
+ &#39;binding_energies/c-7.500o-5.875&#39;,
+ &#39;binding_energies/c-7.500o-5.250&#39;,
+ &#39;binding_energies/c-7.500o-4.625&#39;,
  &#39;binding_energies/c-7.500o-4.000&#39;,
+ &#39;binding_energies/c-7.500o-3.375&#39;,
+ &#39;binding_energies/c-7.500o-2.750&#39;,
+ &#39;binding_energies/c-7.500o-2.125&#39;,
  &#39;binding_energies/c-7.500o-1.500&#39;,
+ &#39;binding_energies/c-6.812o-6.500&#39;,
+ &#39;binding_energies/c-6.812o-5.875&#39;,
+ &#39;binding_energies/c-6.812o-5.250&#39;,
+ &#39;binding_energies/c-6.812o-4.625&#39;,
+ &#39;binding_energies/c-6.812o-4.000&#39;,
+ &#39;binding_energies/c-6.812o-3.375&#39;,
+ &#39;binding_energies/c-6.812o-2.750&#39;,
+ &#39;binding_energies/c-6.812o-2.125&#39;,
+ &#39;binding_energies/c-6.812o-1.500&#39;,
+ &#39;binding_energies/c-6.125o-6.500&#39;,
+ &#39;binding_energies/c-6.125o-5.875&#39;,
+ &#39;binding_energies/c-6.125o-5.250&#39;,
+ &#39;binding_energies/c-6.125o-4.625&#39;,
+ &#39;binding_energies/c-6.125o-4.000&#39;,
+ &#39;binding_energies/c-6.125o-3.375&#39;,
+ &#39;binding_energies/c-6.125o-2.750&#39;,
+ &#39;binding_energies/c-6.125o-2.125&#39;,
+ &#39;binding_energies/c-6.125o-1.500&#39;,
+ &#39;binding_energies/c-5.438o-6.500&#39;,
+ &#39;binding_energies/c-5.438o-5.875&#39;,
+ &#39;binding_energies/c-5.438o-5.250&#39;,
+ &#39;binding_energies/c-5.438o-4.625&#39;,
+ &#39;binding_energies/c-5.438o-4.000&#39;,
+ &#39;binding_energies/c-5.438o-3.375&#39;,
+ &#39;binding_energies/c-5.438o-2.750&#39;,
+ &#39;binding_energies/c-5.438o-2.125&#39;,
+ &#39;binding_energies/c-5.438o-1.500&#39;,
  &#39;binding_energies/c-4.750o-6.500&#39;,
+ &#39;binding_energies/c-4.750o-5.875&#39;,
+ &#39;binding_energies/c-4.750o-5.250&#39;,
+ &#39;binding_energies/c-4.750o-4.625&#39;,
  &#39;binding_energies/c-4.750o-4.000&#39;,
+ &#39;binding_energies/c-4.750o-3.375&#39;,
+ &#39;binding_energies/c-4.750o-2.750&#39;,
+ &#39;binding_energies/c-4.750o-2.125&#39;,
  &#39;binding_energies/c-4.750o-1.500&#39;,
+ &#39;binding_energies/c-4.062o-6.500&#39;,
+ &#39;binding_energies/c-4.062o-5.875&#39;,
+ &#39;binding_energies/c-4.062o-5.250&#39;,
+ &#39;binding_energies/c-4.062o-4.625&#39;,
+ &#39;binding_energies/c-4.062o-4.000&#39;,
+ &#39;binding_energies/c-4.062o-3.375&#39;,
+ &#39;binding_energies/c-4.062o-2.750&#39;,
+ &#39;binding_energies/c-4.062o-2.125&#39;,
+ &#39;binding_energies/c-4.062o-1.500&#39;,
+ &#39;binding_energies/c-3.375o-6.500&#39;,
+ &#39;binding_energies/c-3.375o-5.875&#39;,
+ &#39;binding_energies/c-3.375o-5.250&#39;,
+ &#39;binding_energies/c-3.375o-4.625&#39;,
+ &#39;binding_energies/c-3.375o-4.000&#39;,
+ &#39;binding_energies/c-3.375o-3.375&#39;,
+ &#39;binding_energies/c-3.375o-2.750&#39;,
+ &#39;binding_energies/c-3.375o-2.125&#39;,
+ &#39;binding_energies/c-3.375o-1.500&#39;,
+ &#39;binding_energies/c-2.688o-6.500&#39;,
+ &#39;binding_energies/c-2.688o-5.875&#39;,
+ &#39;binding_energies/c-2.688o-5.250&#39;,
+ &#39;binding_energies/c-2.688o-4.625&#39;,
+ &#39;binding_energies/c-2.688o-4.000&#39;,
+ &#39;binding_energies/c-2.688o-3.375&#39;,
+ &#39;binding_energies/c-2.688o-2.750&#39;,
+ &#39;binding_energies/c-2.688o-2.125&#39;,
+ &#39;binding_energies/c-2.688o-1.500&#39;,
  &#39;binding_energies/c-2.000o-6.500&#39;,
+ &#39;binding_energies/c-2.000o-5.875&#39;,
+ &#39;binding_energies/c-2.000o-5.250&#39;,
+ &#39;binding_energies/c-2.000o-4.625&#39;,
  &#39;binding_energies/c-2.000o-4.000&#39;,
+ &#39;binding_energies/c-2.000o-3.375&#39;,
+ &#39;binding_energies/c-2.000o-2.750&#39;,
+ &#39;binding_energies/c-2.000o-2.125&#39;,
  &#39;binding_energies/c-2.000o-1.500&#39;]</pre>
 </div>
 
@@ -17087,6 +17261,19 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Stop here! (when running on cluster...)&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Now run the simulations using a pool.</span>
 <span class="c1">## Don&#39;t run this cell unless you have a while to wait!! ###</span>
 <span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">()</span>
@@ -17094,6 +17281,58 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>binding_energies/c-6.125o-6.500
+binding_energies/c-6.812o-4.625
+binding_energies/c-7.500o-2.750
+binding_energies/c-7.500o-6.500
+binding_energies/c-6.125o-2.750
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Exception in thread Thread-6:
+Traceback (most recent call last):
+  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/threading.py&#34;, line 801, in __bootstrap_inner
+    self.run()
+  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/threading.py&#34;, line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/multiprocessing/pool.py&#34;, line 389, in _handle_results
+    task = get()
+TypeError: (&#39;__init__() takes at least 3 arguments (1 given)&#39;, &lt;class &#39;subprocess.CalledProcessError&#39;&gt;, ())
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>binding_energies/c-6.125o-5.875
+binding_energies/c-7.500o-2.125
+binding_energies/c-6.812o-4.000
+binding_energies/c-6.125o-5.250
+binding_energies/c-7.500o-1.500
+binding_energies/c-6.812o-6.500
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
