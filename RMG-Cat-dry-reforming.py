@@ -233,6 +233,7 @@ def run_simulation(binding_energies):
 
 # In[15]:
 
+# a test
 experiment = (-8,-3.5)
 make_input(experiment)
 run_simulation(experiment)
@@ -265,29 +266,10 @@ experiments
 
 map(make_input, experiments)
 
-
-# In[ ]:
-
-# make those files again using a pool, just to check how using the pool works
-pool = multiprocessing.Pool()
-result = pool.map_async(make_input, experiments)
-result.wait()
-result.get()
-
-
-# In[ ]:
-
-raise NotImplementedError("Stop here! (when running on cluster...)")
-
-
-# In[ ]:
-
 # Now run the simulations using a pool.
 ## Don't run this cell unless you have a while to wait!! ###
 pool = multiprocessing.Pool()
 result = pool.map(run_simulation, experiments)
-
-
 # In[23]:
 
 def get_data(experiment):

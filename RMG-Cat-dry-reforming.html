@@ -16795,7 +16795,8 @@ XzEi2z96ITwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">experiment</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mf">3.5</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># a test</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mf">3.5</span><span class="p">)</span>
 <span class="n">make_input</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
 <span class="n">run_simulation</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
 </pre></div>
@@ -17238,105 +17239,10 @@ DCH6AGAI0QcAQ4g+ABjyf5L/d5Txw+HHAAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># make those files again using a pool, just to check how using the pool works</span>
-<span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">make_input</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Stop here! (when running on cluster...)&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Now run the simulations using a pool.</span>
-<span class="c1">## Don&#39;t run this cell unless you have a while to wait!! ###</span>
-<span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">run_simulation</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>binding_energies/c-6.125o-6.500
-binding_energies/c-6.812o-4.625
-binding_energies/c-7.500o-2.750
-binding_energies/c-7.500o-6.500
-binding_energies/c-6.125o-2.750
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Exception in thread Thread-6:
-Traceback (most recent call last):
-  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/threading.py&#34;, line 801, in __bootstrap_inner
-    self.run()
-  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/threading.py&#34;, line 754, in run
-    self.__target(*self.__args, **self.__kwargs)
-  File &#34;/Users/rwest/anaconda/envs/rmg6/lib/python2.7/multiprocessing/pool.py&#34;, line 389, in _handle_results
-    task = get()
-TypeError: (&#39;__init__() takes at least 3 arguments (1 given)&#39;, &lt;class &#39;subprocess.CalledProcessError&#39;&gt;, ())
-
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>binding_energies/c-6.125o-5.875
-binding_energies/c-7.500o-2.125
-binding_energies/c-6.812o-4.000
-binding_energies/c-6.125o-5.250
-binding_energies/c-7.500o-1.500
-binding_energies/c-6.812o-6.500
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
+</div># Now run the simulations using a pool.
+## Don't run this cell unless you have a while to wait!! ###
+pool = multiprocessing.Pool()
+result = pool.map(run_simulation, experiments)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
