@@ -1,0 +1,496 @@
+ELEMENTS H C O N Ne Ar He Si S Cl END
+
+SPECIES
+    N2                  ! N2
+    Ar                  ! Ar
+    He                  ! He
+    Ne                  ! Ne
+    X(1)                ! X(1)
+    CH4(2)              ! CH4(2)
+    O2(3)               ! O2(3)
+    CO2(4)              ! CO2(4)
+    H2O(5)              ! H2O(5)
+    H2(6)               ! H2(6)
+    CO(7)               ! CO(7)
+    C2H6(8)             ! C2H6(8)
+    CH2O(9)             ! CH2O(9)
+    CH3(10)             ! CH3(10)
+    C3H8(11)            ! C3H8(11)
+    H(12)               ! H(12)
+    C2H5(13)            ! C2H5(13)
+    CH3OH(14)           ! CH3OH(14)
+    HCO(15)             ! HCO(15)
+    CH3CHO(16)          ! CH3CHO(16)
+    OH(17)              ! OH(17)
+    C2H4(18)            ! C2H4(18)
+    HX(19)              ! HX(19)
+    CH3X(22)            ! CH3X(22)
+    HOCXO(25)           ! HOCXO(25)
+    CHX(26)             ! CHX(26)
+    CH4X(28)            ! C.[Ni](28)
+    CO2X(29)            ! O=C=O.[Ni](29)
+    H2X(31)             ! [H][H].[Ni](31)
+    C2H5X(33)           ! CC[Ni](33)
+    C2H6X(34)           ! CC.[Ni](34)
+    C3H8X(38)           ! CCC.[Ni](38)
+    CH2(48)             ! [CH2](48)
+    CH2X(58)            ! C=[Ni](58)
+END
+
+
+
+THERM ALL
+    300.000  1000.000  5000.000
+
+! Thermo library: primaryThermoLibrary
+N2                      N 2                 G200.000   6000.000  1000.00       1
+ 2.95258000E+00 1.39690000E-03-4.92632000E-07 7.86010000E-11-4.60755000E-15    2
+-9.23949000E+02 5.87189000E+00 3.53101000E+00-1.23661000E-04-5.02999000E-07    3
+ 2.43531000E-09-1.40881000E-12-1.04698000E+03 2.96747000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+Ar                      Ar1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+He                      He1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 9.28724000E-01 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 9.28724000E-01                   4
+
+! Thermo library: primaryThermoLibrary
+Ne                      Ne1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 3.35532000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 3.35532000E+00                   4
+
+! Binding energy corrected by LSR.
+X(1)                    X 1                 G100.000   5000.000  1576.57       1
+ 1.62565408E-01-2.54566683E-04 1.15041925E-07-1.23505678E-11 4.03683104E-16    2
+-7.23070959E+01-9.23338715E-01 5.86411014E-03-3.54004393E-05 7.62639434E-08    3
+-6.77305917E-11 2.05673255E-14-7.24527342E-01-2.56884087E-02                   4
+
+! Thermo library: primaryThermoLibrary
+CH4(2)                  C 1  H 4            G100.000   5000.000  1084.13       1
+ 9.08284576E-01 1.14540547E-02-4.57172076E-06 8.29187602E-10-5.66311562E-14    2
+-9.71998270E+03 1.39929876E+01 4.20541197E+00-5.35553594E-03 2.51121997E-05    3
+-2.13761281E-08 5.97517675E-12-1.01619432E+04-9.21267491E-01                   4
+
+! Thermo library: primaryThermoLibrary
+O2(3)                   O 2                 G100.000   5000.000  1074.55       1
+ 3.15382078E+00 1.67804375E-03-7.69974263E-07 1.51275468E-10-1.08782419E-14    2
+-1.04081727E+03 6.16755848E+00 3.53732243E+00-1.21571653E-03 5.31620274E-06    3
+-4.89446459E-09 1.45846268E-12-1.03858849E+03 4.68368181E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CO2(4)                  C 1  O 2            G100.000   5000.000  978.22        1
+ 4.67427542E+00 2.60962663E-03-9.85681937E-07 1.95711981E-10-1.49834685E-14    2
+-4.89512174E+04-2.11078114E+00 3.28084420E+00 2.50186048E-03 8.08190674E-06    3
+-1.20510173E-08 4.66541829E-12-4.84008303E+04 6.00081558E+00                   4
+
+! Thermo library: primaryThermoLibrary
+H2O(5)                  H 2  O 1            G100.000   5000.000  1130.24       1
+ 2.84325068E+00 2.75108510E-03-7.81031291E-07 1.07243595E-10-5.79391881E-15    2
+-2.99586129E+04 5.91041863E+00 4.05763581E+00-7.87935559E-04 2.90877396E-06    3
+-1.47518745E-09 2.12842497E-13-3.02815866E+04-3.11363965E-01                   4
+
+! Thermo library: primaryThermoLibrary
+H2(6)                   H 2                 G100.000   5000.000  1959.07       1
+ 2.78817421E+00 5.87630057E-04 1.59015512E-07-5.52749253E-11 4.34318438E-15    2
+-5.96149213E+02 1.12682993E-01 3.43536404E+00 2.12711050E-04-2.78626622E-07    3
+ 3.40268405E-10-7.76035065E-14-1.03135984E+03-3.90841701E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CO(7)                   C 1  O 1            G100.000   5000.000  1571.65       1
+ 2.91308395E+00 1.64655381E-03-6.88602675E-07 1.21034765E-10-7.83998142E-15    2
+-1.41808936E+04 6.71035699E+00 3.56837938E+00-8.52119776E-04 2.48916264E-06    3
+-1.56329627E-09 3.13591126E-13-1.42842549E+04 3.57912406E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+C2H6(8)                 C 2  H 6            G100.000   5000.000  1012.42       1
+ 2.82845775E+00 1.73040988E-02-6.73336652E-06 1.23742591E-09-8.65681099E-14    2
+-1.19977975E+04 5.93825703E+00 3.72239867E+00 1.65076994E-03 3.44177942E-05    3
+-3.76861359E-08 1.24451986E-11-1.15575904E+04 4.68245940E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH2O(9)                 C 1  H 2  O 1       G100.000   5000.000  1070.44       1
+ 2.21174577E+00 7.94262143E-03-3.34191053E-06 6.28466743E-10-4.40427625E-14    2
+-1.42974549E+04 1.13047776E+01 4.12927411E+00-4.08396786E-03 2.03227803E-05    3
+-1.83522331E-08 5.37967770E-12-1.44294638E+04 3.22419871E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH3(10)                 C 1  H 3            G100.000   5000.000  697.60        1
+ 3.09511293E+00 5.55429648E-03-1.88158705E-06 3.13334618E-10-2.05194829E-14    2
+ 1.65426189E+04 4.20297309E+00 3.96043211E+00 5.92926300E-04 8.78580371E-06    3
+-9.88037497E-09 3.63237877E-12 1.64218817E+04 3.39861646E-01                   4
+
+! Thermo library: DFT_QCI_thermo
+C3H8(11)                C 3  H 8            G100.000   5000.000  990.00        1
+ 5.60447789E+00 2.19527465E-02-8.22072993E-06 1.50102192E-09-1.05633863E-13    2
+-1.58394363E+04-6.22666905E+00 3.06334195E+00 1.29216933E-02 3.47024330E-05    3
+-4.70934960E-08 1.71379301E-11-1.43905780E+04 1.07836296E+01                   4
+
+! Thermo library: primaryThermoLibrary
+H(12)                   H 1                 G100.000   5000.000  2283.32       1
+ 2.50000000E+00-9.01538747E-15 4.47579118E-18-9.48437531E-22 7.25895052E-26    2
+ 2.54742178E+04-4.44972896E-01 2.50000000E+00-1.63670724E-16 3.44217665E-19    3
+-2.33653948E-22 4.81446067E-26 2.54742178E+04-4.44972896E-01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+C2H5(13)                C 2  H 5            G100.000   5000.000  1006.87       1
+ 3.53785947E+00 1.37310800E-02-5.29559833E-06 9.71471537E-10-6.80280117E-14    2
+ 1.26351581E+04 5.15538224E+00 3.68745367E+00 3.06903663E-03 2.55868173E-05    3
+-2.94070140E-08 9.94048777E-12 1.31153653E+04 6.96689051E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH3OH(14)               C 1  H 4  O 1       G100.000   5000.000  1035.75       1
+ 2.79182827E+00 1.15828098E-02-4.51553334E-06 8.21210002E-10-5.67065967E-14    2
+-2.57211611E+04 9.41069890E+00 3.84006524E+00 1.38238353E-03 1.91668455E-05    3
+-2.01570273E-08 6.39108976E-12-2.56083088E+04 5.90977026E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+HCO(15)                 C 1  H 1  O 1       G100.000   5000.000  1112.10       1
+ 3.05136087E+00 4.11706598E-03-1.75586523E-06 3.29303028E-10-2.29174200E-14    2
+ 3.93007966E+03 7.67464847E+00 4.05936423E+00-1.73846626E-03 9.14981617E-06    3
+-8.01132222E-09 2.25737537E-12 3.84377617E+03 3.32449647E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+CH3CHO(16)              C 2  H 4  O 1       G100.000   5000.000  1028.80       1
+ 4.08561549E+00 1.39061590E-02-5.59372435E-06 1.04609796E-09-7.38742902E-14    2
+-2.20391244E+04 3.76814726E+00 3.57992908E+00 5.18977444E-03 2.26899598E-05    3
+-2.73745338E-08 9.28490962E-12-2.13697376E+04 8.96969737E+00                   4
+
+! Thermo library: primaryThermoLibrary
+OH(17)                  H 1  O 1            G100.000   5000.000  1145.75       1
+ 3.07193992E+00 6.04015517E-04-1.39781930E-08-2.13446326E-11 2.48065842E-15    2
+ 3.57938672E+03 4.57799947E+00 3.51456803E+00 2.92775360E-05-5.32163923E-07    3
+ 1.01949094E-09-3.85945429E-13 3.41425420E+03 2.10434889E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+C2H4(18)                C 2  H 4            G100.000   5000.000  979.36        1
+ 3.55663403E+00 1.10626986E-02-4.17016315E-06 7.85580221E-10-5.70055386E-14    2
+ 4.32045323E+03 2.17703767E+00 3.97470862E+00-4.75835293E-03 4.16780533E-05    3
+-4.51388206E-08 1.54222881E-11 4.91540778E+03 3.62433496E+00                   4
+
+! Binding energy corrected by LSR.
+HX(19)                  H 1  X 1            G100.000   5000.000  951.69        1
+ 2.51683153E+00-4.37437911E-04 5.21743609E-07-6.79375989E-11 1.38153409E-15    2
+-6.73764592E+03-1.47982948E+01-1.90065817E-01-1.52215091E-04 1.75546582E-05    3
+-2.42461638E-08 9.56980024E-12-5.72010821E+03 7.65930873E-01                   4
+
+! Binding energy corrected by LSR.
+CH3X(22)                C 1  H 3  X 1       G100.000   5000.000  874.55        1
+ 2.98547374E+00 8.90180777E-03-3.69074100E-06 6.59364950E-10-4.35692849E-14    2
+ 6.61069455E+03-1.55623933E+01-1.36474355E+00 3.19161510E-02-4.85111086E-05    3
+ 3.89017470E-08-1.21407536E-11 7.25237654E+03 4.16018326E+00                   4
+
+! Binding energy corrected by LSR.
+HOCXO(25)               C 1  H 1  O 2  X 1  G100.000   5000.000  861.39        1
+ 4.89595317E+00 9.94094617E-03-5.31139173E-06 1.02720854E-09-6.99021361E-14    2
+-4.08165376E+04-2.33586394E+01-2.13760093E+00 5.20808580E-02-9.51983860E-05    3
+ 8.33692488E-08-2.76755194E-11-3.99564561E+04 7.48357123E+00                   4
+
+! Binding energy corrected by LSR.
+CHX(26)                 C 1  H 1  X 1       G100.000   5000.000  842.15        1
+-3.19671103E-02 7.32737721E-03-3.51806978E-06 6.75208021E-10-4.65656704E-14    2
+ 3.74478342E+04-2.60241272E-01-5.58601620E-01 1.43581011E-02-2.41083647E-05    3
+ 2.33614264E-08-8.67705560E-12 3.73759214E+04 1.23639618E+00                   4
+
+! Gas phase thermo from Thermo library: primaryThermoLibrary. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+CH4X(28)                C 1  H 4  X 1       G100.000   5000.000  882.19        1
+-2.71574241E+00 1.89343179E-02-9.16512285E-06 1.72014495E-09-1.15439422E-13    2
+-9.52713804E+03 2.60190160E+01-1.08429831E+00 3.20513306E-02-6.63491921E-05    3
+ 7.12935523E-08-2.73015775E-11-1.06132493E+04 1.38283933E+01                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+CO2X(29)                C 1  O 2  X 1       G100.000   5000.000  873.28        1
+ 1.60085532E+00 8.99711843E-03-4.91824529E-06 9.55955229E-10-6.48936083E-14    2
+-4.89518399E+04 6.91411411E+00-1.34660829E+00 3.52047435E-02-7.17601207E-05    3
+ 6.86453246E-08-2.42126761E-11-4.89215813E+04 1.79603430E+01                   4
+
+! Gas phase thermo from Thermo library: primaryThermoLibrary. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+H2X(31)                 H 2  X 1            G100.000   5000.000  914.92        1
+ 6.52337184E-01 5.64823778E-03-3.10476705E-06 5.62065278E-10-3.45851293E-14    2
+-1.09890534E+03 3.66663734E+00-1.11941587E+00 3.20458026E-02-7.69623194E-05    3
+ 7.66610772E-08-2.69169887E-11-1.55533874E+03 7.79062743E+00                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(C*R3) Binding
+! energy corrected by LSR.
+C2H5X(33)               C 2  H 5  X 1       G100.000   5000.000  937.55        1
+ 2.45456636E+00 1.92110461E-02-8.47569687E-06 1.61366227E-09-1.13214005E-13    2
+ 9.41835075E+03-8.43627541E+00-1.55576117E+00 3.63205300E-02-3.58488760E-05    3
+ 2.10776155E-08-5.30322327E-12 1.01703420E+04 1.06527084E+01                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+C2H6X(34)               C 2  H 6  X 1       G100.000   5000.000  833.72        1
+-1.01744712E+00 2.51723034E-02-1.15588031E-05 2.18620066E-09-1.50309412E-13    2
+-1.17146903E+04 1.92070778E+01-1.52386103E+00 3.85523128E-02-5.53333035E-05    3
+ 5.29437042E-08-2.00945893E-11-1.20108191E+04 1.92757651E+01                   4
+
+! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding energy
+! corrected by LSR.
+C3H8X(38)               C 3  H 8  X 1       G100.000   5000.000  771.22        1
+ 1.23935685E+00 3.07510508E-02-1.36066722E-05 2.58802439E-09-1.81157507E-13    2
+-1.53523803E+04 9.93567174E+00-2.00993242E+00 4.76042630E-02-4.63866207E-05    3
+ 3.09248585E-08-9.36714089E-12-1.48512114E+04 2.47674143E+01                   4
+
+! Thermo library: primaryThermoLibrary
+CH2(48)                 C 1  H 2            G100.000   5000.000  1104.59       1
+ 3.14983402E+00 2.96674230E-03-9.76055667E-07 1.54115235E-10-9.50337737E-15    2
+ 4.60581390E+04 4.77807583E+00 4.01192391E+00-1.54979023E-04 3.26297911E-06    3
+-2.40421916E-09 5.69497078E-13 4.58676802E+04 5.33200392E-01                   4
+
+! Binding energy corrected by LSR.
+CH2X(58)                C 1  H 2  X 1       G100.000   5000.000  1030.15       1
+ 1.59964844E+00 7.16777555E-03-2.91851170E-06 5.41646960E-10-3.76043134E-14    2
+ 2.44033312E+04-9.18771316E+00-7.19269738E-01 1.61722376E-02-1.60302836E-05    3
+ 9.02724554E-09-2.09697652E-12 2.48810838E+04 2.06854025E+00                   4
+
+END
+
+
+
+REACTIONS    KCAL/MOLE   MOLES
+
+! Reaction index: Chemkin #1; RMG #45
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); H(12), H2(6); 
+! Exact match found for rate rule (C_methane;H_rad)
+! Multiplied by reaction path degeneracy 4
+CH4(2)+H(12)=H2(6)+CH3(10)                          8.760e-01 4.340     8.200    
+
+! Reaction index: Chemkin #2; RMG #46
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); C2H6(8), C2H5(13); 
+! Estimated using template (C/H3/Cs;C_methyl) for rate rule (C/H3/Cs\H3;C_methyl)
+! Multiplied by reaction path degeneracy 6
+C2H6(8)+CH3(10)=CH4(2)+C2H5(13)                     4.488e-05 4.990     8.000    
+
+! Reaction index: Chemkin #3; RMG #47
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); CH2O(9), HCO(15); 
+! Exact match found for rate rule (CO_pri;C_methyl)
+! Multiplied by reaction path degeneracy 2
+CH2O(9)+CH3(10)=CH4(2)+HCO(15)                      7.780e-08 6.100     1.970    
+
+! Reaction index: Chemkin #4; RMG #48
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); OH(17), H2O(5); 
+! Exact match found for rate rule (C_methane;O_pri_rad)
+! Multiplied by reaction path degeneracy 4
+CH4(2)+OH(17)=H2O(5)+CH3(10)                        1.540e+00 3.950     0.550    
+
+! Reaction index: Chemkin #5; RMG #63
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); H2(6), H(12); 
+! Exact match found for rate rule (H2;O_pri_rad)
+! Multiplied by reaction path degeneracy 2
+H2(6)+OH(17)=H2O(5)+H(12)                           1.820e+09 1.210     4.710    
+
+! Reaction index: Chemkin #6; RMG #64
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); C2H6(8), C2H5(13); 
+! Estimated using template (C/H3/Cs;O_pri_rad) for rate rule (C/H3/Cs\H3;O_pri_rad)
+! Multiplied by reaction path degeneracy 6
+C2H6(8)+OH(17)=H2O(5)+C2H5(13)                      2.862e+09 1.152     2.680    
+
+! Reaction index: Chemkin #7; RMG #65
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH2O(9), HCO(15); 
+! Exact match found for rate rule (CO_pri;O_pri_rad)
+! Multiplied by reaction path degeneracy 2
+CH2O(9)+OH(17)=H2O(5)+HCO(15)                       3.440e+09 1.180     -0.450   
+
+! Reaction index: Chemkin #8; RMG #66
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); C2H6(8), C2H5(13); 
+! Estimated using template (C/H3/Cs;H_rad) for rate rule (C/H3/Cs\H3;H_rad)
+! Multiplied by reaction path degeneracy 6
+C2H6(8)+H(12)=H2(6)+C2H5(13)                        6.180e+03 3.240     7.100    
+
+! Reaction index: Chemkin #9; RMG #67
+! Template reaction: H_Abstraction
+! Flux pairs: H2(6), H(12); HCO(15), CH2O(9); 
+! Exact match found for rate rule (H2;CO_pri_rad)
+! Multiplied by reaction path degeneracy 2
+H2(6)+HCO(15)=CH2O(9)+H(12)                         1.800e+06 2.000     17.830   
+
+! Reaction index: Chemkin #10; RMG #68
+! Template reaction: H_Abstraction
+! Flux pairs: C2H5(13), C2H6(8); CH2O(9), HCO(15); 
+! Estimated using template (CO_pri;C_rad/H2/Cs) for rate rule (CO_pri;C_rad/H2/Cs\H3)
+! Multiplied by reaction path degeneracy 2
+CH2O(9)+C2H5(13)=C2H6(8)+HCO(15)                    5.500e+03 2.810     5.860    
+
+! Reaction index: Chemkin #11; RMG #15
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), CH4X(28); CH4(2), CH4X(28); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 5
+X(1)+CH4(2)=CH4X(28)                                5.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #12; RMG #16
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), CO2X(29); CO2(4), CO2X(29); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 3
+X(1)+CO2(4)=CO2X(29)                                3.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #13; RMG #1
+! Library reaction: Deutschmann_Ni
+! Flux pairs: H2(6), HX(19); X(1), HX(19); X(1), HX(19); 
+X(1)+X(1)+H2(6)=HX(19)+HX(19)                       3.200e-02 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #14; RMG #30
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), HX(19); H(12), HX(19); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+H(12)=HX(19)                                   1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #15; RMG #4
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CH3X(22), CH4(2); HX(19), X(1); HX(19), X(1); 
+HX(19)+CH3X(22)=X(1)+X(1)+CH4(2)                    1.440e+22 -0.087    15.153   
+
+! Reaction index: Chemkin #16; RMG #20
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C2H6(8), CH3X(22); C2H6(8), CH3X(22); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+! Ea raised from 215.8 to 216.0 kJ/mol to match endothermicity of reaction.
+X(1)+X(1)+C2H6(8)=CH3X(22)+CH3X(22)                 2.000e-02 0.000     51.632   
+    STICK
+
+! Reaction index: Chemkin #17; RMG #25
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), CH3X(22); CH3(10), CH3X(22); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+CH3(10)=CH3X(22)                               1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #18; RMG #18
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), H2X(31); H2(6), H2X(31); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+H2(6)=H2X(31)                                  2.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #19; RMG #119
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH2X(58), CH3X(22); HX(19), CH3X(22); 
+! Matched reaction 16 CH2X_3 + HX_5 <=> CH3X_1 + Ni_4 in Surface_Dissociation/training
+HX(19)+CH2X(58)=X(1)+CH3X(22)                       3.090e+23 -0.087    13.671   
+
+! Reaction index: Chemkin #20; RMG #120
+! Template reaction: Surface_Dissociation
+! Flux pairs: CHX(26), CH2X(58); HX(19), CH2X(58); 
+! Matched reaction 18 CHX_3 + HX_5 <=> CH2X_1 + Ni_4 in Surface_Dissociation/training
+HX(19)+CHX(26)=X(1)+CH2X(58)                        9.770e+24 -0.087    19.359   
+
+! Reaction index: Chemkin #21; RMG #122
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), CHX(26); CH2X(58), CH3X(22); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH2X(58)+CH2X(58)=CH3X(22)+CHX(26)                  1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #22; RMG #22
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), C2H6X(34); C2H6(8), C2H6X(34); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 8
+X(1)+C2H6(8)=C2H6X(34)                              8.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #23; RMG #21
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C2H6(8), C2H5X(33); C2H6(8), HX(19); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 12
+! Ea raised from 129.0 to 132.7 kJ/mol to match endothermicity of reaction.
+X(1)+X(1)+C2H6(8)=C2H5X(33)+HX(19)                  1.200e-01 0.000     31.711   
+    STICK
+
+! Reaction index: Chemkin #24; RMG #26
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C3H8(11), C2H5X(33); C3H8(11), CH3X(22); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 4
+! Ea raised from 263.0 to 264.0 kJ/mol to match endothermicity of reaction.
+X(1)+X(1)+C3H8(11)=C2H5X(33)+CH3X(22)               4.000e-02 0.000     63.100   
+    STICK
+
+! Reaction index: Chemkin #25; RMG #31
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), C2H5X(33); C2H5(13), C2H5X(33); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+C2H5(13)=C2H5X(33)                             1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #26; RMG #121
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H5X(33), CH3X(22); C2H5X(33), CH2X(58); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H5X(33)=CH3X(22)+CH2X(58)                    1.000e+21 0.000     81.180   
+
+! Reaction index: Chemkin #27; RMG #69
+! Template reaction: H_Abstraction
+! Flux pairs: CH2(48), CH3(10); CH4(2), CH3(10); 
+! Estimated using template (Cs_H;CH2_triplet) for rate rule (C_methane;CH2_triplet)
+! Multiplied by reaction path degeneracy 4
+CH4(2)+CH2(48)=CH3(10)+CH3(10)                      3.629e+06 1.730     6.190    
+
+! Reaction index: Chemkin #28; RMG #72
+! Template reaction: H_Abstraction
+! Flux pairs: CH2(48), CH3(10); H2(6), H(12); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (H2;CH2_triplet)
+! Multiplied by reaction path degeneracy 2
+H2(6)+CH2(48)=CH3(10)+H(12)                         1.248e+08 1.524     5.529    
+
+! Reaction index: Chemkin #29; RMG #73
+! Template reaction: H_Abstraction
+! Flux pairs: CH2(48), CH3(10); C2H6(8), C2H5(13); 
+! Estimated using template (Cs_H;CH2_triplet) for rate rule (C/H3/Cs\H3;CH2_triplet)
+! Multiplied by reaction path degeneracy 6
+C2H6(8)+CH2(48)=CH3(10)+C2H5(13)                    5.443e+06 1.730     6.190    
+
+! Reaction index: Chemkin #30; RMG #76
+! Template reaction: H_Abstraction
+! Flux pairs: CH2(48), CH3(10); CH2O(9), HCO(15); 
+! Exact match found for rate rule (CO_pri;CH2_triplet)
+! Multiplied by reaction path degeneracy 2
+CH2O(9)+CH2(48)=CH3(10)+HCO(15)                     6.040e+09 0.000     0.000    
+
+! Reaction index: Chemkin #31; RMG #80
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH2(48); OH(17), H2O(5); 
+! Estimated using template (Xrad_H;Y_rad) for rate rule (CH3_rad_H;O_pri_rad)
+! Multiplied by reaction path degeneracy 3
+CH3(10)+OH(17)=H2O(5)+CH2(48)                       1.412e+10 1.068     5.022    
+
+! Reaction index: Chemkin #32; RMG #29
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), C3H8X(38); C3H8(11), C3H8X(38); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 11
+X(1)+C3H8(11)=C3H8X(38)                             1.100e+00 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #33; RMG #12
+! Library reaction: Deutschmann_Ni
+! Flux pairs: HOCXO(25), CO2(4); X(1), X(1); X(1), HX(19); 
+X(1)+HOCXO(25)=X(1)+CO2(4)+HX(19)                   3.730e+20 0.475     8.031    
+
+END
+
