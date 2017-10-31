@@ -230,23 +230,18 @@ def run_simulation(binding_energies):
     assert os.path.exists(job_directory)
     return subprocess.check_call('./run.sh', cwd=job_directory)
 
-
-# In[15]:
-
 # a test
 experiment = (-8,-3.5)
 make_input(experiment)
 run_simulation(experiment)
-
-
-# In[19]:
+# In[15]:
 
 # Revised range
 plt.xlim(-7.5,-2)
 plt.ylim(-6.5,-1.5)
 
 
-# In[72]:
+# In[16]:
 
 # Revised range
 carbon_range = (-7.5, -2)
@@ -256,13 +251,13 @@ mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:o
 mesh
 
 
-# In[73]:
+# In[17]:
 
 experiments = mesh.reshape((2,-1)).T
 experiments
 
 
-# In[74]:
+# In[18]:
 
 map(make_input, experiments)
 
@@ -270,6 +265,12 @@ map(make_input, experiments)
 ## Don't run this cell unless you have a while to wait!! ###
 pool = multiprocessing.Pool()
 result = pool.map(run_simulation, experiments)
+# In[22]:
+
+base_directory = 'binding_energies'
+# base_directory = 'binding_energies_local'
+
+
 # In[23]:
 
 def get_data(experiment):
@@ -298,7 +299,7 @@ def get_max_co(experiment):
 highest_co = max([float(get_max_co(e)) for e in experiments])
 
 
-# In[28]:
+# In[27]:
 
 ax = plt.axes()
 for experiment in experiments:
@@ -307,7 +308,7 @@ for experiment in experiments:
     (data[['CO']]/highest_co).plot.line(ax=ax)
 
 
-# In[31]:
+# In[28]:
 
 import seaborn as sns
 plt.figure(figsize=(5, 4))
@@ -332,7 +333,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO concentration')
 
 
-# In[32]:
+# In[29]:
 
 import seaborn as sns
 plt.figure(figsize=(5, 4))
@@ -368,7 +369,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO concentration')
 
 
-# In[33]:
+# In[30]:
 
 ax = plt.axes()
 for experiment in experiments:
@@ -380,7 +381,7 @@ for experiment in experiments:
     
 
 
-# In[34]:
+# In[31]:
 
 sns.set_palette('Set1')
 x_data = np.array(linearized.index)
@@ -402,7 +403,7 @@ plt.plot(x_data, x_data*slope+intercept)
 plt.show()
 
 
-# In[35]:
+# In[32]:
 
 sns.set_palette('Set1')
 
@@ -443,7 +444,7 @@ rates
     
 
 
-# In[37]:
+# In[33]:
 
 rates = np.array(rates)
 fixed_rates = rates * (rates>0) + (1e-9 * (rates<0))
@@ -451,35 +452,35 @@ log_rates = np.log(fixed_rates)
 log_rates
 
 
-# In[45]:
+# In[34]:
 
 experiments
 
 
-# In[38]:
+# In[35]:
 
 rate_grid = np.reshape(log_rates, (grid_size,grid_size))
 
 
-# In[39]:
+# In[36]:
 
 ax = sns.heatmap(rate_grid)
 
 
-# In[43]:
+# In[37]:
 
 extent = carbon_range + oxygen_range
 extent
 
 
-# In[46]:
+# In[38]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[47]:
+# In[39]:
 
 # (1)	Medford, A. J.; Lausche, A. C.; Abild-Pedersen, F.; Temel, B.; Schjødt, N. C.; Nørskov, J. K.; Studt, F. Activity and Selectivity Trends in Synthesis Gas Conversion to Higher Alcohols. Topics in Catalysis 2014, 57 (1-4), 135–142 DOI: 10.1007/s11244-013-0169-0.
 
@@ -496,7 +497,7 @@ medford_energies = { # Carbon, then Oxygen
 }
 
 
-# In[48]:
+# In[40]:
 
 # Shift medford's energies so that Ni matches Wayne Blaylock's Ni
 blaylock_ni = np.array([-5.997, -4.485])
@@ -505,7 +506,7 @@ shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E i
 shifted_energies
 
 
-# In[50]:
+# In[41]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 for metal, coords in shifted_energies.iteritems():
@@ -515,7 +516,7 @@ plt.xlim(carbon_range)
 plt.ylim(oxygen_range)
 
 
-# In[51]:
+# In[42]:
 
 # For close packed surfaces from
 # Abild-Pedersen, F.; Greeley, J.; Studt, F.; Rossmeisl, J.; Munter, T. R.; Moses, P. G.; Skúlason, E.; Bligaard, T.; Norskov, J. K. Scaling Properties of Adsorption Energies for Hydrogen-Containing Molecules on Transition-Metal Surfaces. Phys. Rev. Lett. 2007, 99 (1), 016105 DOI: 10.1103/PhysRevLett.99.016105.
@@ -532,7 +533,7 @@ abildpedersen_energies = { # Carbon, then Oxygen
 }
 
 
-# In[70]:
+# In[43]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 for metal, coords in abildpedersen_energies.iteritems():
@@ -545,10 +546,29 @@ plt.xlabel('$\Delta E^C$ (eV)')
 plt.ylabel('$\Delta E^O$ (eV)')
 
 
+# In[ ]:
+
+new_rates = []
+for experiment in experiments:
+    print experiment
+    data = get_data(experiment)
+    times = np.array(data.index)
+    normalized = data[['CO']].values[:,0] / highest_co
+    try:
+        i = (np.nonzero((np.log10(times)+np.log10(normalized)) > -10))[0][0]
+        time = times[i]
+    except IndexError:
+        time = 1.0
+    new_rates.append(1./time)
+new_log_rates = np.log(np.array(new_rates))
+print new_log_rates
+rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
+
+
 # # STOP HERE.
 # stuff below is left over from old notebook
 
-# In[14]:
+# In[44]:
 
 raise NotImplementedError("Stop here.")
 
@@ -558,7 +578,7 @@ raise NotImplementedError("Stop here.")
 # Now lets look at the version that generates a mechanism by applying reaction families.
 # First, inspect how the input file differs from the one above. 
 
-# In[13]:
+# In[ ]:
 
 get_ipython().run_cell_magic(u'bash', u'', u'python $RMGpy/rmg.py ch4_co2_families/input.py > /dev/null\ntail -n12 ch4_co2_families/RMG.log')
 
@@ -567,33 +587,33 @@ get_ipython().run_cell_magic(u'bash', u'', u'python $RMGpy/rmg.py ch4_co2_famili
 # First, we make a few plots of the new model.
 # Mostly just to show how it can be done, and to see what the results look like. These aren't very pretty as they're not going in the manuscript.
 
-# In[14]:
+# In[ ]:
 
 data2 = get_pandas_data('ch4_co2_families')
 rename_columns(data2)
 data2.columns
 
 
-# In[15]:
+# In[ ]:
 
 get_last_csv_file('ch4_co2_families')
 
 
-# In[16]:
+# In[ ]:
 
 data2[['CH4', 'CO2']].plot.line()
 data2[['CO', 'H2']].plot.line()
 data2[['H2O']].plot.line()
 
 
-# In[17]:
+# In[ ]:
 
 print "All species"
 data2.plot.area()
 plt.show()
 
 
-# In[18]:
+# In[ ]:
 
 print "Significant species (those that exceed 0.001 mol at some point)"
 significant = [n for n in data2.columns if(data2[n]>0.001).any()]
@@ -601,7 +621,7 @@ with sns.color_palette("hls", len(significant)):
     data2[significant].plot.area(legend='reverse')
 
 
-# In[19]:
+# In[ ]:
 
 surface = [n for n in data2.columns if 'X' in n and n!='X' and (data2[n]>1e-6).any()]
 print "The {} surface species that exceed 1e-6 mol at some point".format(len(surface))
@@ -609,7 +629,7 @@ with sns.color_palette('Set3',len(surface)):
     data2[surface].plot.area(legend='reverse')
 
 
-# In[20]:
+# In[ ]:
 
 species_names = data2.columns
 gas_phase = [n for n in species_names if 'X' not in n and (data2[n]>0).any()]
@@ -626,7 +646,7 @@ data2[surface_phase].plot.line()
 plt.show()
 
 
-# In[21]:
+# In[ ]:
 
 print "A comparison of the two reactants across the two models"
 ax = plt.subplot()
@@ -638,7 +658,7 @@ plt.show()
 # ## Model comparison
 # Now we will start making some prettier plots for the manuscript, comparing the two models
 
-# In[22]:
+# In[ ]:
 
 plt.rcParams.update({'mathtext.default':  'regular' }) # make the LaTeX subscripts (eg. CH4) use regular font
 sns.set_context("paper", font_scale=1, rc={"lines.linewidth": 1.5}) # Tweak the font size and default line widths
@@ -666,7 +686,7 @@ fig = plt.figure(figsize=(2.5,2.5))
 ax1 = comparison_plot()
 
 
-# In[23]:
+# In[ ]:
 
 fig = plt.figure(figsize=(7,4))
 for n, species in enumerate('CH4 CO H2O CO2 H2'.split()):
@@ -683,7 +703,7 @@ plt.tight_layout()
 plt.savefig('Multi-panel gas comparison.pdf', bbox_inches='tight')
 
 
-# In[24]:
+# In[ ]:
 
 def extras_plot(subplot_axis=None, species_list=['C2H6','CH2O'], label_positions=None):
     """
@@ -717,7 +737,7 @@ with sns.color_palette("Dark2", 3):
     extras_plot(species_list='C2H6 CH2O C3H8'.split())
 
 
-# In[25]:
+# In[ ]:
 
 # Everything that exceeds some lower threshold
 gas_phase = [n for n in species_names if 'X' not in n and (data2[n]>1.1e-9).any()]
@@ -731,7 +751,7 @@ with sns.color_palette("Dark2", len(gas_phase)):
 plt.savefig('Gas extra species (many).pdf',bbox_inches='tight')
 
 
-# In[26]:
+# In[ ]:
 
 def multi_comparison_plot(subplot_axis=None, species_list=['X', 'HX'], label_positions=None):
     """
@@ -766,7 +786,7 @@ def multi_comparison_plot(subplot_axis=None, species_list=['X', 'HX'], label_pos
 multi_comparison_plot()
 
 
-# In[27]:
+# In[ ]:
 
 species_names = data2.columns
 gas_phase = [n for n in species_names if 'X' not in n and (data2[n]>0).any()]
@@ -777,7 +797,7 @@ surface_phase = [n for n in species_names if 'X' in n and (data2[n]>sites*1e-6).
 surface_phase
 
 
-# In[28]:
+# In[ ]:
 
 label_positions = {'HX':0.4, 'COX':0.6, 'CHX':0.7, 'OX':0.4, 
                    'CHOX':0.6, 'CX':0.3, 'CH2X':0.05,
@@ -789,7 +809,7 @@ plt.tight_layout()
 plt.savefig('Surface comparison semilog.pdf', bbox_inches='tight')
 
 
-# In[29]:
+# In[ ]:
 
 def multi_comparison_loglogplot(subplot_axis=None, species_list=['X', 'HX'], label_positions=None):
     """
@@ -832,7 +852,7 @@ plt.savefig('Surface comparison loglog.pdf',bbox_inches='tight')
 # # Effect of tolerance
 # Now we investigate the effect of gradually decreasing (tightening) the tolerance
 
-# In[30]:
+# In[ ]:
 
 # First, make a series of input files in separate directories
 
@@ -855,7 +875,7 @@ for i in range(9):
     print "Saved to {}/input.py".format(directory(i))
 
 
-# In[31]:
+# In[ ]:
 
 # Now run all the jobs
 # Don't execute this cell unless you have a while to wait.
@@ -875,7 +895,7 @@ for i in range(9):
         print >>sys.stderr, "Execution failed:", e
 
 
-# In[32]:
+# In[ ]:
 
 # Now read the ends of the log files and extract the mechanism sizes.
 epsilon = []
@@ -906,7 +926,7 @@ core_species = np.array(core_species) - 4
 edge_species = np.array(edge_species) - 4
 
 
-# In[33]:
+# In[ ]:
 
 # Now count the reactions by type
 Deutschmann = []
@@ -945,7 +965,7 @@ total = Deutschmann + abstraction + adsorption + dissociation
 assert (total == np.array(core_rxns)).all(), "Sum of counters doesn't equal core_rxns from above"
 
 
-# In[34]:
+# In[ ]:
 
 # Now plot the figure
 fig = plt.figure()
