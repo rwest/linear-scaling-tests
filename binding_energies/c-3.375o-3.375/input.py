@@ -134,12 +134,12 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(1000,'K'),
-    initialPressure=(1.0, 'bar'),
+    temperature=(1200,'K'),
+    initialPressure=(1.01325, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.1,
-        "CO2": 0.1,
-        "N2": 0.8,
+        "CH3OH": 0.11764706,
+        "O2": 0.17647059,
+        "N2": 0.70588235,
     },
     initialSurfaceCoverages={
         "X": 1.0,
@@ -157,7 +157,7 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-4,
+    toleranceMoveToCore=1e-2,
     toleranceInterruptSimulation=0.1,
     maximumEdgeSpecies=100000
 )
