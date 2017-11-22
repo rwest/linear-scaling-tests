@@ -37,27 +37,26 @@ SPECIES
     H2OX(30)            ! O.[Ni](30)
     H2X(31)             ! [H][H].[Ni](31)
     COX(32)             ! [C]#O.[Ni](32)
-    C2H5X(33)           ! CC[Ni](33)
-    C2H6X(34)           ! CC.[Ni](34)
-    CH2OX(35)           ! C=O.[Ni](35)
-    C3H8X(38)           ! CCC.[Ni](38)
     CH3OX(39)           ! OC[Ni](39)
+    CH3OX(40)           ! CO[Ni](40)
     CH4OX(41)           ! CO.[Ni](41)
     C2H3OX(43)          ! CC(=O)[Ni](43)
-    C2H4OX(44)          ! CC=O.[Ni](44)
     CH2X(58)            ! C=[Ni](58)
-    C2H4X(59)           ! CC=[Ni](59)
-    C2H3X(60)           ! CC#[Ni](60)
-    CH2OX(61)           ! OC=[Ni](61)
-    CHOX(63)            ! OC#[Ni](63)
-    CHO2X(76)           ! O=CO[Ni](76)
-    C2HO2X(77)          ! O=CC(=O)[Ni](77)
-    C2HOX(78)           ! O=CC#[Ni](78)
-    SX(84)              ! CC(=O)O[Ni](84)
-    SX(85)              ! CC(=O)C(=O)[Ni](85)
-    C2H4OX(91)          ! CC(O)=[Ni](91)
-    SX(121)             ! O=CC(=O)C(=O)[Ni](121)
-    SX(136)             ! CC(O)[Ni](136)
+    CH2OX(59)           ! OC=[Ni](59)
+    HO2X(60)            ! OO[Ni](60)
+    CHOX(65)            ! OC#[Ni](65)
+    CH3O2X(66)          ! OC(O)[Ni](66)
+    CH2O2X(68)          ! OC(O)=[Ni](68)
+    C2H5OX(71)          ! CC(O)[Ni](71)
+    C2H4OX(72)          ! CC(O)=[Ni](72)
+    CH3O2X(85)          ! COO[Ni](85)
+    C2H3X(96)           ! CC#[Ni](96)
+    SX(120)             ! CC(O)O[Ni](120)
+    SX(129)             ! CC(O)C(=O)[Ni](129)
+    SX(143)             ! OC(O)O[Ni](143)
+    SX(151)             ! O=C([Ni])C(O)O(151)
+    SX(229)             ! CC(=O)O[Ni](229)
+    SX(237)             ! CC(=O)C(=O)[Ni](237)
 END
 
 
@@ -286,39 +285,17 @@ COX(32)                 C 1  O 1  X 1       G100.000   5000.000  899.12        1
 -1.41421198E+04 1.60721527E+01-1.09651722E+00 3.22882984E-02-7.88516263E-05    3
  8.10011733E-08-2.93109982E-11-1.48033863E+04 1.56731292E+01                   4
 
-! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(C*R3) Binding
-! energy corrected by LSR.
-C2H5X(33)               C 2  H 5  X 1       G100.000   5000.000  937.55        1
- 2.45456636E+00 1.92110461E-02-8.47569687E-06 1.61366227E-09-1.13214005E-13    2
--4.54332084E+03-8.43627541E+00-1.55576117E+00 3.63205300E-02-3.58488760E-05    3
- 2.10776155E-08-5.30322327E-12-3.79132963E+03 1.06527084E+01                   4
-
-! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
-! energy corrected by LSR.
-C2H6X(34)               C 2  H 6  X 1       G100.000   5000.000  833.72        1
--1.01744712E+00 2.51723034E-02-1.15588031E-05 2.18620066E-09-1.50309412E-13    2
--1.17146903E+04 1.92070778E+01-1.52386103E+00 3.85523128E-02-5.53333035E-05    3
- 5.29437042E-08-2.00945893E-11-1.20108191E+04 1.92757651E+01                   4
-
-! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
-! energy corrected by LSR.
-CH2OX(35)               C 1  H 2  O 1  X 1  G100.000   5000.000  876.26        1
--1.41309241E+00 1.54249532E-02-7.93677666E-06 1.51981514E-09-1.02886210E-13    2
--1.41045395E+04 2.33348253E+01-1.16296024E+00 3.33571766E-02-7.12847291E-05    3
- 7.45567511E-08-2.80278354E-11-1.48806612E+04 1.79826593E+01                   4
-
-! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding energy
-! corrected by LSR.
-C3H8X(38)               C 3  H 8  X 1       G100.000   5000.000  771.22        1
- 1.23935685E+00 3.07510508E-02-1.36066722E-05 2.58802439E-09-1.81157507E-13    2
--1.53523803E+04 9.93567174E+00-2.00993242E+00 4.76042630E-02-4.63866207E-05    3
- 3.09248585E-08-9.36714089E-12-1.48512114E+04 2.47674143E+01                   4
-
 ! Binding energy corrected by LSR.
 CH3OX(39)               C 1  H 3  O 1  X 1  G100.000   5000.000  884.22        1
  3.72936523E+00 1.25942891E-02-6.00647757E-06 1.11064126E-09-7.35706113E-14    2
 -2.73328497E+04-1.73703044E+01-2.06853189E+00 5.11183580E-02-9.22177961E-05    3
  8.18371765E-08-2.73442680E-11-2.67881952E+04 7.16973044E+00                   4
+
+! Binding energy corrected by LSR.
+CH3OX(40)               C 1  H 3  O 1  X 1  G100.000   5000.000  829.57        1
+ 2.67190172E+00 1.44588652E-02-6.79763759E-06 1.28932949E-09-8.85124043E-14    2
+-3.01532493E+04-1.32873453E+01-1.68909327E+00 4.05389771E-02-6.30903290E-05    3
+ 5.38693550E-08-1.81465423E-11-2.96035480E+04 5.88926765E+00                   4
 
 ! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
 ! energy corrected by LSR.
@@ -334,70 +311,110 @@ C2H3OX(43)              C 2  H 3  O 1  X 1  G100.000   5000.000  2381.57       1
 -5.80160910E+04-2.63385148E+01-1.02218102E+00 2.23685583E-02-1.18902748E-05    3
  2.90835649E-09-2.77273812E-13-5.44198915E+04 1.66380754E+01                   4
 
-! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding energy
-! corrected by LSR.
-C2H4OX(44)              C 2  H 4  O 1  X 1  G100.000   5000.000  834.59        1
- 2.11254512E-01 2.18195174E-02-1.04438745E-05 2.00048258E-09-1.38066729E-13    2
--2.17430200E+04 1.71991575E+01-1.66959186E+00 4.21401772E-02-6.72865879E-05    3
- 6.36382644E-08-2.34638749E-11-2.18228319E+04 2.35740667E+01                   4
-
 ! Binding energy corrected by LSR.
 CH2X(58)                C 1  H 2  X 1       G100.000   5000.000  1030.15       1
  1.59964844E+00 7.16777555E-03-2.91851170E-06 5.41646960E-10-3.76043134E-14    2
 -3.52001196E+03-9.18771316E+00-7.19269738E-01 1.61722376E-02-1.60302836E-05    3
  9.02724554E-09-2.09697652E-12-3.04225935E+03 2.06854025E+00                   4
 
-! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(C=*R2) Binding energy
-! corrected by LSR.
-C2H4X(59)               C 2  H 4  X 1       G100.000   5000.000  1050.45       1
- 2.97873704E+00 1.37788771E-02-5.45776691E-06 1.02389547E-09-7.25882436E-14    2
--2.25315032E+03-1.32745743E+01-1.06193427E+00 1.86921337E-02 2.48144112E-06    3
--1.35058812E-08 5.64421314E-12-8.26411063E+02 9.16860706E+00                   4
-
-! Gas phase thermo from Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsCsCsCs) + gauche(Cs(RRRR)) +
-! other(R) + radical(Cs_P). Adsorption correction: + Thermo group additivity estimation: adsorption(C#*R) Binding energy corrected by LSR.
-C2H3X(60)               C 2  H 3  X 1       G100.000   5000.000  975.51        1
- 6.77053840E+00 5.03354459E-03-1.75034112E-06 4.25679714E-10-3.83882766E-14    2
--5.88986234E+04-6.41567414E+01-8.94861454E-01 8.61076955E-03 3.55788834E-05    3
--5.43550084E-08 2.15016876E-11-5.60777514E+04-2.05726593E+01                   4
-
 ! Binding energy corrected by LSR.
-CH2OX(61)               C 1  H 2  O 1  X 1  G100.000   5000.000  883.09        1
+CH2OX(59)               C 1  H 2  O 1  X 1  G100.000   5000.000  883.09        1
 -2.33159923E-01 1.70354507E-02-8.88726706E-06 1.68922949E-09-1.13239250E-13    2
 -2.42703832E+04 6.46349585E+00-1.68961336E+00 4.66710233E-02-9.83585020E-05    3
  9.87756757E-08-3.59614739E-11-2.49114721E+04 8.22270142E+00                   4
 
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed)
 ! Binding energy corrected by LSR.
-CHOX(63)                C 1  H 1  O 1  X 1  G100.000   5000.000  866.71        1
+HO2X(60)                H 1  O 2  X 1       G100.000   5000.000  748.18        1
+ 2.17875006E-01 1.00947366E-02-4.93239172E-06 9.73865492E-10-6.91465177E-14    2
+-5.01624834E+04 8.40205857E+00-7.01291799E-01 1.71041804E-02-2.31861902E-05    3
+ 2.09820905E-08-8.00553955E-12-5.00835871E+04 1.21779325E+01                   4
+
+! Binding energy corrected by LSR.
+CHOX(65)                C 1  H 1  O 1  X 1  G100.000   5000.000  866.71        1
  1.74687390E+00 1.00794140E-02-5.22798117E-06 1.00492546E-09-6.83124322E-14    2
 -3.09315947E+04-7.78405772E+00-1.36673650E+00 3.47969659E-02-6.59147107E-05    3
  6.14596098E-08-2.14795829E-11-3.07805344E+04 4.54976850E+00                   4
 
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R)
+! + group(Os-CsH) + gauche(Os(CsR)) + other(R) + radical(Cs_P). Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed)
+! Binding energy corrected by LSR.
+CH3O2X(66)              C 1  H 3  O 2  X 1  G100.000   5000.000  780.94        1
+-3.41011712E+00 2.81472053E-02-1.62707715E-05 3.36440348E-09-2.42660591E-13    2
+-7.36855166E+04 3.18948282E+01-1.32890779E+00 3.71214976E-02-7.12208276E-05    3
+ 8.24676713E-08-3.58718302E-11-7.46092971E+04 1.85354706E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R)
+! + group(Os-CsH) + gauche(Os(CsR)) + other(R) + radical(CH2_triplet). Adsorption correction: + Thermo group additivity estimation:
+! adsorption(R*chemisorbed) Binding energy corrected by LSR.
+CH2O2X(68)              C 1  H 2  O 2  X 1  G100.000   5000.000  773.53        1
+-9.39674783E-01 2.21043058E-02-1.38144878E-05 2.92152507E-09-2.12718986E-13    2
+-4.58003411E+04 1.71344839E+01-1.57387542E+00 4.22704336E-02-8.56661274E-05    3
+ 9.30695137E-08-3.84694693E-11-4.62074249E+04 1.67657214E+01                   4
+
+! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding
+! energy corrected by LSR.
+C2H5OX(71)              C 2  H 5  O 1  X 1  G100.000   5000.000  1451.10       1
+ 3.27859619E+00 1.94945123E-02-8.28222990E-06 1.54195453E-09-1.06188772E-13    2
+-6.14603776E+04-5.93725289E+00-1.44166003E+00 3.25058802E-02-2.17318994E-05    3
+ 7.72094817E-09-1.17071202E-12-6.00904483E+04 1.85927667E+01                   4
+
+! Gas phase thermo from Thermo library: DFT_QCI_thermo + radical(CH2_triplet). Adsorption correction: + Thermo group additivity estimation:
+! adsorption(R*chemisorbed) Binding energy corrected by LSR.
+C2H4OX(72)              C 2  H 4  O 1  X 1  G100.000   5000.000  1331.76       1
+ 5.25746379E+00 1.36378013E-02-5.78669190E-06 1.09457469E-09-7.66125033E-14    2
+-3.06145546E+04-1.73255710E+01-1.62736520E+00 3.43167096E-02-2.90779701E-05    3
+ 1.27539833E-08-2.26533644E-12-2.87807684E+04 1.78622553E+01                   4
+
 ! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed)
 ! Binding energy corrected by LSR.
-CHO2X(76)               C 1  H 1  O 2  X 1  G100.000   5000.000  940.42        1
- 1.67486868E+00 1.26511326E-02-6.27060140E-06 1.25989426E-09-9.10719398E-14    2
--6.74943534E+04 2.43905893E+00-9.85641891E-01 2.39673605E-02-2.43202871E-05    3
- 1.40553302E-08-3.49258231E-12-6.69939523E+04 1.51110617E+01                   4
+CH3O2X(85)              C 1  H 3  O 2  X 1  G100.000   5000.000  2108.98       1
+ 3.95143457E+00 1.32540263E-02-5.61531865E-06 1.01260349E-09-6.69850020E-14    2
+-5.21372450E+04-1.07300216E+01-9.24763928E-01 2.25023368E-02-1.21930282E-05    3
+ 3.09184272E-09-3.13455817E-13-5.00804532E+04 1.64335314E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsCsCsCs) + gauche(Cs(RRRR)) +
+! other(R) + radical(Cs_P). Adsorption correction: + Thermo group additivity estimation: adsorption(C#*R) Binding energy corrected by LSR.
+C2H3X(96)               C 2  H 3  X 1       G100.000   5000.000  975.51        1
+ 6.77053840E+00 5.03354459E-03-1.75034112E-06 4.25679714E-10-3.83882766E-14    2
+-5.88986234E+04-6.41567414E+01-8.94861454E-01 8.61076955E-03 3.55788834E-05    3
+-5.43550084E-08 2.15016876E-11-5.60777514E+04-2.05726593E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-CsOsOsH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) +
+! other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + radical(CsOJ). Adsorption correction:
+! + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(120)                 C 2  H 5  O 2  X 1  G100.000   5000.000  1537.47       1
+ 5.24643363E+00 2.24325159E-02-1.07365726E-05 2.09712165E-09-1.47688631E-13    2
+-7.95130044E+04-1.61531492E+01-1.70006007E+00 4.05049949E-02-2.83685524E-05    3
+ 9.74255154E-09-1.39086862E-12-7.73769931E+04 2.03476399E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-(Cds-Od)CsOsH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR))
+! + other(R) + group(Cds-OdCsH) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Od-Cd) + other(R) + radical(CsCJ=O). Adsorption
+! correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(129)                 C 3  H 5  O 2  X 1  G100.000   5000.000  1864.70       1
+ 9.04567192E+00 2.17448355E-02-1.13488671E-05 2.25171594E-09-1.57791610E-13    2
+-8.12460220E+04-3.47033369E+01-1.79260672E+00 4.49941751E-02-3.00510457E-05    3
+ 8.93809907E-09-1.05423235E-12-7.72039877E+04 2.43384436E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-OsOsOsH) + gauche(Cs(RRRR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R)
+! + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + radical(CsOJ). Adsorption correction: + Thermo group
+! additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(143)                 C 1  H 3  O 3  X 1  G100.000   5000.000  2770.69       1
+ 3.46229046E+01-1.42035386E-02 2.77269249E-06-3.47794570E-10 2.20700453E-14    2
+-1.17184376E+05-1.94621354E+02 3.68257265E-01 2.42228309E-02-1.20611026E-05    3
+ 1.78507685E-09-4.07779681E-14-9.39701889E+04 1.31840757E+01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(Cs-CsOsOsH) + gauche(Cs(RRRR)) + other(R) + group(Cds-OdCsH) + other(R) + group(Os-
+! CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Od-Cd) + other(R) + radical(CsCJ=O). Adsorption correction: +
+! Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(151)                 C 2  H 3  O 3  X 1  G100.000   5000.000  730.53        1
+ 4.88548608E-01 3.10372487E-02-1.79887984E-05 3.75089080E-09-2.73048082E-13    2
+-9.62604178E+04 1.51275723E+01-2.30500562E+00 5.80644688E-02-9.75717138E-05    3
+ 9.83588113E-08-4.01722456E-11-9.61652921E+04 2.55852346E+01                   4
 
 ! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding
 ! energy corrected by LSR.
-C2HO2X(77)              C 2  H 1  O 2  X 1  G100.000   5000.000  807.30        1
- 2.12054779E+00 1.54984609E-02-7.58604723E-06 1.50449154E-09-1.07625814E-13    2
--6.14975248E+04 2.18813158E+00-1.36340130E+00 3.27603357E-02-3.96587374E-05    3
- 2.79895111E-08-8.30918600E-12-6.09349949E+04 1.82504693E+01                   4
-
-! Gas phase thermo from Thermo group additivity estimation: group(Cds-CdsOsH) + gauche(CsOsCdSs) + other(R) + group(Os-(Cds-Cd)H) + gauche(Os(RR)) +
-! other(R) + group(Cds-CdsCsCs) + gauche(CsOsCdSs) + other(R) + radical(RC=COJ). Adsorption correction: + Thermo group additivity estimation:
-! adsorption(C#*R) Binding energy corrected by LSR.
-C2HOX(78)               C 2  H 1  O 1  X 1  G100.000   5000.000  1351.13       1
- 3.40688063E+00 1.08245153E-02-5.00741693E-06 9.72486374E-10-6.87517137E-14    2
--7.21071066E+04-3.22265340E+01-1.09636476E+00 2.41561977E-02-1.98078892E-05    3
- 8.27518988E-09-1.41996228E-12-7.08902028E+04-9.14572935E+00                   4
-
-! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding
-! energy corrected by LSR.
-SX(84)                  C 2  H 3  O 2  X 1  G100.000   5000.000  1201.18       1
+SX(229)                 C 2  H 3  O 2  X 1  G100.000   5000.000  1201.18       1
  5.00807863E+00 1.51471568E-02-6.34471652E-06 1.19481008E-09-8.35966023E-14    2
 -7.65518199E+04-1.53989410E+01-1.56662882E+00 2.96475711E-02-1.52192778E-05    3
  9.95764414E-10 1.02439404E-12-7.44389438E+04 1.97456949E+01                   4
@@ -405,32 +422,10 @@ SX(84)                  C 2  H 3  O 2  X 1  G100.000   5000.000  1201.18       1
 ! Gas phase thermo from Thermo group additivity estimation: group(Cs-(Cds-Od)HHH) + gauche(Cs(RRRR)) + other(R) + group(Cds-Od(Cds-Od)Cs) + other(R) +
 ! group(Cds-Od(Cds-Od)H) + other(R) + group(Od-Cd) + other(R) + group(Od-Cd) + other(R) + radical(CsCJ=O). Adsorption correction: + Thermo group
 ! additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
-SX(85)                  C 3  H 3  O 2  X 1  G100.000   5000.000  3269.13       1
+SX(237)                 C 3  H 3  O 2  X 1  G100.000   5000.000  3269.13       1
  2.01049184E+01 3.81196063E-03-3.83472244E-06 7.75935827E-10-5.00148806E-14    2
 -7.88123652E+04-1.02706031E+02-9.14820247E-01 3.43666843E-02-2.00731714E-05    3
  4.53988243E-09-3.72457128E-13-6.76530932E+04 1.96483437E+01                   4
-
-! Gas phase thermo from Thermo library: DFT_QCI_thermo + radical(CH2_triplet). Adsorption correction: + Thermo group additivity estimation:
-! adsorption(R*chemisorbed) Binding energy corrected by LSR.
-C2H4OX(91)              C 2  H 4  O 1  X 1  G100.000   5000.000  1331.76       1
- 5.25746379E+00 1.36378013E-02-5.78669190E-06 1.09457469E-09-7.66125033E-14    2
--3.06145546E+04-1.73255710E+01-1.62736520E+00 3.43167096E-02-2.90779701E-05    3
- 1.27539833E-08-2.26533644E-12-2.87807684E+04 1.78622553E+01                   4
-
-! Gas phase thermo from Thermo group additivity estimation: group(Cds-OdCsCs) + other(R) + group(Cds-Od(Cds-Od)H) + other(R) + group(Cds-Od(Cds-Od)H) +
-! other(R) + group(Od-Cd) + other(R) + group(Od-Cd) + other(R) + group(Od-Cd) + other(R) + radical(CsCJ=O). Adsorption correction: + Thermo group
-! additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
-SX(121)                 C 3  H 1  O 3  X 1  G100.000   5000.000  3130.33       1
- 3.54859292E+01-1.15011799E-02-3.90442125E-08 2.97159754E-10-2.52787133E-14    2
--9.89617346E+04-1.94287057E+02-1.11976575E-01 3.39909413E-02-2.18401835E-05    3
- 4.94059794E-09-3.96157003E-13-7.66772449E+04 1.80709672E+01                   4
-
-! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding
-! energy corrected by LSR.
-SX(136)                 C 2  H 5  O 1  X 1  G100.000   5000.000  1451.10       1
- 3.27859619E+00 1.94945123E-02-8.28222990E-06 1.54195453E-09-1.06188772E-13    2
--6.14603776E+04-5.93725289E+00-1.44166003E+00 3.25058802E-02-2.17318994E-05    3
- 7.72094817E-09-1.17071202E-12-6.00904483E+04 1.85927667E+01                   4
 
 END
 
@@ -508,20 +503,18 @@ H2(6)+HCO(15)=CH2O(9)+H(12)                         1.800e+06 2.000     17.830
 ! Multiplied by reaction path degeneracy 2
 CH2O(9)+C2H5(13)=C2H6(8)+HCO(15)                    5.500e+03 2.810     5.860    
 
-! Reaction index: Chemkin #11; RMG #15
+! Reaction index: Chemkin #11; RMG #35
 ! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), CH4X(28); CH4(2), CH4X(28); 
+! Flux pairs: X(1), CH4OX(41); CH3OH(14), CH4OX(41); 
 ! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 5
-X(1)+CH4(2)=CH4X(28)                                5.000e-01 0.000     0.000    
+! Multiplied by reaction path degeneracy 6
+X(1)+CH3OH(14)=CH4OX(41)                            6.000e-01 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #12; RMG #16
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), CO2X(29); CO2(4), CO2X(29); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 3
-X(1)+CO2(4)=CO2X(29)                                3.000e-01 0.000     0.000    
+! Reaction index: Chemkin #12; RMG #2
+! Library reaction: Deutschmann_Ni
+! Flux pairs: O2(3), OX(20); X(1), OX(20); X(1), OX(20); 
+X(1)+X(1)+O2(3)=OX(20)+OX(20)                       4.360e-02 -0.206    0.359    
     STICK
 
 ! Reaction index: Chemkin #13; RMG #1
@@ -537,622 +530,7 @@ X(1)+X(1)+H2(6)=HX(19)+HX(19)                       3.200e-02 0.000     0.000
 X(1)+H(12)=HX(19)                                   1.000e-01 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #15; RMG #4
-! Library reaction: Deutschmann_Ni
-! Flux pairs: CH3X(22), CH4(2); HX(19), X(1); HX(19), X(1); 
-HX(19)+CH3X(22)=X(1)+X(1)+CH4(2)                    1.440e+22 -0.087    15.153   
-
-! Reaction index: Chemkin #16; RMG #20
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: C2H6(8), CH3X(22); C2H6(8), CH3X(22); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 2
-X(1)+X(1)+C2H6(8)=CH3X(22)+CH3X(22)                 2.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #17; RMG #25
-! Template reaction: Surface_Adsorption_Single
-! Flux pairs: X(1), CH3X(22); CH3(10), CH3X(22); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-X(1)+CH3(10)=CH3X(22)                               1.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #18; RMG #119
-! Template reaction: Surface_Dissociation
-! Flux pairs: CH2X(58), CH3X(22); HX(19), CH3X(22); 
-! Matched reaction 16 CH2X_3 + HX_5 <=> CH3X_1 + Ni_4 in Surface_Dissociation/training
-HX(19)+CH2X(58)=X(1)+CH3X(22)                       3.090e+23 -0.087    13.671   
-
-! Reaction index: Chemkin #19; RMG #120
-! Template reaction: Surface_Dissociation
-! Flux pairs: CHX(26), CH2X(58); HX(19), CH2X(58); 
-! Matched reaction 18 CHX_3 + HX_5 <=> CH2X_1 + Ni_4 in Surface_Dissociation/training
-HX(19)+CHX(26)=X(1)+CH2X(58)                        9.770e+24 -0.087    19.359   
-
-! Reaction index: Chemkin #20; RMG #122
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), CHX(26); CH2X(58), CH3X(22); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH2X(58)+CH2X(58)=CH3X(22)+CHX(26)                  1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #21; RMG #2
-! Library reaction: Deutschmann_Ni
-! Flux pairs: O2(3), OX(20); X(1), OX(20); X(1), OX(20); 
-X(1)+X(1)+O2(3)=OX(20)+OX(20)                       4.360e-02 -0.206    0.359    
-    STICK
-
-! Reaction index: Chemkin #22; RMG #3
-! Library reaction: Deutschmann_Ni
-! Flux pairs: X(1), OCX(21); CO(7), OCX(21); 
-X(1)+CO(7)=OCX(21)                                  5.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #23; RMG #11
-! Library reaction: Deutschmann_Ni
-! Flux pairs: OCX(21), CO2(4); OX(20), X(1); OX(20), X(1); 
-OX(20)+OCX(21)=X(1)+X(1)+CO2(4)                     2.000e+19 0.000     29.541   
-
-! Reaction index: Chemkin #24; RMG #8
-! Library reaction: Deutschmann_Ni
-! Flux pairs: OCX(21), CX(24); X(1), OX(20); 
-X(1)+OCX(21)=OX(20)+CX(24)                          1.750e+13 0.000     27.772   
-
-! Reaction index: Chemkin #25; RMG #10
-! Library reaction: Deutschmann_Ni
-! Flux pairs: OCX(21), CO2(4); OCX(21), X(1); OCX(21), CX(24); 
-OCX(21)+OCX(21)=X(1)+CO2(4)+CX(24)                  1.620e+14 0.500     57.768   
-
-! Reaction index: Chemkin #26; RMG #123
-! Template reaction: Surface_Dissociation
-! Flux pairs: CX(24), CHX(26); HX(19), CHX(26); 
-! Matched reaction 20 CX_3 + HX_5 <=> CHX_1 + Ni_4 in Surface_Dissociation/training
-HX(19)+CX(24)=X(1)+CHX(26)                          1.700e+24 -0.500    37.739   
-
-! Reaction index: Chemkin #27; RMG #125
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), CH2X(58); CH3X(22), CHX(26); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 3
-CH3X(22)+CX(24)=CHX(26)+CH2X(58)                    1.500e+22 0.000     9.560    
-
-! Reaction index: Chemkin #28; RMG #126
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), CHX(26); CH2X(58), CHX(26); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CX(24)+CH2X(58)=CHX(26)+CHX(26)                     1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #29; RMG #19
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), COX(32); CO(7), COX(32); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 2
-X(1)+CO(7)=COX(32)                                  2.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #30; RMG #18
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), H2X(31); H2(6), H2X(31); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 2
-X(1)+H2(6)=H2X(31)                                  2.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #31; RMG #5
-! Library reaction: Deutschmann_Ni
-! Flux pairs: CH3X(22), CH4(2); HOX(23), X(1); HOX(23), OX(20); 
-CH3X(22)+HOX(23)=X(1)+CH4(2)+OX(20)                 2.980e+22 0.101     6.166    
-
-! Reaction index: Chemkin #32; RMG #6
-! Library reaction: Deutschmann_Ni
-! Flux pairs: HOX(23), H2O(5); HX(19), X(1); HX(19), X(1); 
-HX(19)+HOX(23)=X(1)+X(1)+H2O(5)                     1.850e+20 0.086     9.919    
-
-! Reaction index: Chemkin #33; RMG #7
-! Library reaction: Deutschmann_Ni
-! Flux pairs: HOX(23), OX(20); HOX(23), X(1); HOX(23), H2O(5); 
-HOX(23)+HOX(23)=X(1)+H2O(5)+OX(20)                  2.340e+20 0.274     22.060   
-
-! Reaction index: Chemkin #34; RMG #9
-! Library reaction: Deutschmann_Ni
-! Flux pairs: CX(24), OCX(21); HOX(23), HX(19); 
-HOX(23)+CX(24)=HX(19)+OCX(21)                       3.880e+25 0.188     14.938   
-
-! Reaction index: Chemkin #35; RMG #32
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: CH3OH(14), CH3X(22); CH3OH(14), HOX(23); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 2
-X(1)+X(1)+CH3OH(14)=CH3X(22)+HOX(23)                2.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #36; RMG #41
-! Template reaction: Surface_Adsorption_Single
-! Flux pairs: X(1), HOX(23); OH(17), HOX(23); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-X(1)+OH(17)=HOX(23)                                 1.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #37; RMG #127
-! Template reaction: Surface_Dissociation
-! Flux pairs: HOX(23), HX(19); HOX(23), OX(20); 
-! Matched reaction 32 HOX_1 + Ni_4 <=> OX_3 + HX_5 in Surface_Dissociation/training
-X(1)+HOX(23)=HX(19)+OX(20)                          2.250e+20 0.188     7.075    
-
-! Reaction index: Chemkin #38; RMG #128
-! Template reaction: Surface_Abstraction
-! Flux pairs: HOX(23), CH3X(22); CH2X(58), OX(20); 
-! Matched reaction 24 CH2X_1 + HOX_3 <=> CH3X_4 + OX_5 in Surface_Abstraction/training
-HOX(23)+CH2X(58)=OX(20)+CH3X(22)                    1.390e+21 0.101     4.541    
-
-! Reaction index: Chemkin #39; RMG #130
-! Template reaction: Surface_Abstraction
-! Flux pairs: HOX(23), CH2X(58); CHX(26), OX(20); 
-! Matched reaction 26 CHX_1 + HOX_3 <=> CH2X_4 + OX_5 in Surface_Abstraction/training
-HOX(23)+CHX(26)=OX(20)+CH2X(58)                     4.400e+22 0.101     10.134   
-
-! Reaction index: Chemkin #40; RMG #131
-! Template reaction: Surface_Abstraction
-! Flux pairs: HOX(23), CHX(26); CX(24), OX(20); 
-! Matched reaction 28 HOX_3 + CX_1 <=> OX_5 + CHX_4  in Surface_Abstraction/training
-HOX(23)+CX(24)=OX(20)+CHX(26)                       2.430e+21 -0.312    28.418   
-
-! Reaction index: Chemkin #41; RMG #12
-! Library reaction: Deutschmann_Ni
-! Flux pairs: HOCXO(25), CO2(4); X(1), X(1); X(1), HX(19); 
-X(1)+HOCXO(25)=X(1)+CO2(4)+HX(19)                   3.730e+20 0.475     8.031    
-
-! Reaction index: Chemkin #42; RMG #142
-! Template reaction: Surface_Dissociation
-! Flux pairs: HOCXO(25), OCX(21); HOCXO(25), HOX(23); 
-! Matched reaction 44 HOCXO_1 + Ni_4 <=> OCX_3 + HOX_5 in Surface_Dissociation/training
-X(1)+HOCXO(25)=OCX(21)+HOX(23)                      1.460e+24 -0.213    12.978   
-
-! Reaction index: Chemkin #43; RMG #13
-! Library reaction: Deutschmann_Ni
-! Flux pairs: CHX(26), CXHO(27); OX(20), X(1); 
-OX(20)+CHX(26)=X(1)+CXHO(27)                        4.590e+20 0.000     26.267   
-
-! Reaction index: Chemkin #44; RMG #14
-! Library reaction: Deutschmann_Ni
-! Flux pairs: CXHO(27), HOCXO(25); HOX(23), HX(19); 
-HOX(23)+CXHO(27)=HX(19)+HOCXO(25)                   2.280e+20 0.263     3.800    
-
-! Reaction index: Chemkin #45; RMG #23
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: CH2O(9), CXHO(27); CH2O(9), HX(19); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 4
-X(1)+X(1)+CH2O(9)=HX(19)+CXHO(27)                   4.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #46; RMG #36
-! Template reaction: Surface_Adsorption_Single
-! Flux pairs: X(1), CXHO(27); HCO(15), CXHO(27); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-X(1)+HCO(15)=CXHO(27)                               1.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #47; RMG #37
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: CH3CHO(16), CH3X(22); CH3CHO(16), CXHO(27); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 2
-X(1)+X(1)+CH3CHO(16)=CH3X(22)+CXHO(27)              2.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #48; RMG #132
-! Template reaction: Surface_Dissociation
-! Flux pairs: CXHO(27), HX(19); CXHO(27), OCX(21); 
-! Matched reaction 48 CXHO_1 + Ni_4 <=> OCX_3 + HX_5 in Surface_Dissociation/training
-X(1)+CXHO(27)=HX(19)+OCX(21)                        3.710e+21 0.000     0.000    
-
-! Reaction index: Chemkin #49; RMG #133
-! Template reaction: Surface_Abstraction
-! Flux pairs: CXHO(27), CH3X(22); CH2X(58), OCX(21); 
-! Exact match found for rate rule (Abstracting;R-H)
-CXHO(27)+CH2X(58)=OCX(21)+CH3X(22)                  5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #50; RMG #135
-! Template reaction: Surface_Abstraction
-! Flux pairs: CXHO(27), CH2X(58); CHX(26), OCX(21); 
-! Exact match found for rate rule (Abstracting;R-H)
-CHX(26)+CXHO(27)=OCX(21)+CH2X(58)                   5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #51; RMG #136
-! Template reaction: Surface_Abstraction
-! Flux pairs: CXHO(27), CHX(26); CX(24), OCX(21); 
-! Exact match found for rate rule (Abstracting;R-H)
-CX(24)+CXHO(27)=OCX(21)+CHX(26)                     5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #52; RMG #141
-! Template reaction: Surface_Abstraction
-! Flux pairs: OX(20), OCX(21); CXHO(27), HOX(23); 
-! Exact match found for rate rule (Abstracting;R-H)
-OX(20)+CXHO(27)=OCX(21)+HOX(23)                     5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #53; RMG #17
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), H2OX(30); H2O(5), H2OX(30); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 3
-X(1)+H2O(5)=H2OX(30)                                3.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #54; RMG #22
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), C2H6X(34); C2H6(8), C2H6X(34); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 8
-X(1)+C2H6(8)=C2H6X(34)                              8.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #55; RMG #39
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: CH3CHO(16), C2H3OX(43); CH3CHO(16), HX(19); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 2
-X(1)+X(1)+CH3CHO(16)=HX(19)+C2H3OX(43)              2.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #56; RMG #134
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H3OX(43), CH3X(22); C2H3OX(43), OCX(21); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H3OX(43)=OCX(21)+CH3X(22)                    1.000e+21 0.000     67.814   
-
-! Reaction index: Chemkin #57; RMG #137
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H3X(60), CH3X(22); C2H3X(60), CX(24); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H3X(60)=CH3X(22)+CX(24)                      1.000e+21 0.000     136.531  
-
-! Reaction index: Chemkin #58; RMG #176
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), OCX(21); C2H3OX(43), C2H3X(60); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-CX(24)+C2H3OX(43)=OCX(21)+C2H3X(60)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #59; RMG #24
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), CH2OX(35); CH2O(9), CH2OX(35); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 4
-X(1)+CH2O(9)=CH2OX(35)                              4.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #60; RMG #21
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: C2H6(8), C2H5X(33); C2H6(8), HX(19); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 12
-X(1)+X(1)+C2H6(8)=C2H5X(33)+HX(19)                  1.200e-01 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #61; RMG #26
-! Template reaction: Surface_Adsorption_Dissociative
-! Flux pairs: C3H8(11), C2H5X(33); C3H8(11), CH3X(22); 
-! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
-! Multiplied by reaction path degeneracy 4
-X(1)+X(1)+C3H8(11)=C2H5X(33)+CH3X(22)               4.000e-02 0.000     10.000   
-    STICK
-
-! Reaction index: Chemkin #62; RMG #31
-! Template reaction: Surface_Adsorption_Single
-! Flux pairs: X(1), C2H5X(33); C2H5(13), C2H5X(33); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-X(1)+C2H5(13)=C2H5X(33)                             1.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #63; RMG #121
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H5X(33), CH3X(22); C2H5X(33), CH2X(58); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H5X(33)=CH3X(22)+CH2X(58)                    1.000e+21 0.000     34.569   
-
-! Reaction index: Chemkin #64; RMG #169
-! Template reaction: Surface_Abstraction
-! Flux pairs: OCX(21), CH2X(58); C2H5X(33), C2H3OX(43); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-C2H5X(33)+OCX(21)=C2H3OX(43)+CH2X(58)               1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #65; RMG #185
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), CH2X(58); C2H5X(33), C2H3X(60); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-C2H5X(33)+CX(24)=C2H3X(60)+CH2X(58)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #66; RMG #35
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), CH4OX(41); CH3OH(14), CH4OX(41); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 6
-X(1)+CH3OH(14)=CH4OX(41)                            6.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #67; RMG #175
-! Template reaction: Surface_Dissociation
-! Flux pairs: SX(85), OCX(21); SX(85), C2H3OX(43); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(85)=OCX(21)+C2H3OX(43)                      1.000e+21 0.000     9.328    
-
-! Reaction index: Chemkin #68; RMG #162
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2HO2X(77), OCX(21); C2HO2X(77), CXHO(27); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2HO2X(77)=OCX(21)+CXHO(27)                    1.000e+21 0.000     50.196   
-
-! Reaction index: Chemkin #69; RMG #163
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2HOX(78), CX(24); C2HOX(78), CXHO(27); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2HOX(78)=CX(24)+CXHO(27)                      1.000e+21 0.000     132.607  
-
-! Reaction index: Chemkin #70; RMG #248
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), OCX(21); C2HO2X(77), C2HOX(78); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-CX(24)+C2HO2X(77)=OCX(21)+C2HOX(78)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #71; RMG #40
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), C2H4OX(44); CH3CHO(16), C2H4OX(44); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 7
-X(1)+CH3CHO(16)=C2H4OX(44)                          7.000e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #72; RMG #29
-! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), C3H8X(38); C3H8(11), C3H8X(38); 
-! Exact match found for rate rule (Adsorbate;VacantSite)
-! Multiplied by reaction path degeneracy 11
-X(1)+C3H8(11)=C3H8X(38)                             1.100e+00 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #73; RMG #139
-! Template reaction: Surface_Dissociation
-! Flux pairs: CH2OX(61), CHX(26); CH2OX(61), HOX(23); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+CH2OX(61)=HOX(23)+CHX(26)                      1.000e+21 0.000     28.497   
-
-! Reaction index: Chemkin #74; RMG #150
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHX(26), OCX(21); HOCXO(25), CH2OX(61); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-HOCXO(25)+CHX(26)=OCX(21)+CH2OX(61)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #75; RMG #143
-! Template reaction: Surface_Dissociation
-! Flux pairs: CHOX(63), CX(24); CHOX(63), HOX(23); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+CHOX(63)=HOX(23)+CX(24)                        1.000e+21 0.000     55.010   
-
-! Reaction index: Chemkin #76; RMG #155
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), OCX(21); HOCXO(25), CHOX(63); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-CX(24)+HOCXO(25)=OCX(21)+CHOX(63)                   1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #77; RMG #283
-! Template reaction: Surface_Dissociation
-! Flux pairs: CH2OX(61), CHOX(63); CH2OX(61), HX(19); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+CH2OX(61)=HX(19)+CHOX(63)                      1.000e+21 0.000     24.632   
-
-! Reaction index: Chemkin #78; RMG #288
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), CHOX(63); CH2OX(61), CH3X(22); 
-! Exact match found for rate rule (Abstracting;R-H)
-CH2OX(61)+CH2X(58)=CH3X(22)+CHOX(63)                5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #79; RMG #289
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHX(26), CHOX(63); CH2OX(61), CH2X(58); 
-! Exact match found for rate rule (Abstracting;R-H)
-CHX(26)+CH2OX(61)=CHOX(63)+CH2X(58)                 5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #80; RMG #292
-! Template reaction: Surface_Abstraction
-! Flux pairs: OX(20), CHOX(63); CH2OX(61), HOX(23); 
-! Exact match found for rate rule (Abstracting;R-H)
-OX(20)+CH2OX(61)=HOX(23)+CHOX(63)                   5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #81; RMG #293
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHOX(63), OCX(21); CXHO(27), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-CXHO(27)+CHOX(63)=OCX(21)+CH2OX(61)                 5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #82; RMG #294
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHX(26), CX(24); CHOX(63), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CHX(26)+CHOX(63)=CX(24)+CH2OX(61)                   1.000e+22 0.000     31.562   
-
-! Reaction index: Chemkin #83; RMG #286
-! Template reaction: Surface_Dissociation
-! Flux pairs: SX(136), CH3X(22); SX(136), CH2OX(61); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(136)=CH3X(22)+CH2OX(61)                     1.000e+21 0.000     92.935   
-
-! Reaction index: Chemkin #84; RMG #301
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H3OX(43), SX(136); CH2OX(61), OCX(21); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-C2H3OX(43)+CH2OX(61)=OCX(21)+SX(136)                1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #85; RMG #305
-! Template reaction: Surface_Abstraction
-! Flux pairs: SX(136), C2H3X(60); CX(24), CH2OX(61); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-CX(24)+SX(136)=C2H3X(60)+CH2OX(61)                  1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #86; RMG #306
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H5X(33), SX(136); CH2OX(61), CH2X(58); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-C2H5X(33)+CH2OX(61)=CH2X(58)+SX(136)                1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #87; RMG #124
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H4X(59), CH3X(22); C2H4X(59), CHX(26); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H4X(59)=CH3X(22)+CHX(26)                     1.000e+21 0.000     27.642   
-
-! Reaction index: Chemkin #88; RMG #171
-! Template reaction: Surface_Abstraction
-! Flux pairs: OCX(21), CHX(26); C2H4X(59), C2H3OX(43); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-OCX(21)+C2H4X(59)=CHX(26)+C2H3OX(43)                1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #89; RMG #182
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H4X(59), HX(19); C2H4X(59), C2H3X(60); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H4X(59)=HX(19)+C2H3X(60)                     1.000e+21 0.000     0.000    
-
-! Reaction index: Chemkin #90; RMG #183
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), CH3X(22); CH2X(58), C2H3X(60); 
-! Exact match found for rate rule (Abstracting;R-H)
-C2H4X(59)+CH2X(58)=CH3X(22)+C2H3X(60)               5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #91; RMG #186
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), CH2X(58); CHX(26), C2H3X(60); 
-! Exact match found for rate rule (Abstracting;R-H)
-CHX(26)+C2H4X(59)=C2H3X(60)+CH2X(58)                5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #92; RMG #187
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), CHX(26); C2H4X(59), C2H3X(60); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-! Multiplied by reaction path degeneracy 2
-CX(24)+C2H4X(59)=CHX(26)+C2H3X(60)                  2.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #93; RMG #189
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), HOX(23); OX(20), C2H3X(60); 
-! Exact match found for rate rule (Abstracting;R-H)
-OX(20)+C2H4X(59)=HOX(23)+C2H3X(60)                  5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #94; RMG #193
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), CXHO(27); OCX(21), C2H3X(60); 
-! Exact match found for rate rule (Abstracting;R-H)
-OCX(21)+C2H4X(59)=CXHO(27)+C2H3X(60)                5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #95; RMG #198
-! Template reaction: Surface_Dissociation
-! Flux pairs: C2H5X(33), C2H4X(59); C2H5X(33), HX(19); 
-! Exact match found for rate rule (Combined;VacantSite)
-! Multiplied by reaction path degeneracy 2
-X(1)+C2H5X(33)=HX(19)+C2H4X(59)                     2.000e+21 0.000     39.130   
-
-! Reaction index: Chemkin #96; RMG #199
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), C2H4X(59); C2H5X(33), CH3X(22); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-C2H5X(33)+CH2X(58)=CH3X(22)+C2H4X(59)               1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #97; RMG #201
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), CHX(26); C2H4X(59), C2H5X(33); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 3
-C2H4X(59)+CH2X(58)=C2H5X(33)+CHX(26)                1.500e+22 0.000     9.560    
-
-! Reaction index: Chemkin #98; RMG #204
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), OX(20); HOX(23), C2H5X(33); 
-! Exact match found for rate rule (Abstracting;R-H)
-HOX(23)+C2H4X(59)=C2H5X(33)+OX(20)                  5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #99; RMG #206
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), OCX(21); CXHO(27), C2H5X(33); 
-! Exact match found for rate rule (Abstracting;R-H)
-CXHO(27)+C2H4X(59)=C2H5X(33)+OCX(21)                5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #100; RMG #208
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), C2H4X(59); C2H5X(33), CHX(26); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-C2H5X(33)+CX(24)=CHX(26)+C2H4X(59)                  1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #101; RMG #215
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), C2H3X(60); C2H4X(59), C2H5X(33); 
-! Exact match found for rate rule (Abstracting;R-H)
-C2H4X(59)+C2H4X(59)=C2H5X(33)+C2H3X(60)             5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #102; RMG #304
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHOX(63), C2H3X(60); C2H4X(59), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-C2H4X(59)+CHOX(63)=C2H3X(60)+CH2OX(61)              5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #103; RMG #329
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2OX(61), C2H5X(33); C2H4X(59), CHOX(63); 
-! Exact match found for rate rule (Abstracting;R-H)
-CH2OX(61)+C2H4X(59)=C2H5X(33)+CHOX(63)              5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #104; RMG #340
-! Template reaction: Surface_Dissociation
-! Flux pairs: SX(136), C2H4X(59); SX(136), HOX(23); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(136)=HOX(23)+C2H4X(59)                      1.000e+21 0.000     93.790   
-
-! Reaction index: Chemkin #105; RMG #347
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2OX(61), CHX(26); C2H4X(59), SX(136); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-! Multiplied by reaction path degeneracy 2
-CH2OX(61)+C2H4X(59)=CHX(26)+SX(136)                 2.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #106; RMG #354
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), OCX(21); HOCXO(25), SX(136); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-HOCXO(25)+C2H4X(59)=OCX(21)+SX(136)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #107; RMG #357
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), CX(24); CHOX(63), SX(136); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-C2H4X(59)+CHOX(63)=CX(24)+SX(136)                   1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #108; RMG #161
-! Template reaction: Surface_Dissociation
-! Flux pairs: CHO2X(76), OX(20); CHO2X(76), CXHO(27); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+CHO2X(76)=OX(20)+CXHO(27)                      1.000e+21 0.000     69.843   
-
-! Reaction index: Chemkin #109; RMG #245
-! Template reaction: Surface_Abstraction
-! Flux pairs: OX(20), OCX(21); C2HO2X(77), CHO2X(76); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-OX(20)+C2HO2X(77)=OCX(21)+CHO2X(76)                 1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #110; RMG #265
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), OX(20); CHO2X(76), C2HOX(78); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-CX(24)+CHO2X(76)=OX(20)+C2HOX(78)                   1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #111; RMG #247
-! Template reaction: Surface_Dissociation
-! Flux pairs: SX(121), OCX(21); SX(121), C2HO2X(77); 
-! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(121)=OCX(21)+C2HO2X(77)                     1.000e+21 0.000     13.438   
-
-! Reaction index: Chemkin #112; RMG #33
+! Reaction index: Chemkin #15; RMG #33
 ! Template reaction: Surface_Adsorption_Dissociative
 ! Flux pairs: CH3OH(14), CH3OX(39); CH3OH(14), HX(19); 
 ! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
@@ -1160,222 +538,806 @@ X(1)+SX(121)=OCX(21)+C2HO2X(77)                     1.000e+21 0.000     13.438
 X(1)+X(1)+CH3OH(14)=HX(19)+CH3OX(39)                6.000e-02 0.000     10.000   
     STICK
 
-! Reaction index: Chemkin #113; RMG #138
+! Reaction index: Chemkin #16; RMG #6
+! Library reaction: Deutschmann_Ni
+! Flux pairs: HOX(23), H2O(5); HX(19), X(1); HX(19), X(1); 
+HX(19)+HOX(23)=X(1)+X(1)+H2O(5)                     1.850e+20 0.086     9.919    
+
+! Reaction index: Chemkin #17; RMG #7
+! Library reaction: Deutschmann_Ni
+! Flux pairs: HOX(23), OX(20); HOX(23), X(1); HOX(23), H2O(5); 
+HOX(23)+HOX(23)=X(1)+H2O(5)+OX(20)                  2.340e+20 0.274     22.060   
+
+! Reaction index: Chemkin #18; RMG #41
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), HOX(23); OH(17), HOX(23); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+OH(17)=HOX(23)                                 1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #19; RMG #119
+! Template reaction: Surface_Dissociation
+! Flux pairs: HOX(23), OX(20); HOX(23), HX(19); 
+! Matched reaction 32 HOX_1 + Ni_4 <=> OX_3 + HX_5 in Surface_Dissociation/training
+X(1)+HOX(23)=HX(19)+OX(20)                          2.250e+20 0.188     7.075    
+
+! Reaction index: Chemkin #20; RMG #122
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH3OX(39), CH2OX(59); CH3OX(39), HX(19); 
+! Exact match found for rate rule (Combined;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+CH3OX(39)=HX(19)+CH2OX(59)                     2.000e+21 0.000     37.732   
+
+! Reaction index: Chemkin #21; RMG #124
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CH2OX(59); CH3OX(39), HOX(23); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+OX(20)+CH3OX(39)=HOX(23)+CH2OX(59)                  1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #22; RMG #131
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH2OX(59), CHOX(65); CH2OX(59), HX(19); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CH2OX(59)=HX(19)+CHOX(65)                      1.000e+21 0.000     24.632   
+
+! Reaction index: Chemkin #23; RMG #133
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CHOX(65); CH2OX(59), HOX(23); 
+! Exact match found for rate rule (Abstracting;R-H)
+OX(20)+CH2OX(59)=HOX(23)+CHOX(65)                   5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #24; RMG #138
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CHOX(65); CH2OX(59), CH3OX(39); 
+! Exact match found for rate rule (Abstracting;R-H)
+CH2OX(59)+CH2OX(59)=CH3OX(39)+CHOX(65)              5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #25; RMG #18
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), H2X(31); H2(6), H2X(31); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+H2(6)=H2X(31)                                  2.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #26; RMG #17
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), H2OX(30); H2O(5), H2OX(30); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 3
+X(1)+H2O(5)=H2OX(30)                                3.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #27; RMG #4
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CH3X(22), CH4(2); HX(19), X(1); HX(19), X(1); 
+HX(19)+CH3X(22)=X(1)+X(1)+CH4(2)                    1.440e+22 -0.087    15.153   
+
+! Reaction index: Chemkin #28; RMG #5
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CH3X(22), CH4(2); HOX(23), X(1); HOX(23), OX(20); 
+CH3X(22)+HOX(23)=X(1)+CH4(2)+OX(20)                 2.980e+22 0.101     6.166    
+
+! Reaction index: Chemkin #29; RMG #20
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C2H6(8), CH3X(22); C2H6(8), CH3X(22); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+X(1)+X(1)+C2H6(8)=CH3X(22)+CH3X(22)                 2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #30; RMG #25
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), CH3X(22); CH3(10), CH3X(22); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+CH3(10)=CH3X(22)                               1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #31; RMG #32
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: CH3OH(14), CH3X(22); CH3OH(14), HOX(23); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+X(1)+X(1)+CH3OH(14)=CH3X(22)+HOX(23)                2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #32; RMG #121
 ! Template reaction: Surface_Dissociation
 ! Flux pairs: CH3OX(39), CH2X(58); CH3OX(39), HOX(23); 
 ! Exact match found for rate rule (Combined;VacantSite)
 X(1)+CH3OX(39)=HOX(23)+CH2X(58)                     1.000e+21 0.000     34.028   
 
-! Reaction index: Chemkin #114; RMG #148
+! Reaction index: Chemkin #33; RMG #147
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH2X(58), CH3X(22); HX(19), CH3X(22); 
+! Matched reaction 16 CH2X_3 + HX_5 <=> CH3X_1 + Ni_4 in Surface_Dissociation/training
+HX(19)+CH2X(58)=X(1)+CH3X(22)                       3.090e+23 -0.087    13.671   
+
+! Reaction index: Chemkin #34; RMG #148
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), OCX(21); HOCXO(25), CH3OX(39); 
+! Flux pairs: CH2X(58), OX(20); HOX(23), CH3X(22); 
+! Matched reaction 24 CH2X_1 + HOX_3 <=> CH3X_4 + OX_5 in Surface_Abstraction/training
+HOX(23)+CH2X(58)=OX(20)+CH3X(22)                    1.390e+21 0.101     4.541    
+
+! Reaction index: Chemkin #35; RMG #151
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), CH2OX(59); CH3OX(39), CH3X(22); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH3OX(39)+CH2X(58)=CH3X(22)+CH2OX(59)               1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #36; RMG #153
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), CHOX(65); CH2OX(59), CH3X(22); 
+! Exact match found for rate rule (Abstracting;R-H)
+CH2X(58)+CH2OX(59)=CH3X(22)+CHOX(65)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #37; RMG #130
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH2OX(59), CHX(26); CH2OX(59), HOX(23); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CH2OX(59)=HOX(23)+CHX(26)                      1.000e+21 0.000     28.497   
+
+! Reaction index: Chemkin #38; RMG #155
+! Template reaction: Surface_Dissociation
+! Flux pairs: CHX(26), CH2X(58); HX(19), CH2X(58); 
+! Matched reaction 18 CHX_3 + HX_5 <=> CH2X_1 + Ni_4 in Surface_Dissociation/training
+HX(19)+CHX(26)=X(1)+CH2X(58)                        9.770e+24 -0.087    19.359   
+
+! Reaction index: Chemkin #39; RMG #156
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), OX(20); HOX(23), CH2X(58); 
+! Matched reaction 26 CHX_1 + HOX_3 <=> CH2X_4 + OX_5 in Surface_Abstraction/training
+HOX(23)+CHX(26)=OX(20)+CH2X(58)                     4.400e+22 0.101     10.134   
+
+! Reaction index: Chemkin #40; RMG #158
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CHX(26); CH2X(58), CH3OX(39); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 3
+CH2X(58)+CH2OX(59)=CHX(26)+CH3OX(39)                1.500e+22 0.000     9.560    
+
+! Reaction index: Chemkin #41; RMG #159
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), CHOX(65); CH2OX(59), CH2X(58); 
+! Exact match found for rate rule (Abstracting;R-H)
+CHX(26)+CH2OX(59)=CHOX(65)+CH2X(58)                 5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #42; RMG #162
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), CHX(26); CH2X(58), CH3X(22); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH2X(58)+CH2X(58)=CH3X(22)+CHX(26)                  1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #43; RMG #13
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CHX(26), CXHO(27); OX(20), X(1); 
+OX(20)+CHX(26)=X(1)+CXHO(27)                        4.590e+20 0.000     26.267   
+
+! Reaction index: Chemkin #44; RMG #23
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: CH2O(9), CXHO(27); CH2O(9), HX(19); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 4
+X(1)+X(1)+CH2O(9)=HX(19)+CXHO(27)                   4.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #45; RMG #36
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), CXHO(27); HCO(15), CXHO(27); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+X(1)+HCO(15)=CXHO(27)                               1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #46; RMG #37
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: CH3CHO(16), CH3X(22); CH3CHO(16), CXHO(27); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+X(1)+X(1)+CH3CHO(16)=CH3X(22)+CXHO(27)              2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #47; RMG #3
+! Library reaction: Deutschmann_Ni
+! Flux pairs: X(1), OCX(21); CO(7), OCX(21); 
+X(1)+CO(7)=OCX(21)                                  5.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #48; RMG #11
+! Library reaction: Deutschmann_Ni
+! Flux pairs: OCX(21), CO2(4); OX(20), X(1); OX(20), X(1); 
+OX(20)+OCX(21)=X(1)+X(1)+CO2(4)                     2.000e+19 0.000     29.541   
+
+! Reaction index: Chemkin #49; RMG #171
+! Template reaction: Surface_Dissociation
+! Flux pairs: CXHO(27), OCX(21); CXHO(27), HX(19); 
+! Matched reaction 48 CXHO_1 + Ni_4 <=> OCX_3 + HX_5 in Surface_Dissociation/training
+X(1)+CXHO(27)=HX(19)+OCX(21)                        3.710e+21 0.000     0.000    
+
+! Reaction index: Chemkin #50; RMG #172
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), OCX(21); CXHO(27), HOX(23); 
+! Exact match found for rate rule (Abstracting;R-H)
+OX(20)+CXHO(27)=OCX(21)+HOX(23)                     5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #51; RMG #176
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), OCX(21); CXHO(27), CH3OX(39); 
+! Exact match found for rate rule (Abstracting;R-H)
+CXHO(27)+CH2OX(59)=OCX(21)+CH3OX(39)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #52; RMG #178
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHOX(65), OCX(21); CXHO(27), CH2OX(59); 
+! Exact match found for rate rule (Abstracting;R-H)
+CXHO(27)+CHOX(65)=OCX(21)+CH2OX(59)                 5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #53; RMG #180
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), OCX(21); CXHO(27), CH3X(22); 
+! Exact match found for rate rule (Abstracting;R-H)
+CXHO(27)+CH2X(58)=OCX(21)+CH3X(22)                  5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #54; RMG #182
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), OCX(21); CXHO(27), CH2X(58); 
+! Exact match found for rate rule (Abstracting;R-H)
+CHX(26)+CXHO(27)=OCX(21)+CH2X(58)                   5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #55; RMG #19
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), COX(32); CO(7), COX(32); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+CO(7)=COX(32)                                  2.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #56; RMG #34
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: CH3OH(14), CH3OX(40); CH3OH(14), HX(19); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+X(1)+X(1)+CH3OH(14)=HX(19)+CH3OX(40)                2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #57; RMG #149
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH3OX(40), OX(20); CH3OX(40), CH3X(22); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CH3OX(40)=OX(20)+CH3X(22)                      1.000e+21 0.000     35.228   
+
+! Reaction index: Chemkin #58; RMG #154
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H4OX(72), CHOX(65); C2H4OX(72), CH3X(22); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H4OX(72)=CH3X(22)+CHOX(65)                   1.000e+21 0.000     30.571   
+
+! Reaction index: Chemkin #59; RMG #199
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CHOX(65); C2H4OX(72), CH3OX(40); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+OX(20)+C2H4OX(72)=CH3OX(40)+CHOX(65)                1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #60; RMG #210
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H4OX(72), C2H3X(96); C2H4OX(72), HOX(23); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H4OX(72)=HOX(23)+C2H3X(96)                   1.000e+21 0.000     0.000    
+
+! Reaction index: Chemkin #61; RMG #226
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), C2H3X(96); C2H4OX(72), CH3OX(39); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CH2X(58)+C2H4OX(72)=CH3OX(39)+C2H3X(96)             1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #62; RMG #229
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), C2H3X(96); C2H4OX(72), CH2OX(59); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CHX(26)+C2H4OX(72)=CH2OX(59)+C2H3X(96)              1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #63; RMG #8
+! Library reaction: Deutschmann_Ni
+! Flux pairs: OCX(21), CX(24); X(1), OX(20); 
+X(1)+OCX(21)=OX(20)+CX(24)                          1.750e+13 0.000     27.772   
+
+! Reaction index: Chemkin #64; RMG #9
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CX(24), OCX(21); HOX(23), HX(19); 
+HOX(23)+CX(24)=HX(19)+OCX(21)                       3.880e+25 0.188     14.938   
+
+! Reaction index: Chemkin #65; RMG #10
+! Library reaction: Deutschmann_Ni
+! Flux pairs: OCX(21), CO2(4); OCX(21), X(1); OCX(21), CX(24); 
+OCX(21)+OCX(21)=X(1)+CO2(4)+CX(24)                  1.620e+14 0.500     57.768   
+
+! Reaction index: Chemkin #66; RMG #139
+! Template reaction: Surface_Dissociation
+! Flux pairs: CHOX(65), CX(24); CHOX(65), HOX(23); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CHOX(65)=HOX(23)+CX(24)                        1.000e+21 0.000     55.010   
+
+! Reaction index: Chemkin #67; RMG #160
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3OX(39), CHOX(65); CX(24), CH2X(58); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CX(24)+CH3OX(39)=CHOX(65)+CH2X(58)                  1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #68; RMG #163
+! Template reaction: Surface_Dissociation
+! Flux pairs: CX(24), CHX(26); HX(19), CHX(26); 
+! Matched reaction 20 CX_3 + HX_5 <=> CHX_1 + Ni_4 in Surface_Dissociation/training
+HX(19)+CX(24)=X(1)+CHX(26)                          1.700e+24 -0.500    37.739   
+
+! Reaction index: Chemkin #69; RMG #164
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), OX(20); HOX(23), CHX(26); 
+! Matched reaction 28 HOX_3 + CX_1 <=> OX_5 + CHX_4  in Surface_Abstraction/training
+HOX(23)+CX(24)=OX(20)+CHX(26)                       2.430e+21 -0.312    28.418   
+
+! Reaction index: Chemkin #70; RMG #166
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CH2OX(59); CH3OX(39), CHX(26); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CX(24)+CH3OX(39)=CHX(26)+CH2OX(59)                  1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #71; RMG #167
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHOX(65), CX(24); CHX(26), CH2OX(59); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CHX(26)+CHOX(65)=CX(24)+CH2OX(59)                   1.000e+22 0.000     31.562   
+
+! Reaction index: Chemkin #72; RMG #169
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CH2X(58); CH3X(22), CHX(26); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 3
+CH3X(22)+CX(24)=CHX(26)+CH2X(58)                    1.500e+22 0.000     9.560    
+
+! Reaction index: Chemkin #73; RMG #170
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CHX(26); CH2X(58), CHX(26); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CX(24)+CH2X(58)=CHX(26)+CHX(26)                     1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #74; RMG #191
+! Template reaction: Surface_Abstraction
+! Flux pairs: CXHO(27), CHX(26); CX(24), OCX(21); 
+! Exact match found for rate rule (Abstracting;R-H)
+CX(24)+CXHO(27)=OCX(21)+CHX(26)                     5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #75; RMG #239
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H3X(96), CX(24); C2H3X(96), CH3X(22); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H3X(96)=CH3X(22)+CX(24)                      1.000e+21 0.000     136.531  
+
+! Reaction index: Chemkin #76; RMG #240
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), OX(20); CH3OX(40), C2H3X(96); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+CX(24)+CH3OX(40)=OX(20)+C2H3X(96)                   1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #77; RMG #247
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CHOX(65); C2H4OX(72), C2H3X(96); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+! Multiplied by reaction path degeneracy 2
+CX(24)+C2H4OX(72)=CHOX(65)+C2H3X(96)                2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #78; RMG #16
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), CO2X(29); CO2(4), CO2X(29); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 3
+X(1)+CO2(4)=CO2X(29)                                3.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #79; RMG #123
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CH2X(58); CH3OX(39), HO2X(60); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+OX(20)+CH3OX(39)=HO2X(60)+CH2X(58)                  1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #80; RMG #127
+! Template reaction: Surface_Dissociation
+! Flux pairs: HO2X(60), OX(20); HO2X(60), HOX(23); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+HO2X(60)=OX(20)+HOX(23)                        1.000e+21 0.000     31.438   
+
+! Reaction index: Chemkin #81; RMG #132
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CHX(26); CH2OX(59), HO2X(60); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+OX(20)+CH2OX(59)=CHX(26)+HO2X(60)                   1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #82; RMG #140
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), OX(20); HO2X(60), CHOX(65); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CX(24)+HO2X(60)=OX(20)+CHOX(65)                     1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #83; RMG #211
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), C2H3X(96); C2H4OX(72), HO2X(60); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+OX(20)+C2H4OX(72)=HO2X(60)+C2H3X(96)                1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #84; RMG #152
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H5OX(71), CH2OX(59); C2H5OX(71), CH3X(22); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H5OX(71)=CH3X(22)+CH2OX(59)                  1.000e+21 0.000     92.935   
+
+! Reaction index: Chemkin #85; RMG #197
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), OX(20); CH3OX(40), C2H5OX(71); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+CH3OX(40)+CH2OX(59)=OX(20)+C2H5OX(71)               1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #86; RMG #212
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H5OX(71), HX(19); C2H5OX(71), C2H4OX(72); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+C2H5OX(71)=HX(19)+C2H4OX(72)                   1.000e+21 0.000     86.995   
+
+! Reaction index: Chemkin #87; RMG #214
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3OX(39), C2H5OX(71); C2H4OX(72), CH2OX(59); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH3OX(39)+C2H4OX(72)=CH2OX(59)+C2H5OX(71)           1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #88; RMG #216
+! Template reaction: Surface_Abstraction
+! Flux pairs: HOX(23), C2H5OX(71); C2H4OX(72), OX(20); 
+! Exact match found for rate rule (Abstracting;R-H)
+HOX(23)+C2H4OX(72)=OX(20)+C2H5OX(71)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #89; RMG #218
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CHOX(65); C2H4OX(72), C2H5OX(71); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+! Multiplied by reaction path degeneracy 2
+CH2OX(59)+C2H4OX(72)=CHOX(65)+C2H5OX(71)            2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #90; RMG #223
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3X(22), C2H5OX(71); C2H4OX(72), CH2X(58); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 3
+CH3X(22)+C2H4OX(72)=CH2X(58)+C2H5OX(71)             1.500e+22 0.000     9.560    
+
+! Reaction index: Chemkin #91; RMG #227
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), C2H5OX(71); C2H4OX(72), CHX(26); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH2X(58)+C2H4OX(72)=CHX(26)+C2H5OX(71)              1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #92; RMG #230
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), C2H5OX(71); C2H4OX(72), CX(24); 
+! Exact match found for rate rule (Abstracting;R-H)
+CHX(26)+C2H4OX(72)=CX(24)+C2H5OX(71)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #93; RMG #231
+! Template reaction: Surface_Abstraction
+! Flux pairs: CXHO(27), C2H5OX(71); C2H4OX(72), OCX(21); 
+! Exact match found for rate rule (Abstracting;R-H)
+CXHO(27)+C2H4OX(72)=OCX(21)+C2H5OX(71)              5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #94; RMG #245
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CH2OX(59); C2H5OX(71), C2H3X(96); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+CX(24)+C2H5OX(71)=CH2OX(59)+C2H3X(96)               1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #95; RMG #141
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2O2X(68), CH3OX(39); CH2X(58), CHOX(65); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 2
+CH2O2X(68)+CH2X(58)=CH3OX(39)+CHOX(65)              2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #96; RMG #143
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH2O2X(68), HOX(23); CH2O2X(68), CHOX(65); 
+! Exact match found for rate rule (Combined;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+CH2O2X(68)=HOX(23)+CHOX(65)                    2.000e+21 0.000     20.907   
+
+! Reaction index: Chemkin #97; RMG #145
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2O2X(68), CH2OX(59); CHX(26), CHOX(65); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 2
+CHX(26)+CH2O2X(68)=CHOX(65)+CH2OX(59)               2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #98; RMG #146
+! Template reaction: Surface_Abstraction
+! Flux pairs: CX(24), CHOX(65); CH2O2X(68), CHOX(65); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 2
+CX(24)+CH2O2X(68)=CHOX(65)+CHOX(65)                 2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #99; RMG #221
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHOX(65), C2H3X(96); C2H4OX(72), CH2O2X(68); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CHOX(65)+C2H4OX(72)=CH2O2X(68)+C2H3X(96)            1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #100; RMG #269
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), CHOX(65); CH2O2X(68), HO2X(60); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 2
+OX(20)+CH2O2X(68)=HO2X(60)+CHOX(65)                 2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #101; RMG #134
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3OX(39), CH3O2X(66); CH2OX(59), CH2X(58); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CH3OX(39)+CH2OX(59)=CH3O2X(66)+CH2X(58)             1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #102; RMG #136
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH3O2X(66), HOX(23); CH3O2X(66), CH2OX(59); 
+! Exact match found for rate rule (Combined;VacantSite)
+! Multiplied by reaction path degeneracy 2
+X(1)+CH3O2X(66)=HOX(23)+CH2OX(59)                   2.000e+21 0.000     78.547   
+
+! Reaction index: Chemkin #103; RMG #137
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CHX(26); CH2OX(59), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CH2OX(59)+CH2OX(59)=CHX(26)+CH3O2X(66)              1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #104; RMG #144
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CX(24); CHOX(65), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CHOX(65)+CH2OX(59)=CX(24)+CH3O2X(66)                1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #105; RMG #219
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), C2H3X(96); C2H4OX(72), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+CH2OX(59)+C2H4OX(72)=CH3O2X(66)+C2H3X(96)           1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #106; RMG #267
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), OX(20); HO2X(60), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+HO2X(60)+CH2OX(59)=OX(20)+CH3O2X(66)                1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #107; RMG #313
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH3O2X(66), HX(19); CH3O2X(66), CH2O2X(68); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CH3O2X(66)=HX(19)+CH2O2X(68)                   1.000e+21 0.000     82.272   
+
+! Reaction index: Chemkin #108; RMG #315
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3OX(39), CH3O2X(66); CH2O2X(68), CH2OX(59); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH3OX(39)+CH2O2X(68)=CH3O2X(66)+CH2OX(59)           1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #109; RMG #317
+! Template reaction: Surface_Abstraction
+! Flux pairs: HOX(23), CH3O2X(66); CH2O2X(68), OX(20); 
+! Exact match found for rate rule (Abstracting;R-H)
+HOX(23)+CH2O2X(68)=OX(20)+CH3O2X(66)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #110; RMG #319
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), CHOX(65); CH2O2X(68), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 3
+CH2O2X(68)+CH2OX(59)=CH3O2X(66)+CHOX(65)            3.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #111; RMG #322
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3X(22), CH3O2X(66); CH2O2X(68), CH2X(58); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 3
+CH3X(22)+CH2O2X(68)=CH3O2X(66)+CH2X(58)             1.500e+22 0.000     9.560    
+
+! Reaction index: Chemkin #112; RMG #324
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(58), CH3O2X(66); CH2O2X(68), CHX(26); 
+! Exact match found for rate rule (Abstracting;R-H)
+! Multiplied by reaction path degeneracy 2
+CH2O2X(68)+CH2X(58)=CHX(26)+CH3O2X(66)              1.000e+22 0.000     9.560    
+
+! Reaction index: Chemkin #113; RMG #325
+! Template reaction: Surface_Abstraction
+! Flux pairs: CHX(26), CH3O2X(66); CH2O2X(68), CX(24); 
+! Exact match found for rate rule (Abstracting;R-H)
+CHX(26)+CH2O2X(68)=CX(24)+CH3O2X(66)                5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #114; RMG #326
+! Template reaction: Surface_Abstraction
+! Flux pairs: CXHO(27), CH3O2X(66); CH2O2X(68), OCX(21); 
+! Exact match found for rate rule (Abstracting;R-H)
+CXHO(27)+CH2O2X(68)=OCX(21)+CH3O2X(66)              5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #115; RMG #338
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3O2X(66), C2H5OX(71); C2H4OX(72), CH2O2X(68); 
+! Exact match found for rate rule (Abstracting;R-H)
+CH3O2X(66)+C2H4OX(72)=CH2O2X(68)+C2H5OX(71)         5.000e+21 0.000     9.560    
+
+! Reaction index: Chemkin #116; RMG #15
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), CH4X(28); CH4(2), CH4X(28); 
+! Exact match found for rate rule (Adsorbate;VacantSite)
+! Multiplied by reaction path degeneracy 5
+X(1)+CH4(2)=CH4X(28)                                5.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #117; RMG #194
+! Template reaction: Surface_Dissociation
+! Flux pairs: CH3O2X(85), OX(20); CH3O2X(85), CH3OX(40); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+CH3O2X(85)=OX(20)+CH3OX(40)                    1.000e+21 0.000     31.861   
+
+! Reaction index: Chemkin #118; RMG #12
+! Library reaction: Deutschmann_Ni
+! Flux pairs: HOCXO(25), CO2(4); X(1), X(1); X(1), HX(19); 
+X(1)+HOCXO(25)=X(1)+CO2(4)+HX(19)                   3.730e+20 0.475     8.031    
+
+! Reaction index: Chemkin #119; RMG #14
+! Library reaction: Deutschmann_Ni
+! Flux pairs: CXHO(27), HOCXO(25); HOX(23), HX(19); 
+HOX(23)+CXHO(27)=HX(19)+HOCXO(25)                   2.280e+20 0.263     3.800    
+
+! Reaction index: Chemkin #120; RMG #185
+! Template reaction: Surface_Abstraction
+! Flux pairs: HOCXO(25), CH3OX(39); CH2X(58), OCX(21); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
 HOCXO(25)+CH2X(58)=OCX(21)+CH3OX(39)                1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #115; RMG #284
+! Reaction index: Chemkin #121; RMG #187
 ! Template reaction: Surface_Dissociation
-! Flux pairs: CH3OX(39), HX(19); CH3OX(39), CH2OX(61); 
-! Exact match found for rate rule (Combined;VacantSite)
-! Multiplied by reaction path degeneracy 2
-X(1)+CH3OX(39)=HX(19)+CH2OX(61)                     2.000e+21 0.000     37.732   
+! Flux pairs: HOCXO(25), HOX(23); HOCXO(25), OCX(21); 
+! Matched reaction 44 HOCXO_1 + Ni_4 <=> OCX_3 + HOX_5 in Surface_Dissociation/training
+X(1)+HOCXO(25)=OCX(21)+HOX(23)                      1.460e+24 -0.213    12.978   
 
-! Reaction index: Chemkin #116; RMG #285
+! Reaction index: Chemkin #122; RMG #188
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CH3OX(39), CH3X(22); CH2X(58), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH3OX(39)+CH2X(58)=CH3X(22)+CH2OX(61)               1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #117; RMG #287
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), CHX(26); CH2OX(61), CH3OX(39); 
+! Flux pairs: HOCXO(25), CH2OX(59); CHX(26), OCX(21); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-! Multiplied by reaction path degeneracy 3
-CH2OX(61)+CH2X(58)=CHX(26)+CH3OX(39)                3.000e+19 0.000     19.120   
+HOCXO(25)+CHX(26)=OCX(21)+CH2OX(59)                 1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #118; RMG #290
+! Reaction index: Chemkin #123; RMG #189
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CH3OX(39), CHX(26); CX(24), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CX(24)+CH3OX(39)=CHX(26)+CH2OX(61)                  1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #119; RMG #295
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH3OX(39), HOX(23); OX(20), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-OX(20)+CH3OX(39)=HOX(23)+CH2OX(61)                  1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #120; RMG #299
-! Template reaction: Surface_Abstraction
-! Flux pairs: CXHO(27), CH3OX(39); CH2OX(61), OCX(21); 
-! Exact match found for rate rule (Abstracting;R-H)
-CXHO(27)+CH2OX(61)=OCX(21)+CH3OX(39)                5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #121; RMG #307
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH3OX(39), C2H5X(33); C2H4X(59), CH2OX(61); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH3OX(39)+C2H4X(59)=C2H5X(33)+CH2OX(61)             1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #122; RMG #317
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2OX(61), CHOX(63); CH2OX(61), CH3OX(39); 
-! Exact match found for rate rule (Abstracting;R-H)
-CH2OX(61)+CH2OX(61)=CH3OX(39)+CHOX(63)              5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #123; RMG #319
-! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), CH2X(58); CH3OX(39), CHOX(63); 
+! Flux pairs: HOCXO(25), CHOX(65); CX(24), OCX(21); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-CX(24)+CH3OX(39)=CHOX(63)+CH2X(58)                  1.000e+19 0.000     19.120   
+CX(24)+HOCXO(25)=OCX(21)+CHOX(65)                   1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #124; RMG #344
+! Reaction index: Chemkin #124; RMG #234
 ! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), CH2X(58); CH3OX(39), SX(136); 
+! Flux pairs: OCX(21), C2H3X(96); C2H4OX(72), HOCXO(25); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-CH3OX(39)+C2H4X(59)=CH2X(58)+SX(136)                1.000e+19 0.000     19.120   
+OCX(21)+C2H4OX(72)=HOCXO(25)+C2H3X(96)              1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #125; RMG #398
+! Reaction index: Chemkin #125; RMG #275
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CH2OX(61), C2H3X(60); C2H4X(59), CH3OX(39); 
-! Exact match found for rate rule (Abstracting;R-H)
-CH2OX(61)+C2H4X(59)=CH3OX(39)+C2H3X(60)             5.000e+21 0.000     9.560    
+! Flux pairs: OX(20), OCX(21); HOCXO(25), HO2X(60); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+OX(20)+HOCXO(25)=OCX(21)+HO2X(60)                   1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #126; RMG #174
+! Reaction index: Chemkin #126; RMG #328
+! Template reaction: Surface_Abstraction
+! Flux pairs: OCX(21), CHOX(65); CH2O2X(68), HOCXO(25); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+! Multiplied by reaction path degeneracy 2
+OCX(21)+CH2O2X(68)=HOCXO(25)+CHOX(65)               2.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #127; RMG #352
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), OCX(21); HOCXO(25), CH3O2X(66); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
+HOCXO(25)+CH2OX(59)=OCX(21)+CH3O2X(66)              1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #128; RMG #284
 ! Template reaction: Surface_Dissociation
-! Flux pairs: SX(84), OX(20); SX(84), C2H3OX(43); 
+! Flux pairs: SX(120), OX(20); SX(120), C2H5OX(71); 
 ! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(84)=OX(20)+C2H3OX(43)                       1.000e+21 0.000     30.522   
+X(1)+SX(120)=OX(20)+C2H5OX(71)                      1.000e+21 0.000     25.802   
 
-! Reaction index: Chemkin #127; RMG #225
-! Template reaction: Surface_Abstraction
-! Flux pairs: OX(20), OCX(21); SX(85), SX(84); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-OX(20)+SX(85)=OCX(21)+SX(84)                        1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #128; RMG #190
+! Reaction index: Chemkin #129; RMG #342
 ! Template reaction: Surface_Dissociation
-! Flux pairs: C2H4OX(91), HOX(23); C2H4OX(91), C2H3X(60); 
+! Flux pairs: SX(143), OX(20); SX(143), CH3O2X(66); 
 ! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H4OX(91)=HOX(23)+C2H3X(60)                   1.000e+21 0.000     0.000    
+X(1)+SX(143)=OX(20)+CH3O2X(66)                      1.000e+21 0.000     29.115   
 
-! Reaction index: Chemkin #129; RMG #191
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), HOCXO(25); OCX(21), C2H3X(60); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-OCX(21)+C2H4OX(91)=HOCXO(25)+C2H3X(60)              1.000e+19 0.000     19.120   
+! Reaction index: Chemkin #130; RMG #39
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: CH3CHO(16), C2H3OX(43); CH3CHO(16), HX(19); 
+! Exact match found for rate rule (Adsorbate;VacantSite1;VacantSite2)
+! Multiplied by reaction path degeneracy 2
+X(1)+X(1)+CH3CHO(16)=HX(19)+C2H3OX(43)              2.000e-02 0.000     10.000   
+    STICK
 
-! Reaction index: Chemkin #130; RMG #303
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHX(26), C2H3X(60); C2H4OX(91), CH2OX(61); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-CHX(26)+C2H4OX(91)=C2H3X(60)+CH2OX(61)              1.000e+19 0.000     19.120   
-
-! Reaction index: Chemkin #131; RMG #318
+! Reaction index: Chemkin #131; RMG #190
 ! Template reaction: Surface_Dissociation
-! Flux pairs: C2H4OX(91), CH3X(22); C2H4OX(91), CHOX(63); 
+! Flux pairs: C2H3OX(43), CH3X(22); C2H3OX(43), OCX(21); 
 ! Exact match found for rate rule (Combined;VacantSite)
-X(1)+C2H4OX(91)=CH3X(22)+CHOX(63)                   1.000e+21 0.000     30.571   
+X(1)+C2H3OX(43)=OCX(21)+CH3X(22)                    1.000e+21 0.000     67.814   
 
-! Reaction index: Chemkin #132; RMG #325
+! Reaction index: Chemkin #132; RMG #207
 ! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), C2H3OX(43); OCX(21), CHOX(63); 
+! Flux pairs: OCX(21), OX(20); CH3OX(40), C2H3OX(43); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-OCX(21)+C2H4OX(91)=C2H3OX(43)+CHOX(63)              1.000e+19 0.000     19.120   
+OCX(21)+CH3OX(40)=OX(20)+C2H3OX(43)                 1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #133; RMG #327
+! Reaction index: Chemkin #133; RMG #233
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CX(24), C2H3X(60); C2H4OX(91), CHOX(63); 
+! Flux pairs: OCX(21), CHOX(65); C2H4OX(72), C2H3OX(43); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-! Multiplied by reaction path degeneracy 2
-CX(24)+C2H4OX(91)=C2H3X(60)+CHOX(63)                2.000e+19 0.000     19.120   
+OCX(21)+C2H4OX(72)=C2H3OX(43)+CHOX(65)              1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #134; RMG #328
+! Reaction index: Chemkin #134; RMG #255
 ! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), C2H5X(33); CH2X(58), CHOX(63); 
+! Flux pairs: CX(24), OCX(21); C2H3OX(43), C2H3X(96); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-CH2X(58)+C2H4OX(91)=C2H5X(33)+CHOX(63)              1.000e+19 0.000     19.120   
+CX(24)+C2H3OX(43)=OCX(21)+C2H3X(96)                 1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #135; RMG #341
+! Reaction index: Chemkin #135; RMG #299
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(59), OCX(21); C2H3OX(43), C2H5OX(71); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+C2H3OX(43)+CH2OX(59)=OCX(21)+C2H5OX(71)             1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #136; RMG #476
 ! Template reaction: Surface_Dissociation
-! Flux pairs: SX(136), C2H4OX(91); SX(136), HX(19); 
+! Flux pairs: SX(229), OX(20); SX(229), C2H3OX(43); 
 ! Exact match found for rate rule (Combined;VacantSite)
-X(1)+SX(136)=HX(19)+C2H4OX(91)                      1.000e+21 0.000     86.995   
+X(1)+SX(229)=OX(20)+C2H3OX(43)                      1.000e+21 0.000     30.522   
 
-! Reaction index: Chemkin #136; RMG #345
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), CH2X(58); CH3X(22), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 3
-CH3X(22)+C2H4OX(91)=CH2X(58)+SX(136)                1.500e+22 0.000     9.560    
+! Reaction index: Chemkin #137; RMG #301
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(129), OCX(21); SX(129), C2H5OX(71); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+SX(129)=OCX(21)+C2H5OX(71)                     1.000e+21 0.000     16.000   
 
-! Reaction index: Chemkin #137; RMG #348
+! Reaction index: Chemkin #138; RMG #429
 ! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), CHX(26); CH2X(58), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH2X(58)+C2H4OX(91)=CHX(26)+SX(136)                 1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #138; RMG #352
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), OX(20); HOX(23), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-HOX(23)+C2H4OX(91)=OX(20)+SX(136)                   5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #139; RMG #355
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), OCX(21); CXHO(27), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-CXHO(27)+C2H4OX(91)=OCX(21)+SX(136)                 5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #140; RMG #358
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), CX(24); CHX(26), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-CHX(26)+C2H4OX(91)=CX(24)+SX(136)                   5.000e+21 0.000     9.560    
-
-! Reaction index: Chemkin #141; RMG #365
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4X(59), C2H3X(60); C2H4OX(91), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-C2H4X(59)+C2H4OX(91)=C2H3X(60)+SX(136)              1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #142; RMG #375
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H4OX(91), CH2OX(61); CH3OX(39), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH3OX(39)+C2H4OX(91)=CH2OX(61)+SX(136)              1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #143; RMG #377
-! Template reaction: Surface_Abstraction
-! Flux pairs: CH2OX(61), CHOX(63); C2H4OX(91), SX(136); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-CH2OX(61)+C2H4OX(91)=CHOX(63)+SX(136)               1.000e+22 0.000     9.560    
-
-! Reaction index: Chemkin #144; RMG #399
-! Template reaction: Surface_Abstraction
-! Flux pairs: CHOX(63), CHX(26); C2H4X(59), C2H4OX(91); 
+! Flux pairs: OX(20), OCX(21); SX(129), SX(120); 
 ! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
-C2H4X(59)+CHOX(63)=CHX(26)+C2H4OX(91)               1.000e+19 0.000     19.120   
+OX(20)+SX(129)=OCX(21)+SX(120)                      1.000e+19 0.000     19.120   
 
-! Reaction index: Chemkin #145; RMG #401
-! Template reaction: Surface_Abstraction
-! Flux pairs: C2H5X(33), SX(136); C2H4OX(91), C2H4X(59); 
-! Exact match found for rate rule (Abstracting;R-H)
-! Multiplied by reaction path degeneracy 2
-C2H5X(33)+C2H4OX(91)=C2H4X(59)+SX(136)              1.000e+22 0.000     9.560    
+! Reaction index: Chemkin #139; RMG #353
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(151), OCX(21); SX(151), CH3O2X(66); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+SX(151)=OCX(21)+CH3O2X(66)                     1.000e+21 0.000     23.321   
 
-! Reaction index: Chemkin #146; RMG #477
+! Reaction index: Chemkin #140; RMG #459
 ! Template reaction: Surface_Abstraction
-! Flux pairs: CH2X(58), C2H3X(60); C2H4OX(91), CH3OX(39); 
-! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-OH)
-CH2X(58)+C2H4OX(91)=CH3OX(39)+C2H3X(60)             1.000e+19 0.000     19.120   
+! Flux pairs: OX(20), OCX(21); SX(151), SX(143); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+OX(20)+SX(151)=OCX(21)+SX(143)                      1.000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #141; RMG #487
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(237), OCX(21); SX(237), C2H3OX(43); 
+! Exact match found for rate rule (Combined;VacantSite)
+X(1)+SX(237)=OCX(21)+C2H3OX(43)                     1.000e+21 0.000     9.328    
+
+! Reaction index: Chemkin #142; RMG #519
+! Template reaction: Surface_Abstraction
+! Flux pairs: OX(20), OCX(21); SX(237), SX(229); 
+! Estimated using template (Abstracting;Donating) for rate rule (Abstracting;R-C)
+OX(20)+SX(237)=OCX(21)+SX(229)                      1.000e+19 0.000     19.120   
 
 END
 
