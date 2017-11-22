@@ -1,13 +1,20 @@
 
 # coding: utf-8
 
-# # Modeling dry reforming of methane using RMG-Cat
-# Based on the notebook to accompany the manuscript: <br/>
+# # Modeling catalytic combustion om methane using RMG-Cat
+# Based somewhat on the notebook to accompany the manuscript: <br/>
 # *"Automatic generation of microkinetic mechanisms for heterogeneous catalysis"* by<br/>
 # C. Franklin Goldsmith, School of Engineering, Brown University, franklin_goldsmith@brown.edu, and<br/>
 # Richard H. West, Department of Chemical Engineering, Northeastern University, r.west@northeastern.edu
 # 
-# To demonstrate the capabilities of automatic mechanism generation for heterogeneous catalysis we apply our mechanism generator software RMG-Cat to the problem of methane dry reforming on nickel. Comparison is made to the mechanism developed by Olaf Deutschmann and coworkers (Delgado, K.; Maier, L.; Tischer, S.; Zellner, A.; Stotz, H.; Deutschmann, O. Catalysts 2015, 5, 871–904.)
+# As modified to prepare data for the AIChE conference presentation:
+# 304c Incorporation of Linear Scaling Relations into Automatic Mechanism Generation for Heterogeneous Catalysis
+# Richard H. West, Department of Chemical Engineering, Northeastern University, Boston, MA and C. Franklin Goldsmith, Engineering, Brown University, Providence, RI
+# Tuesday, October 31, 2017
+# https://aiche.confex.com/aiche/2017/meetingapp.cgi/Paper/500172
+# https://www.slideshare.net/richardhwest/incorporation-of-linear-scaling-relations-into-automatic-mechanism-generation-for-heterogeneous-catalysis
+# 
+# Then further updated to model catalytic combustion of methanol.
 
 # First, we print what git commit we were on when we ran this notebook, for both the source code (RMG-Py) and the database. 
 
@@ -17,7 +24,7 @@ get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --prett
 
 
 # ## Model generation
-# We start with a base input file to generate a mechanism for CH4 plus CO2.
+# We start with a base input file to generate a mechanism for CH3OH plus O2.
 # First we print the input file we'll use to generate the model.
 
 # In[2]:
@@ -25,19 +32,24 @@ get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --prett
 get_ipython().magic(u'cat base/input.py')
 
 
-# Then we try running it. This will take a couple of minutes.
+# Then we try running it. This will take about four minutes.
 
 # In[4]:
 
 get_ipython().run_cell_magic(u'bash', u'', u'python $RMGpy/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
 
 
-# There are 59 species and 116 reactions (?)
+# There are 70 species and 218 reactions (?)
 
 # ## Data processing
 # Next we will import some libraries and set things up to start importing and analyzing the simulation results.
 
-# In[3]:
+# In[5]:
+
+get_ipython().magic(u"config InlineBackend.figure_format = 'retina'")
+
+
+# In[6]:
 
 get_ipython().magic(u'matplotlib inline')
 from matplotlib import pyplot as plt
@@ -62,7 +74,7 @@ import subprocess
 import multiprocessing
 
 
-# In[4]:
+# In[7]:
 
 def get_last_csv_file(job_directory):
     """
@@ -81,14 +93,14 @@ get_last_csv_file(job_directory)
 
 # We will use Pandas to import the csv file
 
-# In[5]:
+# In[8]:
 
 last_csv_file = get_last_csv_file(job_directory)
 data = pd.read_csv(last_csv_file)
 data
 
 
-# In[6]:
+# In[9]:
 
 def get_pandas_data(job_directory):
     """
@@ -113,7 +125,7 @@ def get_pandas_data(job_directory):
     return data
 
 
-# In[7]:
+# In[10]:
 
 def rename_columns(data):
     """
@@ -135,22 +147,22 @@ def rename_columns(data):
     data.rename(columns=mapping, inplace=True)
 
 
-# In[8]:
+# In[11]:
 
 data1 = get_pandas_data('base')
 rename_columns(data1)
 data1.columns
 
 
-# In[9]:
+# In[13]:
 
 # Test it with some plots
-data1[['CH4', 'CO2']].plot.line()
+data1[['CH3OH', 'O2']].plot.line()
 data1[['CO', 'H2']].plot.line()
 data1[['H2O']].plot.line()
 
 
-# In[10]:
+# In[15]:
 
 species_names = data1.columns
 # just the gas phase species that aren't always zero:
@@ -162,7 +174,7 @@ data1[gas_phase].plot.line()
 data1[surface_phase].plot.line()
 
 
-# In[11]:
+# In[16]:
 
 print "Significant species (those that exceed 0.001 mol at some point)"
 significant = [n for n in data1.columns if(data1[n]>0.001).any()]
@@ -170,19 +182,21 @@ with sns.color_palette("hls", len(significant)):
     data1[significant].plot.area(legend='reverse')
 
 
-# In[12]:
+# In[23]:
 
-surface = [n for n in data1.columns if 'X' in n and n!='X' and (data1[n]>1e-6).any() ]
-print "The {} surface species that exceed 1e-6 mol at some point".format(len(surface))
+lim = 1e-4
+surface = [n for n in data1.columns if 'X' in n and n!='X' and (data1[n]>lim).any() ]
+print "The {} surface species that exceed {:.1e} mol at some point".format(len(surface), lim)
 total_sites = max(data1['X'])
 with sns.color_palette('Set3',len(surface)):
     (data1[surface]/total_sites).plot.area(legend='reverse')
     plt.ylabel('site fraction')
+    plt.xlim(0,1e-2) ## notice this is much less than 1 seconde
 
 
 # # Effect of binding energies
 
-# In[13]:
+# In[24]:
 
 # First, make a series of input files in separate directories
 
@@ -217,7 +231,7 @@ print make_input((-8,-3.5))
     
 
 
-# In[14]:
+# In[16]:
 
 def run_simulation(binding_energies):
     """
@@ -234,14 +248,14 @@ def run_simulation(binding_energies):
 experiment = (-8,-3.5)
 make_input(experiment)
 run_simulation(experiment)
-# In[15]:
+# In[25]:
 
 # Revised range
 plt.xlim(-7.5,-2)
 plt.ylim(-6.5,-1.5)
 
 
-# In[16]:
+# In[26]:
 
 # Revised range
 carbon_range = (-7.5, -2)
@@ -251,13 +265,13 @@ mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j, oxygen_range[0]:o
 mesh
 
 
-# In[17]:
+# In[27]:
 
 experiments = mesh.reshape((2,-1)).T
 experiments
 
 
-# In[18]:
+# In[28]:
 
 map(make_input, experiments)
 
@@ -265,13 +279,13 @@ map(make_input, experiments)
 ## Don't run this cell unless you have a while to wait!! ###
 pool = multiprocessing.Pool()
 result = pool.map(run_simulation, experiments)
-# In[22]:
+# In[21]:
 
 base_directory = 'binding_energies'
 # base_directory = 'binding_energies_local'
 
 
-# In[23]:
+# In[22]:
 
 def get_data(experiment):
     carbon, oxygen = experiment
@@ -281,31 +295,56 @@ def get_data(experiment):
     return data
 
 
-# In[24]:
+# In[23]:
 
 datas = {tuple(e): get_data(e) for e in experiments}
 
 
-# In[25]:
+# In[24]:
 
 datas.keys()
 
 
-# In[26]:
+# In[25]:
 
-def get_max_co(experiment):
+def get_max_co2(experiment):
     data = datas[tuple(experiment)]
-    return data[['CO']].max()
-highest_co = max([float(get_max_co(e)) for e in experiments])
+    return data[['CO2']].max()
+highest_co2 = max([float(get_max_co2(e)) for e in experiments])
 
 
-# In[27]:
+# In[26]:
 
 ax = plt.axes()
 for experiment in experiments:
     print experiment
     data = get_data(experiment)
-    (data[['CO']]/highest_co).plot.line(ax=ax)
+    (data[['CO2']]/highest_co2).plot.line(ax=ax)
+
+
+# In[58]:
+
+import seaborn as sns
+plt.figure(figsize=(5, 4))
+num_lines = len(experiments)
+sns.set_palette(sns.color_palette("coolwarm",num_lines))
+
+ax = plt.axes()
+def make_label(experiment):
+    return "{:+.1f}, {:+.1f}".format(*experiment)
+
+for experiment in experiments:
+    print experiment
+    data = get_data(experiment)
+    times = np.array(data.index)
+    normalized = data[['CO2']].values / highest_co2
+    ax.plot(times, normalized, label=make_label(experiment))
+    #normalized.plot.line(ax=ax, label=make_label(experiment))
+    #ax.text(times[-10], normalized[-10], make_label(experiment))
+
+#plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.xlabel('Time (s)')
+plt.ylabel('Normalized CO2 concentration')
 
 
 # In[28]:
@@ -314,31 +353,6 @@ import seaborn as sns
 plt.figure(figsize=(5, 4))
 num_lines = len(experiments)
 sns.set_palette(sns.color_palette("coolwarm",num_lines))
-
-ax = plt.axes()
-def make_label(experiment):
-    return "{:+.1f}, {:+.1f}".format(*experiment)
-
-for experiment in experiments:
-    print experiment
-    data = get_data(experiment)
-    times = np.array(data.index)
-    normalized = data[['CO']].values / highest_co
-    ax.plot(times, normalized, label=make_label(experiment))
-    #normalized.plot.line(ax=ax, label=make_label(experiment))
-    #ax.text(times[-10], normalized[-10], make_label(experiment))
-
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.xlabel('Time (s)')
-plt.ylabel('Normalized CO concentration')
-
-
-# In[29]:
-
-import seaborn as sns
-plt.figure(figsize=(5, 4))
-num_lines = len(experiments)
-sns.set_palette(sns.color_palette("coolwarm",num_lines))
 ax = plt.axes()
 
 def make_label(experiment):
@@ -348,7 +362,7 @@ for experiment in experiments:
     print experiment
     data = get_data(experiment)
     times = np.array(data.index)
-    normalized = data[['CO']].values[:,0] / highest_co
+    normalized = data[['CO2']].values[:,0] / highest_co2
     ax.loglog(times, normalized, label=make_label(experiment))
     try:
         i = (np.nonzero((np.log10(times)+np.log10(normalized)) > -10))[0][0]
@@ -366,22 +380,22 @@ plt.ylim(1e-10, 1)
 plt.xlim(1e-10, 1)
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.xlabel('Time (s)')
-plt.ylabel('Normalized CO concentration')
+plt.ylabel('Normalized CO2 concentration')
 
 
-# In[30]:
+# In[29]:
 
 ax = plt.axes()
 for experiment in experiments:
     print experiment
     data = get_data(experiment)
-    normalized = data[['CO']] / highest_co
+    normalized = data[['CO2']] / highest_co2
     linearized = -np.log( 1 - normalized)
     linearized.plot.line(ax=ax)
     
 
 
-# In[31]:
+# In[30]:
 
 sns.set_palette('Set1')
 x_data = np.array(linearized.index)
@@ -403,7 +417,7 @@ plt.plot(x_data, x_data*slope+intercept)
 plt.show()
 
 
-# In[32]:
+# In[56]:
 
 sns.set_palette('Set1')
 
@@ -414,7 +428,7 @@ import scipy.optimize
 
 
 def fit_rate(data):
-    normalized = data[['CO']] / highest_co
+    normalized = data[['CO2']] / highest_co2
     x_data = np.array(normalized.index)
     y_data = normalized.values[:,0] 
 
@@ -426,7 +440,7 @@ def fit_rate(data):
     plt.plot(x_data, y_data, 'o')
     plt.plot(x_data, my_function(x_data, *optimal_parameters))
     plt.xlabel('Time (s)')
-    plt.ylabel('Normalized CO concentration')
+    plt.ylabel('Normalized CO2 concentration')
     
     plt.show()
     fitted_rate = optimal_parameters[0]
@@ -444,7 +458,7 @@ rates
     
 
 
-# In[33]:
+# In[32]:
 
 rates = np.array(rates)
 fixed_rates = rates * (rates>0) + (1e-9 * (rates<0))
@@ -452,35 +466,35 @@ log_rates = np.log(fixed_rates)
 log_rates
 
 
-# In[34]:
+# In[33]:
 
 experiments
 
 
-# In[35]:
+# In[51]:
 
 rate_grid = np.reshape(log_rates, (grid_size,grid_size))
 
 
-# In[36]:
+# In[52]:
 
 ax = sns.heatmap(rate_grid)
 
 
-# In[37]:
+# In[36]:
 
 extent = carbon_range + oxygen_range
 extent
 
 
-# In[38]:
+# In[37]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[39]:
+# In[38]:
 
 # (1)	Medford, A. J.; Lausche, A. C.; Abild-Pedersen, F.; Temel, B.; Schjødt, N. C.; Nørskov, J. K.; Studt, F. Activity and Selectivity Trends in Synthesis Gas Conversion to Higher Alcohols. Topics in Catalysis 2014, 57 (1-4), 135–142 DOI: 10.1007/s11244-013-0169-0.
 
@@ -497,7 +511,7 @@ medford_energies = { # Carbon, then Oxygen
 }
 
 
-# In[40]:
+# In[39]:
 
 # Shift medford's energies so that Ni matches Wayne Blaylock's Ni
 blaylock_ni = np.array([-5.997, -4.485])
@@ -506,7 +520,7 @@ shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E i
 shifted_energies
 
 
-# In[41]:
+# In[40]:
 
 plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
 for metal, coords in shifted_energies.iteritems():
@@ -516,7 +530,7 @@ plt.xlim(carbon_range)
 plt.ylim(oxygen_range)
 
 
-# In[42]:
+# In[41]:
 
 # For close packed surfaces from
 # Abild-Pedersen, F.; Greeley, J.; Studt, F.; Rossmeisl, J.; Munter, T. R.; Moses, P. G.; Skúlason, E.; Bligaard, T.; Norskov, J. K. Scaling Properties of Adsorption Energies for Hydrogen-Containing Molecules on Transition-Metal Surfaces. Phys. Rev. Lett. 2007, 99 (1), 016105 DOI: 10.1103/PhysRevLett.99.016105.
@@ -533,9 +547,23 @@ abildpedersen_energies = { # Carbon, then Oxygen
 }
 
 
-# In[43]:
+# In[141]:
 
-plt.imshow(rate_grid, interpolation='spline16', origin='lower', extent=extent, aspect='equal')
+abildpedersen_energies['Pt'][0] - abildpedersen_energies['Ni'][0]
+
+
+# In[114]:
+
+c_step = mesh[0,1,0]-mesh[0,0,0]
+o_step = mesh[1,0,1]-mesh[1,0,0]
+carbon_range2 = (carbon_range[0]-c_step/2, carbon_range[1]+c_step/2)
+oxygen_range2 = (oxygen_range[0]-c_step/2, oxygen_range[1]+c_step/2)
+extent2 = carbon_range2 + oxygen_range2
+
+
+# In[139]:
+
+plt.imshow(rate_grid.T, interpolation='spline16', origin='lower', extent=extent2, aspect='equal')
 for metal, coords in abildpedersen_energies.iteritems():
     color = {'Ag':'w','Au':'w','Cu':'w'}.get(metal,'k')
     plt.plot(coords[0], coords[1], 'o'+color)
@@ -546,14 +574,14 @@ plt.xlabel('$\Delta E^C$ (eV)')
 plt.ylabel('$\Delta E^O$ (eV)')
 
 
-# In[ ]:
+# In[43]:
 
 new_rates = []
 for experiment in experiments:
     print experiment
     data = get_data(experiment)
     times = np.array(data.index)
-    normalized = data[['CO']].values[:,0] / highest_co
+    normalized = data[['CO2']].values[:,0] / highest_co2
     try:
         i = (np.nonzero((np.log10(times)+np.log10(normalized)) > -10))[0][0]
         time = times[i]
@@ -562,13 +590,75 @@ for experiment in experiments:
     new_rates.append(1./time)
 new_log_rates = np.log(np.array(new_rates))
 print new_log_rates
-rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
+
+
+# In[138]:
+
+new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
+plt.imshow(new_rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
+for metal, coords in abildpedersen_energies.iteritems():
+    color = {'Ag':'w','Au':'w','Cu':'w'}.get(metal,'k')
+    plt.plot(coords[0], coords[1], 'o'+color)
+    plt.text(coords[0], coords[1], metal, color=color)
+plt.xlim(carbon_range)
+plt.ylim(oxygen_range)
+plt.xlabel('$\Delta E^C$ (eV)')
+plt.ylabel('$\Delta E^O$ (eV)')
+
+
+# In[68]:
+
+def get_reaction_count(experiment):
+    d = directory(*experiment)
+    f = os.path.join(d,'chemkin','chem_annotated.inp')
+    with open(f) as chemkin:
+        r = re.compile('\! Reaction index: Chemkin \#(\d+)')
+        for line in chemkin:
+            m = r.match(line)
+            if m:
+                count = int(m.group(1))
+    return count
+    
+get_reaction_count(experiment)
+
+
+# In[134]:
+
+i=35
+print experiments[i]
+print get_reaction_count(experiments[i])
+
+
+# In[143]:
+
+reaction_counts = map(get_reaction_count, experiments)
+reaction_counts_grid = np.log10(np.reshape(reaction_counts, (grid_size,grid_size)))
+plt.imshow(reaction_counts_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
+for metal, coords in abildpedersen_energies.iteritems():
+    color = {'Ag':'w','Au':'w','Cu':'w'}.get(metal,'k')
+    color='k'
+    plt.plot(coords[0], coords[1], 'o'+color)
+    plt.text(coords[0], coords[1], metal, color=color)
+plt.xlim(carbon_range2)
+plt.ylim(oxygen_range2)
+plt.xlabel('$\Delta E^C$ (eV)')
+plt.ylabel('$\Delta E^O$ (eV)')
+
+for e,n in zip(experiments,reaction_counts):
+    plt.text(e[0],e[1],n,color='w',ha='center', va='center')
+#plt.colorbar()
+
+
+# In[146]:
+
+reaction_counts_grid = np.reshape(reaction_counts, (grid_size,grid_size))
+ax = sns.heatmap(reaction_counts_grid.T[::-1,:], annot=True, fmt='d', square=True)
 
 
 # # STOP HERE.
 # stuff below is left over from old notebook
 
-# In[44]:
+# In[45]:
 
 raise NotImplementedError("Stop here.")
 
