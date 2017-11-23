@@ -586,7 +586,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO2 concentration')
 
 
-# In[41]:
+# In[53]:
 
 """
 An alternative way of defining rates.
@@ -612,7 +612,7 @@ new_log_rates = np.log(np.array(new_rates))
 print new_log_rates
 
 
-# In[42]:
+# In[54]:
 
 new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
 plt.imshow(new_rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
@@ -626,9 +626,18 @@ plt.xlabel('$\Delta E^C$ (eV)')
 plt.ylabel('$\Delta E^O$ (eV)')
 
 
-# In[ ]:
+# In[55]:
 
-
+new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
+plt.imshow(new_rate_grid.T, interpolation='spline16', origin='lower', extent=extent2, aspect='equal')
+for metal, coords in abildpedersen_energies.iteritems():
+    color = {'Ag':'w','Au':'w',}.get(metal,'k')
+    plt.plot(coords[0], coords[1], 'o'+color)
+    plt.text(coords[0], coords[1], metal, color=color)
+plt.xlim(carbon_range)
+plt.ylim(oxygen_range)
+plt.xlabel('$\Delta E^C$ (eV)')
+plt.ylabel('$\Delta E^O$ (eV)')
 
 
 # # Count the reactions
