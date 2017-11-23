@@ -36,7 +36,7 @@ get_ipython().magic(u'cat base/input.py')
 
 # In[3]:
 
-get_ipython().run_cell_magic(u'bash', u'', u'python $RMGpy/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
+get_ipython().run_cell_magic(u'bash', u'', u'# python $RMGpy/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
 
 
 # There are 70 species and 218 reactions (?)
