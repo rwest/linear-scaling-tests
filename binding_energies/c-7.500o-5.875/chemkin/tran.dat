@@ -2,7 +2,7 @@
 ! Name            Index    epsilon/k_B sigma     mu        alpha     Zrot      Source   
 N2                  1      97.530     3.621     0.000     1.760     4.000    ! PrimaryTransportLibrary
 Ar                  0     136.501     3.330     0.000     0.000     0.000    ! GRI-Mech
-He                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
+He                  0      10.200     2.576     0.000     0.000     0.000    ! NOx2018
 Ne                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 ! X(1)                None
 CH4(2)              2     141.400     3.746     0.000     2.600    13.000    ! GRI-Mech
@@ -22,26 +22,58 @@ HCO(15)             2     498.002     3.590     0.000     0.000     0.000    ! G
 CH3CHO(16)          2     436.001     3.970     0.000     0.000     2.000    ! GRI-Mech
 OH(17)              1      80.000     2.750     0.000     0.000     0.000    ! GRI-Mech
 C2H4(18)            2     280.801     3.971     0.000     0.000     1.500    ! GRI-Mech
-! CH4OX(41)           None
+! CH3OH(46)           None
 ! OX(20)              None
 ! HX(19)              None
-! CH3OX(39)           None
+! CH3OX(45)           None
 ! HOX(23)             None
-! CH2X(58)            None
+! CH2X(134)           None
 ! CHX(26)             None
 ! CX(24)              None
 ! OCX(21)             None
-! CH2OX(59)           None
-! H2X(31)             None
-! CHOX(67)            None
+! CH2OX(135)          None
+! H2(36)              None
+! CHOX(143)           None
 ! CXHO(27)            None
+! CO(37)              None
 ! CH3X(22)            None
-! CH3OX(40)           None
-! COX(32)             None
-! H2OX(30)            None
-! CO2X(29)            None
-! HO2X(60)            None
-! CH4X(28)            None
-CH3O(51)            2     417.002     3.690 509647178599999949077582184448.000     0.000     2.000    ! GRI-Mech
-! CH3O2X(88)          None
-HO2(47)             2     107.400     3.458     0.000     0.000     1.000    ! GRI-Mech
+! H2O(35)             None
+! CH3OX(44)           None
+! C2H3X(158)          None
+! acetyl(47)          None
+! C2H4X(157)          None
+! CO2(34)             None
+! HO2(136)            None
+CH2OH(57)           2     417.002     3.690     1.700     0.000     2.000    ! GRI-Mech
+HO2(52)             2     107.400     3.458     0.000     0.000     1.000    ! GRI-Mech
+! CH2O(40)            None
+! CH3OO(161)          None
+! CH4(33)             None
+CH2(S)(28)          2     144.001     3.800     0.000     0.000     0.000    ! GRI-Mech
+C2H6O(98)           2     362.600     4.530     0.000     0.000     1.500    ! NOx2018
+! SX(232)             None
+! C2H4(51)            None
+C2H4(32)            2     110.700     4.443     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
+! SX(176)             None
+HOOH(140)           2     289.300     4.196     0.000     0.000     0.000    ! PrimaryTransportLibrary
+! HOOH(268)           None
+DME(170)            2     329.669     4.980     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=428.14 K, Pc=50.37 bar (from Joback method)
+! DME(269)            None
+CHO4(204)           2     500.186     6.079     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=649.59 K, Pc=42 bar (from Joback method)
+O(T)(31)            0      80.000     2.750     0.000     0.000     0.000    ! GRI-Mech
+CH3O(58)            2     417.002     3.690     1.700     0.000     2.000    ! GRI-Mech
+CH3O3(206)          2     454.226     6.094     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=589.90 K, Pc=37.87 bar (from Joback method)
+S(250)              2     443.389     5.695     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=575.83 K, Pc=45.29 bar (from Joback method)
+! C2H6(39)            None
+C3H6O(227)          2     371.145     5.437     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=482.01 K, Pc=43.57 bar (from Joback method)
+S(223)              2     430.874     5.480     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=559.58 K, Pc=49.38 bar (from Joback method)
+S(428)              2     452.392     5.643     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=587.52 K, Pc=47.5 bar (from Joback method)
+S(429)              2     428.975     5.738     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=557.11 K, Pc=42.83 bar (from Joback method)
+C2H4O(224)          2     436.000     3.970     0.000     0.000     2.000    ! NOx2018
+C2H4O(30)           2     384.521     5.509     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=499.38 K, Pc=43.4 bar (from Joback method)
+! CH3CHO(49)          None
+C2H4O(606)          2     436.000     3.970     0.000     0.000     2.000    ! NOx2018
+! SX(623)             None
+CH4O2(163)          2     481.800     3.626     0.000     0.000     1.000    ! NOx2018
+! SX(709)             None
+! C3H8(43)            None
