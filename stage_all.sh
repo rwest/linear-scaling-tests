@@ -5,3 +5,8 @@ find binding_energies -name solver -execdir sh -c "git rm -r --cached --ignore-u
 find binding_energies -name solver -execdir sh -c "ls solver/*.csv | tail -n 1 | xargs git add" \;
 # add everything not ignored in the chemkin directories
 find binding_energies -name chemkin -execdir sh -c "git add chemkin" \;
+# remove the old cantera files
+find binding_energies -name cantera -execdir sh -c "git rm -r --cached --ignore-\
+unmatch cantera" \;
+# add new cantera files
+find binding_energies -name cantera -execdir sh -c "git add cantera" \;
