@@ -1,1 +1,1 @@
-this branch is for methanol
+This branch is for catalytic partial oxidation of methane.
