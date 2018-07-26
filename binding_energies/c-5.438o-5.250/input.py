@@ -134,12 +134,12 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(1200,'K'),
+    temperature=(800,'K'),
     initialPressure=(1.01325, 'bar'),
     initialGasMoleFractions={
-        "CH3OH": 0.11764706,
-        "O2": 0.17647059,
-        "N2": 0.70588235,
+        "CH4": 0.1,
+        "O2": 0.1,
+        "N2": 0.8,
     },
     initialSurfaceCoverages={
         "X": 1.0,
@@ -147,7 +147,7 @@ surfaceReactor(
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
 #    terminationConversion = { "CH4":0.9,},
-    terminationTime=(1.0, 's'),
+    terminationTime=(1000.0, 's'),
 )
 
 simulator(

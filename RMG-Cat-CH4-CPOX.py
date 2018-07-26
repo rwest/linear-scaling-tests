@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# # Modeling catalytic combustion om methane using RMG-Cat
+# # Modeling catalytic combustion of methanol using RMG-Cat
 # Based somewhat on the notebook to accompany the manuscript: <br/>
 # *"Automatic generation of microkinetic mechanisms for heterogeneous catalysis"* by<br/>
 # C. Franklin Goldsmith, School of Engineering, Brown University, franklin_goldsmith@brown.edu, and<br/>
@@ -20,7 +20,8 @@
 
 # In[1]:
 
-get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --pretty=oneline\ncd ../RMG-database\npwd\ngit log -n1 --pretty=oneline')
+
+get_ipython().run_cell_magic(u'bash', u'', u'export RMGpy=~/Code/RMG-Py\npwd\ngit log -n1 --pretty=oneline\ncd ../RMG-Py\npwd\ngit log -n1 --pretty=oneline\ncd ../RMG-database\npwd\ngit log -n1 --pretty=oneline')
 
 
 # ## Model generation
@@ -29,27 +30,31 @@ get_ipython().run_cell_magic(u'bash', u'', u'cd $RMGpy\npwd\ngit log -n1 --prett
 
 # In[2]:
 
+
 get_ipython().magic(u'cat base/input.py')
 
 
-# Then we try running it. This will take about four minutes.
+# Then we try running it. This will take Richard's computer about four minutes and Emily's computer 25 minutes.
 
 # In[3]:
 
-get_ipython().run_cell_magic(u'bash', u'', u'# python $RMGpy/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
+
+get_ipython().run_cell_magic(u'bash', u'', u'python ~/Code/RMG-Py/rmg.py base/input.py > /dev/null\ntail -n12 base/RMG.log')
 
 
-# There are 70 species and 218 reactions (?)
+# There are 54 species and 77 reactions (?)
 
 # ## Data processing
 # Next we will import some libraries and set things up to start importing and analyzing the simulation results.
 
 # In[4]:
 
+
 get_ipython().magic(u"config InlineBackend.figure_format = 'retina'")
 
 
 # In[5]:
+
 
 get_ipython().magic(u'matplotlib inline')
 from matplotlib import pyplot as plt
@@ -76,6 +81,7 @@ import multiprocessing
 
 # In[6]:
 
+
 def get_last_csv_file(job_directory):
     """
     Find the CSV file from the largest model in the provided job directory.
@@ -95,12 +101,14 @@ get_last_csv_file(job_directory)
 
 # In[7]:
 
+
 last_csv_file = get_last_csv_file(job_directory)
 data = pd.read_csv(last_csv_file)
 data
 
 
 # In[8]:
+
 
 def get_pandas_data(job_directory):
     """
@@ -127,6 +135,7 @@ def get_pandas_data(job_directory):
 
 # In[9]:
 
+
 def rename_columns(data):
     """
     Removes the number (##) from the end of the column names, in place,
@@ -149,6 +158,7 @@ def rename_columns(data):
 
 # In[10]:
 
+
 data1 = get_pandas_data('base')
 rename_columns(data1)
 data1.columns
@@ -156,13 +166,24 @@ data1.columns
 
 # In[11]:
 
+
 # Test it with some plots
-data1[['CH3OH', 'O2']].plot.line()
-data1[['CO', 'H2']].plot.line()
-data1[['H2O']].plot.line()
+data1[['H2', 'CO', 'O2', 'CH4', 'H2O']].plot.line(
+    loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
+data1[['X', 'CH4X', 'OX', 'CX']].plot.line(
+    loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
+data1[['H2O']].plot.line(
+    loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
 
 
 # In[12]:
+
+
+data1[['CH4', 'O2', 'H2', 'CO', 'H2O']].plot.line()
+
+
+# In[13]:
+
 
 species_names = data1.columns
 # just the gas phase species that aren't always zero:
@@ -174,7 +195,8 @@ data1[gas_phase].plot.line()
 data1[surface_phase].plot.line()
 
 
-# In[13]:
+# In[14]:
+
 
 print "Significant species (those that exceed 0.001 mol at some point)"
 significant = [n for n in data1.columns if(data1[n]>0.001).any()]
@@ -182,7 +204,8 @@ with sns.color_palette("hls", len(significant)):
     data1[significant].plot.area(legend='reverse')
 
 
-# In[14]:
+# In[15]:
+
 
 lim = 1e-4
 surface = [n for n in data1.columns if 'X' in n and n!='X' and (data1[n]>lim).any() ]
@@ -198,7 +221,8 @@ with sns.color_palette('Set3',len(surface)):
 # 
 # Now we will use that template 'base' input file to create a ton of other input files with different binding energies, then run them all in RMG-Cat, then process the results.
 
-# In[15]:
+# In[16]:
+
 
 # First, make a series of input files in separate directories
 
@@ -233,7 +257,8 @@ print make_input((-8,-3.5))
     
 
 
-# In[16]:
+# In[17]:
+
 
 def run_simulation(binding_energies):
     """
@@ -250,7 +275,8 @@ def run_simulation(binding_energies):
 experiment = (-8,-3.5)
 make_input(experiment)
 run_simulation(experiment)
-# In[17]:
+# In[18]:
+
 
 # Revised range
 carbon_range = (-7.5, -2)
@@ -268,13 +294,15 @@ plt.show()
 mesh
 
 
-# In[18]:
+# In[19]:
+
 
 experiments = mesh.reshape((2,-1)).T
 experiments
 
 
-# In[19]:
+# In[20]:
+
 
 with sns.axes_style("whitegrid"):
     plt.axis('square')
@@ -283,31 +311,35 @@ with sns.axes_style("whitegrid"):
     plt.plot(*experiments.T, marker='o', linestyle='none')
 
 
-# In[20]:
+# In[21]:
+
 
 map(make_input, experiments)
 
 
-# In[21]:
-
-## Now run the simulations using a pool.
-## Don't run this cell unless you have a while to wait!! ###
-
-# pool = multiprocessing.Pool()
-# result = pool.map(run_simulation, experiments)
-
-## Instead, upload the input files to a cluster and run `start_all.sh`
-## The script `stage_all.sh` will stage (add) the results in git
-## so you can commit and get them back to analyze with the subsequent cells:
+# In[ ]:
 
 
-# In[22]:
+# Now run the simulations using a pool.
+# Don't run this cell unless you have a while to wait!! ###
+
+#pool = multiprocessing.Pool()
+#result = pool.map(run_simulation, experiments)
+
+# Instead, upload the input files to a cluster and run `start_all.sh`
+# The script `stage_all.sh` will stage (add) the results in git
+# so you can commit and get them back to analyze with the subsequent cells:
+
+
+# In[ ]:
+
 
 base_directory = 'binding_energies'
 # base_directory = 'binding_energies_local'
 
 
-# In[23]:
+# In[ ]:
+
 
 def get_data(experiment):
     carbon, oxygen = experiment
@@ -320,12 +352,14 @@ def get_data(experiment):
     return data
 
 
-# In[24]:
+# In[ ]:
+
 
 datas = {tuple(e): get_data(e) for e in experiments}
 
 
-# In[25]:
+# In[ ]:
+
 
 def get_max_co2(experiment):
     data = datas[tuple(experiment)]
@@ -339,7 +373,8 @@ highest_co2 = max([float(get_max_co2(e)) for e in experiments])
 # For this first attempt to extract "rate" we fit an exponential growth curve to the normalized CO2 concentration profile of each simulation.
 # First we plot all the curves on one plot, then we'll plot each with its fitted exponential.
 
-# In[26]:
+# In[ ]:
+
 
 import seaborn as sns
 plt.figure(figsize=(5, 4))
@@ -367,7 +402,8 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO$_2$ concentration')
 
 
-# In[27]:
+# In[ ]:
+
 
 sns.set_palette('Set1')
 
@@ -416,7 +452,8 @@ rates
     
 
 
-# In[28]:
+# In[ ]:
+
 
 rates = np.array(rates)
 fixed_rates = rates * (rates>0) + (1e-9 * (rates<0))
@@ -424,23 +461,27 @@ log_rates = np.log(fixed_rates)
 log_rates
 
 
-# In[29]:
+# In[ ]:
+
 
 rate_grid = np.reshape(log_rates, (grid_size,grid_size))
 
 
-# In[30]:
+# In[ ]:
+
 
 ax = sns.heatmap(rate_grid)
 
 
-# In[31]:
+# In[ ]:
+
 
 extent = carbon_range + oxygen_range
 extent
 
 
-# In[32]:
+# In[ ]:
+
 
 # Because the center of a corner pixel is in fact the corner of the grid
 # we want to stretch the image a little
@@ -452,14 +493,16 @@ extent2 = carbon_range2 + oxygen_range2
 extent2
 
 
-# In[33]:
+# In[ ]:
+
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
 plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[34]:
+# In[ ]:
+
 
 # Binding energies extracted from:
 u"""
@@ -483,7 +526,8 @@ medford_energies = { # Carbon, then Oxygen
 }
 
 
-# In[35]:
+# In[ ]:
+
 
 # Shift Medford's energies so that Ni matches Wayne Blaylock's Ni
 blaylock_ni = np.array([-5.997, -4.485])
@@ -492,7 +536,8 @@ shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E i
 shifted_energies
 
 
-# In[36]:
+# In[ ]:
+
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
 for metal, coords in shifted_energies.iteritems():
@@ -502,7 +547,8 @@ plt.xlim(carbon_range)
 plt.ylim(oxygen_range)
 
 
-# In[37]:
+# In[ ]:
+
 
 # Binding energies for close packed surfaces from
 """
@@ -526,12 +572,14 @@ abildpedersen_energies = { # Carbon, then Oxygen
 }
 
 
-# In[38]:
+# In[ ]:
+
 
 abildpedersen_energies['Pt'][0] - abildpedersen_energies['Ni'][0]
 
 
-# In[39]:
+# In[ ]:
+
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
 for metal, coords in abildpedersen_energies.iteritems():
@@ -548,7 +596,8 @@ plt.ylabel('$\Delta E^O$ (eV)')
 # 
 # For this, we plot the CO2 concentration profiles on a log-log plot, and see the characteristic time as the time at which it crosses the diagonal, i.e. when does $\left( \log_{10}(time) + \log_{10}(\frac{CO_2}{CO_2max}) \right) \ge -10$
 
-# In[40]:
+# In[ ]:
+
 
 """
 Plot everything on a log-log plot
@@ -586,7 +635,8 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO2 concentration')
 
 
-# In[53]:
+# In[ ]:
+
 
 """
 An alternative way of defining rates.
@@ -612,7 +662,8 @@ new_log_rates = np.log(np.array(new_rates))
 print new_log_rates
 
 
-# In[54]:
+# In[ ]:
+
 
 new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
 plt.imshow(new_rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
@@ -626,7 +677,8 @@ plt.xlabel('$\Delta E^C$ (eV)')
 plt.ylabel('$\Delta E^O$ (eV)')
 
 
-# In[55]:
+# In[ ]:
+
 
 new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
 plt.imshow(new_rate_grid.T, interpolation='spline16', origin='lower', extent=extent2, aspect='equal')
@@ -642,7 +694,8 @@ plt.ylabel('$\Delta E^O$ (eV)')
 
 # # Count the reactions
 
-# In[43]:
+# In[ ]:
+
 
 def get_reaction_count(experiment):
     d = directory(*experiment)
@@ -658,14 +711,16 @@ def get_reaction_count(experiment):
 get_reaction_count(experiment)
 
 
-# In[44]:
+# In[ ]:
+
 
 i=35
 print experiments[i]
 print get_reaction_count(experiments[i])
 
 
-# In[45]:
+# In[ ]:
+
 
 reaction_counts = map(get_reaction_count, experiments)
 reaction_counts_grid = np.log10(np.reshape(reaction_counts, (grid_size,grid_size)))
@@ -686,9 +741,16 @@ for e,n in zip(experiments,reaction_counts):
 #plt.colorbar()
 
 
-# In[46]:
+# In[ ]:
+
 
 # A linear one, just to check it looks the same
 reaction_counts_grid = np.reshape(reaction_counts, (grid_size,grid_size))
 ax = sns.heatmap(reaction_counts_grid.T[::-1,:], annot=True, fmt='d', square=True)
+
+
+# In[ ]:
+
+
+
 
