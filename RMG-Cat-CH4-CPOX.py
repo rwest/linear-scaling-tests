@@ -171,7 +171,7 @@ data1.columns
 data1[['H2', 'CO', 'O2', 'CH4', 'H2O']].plot.line(
     loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
 data1[['X', 'CH4X', 'OX', 'CX']].plot.line(
-    loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
+    loglog=True, ylim=(1e-15,0.5), xlim=(1e-9,1e3))
 data1[['H2O']].plot.line(
     loglog=True, ylim=(1e-3,0.5), xlim=(1e-3,1e3))
 
@@ -317,7 +317,7 @@ with sns.axes_style("whitegrid"):
 map(make_input, experiments)
 
 
-# In[ ]:
+# In[22]:
 
 
 # Now run the simulations using a pool.
@@ -331,14 +331,14 @@ map(make_input, experiments)
 # so you can commit and get them back to analyze with the subsequent cells:
 
 
-# In[ ]:
+# In[23]:
 
 
 base_directory = 'binding_energies'
 # base_directory = 'binding_energies_local'
 
 
-# In[ ]:
+# In[24]:
 
 
 def get_data(experiment):
@@ -352,13 +352,13 @@ def get_data(experiment):
     return data
 
 
-# In[ ]:
+# In[25]:
 
 
 datas = {tuple(e): get_data(e) for e in experiments}
 
 
-# In[ ]:
+# In[26]:
 
 
 def get_max_co2(experiment):
@@ -373,7 +373,7 @@ highest_co2 = max([float(get_max_co2(e)) for e in experiments])
 # For this first attempt to extract "rate" we fit an exponential growth curve to the normalized CO2 concentration profile of each simulation.
 # First we plot all the curves on one plot, then we'll plot each with its fitted exponential.
 
-# In[ ]:
+# In[27]:
 
 
 import seaborn as sns
@@ -402,7 +402,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO$_2$ concentration')
 
 
-# In[ ]:
+# In[28]:
 
 
 sns.set_palette('Set1')
@@ -452,7 +452,7 @@ rates
     
 
 
-# In[ ]:
+# In[29]:
 
 
 rates = np.array(rates)
@@ -461,26 +461,26 @@ log_rates = np.log(fixed_rates)
 log_rates
 
 
-# In[ ]:
+# In[30]:
 
 
 rate_grid = np.reshape(log_rates, (grid_size,grid_size))
 
 
-# In[ ]:
+# In[31]:
 
 
 ax = sns.heatmap(rate_grid)
 
 
-# In[ ]:
+# In[32]:
 
 
 extent = carbon_range + oxygen_range
 extent
 
 
-# In[ ]:
+# In[33]:
 
 
 # Because the center of a corner pixel is in fact the corner of the grid
@@ -493,7 +493,7 @@ extent2 = carbon_range2 + oxygen_range2
 extent2
 
 
-# In[ ]:
+# In[34]:
 
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
@@ -501,7 +501,7 @@ plt.plot(-5.997, -4.485, 'ok')
 plt.text(-5.997, -4.485, 'Ni(111)')
 
 
-# In[ ]:
+# In[35]:
 
 
 # Binding energies extracted from:
@@ -526,7 +526,7 @@ medford_energies = { # Carbon, then Oxygen
 }
 
 
-# In[ ]:
+# In[36]:
 
 
 # Shift Medford's energies so that Ni matches Wayne Blaylock's Ni
@@ -536,7 +536,7 @@ shifted_energies = {metal: tuple(blaylock_ni + np.array(E)-old_ni) for metal,E i
 shifted_energies
 
 
-# In[ ]:
+# In[37]:
 
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
@@ -547,7 +547,7 @@ plt.xlim(carbon_range)
 plt.ylim(oxygen_range)
 
 
-# In[ ]:
+# In[38]:
 
 
 # Binding energies for close packed surfaces from
@@ -572,13 +572,13 @@ abildpedersen_energies = { # Carbon, then Oxygen
 }
 
 
-# In[ ]:
+# In[39]:
 
 
 abildpedersen_energies['Pt'][0] - abildpedersen_energies['Ni'][0]
 
 
-# In[ ]:
+# In[40]:
 
 
 plt.imshow(rate_grid.T, interpolation='none', origin='lower', extent=extent2, aspect='equal')
@@ -596,7 +596,7 @@ plt.ylabel('$\Delta E^O$ (eV)')
 # 
 # For this, we plot the CO2 concentration profiles on a log-log plot, and see the characteristic time as the time at which it crosses the diagonal, i.e. when does $\left( \log_{10}(time) + \log_{10}(\frac{CO_2}{CO_2max}) \right) \ge -10$
 
-# In[ ]:
+# In[41]:
 
 
 """
@@ -635,7 +635,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized CO2 concentration')
 
 
-# In[ ]:
+# In[42]:
 
 
 """
@@ -662,7 +662,7 @@ new_log_rates = np.log(np.array(new_rates))
 print new_log_rates
 
 
-# In[ ]:
+# In[43]:
 
 
 new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
@@ -677,7 +677,7 @@ plt.xlabel('$\Delta E^C$ (eV)')
 plt.ylabel('$\Delta E^O$ (eV)')
 
 
-# In[ ]:
+# In[44]:
 
 
 new_rate_grid = np.reshape(new_log_rates, (grid_size,grid_size))
@@ -694,12 +694,12 @@ plt.ylabel('$\Delta E^O$ (eV)')
 
 # # Count the reactions
 
-# In[ ]:
+# In[56]:
 
 
 def get_reaction_count(experiment):
     d = directory(*experiment)
-    f = os.path.join(d,'chemkin','chem_annotated.inp')
+    f = os.path.join(d,'chemkin','chem_annotated-surface.inp')
     with open(f) as chemkin:
         r = re.compile('\! Reaction index: Chemkin \#(\d+)')
         for line in chemkin:
@@ -711,7 +711,7 @@ def get_reaction_count(experiment):
 get_reaction_count(experiment)
 
 
-# In[ ]:
+# In[57]:
 
 
 i=35
@@ -719,7 +719,7 @@ print experiments[i]
 print get_reaction_count(experiments[i])
 
 
-# In[ ]:
+# In[58]:
 
 
 reaction_counts = map(get_reaction_count, experiments)
@@ -741,7 +741,7 @@ for e,n in zip(experiments,reaction_counts):
 #plt.colorbar()
 
 
-# In[ ]:
+# In[59]:
 
 
 # A linear one, just to check it looks the same
