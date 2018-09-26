@@ -2,7 +2,7 @@
 ! Name            Index    epsilon/k_B sigma     mu        alpha     Zrot      Source   
 N2                  1      97.530     3.621     0.000     1.760     4.000    ! PrimaryTransportLibrary
 Ar                  0     136.501     3.330     0.000     0.000     0.000    ! GRI-Mech
-He                  0      10.200     2.576     0.000     0.000     0.000    ! NOx2018
+He                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 Ne                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 ! X(1)                None
 CH4(2)              2     141.400     3.746     0.000     2.600    13.000    ! GRI-Mech
@@ -23,89 +23,15 @@ CH3CHO(16)          2     436.001     3.970     0.000     0.000     2.000    ! G
 OH(17)              1      80.000     2.750     0.000     0.000     0.000    ! GRI-Mech
 C2H4(18)            2     280.801     3.971     0.000     0.000     1.500    ! GRI-Mech
 ! CH4X(28)            None
-! OX(20)              None
-! CH3X(22)            None
-! HOX(23)             None
+! CO2X(29)            None
 ! HX(19)              None
-! CH3OHX(41)          None
-! C2H6X(34)           None
-! CH3OX(40)           None
-CH2OH(50)           2     417.002     3.690     1.700     0.000     2.000    ! GRI-Mech
-! H2OX(30)            None
-OCO(54)             2     436.691     5.898     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=567.13 K, Pc=40.16 bar (from Joback method)
-! CH4O2X(57)          None
-! CH2X(47)            None
+! CH3X(22)            None
+! CH2X(58)            None
 ! CHX(26)             None
-! CH3O2X(52)          None
-! CH3O2X(56)          None
 ! H2X(31)             None
-! CH3OX(39)           None
-HOOH(49)            2     289.300     4.196     0.000     0.000     0.000    ! PrimaryTransportLibrary
-! HOOHX(88)           None
-! HO2X(48)            None
-OC(O)O(73)          2     506.876     6.621     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=658.28 K, Pc=32.95 bar (from Joback method)
-! CH4O3X(94)          None
-! CH3O3X(71)          None
-! CH3O3X(93)          None
-OCOCO(65)           2     471.357     6.410     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=612.15 K, Pc=33.76 bar (from Joback method)
-! SX(118)             None
-! SX(117)             None
-C2H6O4(77)          2     541.399     7.133     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=703.12 K, Pc=28.14 bar (from Joback method)
-! SX(136)             None
-CH4O4(106)          2     576.993     7.348     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=749.34 K, Pc=27.44 bar (from Joback method)
-! SX(137)             None
-! SX(121)             None
-! SX(66)              None
-! SX(104)             None
-! SX(116)             None
-! SX(134)             None
-S(100)              2     613.165     7.860     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=796.32 K, Pc=23.82 bar (from Joback method)
-! SX(203)             None
-! SX(186)             None
-! SX(97)              None
-! SX(133)             None
-! SX(135)             None
-S(110)              2     612.445     7.865     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=795.38 K, Pc=23.75 bar (from Joback method)
-! SX(271)             None
-COCO(63)            2     402.716     5.709     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=523.01 K, Pc=40.83 bar (from Joback method)
-! SX(274)             None
-! SX(248)             None
-S(153)              2     505.782     6.921     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=656.86 K, Pc=28.78 bar (from Joback method)
-! SX(292)             None
-S(126)              2     576.372     7.647     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=748.53 K, Pc=24.31 bar (from Joback method)
-! SX(297)             None
-C2H6O3(86)          2     473.551     6.440     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=615.00 K, Pc=33.45 bar (from Joback method)
-! SX(300)             None
-! SX(202)             None
-S(114)              2     687.823     8.605     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=893.28 K, Pc=20.36 bar (from Joback method)
-! SX(326)             None
-! SX(270)             None
-S(157)              2     576.372     7.647     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=748.53 K, Pc=24.31 bar (from Joback method)
-! SX(355)             None
-! SX(290)             None
-! SX(302)             None
-! SX(295)             None
-S(130)              2     649.967     8.383     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=844.11 K, Pc=20.81 bar (from Joback method)
-! SX(426)             None
-S(253)              2     648.933     8.387     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=842.77 K, Pc=20.76 bar (from Joback method)
-! SX(430)             None
-! SX(273)             None
-! SX(164)             None
-! SX(269)             None
-! SX(324)             None
-S(112)              2     543.005     7.168     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=705.20 K, Pc=27.82 bar (from Joback method)
-! SX(523)             None
-! SX(299)             None
-S(257)              2     727.329     9.140     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=944.58 K, Pc=17.97 bar (from Joback method)
-! SX(559)             None
-! SX(429)             None
-! SX(298)             None
-S(128)              2     507.759     6.950     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=659.43 K, Pc=28.54 bar (from Joback method)
-! SX(615)             None
-! SX(325)             None
-S(169)              2     767.769     9.370     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=997.10 K, Pc=17.61 bar (from Joback method)
-! SX(649)             None
-! SX(522)             None
-! SX(617)             None
-S(255)              2     577.465     7.680     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=749.95 K, Pc=24.05 bar (from Joback method)
-! SX(699)             None
+! C2H6X(34)           None
+! CX(24)              None
+! C2H5X(33)           None
+! C3H8X(38)           None
+CH2(48)             2     144.001     3.800     0.000     0.000     0.000    ! GRI-Mech
+! HOCXO(25)           None
