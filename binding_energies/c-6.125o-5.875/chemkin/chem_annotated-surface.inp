@@ -13,8 +13,10 @@ SITE   SDEN/2.9E-9/
     H2OX(35)            ! H2OX(35)
     H2X(36)             ! H2X(36)
     COX(37)             ! COX(37)
+    C2H6X(39)           ! C2H6X(39)
     CH2X(134)           ! C=[Ni](134)
     HO2X(139)           ! HO2X(139)
+    HOOHX(192)          ! HOOHX(192)
 END
 
 
@@ -111,6 +113,13 @@ COX(37)                 X   1C   1O   1     G   100.000  5000.000 1571.63      1
 -1.51873148E+04-8.37741497E-01 3.56838038E+00-8.52129500E-04 2.48918819E-06    3
 -1.56331996E-09 3.13598127E-13-1.52906929E+04-3.96916420E+00                   4
 
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+C2H6X(39)               H   6C   2X   1     G   100.000  5000.000 1012.42      1
+ 2.82848257E+00 1.73040568E-02-6.73334245E-06 1.23742024E-09-8.65676410E-14    2
+-1.30042460E+04-1.61016742E+00 3.72239291E+00 1.65083841E-03 3.44175530E-05    3
+-3.76858229E-08 1.24450657E-11-1.25640281E+04-2.86580449E+00                   4
+
 ! Thermo library: surfaceThermo Binding energy corrected by LSR.
 CH2X(134)               H   2C   1X   1     G   100.000  5000.000 1030.95      1
  1.60135230E+00 7.16444444E-03-2.91650208E-06 5.41234458E-10-3.75747221E-14    2
@@ -123,6 +132,13 @@ HO2X(139)               H   1O   2X   1     G   100.000  5000.000  937.41      1
  3.87667155E+00 2.53550293E-03-2.85179450E-07 6.87598387E-11-9.07470409E-15    2
 -5.86226608E+04-1.13548970E+01 4.56407840E+00-1.99941232E-02 6.71226690E-05    3
 -7.01705560E-08 2.46704576E-11-5.78905246E+04-1.00343197E+01                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+HOOHX(192)              H   2O   2X   1     G   100.000  5000.000 1005.78      1
+ 4.14711917E+00 4.72694898E-03-1.79320499E-06 3.26120398E-10-2.27309864E-14    2
+-1.89335678E+04-4.59587831E+00 3.81666060E+00 2.71177103E-03 6.17757060E-06    3
+-8.24839330E-09 2.92664300E-12-1.86986919E+04-2.16253353E+00                   4
 
 END
 
@@ -441,6 +457,53 @@ X(1)+CO2(4)=CO2X(34)                                1.000e-01 0.000     0.000
 ! Euclidian distance = 0
 ! family: Surface_Dissociation
 X(1)+HO2X(139)=OX(20)+HOX(23)                       1.000000e+21 0.000     7.224    
+
+! Reaction index: Chemkin #42; RMG #34
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), C2H6X(39); C2H6(8), C2H6X(39); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+C2H6(8)=C2H6X(39)                              1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #43; RMG #351
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: HO2(52), HO2X(139); X(1), HO2X(139); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_Single
+X(1)+HO2(52)=HO2X(139)                              1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #44; RMG #343
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: HOOH(141), HOX(23); HOOH(141), HOX(23); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+HOOH(141)=HOX(23)+HOX(23)                 2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #45; RMG #353
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: HOOH(141), HX(19); HOOH(141), HO2X(139); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+HOOH(141)=HX(19)+HO2X(139)                4.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #46; RMG #491
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), HOOHX(192); HOOH(141), HOOHX(192); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+HOOH(141)=HOOHX(192)                           1.000e-01 0.000     0.000    
+    STICK
 
 END
 

@@ -7,17 +7,18 @@ ideal_gas(name='gas',
                      H2(6)       CO(7)       C2H6(8)     CH2O(9)
                      CH3(10)     C3H8(11)    H(12)       C2H5(13)
                      CH3OH(14)   HCO(15)     CH3CHO(16)  OH(17)
-                     C2H4(18)""",
+                     C2H4(18)    HO2(52)     HOOH(141)   CHO4(146)""",
           reactions='gas-*',
           transport='Mix',
           initial_state=state(temperature=300.0, pressure=OneAtm))
 
 ideal_interface(name='surface1',
                 elements="H D T C Ci O Oi N Ne Ar He Si S Cl X",
-                species="""X(1)       HX(19)     OX(20)     OCX(21)
-                          CH3X(22)   HOX(23)    CX(24)     CHX(26)
-                          CXHO(27)   CH4X(33)   CO2X(34)   H2OX(35)
-                          H2X(36)    COX(37)    C2H6X(39)  CH2X(134)""",
+                species="""X(1)        HX(19)      OX(20)      OCX(21)
+                          CH3X(22)    HOX(23)     CX(24)      CHX(26)
+                          CXHO(27)    CH4X(33)    CO2X(34)    H2OX(35)
+                          H2X(36)     COX(37)     C2H6X(39)   C2H4X(51)
+                          CH2X(134)   HO2X(139)   HOOHX(157)""",
                 site_density=2.9e-09,
                 phases="gas",
           reactions='surface1-*',
@@ -345,6 +346,49 @@ species(name=u'C2H4(18)',
                                 well_depth=280.801,
                                 rot_relax=1.5))
 
+species(name=u'HO2(52)',
+        atoms='H:1 O:2',
+        thermo=(NASA([100.00, 1000.24],
+                     [ 4.02425861E+00, -1.64549504E-03,  1.05110773E-05,
+                      -1.06993350E-08,  3.49387579E-12,  2.34739940E+02,
+                       4.70057285E+00]),
+                NASA([1000.24, 5000.00],
+                     [ 3.62866972E+00,  3.05389584E-03, -1.21131943E-06,
+                       2.29641965E-10, -1.65063959E-14,  1.57931174E+02,
+                       5.82961483E+00])),
+        transport=gas_transport(geom='nonlinear',
+                                diam=3.458,
+                                well_depth=107.4,
+                                rot_relax=1.0))
+
+species(name=u'HOOH(141)',
+        atoms='H:2 O:2',
+        thermo=(NASA([100.00, 1005.77],
+                     [ 3.81666650E+00,  2.71170060E-03,  6.17781977E-06,
+                      -8.24871834E-09,  2.92678168E-12, -1.76922542E+04,
+                       5.38572985E+00]),
+                NASA([1005.77, 5000.00],
+                     [ 4.14709440E+00,  4.72699093E-03, -1.79322910E-06,
+                       3.26126082E-10, -2.27314571E-14, -1.79271194E+04,
+                       2.95254574E+00])),
+        transport=gas_transport(geom='nonlinear',
+                                diam=4.196,
+                                well_depth=289.3))
+
+species(name=u'CHO4(146)',
+        atoms='C:1 H:1 O:4',
+        thermo=(NASA([100.00, 929.30],
+                     [ 2.55600877E+00,  1.61654238E-02,  3.39925338E-05,
+                      -6.86967791E-08,  3.08174278E-11, -5.19968525E+04,
+                       1.61542762E+01]),
+                NASA([929.30, 5000.00],
+                     [ 1.68554932E+01, -5.29688964E-03,  3.93044389E-06,
+                      -7.12808650E-10,  4.12068754E-14, -5.63855328E+04,
+                      -6.10972778E+01])),
+        transport=gas_transport(geom='nonlinear',
+                                diam=6.079,
+                                well_depth=500.186))
+
 species(name=u'X(1)',
         atoms='X:1',
         thermo=(NASA([100.00, 1554.81],
@@ -510,6 +554,17 @@ species(name=u'C2H6X(39)',
                        1.23742041E-09, -8.65676548E-14, -1.30042457E+04,
                       -1.61016331E+00])))
 
+species(name=u'C2H4X(51)',
+        atoms='C:2 H:4 X:1',
+        thermo=(NASA([100.00, 979.37],
+                     [ 3.97469045E+00, -4.75813325E-03,  4.16772624E-05,
+                      -4.51377676E-08,  1.54218287E-11,  3.90897062E+03,
+                      -3.92388472E+00]),
+                NASA([979.37, 5000.00],
+                     [ 3.55670229E+00,  1.10625819E-02, -4.17009559E-06,
+                       7.85564219E-10, -5.70042086E-14,  3.31398680E+03,
+                      -5.37163071E+00])))
+
 species(name=u'CH2X(134)',
         atoms='C:1 H:2 X:1',
         thermo=(NASA([100.00, 1030.99],
@@ -520,6 +575,28 @@ species(name=u'CH2X(134)',
                      [ 1.60136044E+00,  7.16442919E-03, -2.91649266E-06,
                        5.41232121E-10, -3.75745212E-14,  4.68429873E+02,
                       -9.19707162E+00])))
+
+species(name=u'HO2X(139)',
+        atoms='H:1 O:2 X:1',
+        thermo=(NASA([100.00, 937.43],
+                     [ 4.56402193E+00, -1.99934262E-02,  6.71200860E-05,
+                      -7.01669997E-08,  2.46688487E-11, -6.15169304E+04,
+                      -1.00341192E+01]),
+                NASA([937.43, 5000.00],
+                     [ 3.87684847E+00,  2.53519574E-03, -2.84999652E-07,
+                       6.87169079E-11, -9.07111456E-15, -6.22491413E+04,
+                      -1.13558891E+01])))
+
+species(name=u'HOOHX(157)',
+        atoms='H:2 O:2 X:1',
+        thermo=(NASA([100.00, 1005.77],
+                     [ 3.81666650E+00,  2.71170060E-03,  6.17781977E-06,
+                      -8.24871834E-09,  2.92678168E-12, -1.86986921E+04,
+                      -2.16255463E+00]),
+                NASA([1005.77, 5000.00],
+                     [ 4.14709440E+00,  4.72699093E-03, -1.79322910E-06,
+                       3.26126082E-10, -2.27314571E-14, -1.89335574E+04,
+                      -4.59573875E+00])))
 
 #-------------------------------------------------------------------------------
 # Reaction data
@@ -612,6 +689,70 @@ reaction('C2H5(13) + C2H5(13) <=> C2H6(8) + C2H4(18)', [6.900000e+13, -0.35, 0.0
 # Reaction 22
 reaction('C2H5(13) + HCO(15) <=> CH2O(9) + C2H4(18)', [9.517315e+13, -0.096, -0.001],
          id='gas-22')
+
+# Reaction 23
+reaction('CH4(2) + O2(3) <=> CH3(10) + HO2(52)', [2.030000e+05, 2.745, 55.339],
+         id='gas-23')
+
+# Reaction 24
+reaction('O2(3) + H2O(5) <=> OH(17) + HO2(52)', [9.300000e+12, 0.0, 74.12],
+         id='gas-24')
+
+# Reaction 25
+reaction('O2(3) + H2(6) <=> H(12) + HO2(52)', [2.900000e+14, 0.0, 56.64],
+         id='gas-25')
+
+# Reaction 26
+reaction('O2(3) + C2H6(8) <=> C2H5(13) + HO2(52)', [2.920000e+07, 1.9, 51.557],
+         id='gas-26')
+
+# Reaction 27
+reaction('O2(3) + CH2O(9) <=> HCO(15) + HO2(52)', [9.360000e+07, 2.05, 39.171],
+         id='gas-27')
+
+# Reaction 28
+reaction('O2(3) + C2H5(13) <=> C2H4(18) + HO2(52)', [4.338000e+13, 0.0, 15.99],
+         id='gas-28')
+
+# Reaction 29
+reaction('O2(3) + HCO(15) <=> CO(7) + HO2(52)', [5.120000e+13, 0.0, 1.69],
+         id='gas-29')
+
+# Reaction 30
+reaction('CH4(2) + HO2(52) <=> CH3(10) + HOOH(141)', [4.700000e+04, 2.5, 21.0],
+         id='gas-30')
+
+# Reaction 31
+reaction('OH(17) + HOOH(141) <=> H2O(5) + HO2(52)', [4.994995e+05, 1.927, 4.161],
+         id='gas-31')
+
+# Reaction 32
+reaction('H(12) + HOOH(141) <=> H2(6) + HO2(52)', [1.134783e+06, 1.647, 1.814],
+         id='gas-32')
+
+# Reaction 33
+reaction('C2H6(8) + HO2(52) <=> C2H5(13) + HOOH(141)', [2.600000e+01, 3.37, 15.9],
+         id='gas-33')
+
+# Reaction 34
+reaction('CH2O(9) + HO2(52) <=> HCO(15) + HOOH(141)', [4.120000e+04, 2.5, 10.21],
+         id='gas-34')
+
+# Reaction 35
+reaction('C2H5(13) + HO2(52) <=> C2H4(18) + HOOH(141)', [3.003453e+10, 1.009, -0.6],
+         id='gas-35')
+
+# Reaction 36
+reaction('HCO(15) + HO2(52) <=> CO(7) + HOOH(141)', [1.240000e+23, -3.29, 2.355],
+         id='gas-36')
+
+# Reaction 37
+reaction('HO2(52) + HO2(52) <=> O2(3) + HOOH(141)', [1.750000e+10, 0.0, -3.275],
+         id='gas-37')
+
+# Reaction 38
+reaction('CHO4(146) <=> CO2(4) + HO2(52)', [6.380000e+12, 0.0, 11.4],
+         id='gas-38')
 
 # surface1 Reaction 1
 surface_reaction('X(1) + CH4(2) <=> CH4X(33)', stick(1.000000e-01, 0.0, 0.0),
@@ -776,3 +917,27 @@ surface_reaction('X(1) + C2H6(8) <=> C2H6X(39)', stick(1.000000e-01, 0.0, 0.0),
 # surface1 Reaction 41
 surface_reaction('X(1) + H2O(5) <=> H2OX(35)', stick(1.000000e-01, 0.0, 0.0),
                  id='surface1-41')
+
+# surface1 Reaction 42
+surface_reaction('X(1) + HO2X(139) <=> OX(20) + HOX(23)', [1.000000e+21, 0.0, 0.0],
+                 id='surface1-42')
+
+# surface1 Reaction 43
+surface_reaction('X(1) + HO2(52) <=> HO2X(139)', stick(1.000000e-01, 0.0, 0.0),
+                 id='surface1-43')
+
+# surface1 Reaction 44
+surface_reaction('X(1) + X(1) + HOOH(141) <=> HOX(23) + HOX(23)', stick(2.000000e-02, 0.0, 10.0),
+                 id='surface1-44')
+
+# surface1 Reaction 45
+surface_reaction('X(1) + X(1) + HOOH(141) <=> HX(19) + HO2X(139)', stick(4.000000e-02, 0.0, 10.0),
+                 id='surface1-45')
+
+# surface1 Reaction 46
+surface_reaction('X(1) + HOOH(141) <=> HOOHX(157)', stick(1.000000e-01, 0.0, 0.0),
+                 id='surface1-46')
+
+# surface1 Reaction 47
+surface_reaction('X(1) + C2H4(18) <=> C2H4X(51)', stick(1.000000e-01, 0.0, 0.0),
+                 id='surface1-47')

@@ -10,7 +10,9 @@ SITE   SDEN/2.9E-9/
     CH4X(33)            ! CH4X(33)
     CO2X(34)            ! CO2X(34)
     H2OX(35)            ! H2OX(35)
+    H2X(36)             ! H2X(36)
     COX(37)             ! COX(37)
+    C2H5X(38)           ! C2H5X(38)
     C2H6X(39)           ! C2H6X(39)
     CH2OX(40)           ! CH2OX(40)
     CH3OX(44)           ! CO[Ni](44)
@@ -26,7 +28,14 @@ SITE   SDEN/2.9E-9/
     CHOX(210)           ! OC#[Ni](210)
     SX(212)             ! OC(O)[Ni](212)
     SX(219)             ! OC(O)=[Ni](219)
+    SX(226)             ! OC(O)(O)[Ni](226)
     SX(232)             ! OC(O)O[Ni](232)
+    SX(248)             ! OC(O)OO[Ni](248)
+    SX(267)             ! OCO.[Ni](267)
+    SX(304)             ! OC(O)(O)O[Ni](304)
+    SX(323)             ! OC(O)(O)OO[Ni](323)
+    HOOHX(343)          ! HOOHX(343)
+    DMEX(356)           ! DMEX(356)
 END
 
 
@@ -103,12 +112,26 @@ H2OX(35)                H   2O   1X   1     G   100.000  5000.000 1130.25      1
 -3.09650465E+04-1.63781111E+00 4.05763720E+00-7.87951343E-04 2.90882564E-06    3
 -1.47524910E-09 2.12866372E-13-3.12880246E+04-7.85965351E+00                   4
 
+! Gas phase thermo from Thermo library: primaryThermoLibrary. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+H2X(36)                 H   2X   1          G   100.000  5000.000 1959.08      1
+ 2.78816619E+00 5.87640475E-04 1.59010635E-07-5.52739465E-11 4.34311304E-15    2
+-1.60258241E+03-7.43555396E+00 3.43536411E+00 2.12710383E-04-2.78625110E-07    3
+ 3.40267219E-10-7.76032129E-14-2.03779777E+03-1.14567018E+01                   4
+
 ! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
 ! energy corrected by LSR.
 COX(37)                 X   1C   1O   1     G   100.000  5000.000 1571.64      1
  2.91306987E+00 1.64657389E-03-6.88612820E-07 1.21036930E-10-7.84014743E-15    2
 -1.51873242E+04-8.37845489E-01 3.56837982E+00-8.52124063E-04 2.48917390E-06    3
 -1.56330672E-09 3.13594213E-13-1.52906929E+04-3.96916209E+00                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(C*R3) Binding
+! energy corrected by LSR.
+C2H5X(38)               H   5C   2X   1     G   100.000  5000.000  948.06      1
+ 6.38804138E+00 1.11720849E-02-3.54281913E-06 6.37966210E-10-4.71440037E-14    2
+ 4.10956422E+03-2.97341828E+01 3.55562063E+00 1.15611332E-03 4.70586334E-05    3
+-5.93832390E-08 2.22245866E-11 5.63382122E+03-1.10140857E+01                   4
 
 ! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
 ! energy corrected by LSR.
@@ -210,12 +233,61 @@ SX(219)                 H   2C   1O   2X   1G   100.000  5000.000  898.18      1
 -3.40267481E+04-9.33821406E+01 3.21629475E+00-4.89976510E-03 8.68511404E-05    3
 -1.30203445E-07 5.58747849E-11-2.87694540E+04-4.04496109E+00                   4
 
+! Gas phase thermo from Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsOsH) + radical(Cs_P).
+! Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(226)                 H   3C   1O   3X   1G   100.000  5000.000 1866.48      1
+ 7.58093161E+00 1.05878099E-02-4.83362389E-06 8.71965548E-10-5.67306093E-14    2
+-9.23837932E+04-2.50302102E+01 3.44909932E+00 1.45249931E-02-4.04569534E-06    3
+-8.21051407E-10 3.59105595E-13-8.99848061E+04-2.23353888E-01                   4
+
 ! Gas phase thermo from Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsOsH) + radical(OCOJ).
 ! Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
 SX(232)                 H   3C   1O   3X   1G   100.000  5000.000 1835.19      1
  4.89108334E+00 1.96800162E-02-1.10038953E-05 2.09852821E-09-1.39146600E-13    2
 -9.55518982E+04-1.36459571E+01 4.96080480E+00-6.26087951E-04 2.20663741E-05    3
 -1.58989499E-08 3.12775533E-12-9.21835947E+04-4.77796489E+00                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(O2s-OsH) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-OsCs) + group(Cs-OsOsOsH) +
+! radical(ROOJ). Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(248)                 H   3C   1O   4X   1G   100.000  5000.000 2591.88      1
+ 1.89903122E+01 2.35016815E-03-1.83119952E-06 3.21347504E-10-1.81511754E-14    2
+-1.02448083E+05-9.13689272E+01 3.64138448E+00 2.04013522E-02-9.01592674E-06    3
+ 1.33031182E-09-3.45404656E-14-9.25983089E+04 9.51136664E-01                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsHH). Adsorption correction: + Thermo group
+! additivity estimation: adsorption(R*vdW) Binding energy corrected by LSR.
+SX(267)                 H   4C   1O   2X   1G   100.000  5000.000  894.10      1
+ 1.68605497E+01-9.64319453E-03 7.94866031E-06-1.62836085E-09 1.09847823E-13    2
+-5.46900600E+04-7.23279203E+01 2.88385292E+00 7.57480349E-03 5.50794101E-05    3
+-9.34513271E-08 4.16333127E-11-5.03796704E+04 3.66503125E+00                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsOsOs) +
+! radical(OCOJ). Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(304)                 H   3C   1O   4X   1G   100.000  5000.000  855.67      1
+-2.01052544E+00 3.04290044E-02-1.49557104E-05 2.85243141E-09-1.95340436E-13    2
+-1.11491746E+05 3.04709013E+01 3.05287991E+00 2.95296452E-02-5.32963459E-05    3
+ 6.38245732E-08-2.70960754E-11-1.13191859E+05 1.96112782E+00                   4
+
+! Gas phase thermo from Thermo group additivity estimation: group(O2s-OsH) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-OsCs) + group
+! (Cs-OsOsOsOs) + radical(ROOJ). Adsorption correction: + Thermo group additivity estimation: adsorption(R*chemisorbed) Binding energy corrected by LSR.
+SX(323)                 H   3C   1O   5X   1G   100.000  5000.000  892.36      1
+ 6.67051361E+00 1.83751893E-02-7.60481220E-06 1.33764994E-09-8.74218297E-14    2
+-1.14162534E+05-1.35857447E+01 2.05262543E+00 4.61026824E-02-6.60263308E-05    3
+ 5.38089597E-08-1.72601307E-11-1.13618185E+05 6.59915025E+00                   4
+
+! Gas phase thermo from Thermo library: thermo_DFT_CCSDTF12_BAC. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding
+! energy corrected by LSR.
+HOOHX(343)              H   2O   2X   1     G   100.000  5000.000 1005.77      1
+ 4.14709440E+00 4.72699093E-03-1.79322910E-06 3.26126082E-10-2.27314571E-14    2
+-1.89335574E+04-4.59573875E+00 3.81666650E+00 2.71170060E-03 6.17781977E-06    3
+-8.24871834E-09 2.92678168E-12-1.86986921E+04-2.16255463E+00                   4
+
+! Gas phase thermo from Thermo library: DFT_QCI_thermo. Adsorption correction: + Thermo group additivity estimation: adsorption(R*vdW) Binding energy
+! corrected by LSR.
+DMEX(356)               H   6C   2O   1X   1G   100.000  5000.000 1170.38      1
+ 3.88838883E+00 1.97267204E-02-8.07482672E-06 1.47699976E-09-1.01102459E-13    2
+-2.54544098E+04-3.91833836E+00 3.24108862E+00 1.38084664E-02 9.93056821E-06    3
+-1.47147400E-08 4.62542167E-12-2.47460360E+04 1.68530330E+00                   4
 
 END
 
@@ -914,6 +986,222 @@ DUPLICATE
 ! Euclidian distance = 0
 ! family: Surface_Dissociation
 X(1)+SX(232)=OX(20)+SX(212)                         1.000000e+21 0.000     47.646   
+
+! Reaction index: Chemkin #84; RMG #683
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(248), OX(20); SX(248), SX(232); 
+! Exact match found for rate rule [Combined;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Dissociation
+X(1)+SX(248)=OX(20)+SX(232)                         1.000000e+21 0.000     9.619    
+
+! Reaction index: Chemkin #85; RMG #560
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: OCO(200), HOX(23); OCO(200), CH3OX(45); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: Surface_Adsorption_Dissociative
+! Ea raised from 53.2 to 53.9 kJ/mol to match endothermicity of reaction.
+X(1)+X(1)+OCO(200)=HOX(23)+CH3OX(45)                4.000e-02 0.000     12.892   
+    STICK
+
+! Reaction index: Chemkin #86; RMG #665
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: OCO(200), HX(19); OCO(200), SX(212); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+OCO(200)=HX(19)+SX(212)                   4.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #87; RMG #723
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), SX(267); OCO(200), SX(267); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+OCO(200)=SX(267)                               1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #88; RMG #30
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), H2X(36); H2(6), H2X(36); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+H2(6)=H2X(36)                                  1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #89; RMG #640
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(226), HOX(23); SX(226), SX(219); 
+! Exact match found for rate rule [Combined;VacantSite]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Surface_Dissociation
+X(1)+SX(226)=HOX(23)+SX(219)                        3.000000e+21 0.000     103.044  
+
+! Reaction index: Chemkin #90; RMG #642
+! Template reaction: Surface_Abstraction
+! Flux pairs: HO2X(135), SX(226); SX(219), OX(20); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-OH]
+! Euclidian distance = 2.0
+! family: Surface_Abstraction
+HO2X(135)+SX(219)=OX(20)+SX(226)                    1.000000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #91; RMG #653
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH3OX(45), SX(226); SX(219), CH2X(134); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-OH]
+! Euclidian distance = 2.0
+! family: Surface_Abstraction
+CH3OX(45)+SX(219)=CH2X(134)+SX(226)                 1.000000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #92; RMG #657
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(140), SX(226); SX(219), CHX(26); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-OH]
+! Euclidian distance = 2.0
+! family: Surface_Abstraction
+CH2OX(140)+SX(219)=CHX(26)+SX(226)                  1.000000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #93; RMG #660
+! Template reaction: Surface_Abstraction
+! Flux pairs: SX(219), CHOX(210); SX(219), SX(226); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-OH]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Surface_Abstraction
+SX(219)+SX(219)=CHOX(210)+SX(226)                   2.000000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #94; RMG #679
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2OX(140), SX(219); SX(226), SX(212); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-OH]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Surface_Abstraction
+CH2OX(140)+SX(226)=SX(219)+SX(212)                  3.000000e+19 0.000     19.120   
+
+! Reaction index: Chemkin #95; RMG #875
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(304), OX(20); SX(304), SX(226); 
+! Exact match found for rate rule [Combined;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Dissociation
+X(1)+SX(304)=OX(20)+SX(226)                         1.000000e+21 0.000     47.783   
+
+! Reaction index: Chemkin #96; RMG #896
+! Template reaction: Surface_Dissociation
+! Flux pairs: SX(323), OX(20); SX(323), SX(304); 
+! Exact match found for rate rule [Combined;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Dissociation
+X(1)+SX(323)=SX(304)+OX(20)                         1.000000e+21 0.000     9.619    
+
+! Reaction index: Chemkin #97; RMG #323
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: HOOH(136), HOX(23); HOOH(136), HOX(23); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+HOOH(136)=HOX(23)+HOX(23)                 2.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #98; RMG #326
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: HOOH(136), HX(19); HOOH(136), HO2X(135); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+HOOH(136)=HO2X(135)+HX(19)                4.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #99; RMG #938
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), HOOHX(343); HOOH(136), HOOHX(343); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+HOOH(136)=HOOHX(343)                           1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #100; RMG #536
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: DME(189), CH3X(22); DME(189), CH3OX(44); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+DME(189)=CH3X(22)+CH3OX(44)               4.000e-02 0.000     10.000   
+    STICK
+
+! Reaction index: Chemkin #101; RMG #1033
+! Template reaction: Surface_Adsorption_vdW
+! Flux pairs: X(1), DMEX(356); DME(189), DMEX(356); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_vdW
+X(1)+DME(189)=DMEX(356)                             1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #102; RMG #661
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: CH3O2(150), SX(212); X(1), SX(212); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_Single
+X(1)+CH3O2(150)=SX(212)                             1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #103; RMG #33
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C2H6(8), C2H5X(38); C2H6(8), HX(19); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+C2H6(8)=C2H5X(38)+HX(19)                  6.000e-02 0.000     22.895   
+    STICK
+
+! Reaction index: Chemkin #104; RMG #38
+! Template reaction: Surface_Adsorption_Dissociative
+! Flux pairs: C3H8(11), CH3X(22); C3H8(11), C2H5X(38); 
+! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Surface_Adsorption_Dissociative
+X(1)+X(1)+C3H8(11)=C2H5X(38)+CH3X(22)               2.000e-02 0.000     47.003   
+    STICK
+
+! Reaction index: Chemkin #105; RMG #43
+! Template reaction: Surface_Adsorption_Single
+! Flux pairs: X(1), C2H5X(38); C2H5(13), C2H5X(38); 
+! Exact match found for rate rule [Adsorbate;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Adsorption_Single
+X(1)+C2H5(13)=C2H5X(38)                             1.000e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #106; RMG #329
+! Template reaction: Surface_Dissociation
+! Flux pairs: C2H5X(38), CH3X(22); C2H5X(38), CH2X(134); 
+! Exact match found for rate rule [Combined;VacantSite]
+! Euclidian distance = 0
+! family: Surface_Dissociation
+X(1)+C2H5X(38)=CH3X(22)+CH2X(134)                   1.000000e+21 0.000     67.863   
+
+! Reaction index: Chemkin #107; RMG #538
+! Template reaction: Surface_Abstraction
+! Flux pairs: CH2X(134), OX(20); CH3OX(44), C2H5X(38); 
+! Estimated using template [Abstracting;Donating] for rate rule [Abstracting;R-C]
+! Euclidian distance = 1.0
+! family: Surface_Abstraction
+CH3OX(44)+CH2X(134)=C2H5X(38)+OX(20)                1.000000e+19 0.000     19.120   
 
 END
 

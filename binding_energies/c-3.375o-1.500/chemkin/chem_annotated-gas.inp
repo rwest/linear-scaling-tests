@@ -43,20 +43,32 @@ SPECIES
     CH3O(58)            ! CH3O(58)
     CH2O2(69)           ! formic_acid(69)
     C2H6O(98)           ! ethanol(98)
+    HOOH(136)           ! HOOH(136)
     OCO(140)            ! OCO(140)
     OCCO(143)           ! OCCO(143)
+    CHO4(146)           ! [O]OC(=O)O(146)
+    CH4O3(154)          ! HOOCH2OH(154)
     CH3O2(173)          ! O[CH]O(173)
+    CCOCO(177)          ! CCOCO(177)
     COCO(190)           ! COCO(190)
     S(203)              ! CC(O)O(203)
     OCOCO(215)          ! OCOCO(215)
+    S(218)              ! CC(O)OCO(218)
     CH4O3(222)          ! OC(O)O(222)
     S(225)              ! OCC(O)O(225)
+    S(228)              ! COC(O)O(228)
     S(231)              ! OCOC(O)O(231)
     C2H4O(259)          ! ethenol(259)
     CH2O3(303)          ! O=C(O)O(303)
     CH2O4(306)          ! O=C(O)OO(306)
+    S(309)              ! COC(=O)O(309)
     S(310)              ! O=C(O)OCO(310)
+    S(398)              ! COCOCO(398)
+    S(401)              ! OCOCOCO(401)
     S(458)              ! HOCHCHOH(458)
+    S(870)              ! O=C(O)OOC(=O)O(870)
+    S(1077)             ! O=C(OO)OCO(1077)
+    S(1597)             ! O=C(OCO)OCO(1597)
 END
 
 
@@ -220,6 +232,12 @@ C2H6O(98)               H   6C   2O   1     G   100.000  5000.000  984.00      1
 -3.12258208E+04-4.44488784E+00 3.24025972E+00 1.04859555E-02 2.63967779E-05    3
 -3.69293677E-08 1.36710645E-11-2.99902844E+04 1.11433012E+01                   4
 
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+HOOH(136)               H   2O   2          G   100.000  5000.000 1005.77      1
+ 4.14709440E+00 4.72699093E-03-1.79322910E-06 3.26126082E-10-2.27314571E-14    2
+-1.79271194E+04 2.95254574E+00 3.81666650E+00 2.71170060E-03 6.17781977E-06    3
+-8.24871834E-09 2.92678168E-12-1.76922542E+04 5.38572985E+00                   4
+
 ! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsHH)
 OCO(140)                H   4C   1O   2     G   100.000  5000.000  894.10      1
  1.68605497E+01-9.64319453E-03 7.94866031E-06-1.62836085E-09 1.09847823E-13    2
@@ -232,11 +250,29 @@ OCCO(143)               H   6C   2O   2     G   100.000  5000.000 1023.85      1
 -5.08289916E+04-3.61772327E+00 2.45006273E+00 3.47926417E-02-3.03302734E-05    3
  1.60434843E-08-3.66598665E-12-5.00259550E+04 1.53943660E+01                   4
 
+! Thermo group additivity estimation: group(O2s-OsH) + group(O2s-(Cds-O2d)H) + group(O2s-O2s(Cds-O2d)) + group(Cds-OdOsOs) + radical(C(=O)OOJ)
+CHO4(146)               H   1C   1O   4     G   100.000  5000.000  929.30      1
+ 1.68554932E+01-5.29688964E-03 3.93044389E-06-7.12808650E-10 4.12068754E-14    2
+-5.63855328E+04-6.10972778E+01 2.55600877E+00 1.61654238E-02 3.39925338E-05    3
+-6.86967791E-08 3.08174278E-11-5.19968525E+04 1.61542762E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+CH4O3(154)              H   4C   1O   3     G   100.000  5000.000 1356.78      1
+ 1.08688635E+01 8.55673394E-03-3.22853612E-06 5.72009603E-10-3.87175114E-14    2
+-4.21674118E+04-2.92653934E+01 2.22803783E+00 3.40318183E-02-3.13933760E-05    3
+ 1.44113829E-08-2.58881525E-12-3.98227250E+04 1.50578391E+01                   4
+
 ! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsHH) + radical(OCJO)
 CH3O2(173)              H   3C   1O   2     G   100.000  5000.000 1261.91      1
  8.67770786E+00 2.77365604E-03 8.08981041E-08-1.17581162E-10 1.15166167E-14    2
 -2.78569752E+04-1.73576109E+01 2.70939631E+00 2.54993018E-02-3.14581340E-05    3
  1.89353734E-08-4.23677504E-12-2.66538216E+04 1.16233107E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsCs) + group(Cs-OsOsHH) + group(Cs-CsHHH) + group(Cs-CsOsHH)
+CCOCO(177)              H   8C   3O   2     G   100.000  5000.000  927.68      1
+ 1.79690447E+01 9.61179932E-03-1.21474068E-06 1.36871331E-10-1.33815278E-14    2
+-5.61745156E+04-6.77472845E+01 1.47036914E+00 3.96394846E-02 1.67078589E-05    3
+-6.05150153E-08 2.92057661E-11-5.13444021E+04 2.01453959E+01                   4
 
 ! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsCs) + group(Cs-OsHHH) + group(Cs-OsOsHH)
 COCO(190)               H   6C   2O   2     G   100.000  5000.000  916.51      1
@@ -256,6 +292,12 @@ OCOCO(215)              H   6C   2O   3     G   100.000  5000.000  899.96      1
 -7.80361148E+04-1.28963606E+02 1.29836742E+00 3.07083865E-02 6.20457814E-05    3
 -1.33826786E-07 6.29715810E-11-6.98970301E+04 2.01523174E+01                   4
 
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsCs) + group(Cs-OsOsHH) + group(Cs-CsHHH) + group(Cs-CsOsOsH)
+S(218)                  H   8C   3O   3     G   100.000  5000.000  935.33      1
+ 2.05466321E+01 9.63911150E-03-1.56689731E-06 2.25780374E-10-2.00807355E-14    2
+-8.08305047E+04-7.74969526E+01 8.18138391E-01 5.43116023E-02-9.54490360E-06    3
+-3.94649654E-08 2.27173453E-11-7.54035161E+04 2.56452647E+01                   4
+
 ! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(Cs-OsOsOsH)
 CH4O3(222)              H   4C   1O   3     G   100.000  5000.000  844.28      1
  2.93917480E+00 2.00243857E-02-9.90879646E-06 1.90444681E-09-1.31174764E-13    2
@@ -267,6 +309,12 @@ S(225)                  H   6C   2O   3     G   100.000  5000.000  951.98      1
  8.73101106E+00 1.98822403E-02-8.46250324E-06 1.57124086E-09-1.08497581E-13    2
 -7.53972037E+04-1.21466720E+01 1.85100789E+00 4.87910129E-02-5.40139248E-05    3
  3.34713154E-08-8.48596465E-12-7.40873053E+04 2.07066525E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsCs) + group(Cs-OsHHH) + group(Cs-OsOsOsH)
+S(228)                  H   6C   2O   3     G   100.000  5000.000 2901.06      1
+ 4.12006552E+01-1.30943489E-02 3.36658076E-06-5.38021417E-10 3.67538739E-14    2
+-9.57995980E+04-2.14334027E+02 4.18967954E+00 2.71660598E-02-1.18812234E-05    3
+ 1.68619444E-09-4.46363653E-14-6.97930476E+04 1.14535608E+01                   4
 
 ! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsCs) + group(Cs-OsOsHH) + group(Cs-OsOsOsH)
 S(231)                  H   6C   2O   4     G   100.000  5000.000 1019.91      1
@@ -292,17 +340,57 @@ CH2O4(306)              H   2C   1O   4     G   100.000  5000.000  939.72      1
 -8.04671910E+04-7.24262530E+01 2.27265063E+00 1.99832674E-02 3.79253820E-05    3
 -7.70314977E-08 3.41716339E-11-7.53640716E+04 1.64124514E+01                   4
 
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-OsHHH)
+S(309)                  H   4C   2O   3     G   100.000  5000.000 1007.63      1
+ 1.06261541E+01 1.33536757E-02-5.59213075E-06 1.11676986E-09-8.36443986E-14    2
+-7.57741392E+04-2.89020735E+01 2.52452379E+00 2.29974047E-02 1.35718583E-05    3
+-3.37397660E-08 1.40667939E-11-7.29983235E+04 1.59175180E+01                   4
+
 ! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-CsH) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-OsOsHH)
 S(310)                  H   4C   2O   4     G   100.000  5000.000  925.24      1
  2.40063328E+01-6.07436527E-03 5.60294938E-06-1.05843397E-09 6.27817910E-14    2
 -1.02758129E+05-9.91421517E+01 1.52547831E+00 3.12636937E-02 4.21007808E-05    3
 -9.72695911E-08 4.49495144E-11-9.60362380E+04 2.14123932E+01                   4
 
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsCs) + group(O2s-CsCs) + group(Cs-OsHHH) + group(Cs-OsOsHH) + group(Cs-OsOsHH)
+S(398)                  H   8C   3O   3     G   100.000  5000.000  912.96      1
+ 2.78733676E+01-3.62632476E-03 6.40031779E-06-1.33399195E-09 8.49967851E-14    2
+-7.52510865E+04-1.20203580E+02 7.25899046E-01 4.54739463E-02 4.04806428E-05    3
+-1.10016125E-07 5.27922903E-11-6.73835321E+04 2.42358873E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-CsCs) + group(O2s-CsCs) + group(Cs-OsOsHH) + group(Cs-OsOsHH) + group
+! (Cs-OsOsHH)
+S(401)                  H   8C   3O   4     G   100.000  5000.000  902.45      1
+ 4.16141731E+01-2.36546416E-02 1.79362737E-05-3.58880756E-09 2.37969738E-13    2
+-1.02390595E+05-1.93174347E+02-2.87554152E-01 5.38464893E-02 6.90003587E-05    3
+-1.74195283E-07 8.43119204E-11-9.04208091E+04 2.90929147E+01                   4
+
 ! Thermo library: DFT_QCI_thermo
 S(458)                  H   4C   2O   2     G   100.000  5000.000  950.93      1
  1.28255691E+01 4.54624911E-03-7.73345593E-07 1.92035857E-10-2.14955256E-14    2
 -3.97190577E+04-4.23789662E+01 2.84598884E+00 1.15516642E-02 4.33419579E-05    3
 -6.94103334E-08 2.84444686E-11-3.62398290E+04 1.35788218E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-(Cds-O2d)H) + group(O2s-O2s(Cds-O2d)) + group(O2s-O2s(Cds-O2d)) + group(Cds-
+! OdOsOs) + group(Cds-OdOsOs)
+S(870)                  H   2C   2O   6     G   100.000  5000.000  942.08      1
+ 3.19264993E+01-1.06655774E-02 6.77419022E-06-1.10162556E-09 5.45454976E-14    2
+-1.42633593E+05-1.40856731E+02 8.16043562E-01 3.65871549E-02 6.66215988E-05    3
+-1.39045998E-07 6.20285060E-11-1.33007061E+05 2.73584954E+01                   4
+
+! Thermo group additivity estimation: group(O2s-OsH) + group(O2s-O2s(Cds-O2d)) + group(O2s-CsH) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-
+! OsOsHH)
+S(1077)                 H   4C   2O   5     G   100.000  5000.000  922.87      1
+ 3.08103575E+01-1.18653023E-02 8.94488390E-06-1.68356833E-09 1.02757513E-13    2
+-1.05135785E+05-1.34179739E+02 8.16620633E-01 3.98055636E-02 5.22772963E-05    3
+-1.24957390E-07 5.84113010E-11-9.62640262E+04 2.61875799E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(O2s-Cs(Cds-O2d)) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-
+! OsOsHH) + group(Cs-OsOsHH)
+S(1597)                 H   6C   3O   5     G   100.000  5000.000  916.13      1
+ 3.61717991E+01-1.39551736E-02 1.14050558E-05-2.22140200E-09 1.40405624E-13    2
+-1.27437084E+05-1.61723975E+02 7.07219413E-02 5.10635034E-02 5.65730679E-05    3
+-1.45426635E-07 6.93285388E-11-1.16936245E+05 3.04902390E+01                   4
 
 END
 
@@ -1102,6 +1190,289 @@ H2O(5)+C2H4O(259)=S(203)                            1.304000e+02 2.920     50.70
 ! Multiplied by reaction path degeneracy 4.0
 ! family: 1,3_Insertion_ROR
 H2O(5)+S(458)=S(225)                                4.475998e+01 3.250     62.600   
+
+! Reaction index: Chemkin #92; RMG #504
+! Template reaction: 1,3_Insertion_ROR
+! Flux pairs: C2H4(18), CCOCO(177); OCO(140), CCOCO(177); 
+! Estimated using an average for rate rule [Cd/unsub_Cd/unsub;H_OCs]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: 1,3_Insertion_ROR
+C2H4(18)+OCO(140)=CCOCO(177)                        1.892000e+02 3.000     47.000   
+
+! Reaction index: Chemkin #93; RMG #369
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); HO2(52), HOOH(136); 
+! Matched reaction 1503 CH4b + HO2_r3 <=> CH3_p1 + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;O_rad/NonDeO]
+! family: H_Abstraction
+CH4(2)+HO2(52)=CH3(10)+HOOH(136)                    4.700000e+04 2.500     21.000   
+
+! Reaction index: Chemkin #94; RMG #373
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); HOOH(136), HO2(52); 
+! Estimated using average of templates [O/H/NonDeO;O_pri_rad] + [H2O2;O_rad] for rate rule [H2O2;O_pri_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+OH(17)+HOOH(136)=H2O(5)+HO2(52)                     4.994995e+05 1.927     4.161    
+
+! Reaction index: Chemkin #95; RMG #374
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); HOOH(136), HO2(52); 
+! Estimated using average of templates [O/H/NonDeO;H_rad] + [H2O2;Y_rad] for rate rule [H2O2;H_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+H(12)+HOOH(136)=H2(6)+HO2(52)                       1.134783e+06 1.647     1.814    
+
+! Reaction index: Chemkin #96; RMG #376
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); HO2(52), HOOH(136); 
+! Matched reaction 1527 C2H6 + HO2_r3 <=> C2H5b + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/Cs\H3;O_rad/NonDeO]
+! family: H_Abstraction
+C2H6(8)+HO2(52)=C2H5(13)+HOOH(136)                  2.600000e+01 3.370     15.900   
+
+! Reaction index: Chemkin #97; RMG #378
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); HO2(52), HOOH(136); 
+! Exact match found for rate rule [CO_pri;O_rad/NonDeO]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+HO2(52)=HCO(15)+HOOH(136)                   4.120000e+04 2.500     10.210   
+
+! Reaction index: Chemkin #98; RMG #383
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); HO2(52), HOOH(136); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+HO2(52)=C2H4(18)+HOOH(136)                 3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #99; RMG #384
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH3O(58); HO2(52), HOOH(136); 
+! Matched reaction 1512 CH4O-2 + HO2_r3 <=> CH3O_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;O_rad/NonDeO]
+! family: H_Abstraction
+! Ea raised from 66.2 to 73.7 kJ/mol to match endothermicity of reaction.
+CH3OH(14)+HO2(52)=HOOH(136)+CH3O(58)                1.500000e-03 4.610     17.624   
+
+! Reaction index: Chemkin #100; RMG #385
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH2OH(57); HO2(52), HOOH(136); 
+! Matched reaction 1511 CH4O + HO2_r3 <=> CH2OH_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;O_rad/NonDeO]
+! family: H_Abstraction
+CH3OH(14)+HO2(52)=HOOH(136)+CH2OH(57)               3.500000e-04 4.850     10.346   
+
+! Reaction index: Chemkin #101; RMG #386
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); HO2(52), HOOH(136); 
+! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/NonDeO;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+HO2(52)=CO(7)+HOOH(136)                     1.240000e+23 -3.290    2.355    
+
+! Reaction index: Chemkin #102; RMG #395
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(57), CH2O(9); HO2(52), HOOH(136); 
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH2OH(57)+HO2(52)=CH2O(9)+HOOH(136)                 1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #103; RMG #396
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(52), O2(3); HO2(52), HOOH(136); 
+! Exact match found for rate rule [Orad_O_H;O_rad/NonDeO]
+! Euclidian distance = 0
+! family: H_Abstraction
+HO2(52)+HO2(52)=O2(3)+HOOH(136)                     1.750000e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #104; RMG #509
+! Template reaction: H_Abstraction
+! Flux pairs: HOOH(136), HO2(52); CH3O2(173), OCO(140); 
+! Estimated using template [H2O2;C_rad/H/NonDeO] for rate rule [H2O2;C_rad/H/O2]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+HOOH(136)+CH3O2(173)=HO2(52)+OCO(140)               5.700000e+01 3.040     1.210    
+
+! Reaction index: Chemkin #105; RMG #564
+! Template reaction: Disproportionation
+! Flux pairs: HO2(52), HOOH(136); CH3O(58), CH2O(9); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HO2(52)+CH3O(58)=CH2O(9)+HOOH(136)                  1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #106; RMG #974
+! Template reaction: Disproportionation
+! Flux pairs: HO2(52), HOOH(136); CH3O2(173), CH2O2(69); 
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+HO2(52)+CH3O2(173)=HOOH(136)+CH2O2(69)              2.420000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #107; RMG #372
+! Template reaction: HO2_Elimination_from_PeroxyRadical
+! Flux pairs: CHO4(146), CO2(4); CHO4(146), HO2(52); 
+! Exact match found for rate rule [R2OO_O]
+! Euclidian distance = 0
+! family: HO2_Elimination_from_PeroxyRadical
+CHO4(146)=CO2(4)+HO2(52)                            6.380000e+12 0.000     11.400   
+
+! Reaction index: Chemkin #108; RMG #2113
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(52), O2(3); CHO4(146), CH2O4(306); 
+! From training reaction 1558 used for Orad_O_H;OOC
+! Exact match found for rate rule [Orad_O_H;OOC]
+! Euclidian distance = 0
+! family: H_Abstraction
+! Ea raised from -8.2 to -8.2 kJ/mol.
+CHO4(146)+HO2(52)=O2(3)+CH2O4(306)                  1.200000e+11 0.000     -1.950   
+
+! Reaction index: Chemkin #109; RMG #2127
+! Template reaction: CO_Disproportionation
+! Flux pairs: CHO4(146), CH2O4(306); HCO(15), CO(7); 
+! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/NonDeO;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+CHO4(146)=CO(7)+CH2O4(306)                  1.240000e+23 -3.290    2.355    
+
+! Reaction index: Chemkin #110; RMG #2135
+! Template reaction: Disproportionation
+! Flux pairs: CHO4(146), CH2O4(306); CH2OH(57), CH2O(9); 
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CHO4(146)+CH2OH(57)=CH2O(9)+CH2O4(306)              1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #111; RMG #2137
+! Template reaction: Disproportionation
+! Flux pairs: CHO4(146), CH2O4(306); CH3O(58), CH2O(9); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CHO4(146)+CH3O(58)=CH2O(9)+CH2O4(306)               1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #112; RMG #2147
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); CHO4(146), CH2O4(306); 
+! From training reaction 1523 used for C_methane;OOC
+! Exact match found for rate rule [C_methane;OOC]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 4.0
+! family: H_Abstraction
+CH4(2)+CHO4(146)=CH3(10)+CH2O4(306)                 4.450000e-03 4.691     19.868   
+
+! Reaction index: Chemkin #113; RMG #2153
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); CH2O4(306), CHO4(146); 
+! From training reaction 1517 used for O/H/NonDeO;H_rad
+! Exact match found for rate rule [O/H/NonDeO;H_rad]
+! Euclidian distance = 0
+! family: H_Abstraction
+H(12)+CH2O4(306)=H2(6)+CHO4(146)                    5.400000e+10 0.000     1.860    
+
+! Reaction index: Chemkin #114; RMG #2157
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); CHO4(146), CH2O4(306); 
+! From training reaction 1530 used for C/H3/Cs\H3;OOC
+! Exact match found for rate rule [C/H3/Cs\H3;OOC]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C2H6(8)+CHO4(146)=C2H5(13)+CH2O4(306)               1.900000e+01 3.640     17.100   
+
+! Reaction index: Chemkin #115; RMG #2163
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); CHO4(146), CH2O4(306); 
+! Estimated using template [CO_pri;O_rad/NonDeO] for rate rule [CO_pri;OOC]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+CHO4(146)=HCO(15)+CH2O4(306)                4.120000e+04 2.500     10.210   
+
+! Reaction index: Chemkin #116; RMG #2181
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH2O4(306), CHO4(146); 
+! From training reaction 1520 used for O/H/NonDeO;O_pri_rad
+! Exact match found for rate rule [O/H/NonDeO;O_pri_rad]
+! Euclidian distance = 0
+! family: H_Abstraction
+! Ea raised from -1.8 to -1.8 kJ/mol.
+OH(17)+CH2O4(306)=H2O(5)+CHO4(146)                  1.100000e+12 0.000     -0.437   
+
+! Reaction index: Chemkin #117; RMG #2185
+! Template reaction: Disproportionation
+! Flux pairs: CHO4(146), CH2O4(306); C2H5(13), C2H4(18); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CHO4(146)=C2H4(18)+CH2O4(306)              3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #118; RMG #2193
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH2OH(57); CHO4(146), CH2O4(306); 
+! Estimated using average of templates [C_pri;OOC] + [C/H3/O;O_rad/NonDeO] for rate rule [C/H3/O;OOC]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3OH(14)+CHO4(146)=CH2OH(57)+CH2O4(306)            5.766281e-02 4.245     13.723   
+
+! Reaction index: Chemkin #119; RMG #2197
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(52), HOOH(136); CH2O4(306), CHO4(146); 
+! From training reaction 1522 used for O/H/NonDeO;O_rad/NonDeO
+! Exact match found for rate rule [O/H/NonDeO;O_rad/NonDeO]
+! Euclidian distance = 0
+! family: H_Abstraction
+! Ea raised from 45.2 to 45.3 kJ/mol to match endothermicity of reaction.
+HO2(52)+CH2O4(306)=HOOH(136)+CHO4(146)              4.100000e+04 2.500     10.820   
+
+! Reaction index: Chemkin #120; RMG #2212
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O(58), CH3OH(14); CH2O4(306), CHO4(146); 
+! Estimated using template [O/H/NonDeO;O_sec_rad] for rate rule [O/H/NonDeO;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3O(58)+CH2O4(306)=CH3OH(14)+CHO4(146)             4.331279e+00 3.368     9.952    
+
+! Reaction index: Chemkin #121; RMG #2224
+! Template reaction: H_Abstraction
+! Flux pairs: OCO(140), CH3O2(173); CHO4(146), CH2O4(306); 
+! Estimated using template [C/H2/NonDeO;O_rad/NonDeO] for rate rule [C/H2/O2;OOC]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CHO4(146)+OCO(140)=CH2O4(306)+CH3O2(173)            8.200000e+03 2.550     10.750   
+
+! Reaction index: Chemkin #122; RMG #2230
+! Template reaction: Disproportionation
+! Flux pairs: CHO4(146), CH2O4(306); CH3O2(173), CH2O2(69); 
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+CHO4(146)+CH3O2(173)=CH2O2(69)+CH2O4(306)           2.420000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #123; RMG #1845
+! Template reaction: 1,3_Insertion_ROR
+! Flux pairs: OCO(140), S(218); C2H4O(259), S(218); 
+! Estimated using an average for rate rule [Cd/H2_Cd/H/Nd;H_OCs]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: 1,3_Insertion_ROR
+OCO(140)+C2H4O(259)=S(218)                          4.960000e+01 2.930     43.900   
 
 END
 

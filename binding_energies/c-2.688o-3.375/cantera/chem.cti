@@ -8,8 +8,7 @@ ideal_gas(name='gas',
                      CH3(10)     C3H8(11)    H(12)       C2H5(13)
                      CH3OH(14)   HCO(15)     CH3CHO(16)  OH(17)
                      C2H4(18)    HO2(52)     CH2OH(57)   CH3O(58)
-                     CH2O2(69)   OCO(149)    CH3O2(165)  DME(172)
-                     COCO(176)   CH2O3(437)""",
+                     CH2O2(69)   OCO(149)    DME(172)    COCO(176)""",
           reactions='gas-*',
           transport='Mix',
           initial_state=state(temperature=300.0, pressure=OneAtm))
@@ -17,18 +16,15 @@ ideal_gas(name='gas',
 ideal_interface(name='surface1',
                 elements="H D T C Ci O Oi N Ne Ar He Si S Cl X",
                 species="""X(1)        HX(19)      OX(20)      OCX(21)
-                          CH3X(22)    HOX(23)     HOCXO(25)   CHX(26)
-                          CXHO(27)    CH4X(33)    CO2X(34)    H2OX(35)
-                          H2X(36)     COX(37)     C2H6X(39)   CH2OX(40)
-                          CH3OX(44)   CH3OX(45)   CH3OHX(46)  C2H4OX(49)
-                          C2H4X(51)   CH2X(134)   HO2X(135)   CH2OX(140)
-                          CHO2X(142)  SX(148)     SX(162)     SX(163)
-                          SX(171)     SX(173)     SX(174)     DMEX(178)
-                          CHOX(183)   SX(188)     SX(190)     SX(196)
-                          SX(238)     SX(253)     SX(266)     SX(291)
-                          SX(303)     SX(304)     SX(305)     SX(315)
-                          SX(342)     SX(375)     SX(399)     CHO3X(436)
-                          SX(460)     CHO4X(509)""",
+                          CH3X(22)    HOX(23)     CHX(26)     CXHO(27)
+                          CH4X(33)    H2OX(35)    COX(37)     C2H6X(39)
+                          CH2OX(40)   CH3OX(44)   CH3OX(45)   CH3OHX(46)
+                          CH2X(134)   HO2X(135)   CH2OX(140)  SX(148)
+                          SX(162)     SX(163)     SX(171)     SX(173)
+                          SX(174)     DMEX(178)   CHOX(183)   SX(188)
+                          SX(190)     SX(196)     SX(238)     SX(253)
+                          SX(266)     SX(291)     SX(303)     SX(304)
+                          SX(305)     SX(315)     SX(375)""",
                 site_density=2.9e-09,
                 phases="gas",
           reactions='surface1-*',
@@ -433,20 +429,6 @@ species(name=u'OCO(149)',
                                 diam=5.898,
                                 well_depth=436.691))
 
-species(name=u'CH3O2(165)',
-        atoms='C:1 H:3 O:2',
-        thermo=(NASA([100.00, 1261.91],
-                     [ 2.70939631E+00,  2.54993018E-02, -3.14581340E-05,
-                       1.89353734E-08, -4.23677504E-12, -2.66538216E+04,
-                       1.16233107E+01]),
-                NASA([1261.91, 5000.00],
-                     [ 8.67770786E+00,  2.77365604E-03,  8.08981041E-08,
-                      -1.17581162E-10,  1.15166167E-14, -2.78569752E+04,
-                      -1.73576109E+01])),
-        transport=gas_transport(geom='nonlinear',
-                                diam=5.898,
-                                well_depth=436.691))
-
 species(name=u'DME(172)',
         atoms='C:2 H:6 O:1',
         thermo=(NASA([100.00, 1170.38],
@@ -474,20 +456,6 @@ species(name=u'COCO(176)',
         transport=gas_transport(geom='nonlinear',
                                 diam=5.709,
                                 well_depth=402.716))
-
-species(name=u'CH2O3(437)',
-        atoms='C:1 H:2 O:3',
-        thermo=(NASA([100.00, 956.74],
-                     [ 2.98121452E+00,  1.14382895E-02,  2.77967873E-05,
-                      -4.94728374E-08,  2.08012185E-11, -7.51362689E+04,
-                       1.09455486E+01]),
-                NASA([956.74, 5000.00],
-                     [ 1.18951788E+01,  1.71631925E-03, -1.48101885E-07,
-                       9.26322009E-11, -1.38647279E-14, -7.81026627E+04,
-                      -3.82536000E+01])),
-        transport=gas_transport(geom='nonlinear',
-                                diam=5.425,
-                                well_depth=432.363))
 
 species(name=u'X(1)',
         atoms='X:1',
@@ -555,17 +523,6 @@ species(name=u'HOX(23)',
                        6.29126544E-10, -4.25422169E-14, -2.23994800E+04,
                       -2.94050019E+00])))
 
-species(name=u'HOCXO(25)',
-        atoms='C:1 H:1 O:2 X:1',
-        thermo=(NASA([100.00, 861.36],
-                     [-2.13600642E+00,  5.20695978E-02, -9.51709660E-05,
-                       8.33416942E-08, -2.76657552E-11, -4.19511480E+04,
-                       7.47684901E+00]),
-                NASA([861.36, 5000.00],
-                     [ 4.89698394E+00,  9.93879670E-03, -5.31007963E-06,
-                       1.02696366E-09, -6.98866312E-14, -4.28113958E+04,
-                      -2.33641900E+01])))
-
 species(name=u'CHX(26)',
         atoms='C:1 H:1 X:1',
         thermo=(NASA([100.00, 842.10],
@@ -599,17 +556,6 @@ species(name=u'CH4X(33)',
                        8.29173612E-10, -5.66300105E-14, -1.07264490E+04,
                        6.44433592E+00])))
 
-species(name=u'CO2X(34)',
-        atoms='C:1 O:2 X:1',
-        thermo=(NASA([100.00, 978.22],
-                     [ 3.28083821E+00,  2.50193291E-03,  8.08164577E-06,
-                      -1.20506695E-08,  4.66526645E-12, -4.94072680E+04,
-                      -1.54744756E+00]),
-                NASA([978.22, 5000.00],
-                     [ 4.67429780E+00,  2.60958835E-03, -9.85659769E-07,
-                       1.95706729E-10, -1.49830320E-14, -4.99576646E+04,
-                      -9.65919150E+00])))
-
 species(name=u'H2OX(35)',
         atoms='H:2 O:1 X:1',
         thermo=(NASA([100.00, 1130.25],
@@ -620,17 +566,6 @@ species(name=u'H2OX(35)',
                      [ 2.84324104E+00,  2.75110073E-03, -7.81040007E-07,
                        1.07245603E-10, -5.79408217E-15, -3.09650465E+04,
                       -1.63781111E+00])))
-
-species(name=u'H2X(36)',
-        atoms='H:2 X:1',
-        thermo=(NASA([100.00, 1959.08],
-                     [ 3.43536411E+00,  2.12710383E-04, -2.78625110E-07,
-                       3.40267219E-10, -7.76032129E-14, -2.03779777E+03,
-                      -1.14567018E+01]),
-                NASA([1959.08, 5000.00],
-                     [ 2.78816619E+00,  5.87640475E-04,  1.59010635E-07,
-                      -5.52739465E-11,  4.34311304E-15, -1.60258241E+03,
-                      -7.43555396E+00])))
 
 species(name=u'COX(37)',
         atoms='C:1 O:1 X:1',
@@ -698,28 +633,6 @@ species(name=u'CH3OHX(46)',
                        8.21206786E-10, -5.67063316E-14, -2.67276051E+04,
                        1.86233339E+00])))
 
-species(name=u'C2H4OX(49)',
-        atoms='C:2 H:4 O:1 X:1',
-        thermo=(NASA([100.00, 1028.81],
-                     [ 3.57992397E+00,  5.18983474E-03,  2.26897496E-05,
-                      -2.73742644E-08,  9.28479682E-12, -2.23761753E+04,
-                       1.42143119E+00]),
-                NASA([1028.81, 5000.00],
-                     [ 4.08563906E+00,  1.39061194E-02, -5.59370172E-06,
-                       1.04609264E-09, -7.38738518E-14, -2.30455724E+04,
-                      -3.78027026E+00])))
-
-species(name=u'C2H4X(51)',
-        atoms='C:2 H:4 X:1',
-        thermo=(NASA([100.00, 979.37],
-                     [ 3.97469045E+00, -4.75813325E-03,  4.16772624E-05,
-                      -4.51377676E-08,  1.54218287E-11,  3.90897062E+03,
-                      -3.92388472E+00]),
-                NASA([979.37, 5000.00],
-                     [ 3.55670229E+00,  1.10625819E-02, -4.17009559E-06,
-                       7.85564219E-10, -5.70042086E-14,  3.31398680E+03,
-                      -5.37163071E+00])))
-
 species(name=u'CH2X(134)',
         atoms='C:1 H:2 X:1',
         thermo=(NASA([100.00, 1030.99],
@@ -752,17 +665,6 @@ species(name=u'CH2OX(140)',
                      [-2.31808846E-01,  1.70327342E-02, -8.88561850E-06,
                        1.68890349E-09, -1.13216911E-13, -3.36550429E+02,
                        6.45615588E+00])))
-
-species(name=u'CHO2X(142)',
-        atoms='C:1 H:1 O:2 X:1',
-        thermo=(NASA([100.00, 951.47],
-                     [ 4.11475324E+00, -1.10564982E-02,  5.80626305E-05,
-                      -6.56838133E-08,  2.37098045E-11, -6.02882170E+04,
-                      -6.51745845E+00]),
-                NASA([951.47, 5000.00],
-                     [ 5.65345399E+00,  4.53546573E-03, -1.29738458E-06,
-                       2.76911129E-10, -2.44872632E-14, -6.15795859E+04,
-                      -1.91117538E+01])))
 
 species(name=u'SX(148)',
         atoms='C:1 H:3 O:2 X:1',
@@ -973,17 +875,6 @@ species(name=u'SX(315)',
                       -3.52963291E-10,  2.08689218E-14, -5.19026014E+04,
                       -6.35351414E+01])))
 
-species(name=u'SX(342)',
-        atoms='C:2 H:5 O:3 X:1',
-        thermo=(NASA([100.00, 924.62],
-                     [ 2.37999883E+00,  9.66424378E-03,  9.37119539E-05,
-                      -1.43422298E-07,  5.97511825E-11, -8.61954953E+04,
-                       4.63906431E+00]),
-                NASA([924.62, 5000.00],
-                     [ 2.06129015E+01, -2.30059002E-03,  4.57167988E-06,
-                      -8.84320577E-10,  4.99641579E-14, -9.24274678E+04,
-                      -9.73624202E+01])))
-
 species(name=u'SX(375)',
         atoms='C:2 H:5 O:3 X:1',
         thermo=(NASA([100.00, 1908.33],
@@ -994,50 +885,6 @@ species(name=u'SX(375)',
                      [ 9.18374046E+00,  2.50855577E-02, -1.38654284E-05,
                        2.61383972E-09, -1.71390589E-13, -9.23439896E+04,
                       -3.81812649E+01])))
-
-species(name=u'SX(399)',
-        atoms='C:2 H:5 O:4 X:1',
-        thermo=(NASA([100.00, 787.13],
-                     [ 2.29602814E+00,  4.36251244E-02, -5.81575809E-05,
-                       5.98068610E-08, -2.52207685E-11, -8.64216775E+04,
-                       7.86561886E+00]),
-                NASA([787.13, 5000.00],
-                     [ 9.75431028E-01,  3.64801614E-02, -1.81371387E-05,
-                       3.54761681E-09, -2.49416391E-13, -8.57845429E+04,
-                       1.66472381E+01])))
-
-species(name=u'CHO3X(436)',
-        atoms='C:1 H:1 O:3 X:1',
-        thermo=(NASA([100.00, 946.62],
-                     [ 3.82822297E+00, -9.30173653E-03,  7.20667140E-05,
-                      -8.82460436E-08,  3.32068786E-11, -8.94548280E+04,
-                      -3.72245106E+00]),
-                NASA([946.62, 5000.00],
-                     [ 8.92588517E+00,  2.72266847E-03, -1.73748900E-07,
-                       8.75950790E-11, -1.43324705E-14, -9.19237848E+04,
-                      -3.59793508E+01])))
-
-species(name=u'SX(460)',
-        atoms='C:1 H:2 O:3 X:1',
-        thermo=(NASA([100.00, 956.74],
-                     [ 2.98121452E+00,  1.14382895E-02,  2.77967873E-05,
-                      -4.94728374E-08,  2.08012185E-11, -7.61427068E+04,
-                       3.39726412E+00]),
-                NASA([956.74, 5000.00],
-                     [ 1.18951788E+01,  1.71631925E-03, -1.48101885E-07,
-                       9.26322009E-11, -1.38647279E-14, -7.91091007E+04,
-                      -4.58018845E+01])))
-
-species(name=u'CHO4X(509)',
-        atoms='C:1 H:1 O:4 X:1',
-        thermo=(NASA([100.00, 928.82],
-                     [ 3.09446884E+00, -2.17104444E-03,  9.05836126E-05,
-                      -1.28181318E-07,  5.20211521E-11, -9.56164245E+04,
-                       1.42448127E+00]),
-                NASA([928.82, 5000.00],
-                     [ 1.71297248E+01, -5.85888946E-03,  4.88132611E-06,
-                      -8.79465965E-10,  4.91132792E-14, -1.00671825E+05,
-                      -7.84300324E+01])))
 
 #-------------------------------------------------------------------------------
 # Reaction data
@@ -1310,90 +1157,6 @@ reaction('CH2OH(57) + CH3O(58) <=> CH2O(9) + CH3OH(14)', [8.670000e+12, 0.0, 0.0
 reaction('CH2OH(57) + CH3O(58) <=> CH2O(9) + CH3OH(14)', [2.410000e+13, 0.0, 0.0],
          id='gas-66',
          options='duplicate')
-
-# Reaction 67
-reaction('HO2(52) + CH3O2(165) <=> O2(3) + OCO(149)', [3.379463e-03, 4.165, 2.503],
-         id='gas-67')
-
-# Reaction 68
-reaction('HCO(15) + CH3O2(165) <=> CO(7) + OCO(149)', [1.200000e+14, 0.0, 0.0],
-         id='gas-68')
-
-# Reaction 69
-reaction('CH2OH(57) + CH3O2(165) <=> CH2O(9) + OCO(149)', [2.350000e+12, 0.0, 0.0],
-         id='gas-69')
-
-# Reaction 70
-reaction('CH3O(58) + CH3O2(165) <=> CH2O(9) + OCO(149)', [6.128317e+12, -0.311, 0.0],
-         id='gas-70')
-
-# Reaction 71
-reaction('CH3(10) + OCO(149) <=> CH4(2) + CH3O2(165)', [2.480000e-03, 4.44, 4.5],
-         id='gas-71')
-
-# Reaction 72
-reaction('H(12) + OCO(149) <=> H2(6) + CH3O2(165)', [8.800000e+03, 2.68, 2.913],
-         id='gas-72')
-
-# Reaction 73
-reaction('C2H5(13) + OCO(149) <=> C2H6(8) + CH3O2(165)', [8.500000e-06, 5.01, 5.01],
-         id='gas-73')
-
-# Reaction 74
-reaction('CH2O(9) + CH3O2(165) <=> HCO(15) + OCO(149)', [1.080000e+11, 0.0, 6.96],
-         id='gas-74')
-
-# Reaction 75
-reaction('OH(17) + OCO(149) <=> H2O(5) + CH3O2(165)', [4.310000e+04, 2.6, -1.738],
-         id='gas-75')
-
-# Reaction 76
-reaction('C2H5(13) + CH3O2(165) <=> C2H4(18) + OCO(149)', [2.423978e+12, -0.233, 0.0],
-         id='gas-76')
-
-# Reaction 77
-reaction('CH3OH(14) + CH3O2(165) <=> CH2OH(57) + OCO(149)', [1.172309e-05, 5.02, 3.65],
-         id='gas-77')
-
-# Reaction 78
-reaction('CH3(10) + CH3O2(165) <=> CH4(2) + CH2O2(69)', [1.698000e+14, 0.0, 0.0],
-         id='gas-78')
-
-# Reaction 79
-reaction('OH(17) + CH3O2(165) <=> H2O(5) + CH2O2(69)', [4.820000e+13, 0.0, 0.0],
-         id='gas-79')
-
-# Reaction 80
-reaction('H(12) + CH3O2(165) <=> H2(6) + CH2O2(69)', [4.000000e+13, 0.0, 0.0],
-         id='gas-80')
-
-# Reaction 81
-reaction('C2H5(13) + CH3O2(165) <=> C2H6(8) + CH2O2(69)', [4.820000e+12, 0.0, 0.0],
-         id='gas-81')
-
-# Reaction 82
-reaction('HCO(15) + CH3O2(165) <=> CH2O(9) + CH2O2(69)', [3.620000e+14, 0.0, 0.0],
-         id='gas-82')
-
-# Reaction 83
-reaction('CH3O(58) + CH3O2(165) <=> CH3OH(14) + CH2O2(69)', [4.820000e+13, 0.0, 0.0],
-         id='gas-83')
-
-# Reaction 84
-reaction('CH2OH(57) + CH3O2(165) <=> CH3OH(14) + CH2O2(69)', [9.640000e+12, 0.0, 0.0],
-         id='gas-84')
-
-# Reaction 85
-reaction('O2(3) + CH3O2(165) <=> HO2(52) + CH2O2(69)', [2.288360e+13, 0.0, 0.0],
-         id='gas-85')
-
-# Reaction 86
-reaction('CH3O2(165) + CH3O2(165) <=> CH2O2(69) + OCO(149)', [4.700000e+12, 0.0, 0.0],
-         id='gas-86')
-
-# Reaction 87
-reaction('CH3O(58) + OCO(149) <=> CH3OH(14) + CH3O2(165)', [8.200000e+03, 2.55, 10.75],
-         id='gas-87')
 
 # surface1 Reaction 1
 surface_reaction('X(1) + CH4(2) <=> CH4X(33)', stick(1.000000e-01, 0.0, 0.0),
@@ -1790,11 +1553,11 @@ surface_reaction('CXHO(27) + SX(174) <=> OCX(21) + SX(173)', [5.000000e+21, 0.0,
                  id='surface1-96')
 
 # surface1 Reaction 97
-surface_reaction('CH3OX(45) + SX(174) <=> SX(173) + CH2OX(140)', [1.000000e+22, 0.0, 9.56],
+surface_reaction('CH3OX(45) + SX(174) <=> CH2OX(140) + SX(173)', [1.000000e+22, 0.0, 9.56],
                  id='surface1-97')
 
 # surface1 Reaction 98
-surface_reaction('SX(174) + CH2OX(140) <=> CHOX(183) + SX(173)', [5.000000e+21, 0.0, 9.56],
+surface_reaction('CH2OX(140) + SX(174) <=> CHOX(183) + SX(173)', [5.000000e+21, 0.0, 9.56],
                  id='surface1-98')
 
 # surface1 Reaction 99
@@ -1928,11 +1691,11 @@ surface_reaction('X(1) + SX(188) <=> CH3OX(44) + CH2OX(140)', [1.000000e+21, 0.0
                  id='surface1-129')
 
 # surface1 Reaction 130
-surface_reaction('SX(171) + CH2OX(140) <=> OX(20) + SX(188)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2OX(140) + SX(171) <=> OX(20) + SX(188)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-130')
 
 # surface1 Reaction 131
-surface_reaction('CH2X(134) + SX(188) <=> SX(173) + CH2OX(140)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2X(134) + SX(188) <=> CH2OX(140) + SX(173)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-131')
 
 # surface1 Reaction 132
@@ -1948,12 +1711,12 @@ surface_reaction('CH3OX(45) + SX(174) <=> CH2X(134) + SX(188)', [1.000000e+19, 0
                  id='surface1-134')
 
 # surface1 Reaction 135
-surface_reaction('SX(174) + CH2OX(140) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2OX(140) + SX(174) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-135',
                  options='duplicate')
 
 # surface1 Reaction 136
-surface_reaction('SX(174) + CH2OX(140) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2OX(140) + SX(174) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-136',
                  options='duplicate')
 
@@ -1970,12 +1733,12 @@ surface_reaction('X(1) + X(1) + COCO(176) <=> HX(19) + SX(188)', stick(2.000000e
                  id='surface1-139')
 
 # surface1 Reaction 140
-surface_reaction('SX(174) + CH2OX(140) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2OX(140) + SX(174) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-140',
                  options='duplicate')
 
 # surface1 Reaction 141
-surface_reaction('SX(174) + CH2OX(140) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
+surface_reaction('CH2OX(140) + SX(174) <=> CHX(26) + SX(188)', [1.000000e+19, 0.0, 19.12],
                  id='surface1-141',
                  options='duplicate')
 
@@ -1986,99 +1749,3 @@ surface_reaction('X(1) + SX(375) <=> OX(20) + SX(188)', [1.000000e+21, 0.0, 57.1
 # surface1 Reaction 143
 surface_reaction('X(1) + SX(291) <=> OX(20) + SX(266)', [1.000000e+21, 0.0, 21.865],
                  id='surface1-143')
-
-# surface1 Reaction 144
-surface_reaction('X(1) + SX(342) <=> OX(20) + SX(304)', [1.000000e+21, 0.0, 58.722],
-                 id='surface1-144')
-
-# surface1 Reaction 145
-surface_reaction('X(1) + HOCXO(25) <=> X(1) + CO2(4) + HX(19)', [3.730000e+20, 0.475, 8.031],
-                 id='surface1-145')
-
-# surface1 Reaction 146
-surface_reaction('CXHO(27) + HOX(23) <=> HX(19) + HOCXO(25)', [2.280000e+20, 0.263, 3.8],
-                 id='surface1-146')
-
-# surface1 Reaction 147
-surface_reaction('X(1) + HOCXO(25) <=> OCX(21) + HOX(23)', [1.460000e+24, -0.213, 18.14],
-                 id='surface1-147')
-
-# surface1 Reaction 148
-surface_reaction('OX(20) + HOCXO(25) <=> HO2X(135) + OCX(21)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-148')
-
-# surface1 Reaction 149
-surface_reaction('HOCXO(25) + CH2X(134) <=> OCX(21) + CH3OX(45)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-149')
-
-# surface1 Reaction 150
-surface_reaction('CHX(26) + HOCXO(25) <=> OCX(21) + CH2OX(140)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-150')
-
-# surface1 Reaction 151
-surface_reaction('X(1) + X(1) + CH2O2(69) <=> HX(19) + HOCXO(25)', stick(1.000000e-02, 0.0, 10.0),
-                 id='surface1-151')
-
-# surface1 Reaction 152
-surface_reaction('HOCXO(25) + CHOX(183) <=> OCX(21) + SX(190)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-152')
-
-# surface1 Reaction 153
-surface_reaction('HOCXO(25) + CH2OX(140) <=> OCX(21) + SX(162)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-153')
-
-# surface1 Reaction 154
-surface_reaction('HOCXO(25) + SX(174) <=> OCX(21) + SX(188)', [1.000000e+19, 0.0, 19.12],
-                 id='surface1-154')
-
-# surface1 Reaction 155
-surface_reaction('X(1) + CO2(4) <=> CO2X(34)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-155')
-
-# surface1 Reaction 156
-surface_reaction('X(1) + X(1) + CH2O3(437) <=> HOX(23) + HOCXO(25)', stick(4.000000e-02, 0.0, 21.321),
-                 id='surface1-156')
-
-# surface1 Reaction 157
-surface_reaction('X(1) + CH2O3(437) <=> SX(460)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-157')
-
-# surface1 Reaction 158
-surface_reaction('X(1) + CHO2X(142) <=> CXHO(27) + OX(20)', [1.000000e+21, 0.0, 101.926],
-                 id='surface1-158')
-
-# surface1 Reaction 159
-surface_reaction('X(1) + X(1) + CH2O2(69) <=> HX(19) + CHO2X(142)', stick(1.000000e-02, 0.0, 10.0),
-                 id='surface1-159')
-
-# surface1 Reaction 160
-surface_reaction('X(1) + CH3O2(165) <=> SX(162)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-160')
-
-# surface1 Reaction 161
-surface_reaction('X(1) + CHO3X(436) <=> OX(20) + HOCXO(25)', [1.000000e+21, 0.0, 100.465],
-                 id='surface1-161')
-
-# surface1 Reaction 162
-surface_reaction('X(1) + X(1) + CH2O3(437) <=> HX(19) + CHO3X(436)', stick(2.000000e-02, 0.0, 10.0),
-                 id='surface1-162')
-
-# surface1 Reaction 163
-surface_reaction('X(1) + H2(6) <=> H2X(36)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-163')
-
-# surface1 Reaction 164
-surface_reaction('X(1) + CHO4X(509) <=> OX(20) + CHO3X(436)', [1.000000e+21, 0.0, 31.498],
-                 id='surface1-164')
-
-# surface1 Reaction 165
-surface_reaction('X(1) + CH3CHO(16) <=> C2H4OX(49)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-165')
-
-# surface1 Reaction 166
-surface_reaction('X(1) + SX(399) <=> OX(20) + SX(375)', [1.000000e+21, 0.0, 21.726],
-                 id='surface1-166')
-
-# surface1 Reaction 167
-surface_reaction('X(1) + C2H4(18) <=> C2H4X(51)', stick(1.000000e-01, 0.0, 0.0),
-                 id='surface1-167')

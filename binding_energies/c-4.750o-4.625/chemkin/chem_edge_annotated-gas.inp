@@ -146,6 +146,12 @@ SPECIES
     S(185)              ! O=COC(O)O(185)
     S(190)              ! OC(O)OC(O)O(190)
     S(191)              ! OC(O)OOC(O)O(191)
+    CH2O3(193)          ! O=C(O)O(193)
+    S(196)              ! O=CC(=O)O(196)
+    CH2O4(198)          ! O=C(O)OO(198)
+    S(202)              ! O=C(O)C(O)O(202)
+    S(203)              ! O=C(O)OC(O)O(203)
+    S(204)              ! O=C(O)C(=O)O(204)
 END
 
 
@@ -544,7 +550,7 @@ C3H4O3(89)              H   4C   3O   3     G   100.000  5000.000 1839.50      1
  6.91435768E-09-8.42716453E-13-6.47086213E+04 1.98283466E+01                   4
 
 ! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-CsH) + group(Cds-OdCsOs) + group(Cs-CsHHH) + group(Cs-(Cds-O2d)CsOsH) +
-! radical(CCOJ) + radical(C=OCOJ)
+! radical(C=OCOJ) + radical(CCOJ)
 C3H4O3(90)              H   4C   3O   3     G   100.000  5000.000 1554.39      1
  9.86082729E+00 1.97099047E-02-8.94765411E-06 1.66284399E-09-1.12407689E-13    2
 -2.35238849E+04-1.98671350E+01 2.44195256E+00 3.13890949E-02-1.30653196E-05    3
@@ -950,6 +956,43 @@ S(191)                  H   6C   2O   6     G   100.000  5000.000  839.00      1
  2.98494046E+00 4.68438340E-02-2.55148466E-05 5.04383782E-09-3.51284096E-13    2
 -1.08492194E+05 2.81788915E+01 2.54170181E-01 9.99448539E-02-1.92110385E-04    3
  1.94359714E-07-7.37287761E-11-1.09444709E+05 3.24666935E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-(Cds-O2d)H) + group(Cds-OdOsOs)
+CH2O3(193)              H   2C   1O   3     G   100.000  5000.000  956.74      1
+ 1.18951636E+01 1.71634542E-03-1.48117122E-07 9.26358257E-11-1.38650302E-14    2
+-7.81026565E+04-3.82535148E+01 2.98121897E+00 1.14382351E-02 2.77969862E-05    3
+-4.94731071E-08 2.08013384E-11-7.51362691E+04 1.09455328E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(Cds-O2d(Cds-O2d)H) + group(Cds-O2d(Cds-O2d)O2s)
+S(196)                  H   2C   2O   3     G   100.000  5000.000 2089.51      1
+ 1.14244704E+01 9.07950778E-03-4.64401931E-06 8.84596528E-10-5.97008719E-14    2
+-6.15096087E+04-3.41451151E+01 2.79802481E+00 2.55929771E-02-1.64983224E-05    3
+ 4.66668088E-09-5.12199912E-13-5.79045243E+04 1.38297624E+01                   4
+
+! Thermo group additivity estimation: group(O2s-OsH) + group(O2s-(Cds-O2d)H) + group(O2s-O2s(Cds-O2d)) + group(Cds-OdOsOs)
+CH2O4(198)              H   2C   1O   4     G   100.000  5000.000  939.74      1
+ 1.86691072E+01-4.02462172E-03 3.16548528E-06-5.25889445E-10 2.55677066E-14    2
+-8.04673151E+04-7.24279531E+01 2.27255485E+00 1.99844484E-02 3.79210131E-05    3
+-7.70254936E-08 3.41689233E-11-7.53640675E+04 1.64127915E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-CsH) + group(O2s-CsH) + group(Cds-OdCsOs) + group(Cs-CsOsOsH)
+S(202)                  H   4C   2O   4     G   100.000  5000.000 1286.93      1
+ 1.00367660E+01 1.79197584E-02-8.15211061E-06 1.56480353E-09-1.10043639E-13    2
+-9.86292060E+04-1.90826031E+01 2.02427580E+00 4.28237167E-02-3.71790013E-05    3
+ 1.66014205E-08-3.03104004E-12-9.65668833E+04 2.15943350E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-CsH) + group(O2s-CsH) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-
+! OsOsOsH)
+S(203)                  H   4C   2O   5     G   100.000  5000.000 1119.12      1
+ 9.50391422E+00 2.45846527E-02-1.28263934E-05 2.60933328E-09-1.89419518E-13    2
+-1.20607288E+05-1.44482593E+01 1.83639539E+00 5.19902605E-02-4.95593001E-05    3
+ 2.44914148E-08-5.07766759E-12-1.18891118E+05 2.34059877E+01                   4
+
+! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-(Cds-O2d)H) + group(Cds-O2d(Cds-O2d)O2s) + group(Cds-O2d(Cds-O2d)O2s)
+S(204)                  H   2C   2O   4     G   100.000  5000.000 1398.05      1
+ 8.53133113E+00 1.88476391E-02-1.01636131E-05 2.06617221E-09-1.48773327E-13    2
+-9.07306966E+04-1.67010752E+01 2.55078923E+00 3.59584888E-02-2.85219730E-05    3
+ 1.08203158E-08-1.71417113E-12-8.90584532E+04 1.41556189E+01                   4
 
 END
 
@@ -3406,7 +3449,7 @@ CH3O3(150)=CH2O(9)+HO2(52)                          6.380000e+12 0.000     16.02
 ! Euclidian distance = 1.41421356237
 ! Multiplied by reaction path degeneracy 2.0
 ! family: H_Abstraction
-HOOH(136)+CH2(T)(29)=CH3(10)+HO2(52)                1.740000e+13 0.000     4.750    
+CH2(T)(29)+HOOH(136)=CH3(10)+HO2(52)                1.740000e+13 0.000     4.750    
 
 ! Reaction index: Chemkin #289; RMG #372
 ! Template reaction: H_Abstraction

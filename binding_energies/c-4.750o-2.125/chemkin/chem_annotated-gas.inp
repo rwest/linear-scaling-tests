@@ -44,14 +44,11 @@ SPECIES
     CH2OH(57)           ! CH2OH(57)
     CH3O(58)            ! CH3O(58)
     CH2O2(69)           ! formic_acid(69)
-    C2H6O(98)           ! ethanol(98)
     HOOH(136)           ! HOOH(136)
     OCO(140)            ! OCO(140)
-    OCCO(143)           ! OCCO(143)
     CH3O2(146)          ! HOCH2O(146)
     CH3O2(147)          ! O[CH]O(147)
     CH2O3(196)          ! O=C(O)O(196)
-    S(201)              ! O=C(O)OCO(201)
     CHO3(244)           ! [O]C(=O)O(244)
 END
 
@@ -222,12 +219,6 @@ CH2O2(69)               H   2C   1O   2     G   100.000  5000.000  993.73      1
 -4.79890024E+04-5.43104436E+00 3.76240519E+00-9.43849897E-04 3.38778464E-05    3
 -4.04983181E-08 1.43986430E-11-4.68212102E+04 7.63276247E+00                   4
 
-! Thermo library: DFT_QCI_thermo
-C2H6O(98)               H   6C   2O   1     G   100.000  5000.000  984.00      1
- 5.68494081E+00 1.61313303E-02-5.96365813E-06 1.08897225E-09-7.69621044E-14    2
--3.12258208E+04-4.44488784E+00 3.24025972E+00 1.04859555E-02 2.63967779E-05    3
--3.69293677E-08 1.36710645E-11-2.99902844E+04 1.11433012E+01                   4
-
 ! Thermo library: thermo_DFT_CCSDTF12_BAC
 HOOH(136)               H   2O   2          G   100.000  5000.000 1005.77      1
  4.14709440E+00 4.72699093E-03-1.79322910E-06 3.26126082E-10-2.27314571E-14    2
@@ -239,12 +230,6 @@ OCO(140)                H   4C   1O   2     G   100.000  5000.000  894.10      1
  1.68605497E+01-9.64319453E-03 7.94866031E-06-1.62836085E-09 1.09847823E-13    2
 -5.36836221E+04-6.47796358E+01 2.88385292E+00 7.57480349E-03 5.50794101E-05    3
 -9.34513271E-08 4.16333127E-11-4.93732325E+04 1.12133157E+01                   4
-
-! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-CsH) + group(Cs-CsOsHH) + group(Cs-CsOsHH)
-OCCO(143)               H   6C   2O   2     G   100.000  5000.000 1023.85      1
- 6.37170231E+00 1.94715400E-02-7.88403443E-06 1.42795155E-09-9.72295791E-14    2
--5.08289916E+04-3.61772327E+00 2.45006273E+00 3.47926417E-02-3.03302734E-05    3
- 1.60434843E-08-3.66598665E-12-5.00259550E+04 1.53943660E+01                   4
 
 ! Thermo library: DFT_QCI_thermo
 CH3O2(146)              H   3C   1O   2     G   100.000  5000.000  944.18      1
@@ -263,12 +248,6 @@ CH2O3(196)              H   2C   1O   3     G   100.000  5000.000  956.74      1
  1.18951788E+01 1.71631925E-03-1.48101885E-07 9.26322009E-11-1.38647279E-14    2
 -7.81026627E+04-3.82536000E+01 2.98121452E+00 1.14382895E-02 2.77967873E-05    3
 -4.94728374E-08 2.08012185E-11-7.51362689E+04 1.09455486E+01                   4
-
-! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-CsH) + group(O2s-Cs(Cds-O2d)) + group(Cds-OdOsOs) + group(Cs-OsOsHH)
-S(201)                  H   4C   2O   4     G   100.000  5000.000  925.24      1
- 2.40063328E+01-6.07436527E-03 5.60294938E-06-1.05843397E-09 6.27817910E-14    2
--1.02758129E+05-9.91421517E+01 1.52547831E+00 3.12636937E-02 4.21007808E-05    3
--9.72695911E-08 4.49495144E-11-9.60362380E+04 2.14123932E+01                   4
 
 ! Thermo group additivity estimation: group(O2s-(Cds-O2d)H) + group(O2s-(Cds-O2d)H) + group(Cds-OdOsOs) + radical(OC=OOJ)
 CHO3(244)               H   1C   1O   3     G   100.000  5000.000  968.19      1
@@ -2143,15 +2122,6 @@ DUPLICATE
 ! family: Disproportionation
 HOCO(53)+CHO2(54)=CO2(4)+CH2O2(69)                  1.810000e+14 0.000     0.000    
 DUPLICATE
-
-! Reaction index: Chemkin #214; RMG #155
-! Template reaction: 1,3_Insertion_ROR
-! Flux pairs: H2O(5), C2H6O(98); C2H4(18), C2H6O(98); 
-! Exact match found for rate rule [Cd/unsub_Cd/unsub;H_OH]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 4.0
-! family: 1,3_Insertion_ROR
-H2O(5)+C2H4(18)=C2H6O(98)                           5.880000e+02 2.940     53.100   
 
 END
 
