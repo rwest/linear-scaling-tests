@@ -134,11 +134,11 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(1000,'K'),
+    temperature=(800,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
         "CH4": 0.1,
-        "CO2": 0.1,
+        "O2": 0.1,
         "N2": 0.8,
     },
     initialSurfaceCoverages={
