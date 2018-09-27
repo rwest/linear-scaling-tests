@@ -2,7 +2,7 @@
 ! Name            Index    epsilon/k_B sigma     mu        alpha     Zrot      Source   
 N2                  1      97.530     3.621     0.000     1.760     4.000    ! PrimaryTransportLibrary
 Ar                  0     136.501     3.330     0.000     0.000     0.000    ! GRI-Mech
-He                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
+He                  0      10.200     2.576     0.000     0.000     0.000    ! NOx2018
 Ne                  0     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 ! X(1)                None
 CH4(2)              2     141.400     3.746     0.000     2.600    13.000    ! GRI-Mech
@@ -22,24 +22,38 @@ HCO(15)             2     498.002     3.590     0.000     0.000     0.000    ! G
 CH3CHO(16)          2     436.001     3.970     0.000     0.000     2.000    ! GRI-Mech
 OH(17)              1      80.000     2.750     0.000     0.000     0.000    ! GRI-Mech
 C2H4(18)            2     280.801     3.971     0.000     0.000     1.500    ! GRI-Mech
-! CH4X(28)            None
-! CO2X(29)            None
-! HX(19)              None
+! CH4X(33)            None
+! CO2X(34)            None
 ! CH3X(22)            None
-! OX(20)              None
+! HX(19)              None
 ! OCX(21)             None
-! CH2X(58)            None
+! OX(20)              None
+! CH2X(134)           None
 ! CHX(26)             None
-! COX(32)             None
-! H2X(31)             None
-! C2H6X(34)           None
+! COX(37)             None
+! H2X(36)             None
+! C2H6X(39)           None
 ! CX(24)              None
+! C2H3X(136)          None
 ! HOX(23)             None
-! C2H5X(33)           None
-! C3H8X(38)           None
-CH2(48)             2     144.001     3.800     0.000     0.000     0.000    ! GRI-Mech
+! C2H5X(38)           None
+! C2H4X(51)           None
+! C2H3X(50)           None
+CH2(T)(29)          2     144.001     3.800     0.000     0.000     0.000    ! GRI-Mech
+! C3H8X(43)           None
+C3H6(150)           2     266.801     4.982     0.000     0.000     1.000    ! GRI-Mech
+! C3H6X(167)          None
+! C3H5X(165)          None
 ! HOCXO(25)           None
-! H2OX(30)            None
-! CH4OX(41)           None
-! CXHO(27)            None
-! C2H4OX(44)          None
+! C3H5X(166)          None
+! C3H5X(153)          None
+allyl(170)          2     260.001     4.850     0.000     0.000     1.000    ! GRI-Mech
+C4H8(212)           2     359.053     5.289     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=466.30 K, Pc=45.78 bar (from Joback method)
+! C4H8X(300)          None
+! H2OX(35)            None
+! C4H7X(299)          None
+! C4H7X(215)          None
+C4H7(303)           2     348.453     5.213     0.000     0.000     0.000    ! Epsilon & sigma estimated with Tc=452.54 K, Pc=46.4 bar (from Joback method)
+! C4H7X(360)          None
+C4H8(158)           2     357.002     5.176     0.000     0.000     1.000    ! GRI-Mech
+! C4H8X(467)          None
