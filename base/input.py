@@ -4,12 +4,12 @@ database(
     reactionLibraries = [('Deutschmann_Ni', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies ='default',
+    kineticsFamilies =['surface','default'],
     kineticsEstimator = 'rate rules',
     bindingEnergies = { # default values for Ni(111)
-                       'C':(-5.997, 'eV/molecule'),
-                       'H':(-2.778, 'eV/molecule'), #UNKNOWN!
-                       'O':(-4.485, 'eV/molecule'),
+                       'C':(-6.364, 'eV/molecule'),
+                       'H':(-2.778, 'eV/molecule'),
+                       'O':(-3.481, 'eV/molecule'),
                        }
 )
 
