@@ -38,6 +38,41 @@ SPECIES
     CH3CHO(16)          ! CH3CHO(16)
     OH(17)              ! OH(17)
     C2H4(18)            ! C2H4(18)
+    C3H7(32)            ! npropyl(32)
+    CH3O(35)            ! CH3O(35)
+    CH2OH(36)           ! CH2OH(36)
+    vinoxy(38)          ! vinoxy(38)
+    acetyl(39)          ! acetyl(39)
+    C2H4O(41)           ! ethenol(41)
+    O(T)(42)            ! O(T)(42)
+    C2H4(44)            ! CHCH3(S)(44)
+    HO2(63)             ! HO2(63)
+    C2H5O(69)           ! CH3CHOH(69)
+    C2H5O(70)           ! CH3CH2O(70)
+    CH3OO(75)           ! CH3OO(75)
+    C2H5O2(76)          ! CH3CH2OO(76)
+    CHO3(77)            ! formylperoxy(77)
+    C2H2O3(89)          ! [O]CC([O])=O(89)
+    C2H5O(138)          ! CH3OCH2(138)
+    CH3O2(149)          ! [CH2]OO(149)
+    C3H7O(154)          ! CH3CHOCH3(154)
+    C3H7O(155)          ! ipropoxy(155)
+    OO(175)             ! OO(175)
+    CH4O2(183)          ! CH3OOH(183)
+    S(189)              ! vinoxyperoxy(189)
+    S(193)              ! CH3OOCH3(193)
+    CH2O(204)           ! [CH2][O](204)
+    S(221)              ! QOOH_1(221)
+    CH3O3(230)          ! HOCH2OO(230)
+    S(273)              ! [CH2]OCC=O(273)
+    S(312)              ! OCHCH2CH2O(312)
+    S(466)              ! C[CH]OCC=O(466)
+    C2H2O(489)          ! ketene(489)
+    C2H3O(515)          ! oxiranyl(515)
+    S(564)              ! CC([O])CC=O(564)
+    S(1107)             ! [CH2]C(=O)O[O](1107)
+    S(1252)             ! O=C1COO1(1252)
+    S(2009)             ! npropylperoxy(2009)
 END
 
 
@@ -171,80 +206,379 @@ C2H4(18)                H   4C   2          G   100.000  5000.000  979.36      1
  4.32046489E+03 2.17719479E+00 3.97471606E+00-4.75844285E-03 4.16783770E-05    3
 -4.51392516E-08 1.54224761E-11 4.91540746E+03 3.62430844E+00                   4
 
+! Thermo library: DFT_QCI_thermo
+C3H7(32)                H   7C   3          G   100.000  5000.000  984.46      1
+ 6.16543461E+00 1.84494574E-02-6.79029262E-06 1.23049161E-09-8.63865961E-14    2
+ 9.09505987E+03-6.67606845E+00 3.02815489E+00 1.47023398E-02 2.40509586E-05    3
+-3.66738136E-08 1.38611294E-11 1.05120547E+04 1.24698738E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH3O(35)                H   3C   1O   1     G   100.000  5000.000  985.45      1
+ 3.74488672E+00 8.52633291E-03-3.28794143E-06 6.23972749E-10-4.53282945E-14    2
+ 7.13067763E+02 3.06640880E+00 3.95613787E+00-3.06320855E-03 3.06887593E-05    3
+-3.34128285E-08 1.13930971E-11 1.19253580E+03 4.69432285E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH2OH(36)               H   3C   1O   1     G   100.000  5000.000 1015.48      1
+ 4.77201169E+00 6.78473588E-03-2.60442931E-06 4.77565512E-10-3.34609211E-14    2
+-3.81561325E+03-2.42265753E-01 3.61905444E+00 6.28695698E-03 5.57453382E-06    3
+-9.77872604E-09 3.69458574E-12-3.32162396E+03 6.61713040E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+vinoxy(38)              H   3C   2O   1     G   100.000  5000.000  956.36      1
+ 6.48035240E+00 7.73058389E-03-2.53965028E-06 4.69285612E-10-3.50525430E-14    2
+-4.73699257E+02-9.05321524E+00 3.51489386E+00 4.49258142E-03 2.70713014E-05    3
+-3.72733599E-08 1.43015757E-11 8.08794980E+02 8.86071413E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+acetyl(39)              H   3C   2O   1     G   100.000  5000.000 1011.57      1
+ 4.39399998E+00 1.04823697E-02-4.12727295E-06 7.69397006E-10-5.45059171E-14    2
+-3.15699378E+03 3.46497450E+00 3.63677897E+00 4.50842767E-03 1.80295451E-05    3
+-2.25970534E-08 7.88627605E-12-2.54495151E+03 9.39482632E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H4O(41)               H   4C   2O   1     G   100.000  5000.000  938.10      1
+ 8.28287311E+00 7.09590725E-03-1.85578242E-06 3.11667813E-10-2.32721147E-14    2
+-1.82989894E+04-1.91575431E+01 3.14417382E+00 1.21917367E-02 1.68835252E-05    3
+-3.21133987E-08 1.37100910E-11-1.65949740E+04 9.24893905E+00                   4
+
+! Thermo library: primaryThermoLibrary
+O(T)(42)                O   1               G   100.000  5000.000 3459.60      1
+ 2.49999999E+00 9.20455546E-12-3.58608293E-15 6.15198922E-19-3.92041801E-23    2
+ 2.92302441E+04 4.09104291E+00 2.50000000E+00 9.24384602E-15-1.36779837E-17    3
+ 6.66184769E-21-1.00106912E-24 2.92302441E+04 4.09104286E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+C2H4(44)                H   4C   2          G   100.000  5000.000  846.11      1
+ 2.62344910E+00 1.38429140E-02-6.25541075E-06 1.16703453E-09-7.95359410E-14    2
+ 4.32128675E+04 2.66158079E+01 3.36869114E+00 1.64232504E-02-2.16503709E-05    3
+ 2.18227984E-08-8.70182877E-12 4.28682838E+04 2.18539333E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+HO2(63)                 H   1O   2          G   100.000  5000.000 1000.25      1
+ 3.62868258E+00 3.05387401E-03-1.21130686E-06 2.29639000E-10-1.65061502E-14    2
+ 1.57925751E+02 5.82954238E+00 4.02425547E+00-1.64545752E-03 1.05109441E-05    3
+-1.06991604E-08 3.49380097E-12 2.34740074E+02 4.70058405E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H5O(69)               H   5C   2O   1     G   100.000  5000.000 1026.11      1
+ 5.93069415E+00 1.37122351E-02-5.26829202E-06 9.58653365E-10-6.66255707E-14    2
+-9.25841807E+03-4.22467385E+00 3.10285312E+00 1.58473872E-02 4.60389954E-06    3
+-1.38972684E-08 5.60964601E-12-8.21015651E+03 1.17710190E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H5O(70)               H   5C   2O   1     G   100.000  5000.000 1075.82      1
+ 5.34724675E+00 1.54987646E-02-6.19436548E-06 1.13688029E-09-7.87694571E-14    2
+-4.13921001E+03-2.02239919E+00 3.13416856E+00 1.54298994E-02 5.47053235E-06    3
+-1.32607310E-08 4.93292869E-12-3.18287860E+03 1.10477547E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH3OO(75)               H   3C   1O   2     G   100.000  5000.000 1031.35      1
+ 4.35022282E+00 1.07183275E-02-4.26215078E-06 7.89578335E-10-5.53846326E-14    2
+-3.09810145E+02 4.08928223E+00 3.58600855E+00 6.15348645E-03 1.33269290E-05    3
+-1.76581521E-08 6.13210932E-12 2.48233564E+02 9.74096027E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H5O2(76)              H   5C   2O   2     G   100.000  5000.000 1009.29      1
+ 7.15146595E+00 1.56281940E-02-6.04672481E-06 1.12072260E-09-7.93642608E-14    2
+-5.83975502E+03-9.07479454E+00 2.88894749E+00 1.85232184E-02 1.04544691E-05    3
+-2.35202383E-08 9.42788584E-12-4.26635650E+03 1.50608596E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+CHO3(77)                H   1C   1O   3     G   100.000  5000.000  990.68      1
+ 8.52147535E+00 4.09729958E-03-1.65618098E-06 3.44822169E-10-2.71429741E-14    2
+-1.58532286E+04-1.75186043E+01 3.11870153E+00 1.45187485E-02-1.85255666E-07    3
+-1.22532859E-08 6.08137421E-12-1.42236641E+04 1.13177636E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(O2s-(Cds-O2d)H) + group(Cs-(Cds-O2d)OsHH) + group(Cds-OdCsOs) + radical(CCOJ) +
+! radical(C=OCOJ)
+C2H2O3(89)              H   2C   2O   3     G   100.000  5000.000 2170.08      1
+ 1.24018251E+01 8.68144136E-03-4.57415890E-06 8.28526420E-10-5.23799548E-14    2
+-1.98127392E+04-3.93871178E+01 3.56820102E+00 1.80632038E-02-6.28904906E-06    3
+-1.10012533E-10 2.24557126E-13-1.43539184E+04 1.38178214E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H5O(138)              H   5C   2O   1     G   100.000  5000.000 1183.80      1
+ 5.01055766E+00 1.56871715E-02-6.44367145E-06 1.18134627E-09-8.09901877E-14    2
+-2.13351742E+03 8.45229694E-02 3.17261466E+00 1.54260984E-02 2.08703587E-06    3
+-8.24061228E-09 2.88398688E-12-1.24491952E+03 1.11768626E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC + radical(CsJOOH)
+CH3O2(149)              H   3C   1O   2     G   100.000  5000.000 1029.22      1
+ 5.82568677E+00 7.68557071E-03-2.79765016E-06 5.06432711E-10-3.53258465E-14    2
+ 5.81689861E+03-4.59034943E+00 3.33245628E+00 1.23287067E-02-2.20959491E-06    3
+-4.63859699E-09 2.37162595E-12 6.59741061E+03 8.80838585E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+C3H7O(154)              H   7C   3O   1     G   100.000  5000.000 1812.07      1
+ 9.55959920E+00 1.77880440E-02-6.64970217E-06 1.12847010E-09-7.25674602E-14    2
+-9.00758124E+03-2.36839360E+01 2.26133040E+00 3.38984681E-02-1.99856953E-05    3
+ 6.03485068E-09-7.49473470E-13-6.36259923E+03 1.58645575E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+C3H7O(155)              H   7C   3O   1     G   100.000  5000.000 1031.37      1
+ 7.67892347E+00 2.06760410E-02-7.97423328E-06 1.45196442E-09-1.00894829E-13    2
+-9.08961704E+03-1.44359113E+01 2.47204763E+00 2.75918118E-02 1.27909657E-06    3
+-1.70119487E-08 7.40041529E-12-7.30935064E+03 1.42687902E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+OO(175)                 H   2O   2          G   100.000  5000.000 1005.78      1
+ 4.14711917E+00 4.72694898E-03-1.79320499E-06 3.26120398E-10-2.27309864E-14    2
+-1.79271299E+04 2.95240617E+00 3.81666060E+00 2.71177103E-03 6.17757060E-06    3
+-8.24839330E-09 2.92664300E-12-1.76922539E+04 5.38575095E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH4O2(183)              H   4C   1O   2     G   100.000  5000.000 1042.70      1
+ 4.64751826E+00 1.15696448E-02-4.44494600E-06 8.04480489E-10-5.54881525E-14    2
+-1.75399678E+04 1.41958164E+00 3.42341958E+00 1.00731643E-02 6.61593546E-06    3
+-1.19629431E-08 4.37120425E-12-1.69480673E+04 8.99053484E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+S(189)                  H   3C   2O   3     G   100.000  5000.000 1433.49      1
+ 1.04205846E+01 1.01180096E-02-4.02818552E-06 7.26608407E-10-4.93432883E-14    2
+-1.37463930E+04-2.48152594E+01 2.29854063E+00 3.27817848E-02-2.77435846E-05    3
+ 1.17558615E-08-1.97284703E-12-1.14178278E+04 1.72937239E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+S(193)                  H   6C   2O   2     G   100.000  5000.000 1402.39      1
+ 7.37805293E+00 1.85555251E-02-7.41596235E-06 1.31780763E-09-8.77657139E-14    2
+-1.83712667E+04-1.24746368E+01 2.59552531E+00 2.73446577E-02-1.16271900E-05    3
+ 8.52686128E-10 4.34943980E-13-1.65527574E+04 1.39167195E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC + radical(H3COJ) + radical(CsJOH)
+CH2O(204)               H   2C   1O   1     G   100.000  5000.000  913.74      1
+ 6.62779721E+00 9.63515134E-05 1.05674948E-06-2.22982858E-10 1.39131210E-14    2
+ 2.20330335E+04-8.98443396E+00 3.75376970E+00 9.14863771E-04 1.90230276E-05    3
+-2.74197795E-08 1.13096147E-11 2.30493101E+04 7.30887630E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+S(221)                  H   7C   3O   2     G   100.000  5000.000 1415.64      1
+ 1.08293624E+01 2.00751613E-02-7.92781860E-06 1.41611408E-09-9.53843402E-14    2
+-1.41505633E+03-2.45834617E+01 1.73075109E+00 4.57840766E-02-3.51688572E-05    3
+ 1.42447669E-08-2.36091378E-12 1.16100654E+03 2.24745585E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+CH3O3(230)              H   3C   1O   3     G   100.000  5000.000 1253.51      1
+ 8.21381118E+00 9.49295261E-03-3.89777795E-06 7.16890732E-10-4.94195547E-14    2
+-2.30580751E+04-1.38317235E+01 2.69193998E+00 2.71134724E-02-2.49832062E-05    3
+ 1.19309699E-08-2.28595650E-12-2.16737318E+04 1.40557635E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsCs) + group(Cs-(Cds-O2d)OsHH) + group(Cs-OsHHH) + group(Cds-OdCsH) + radical(CsJOCC)
+S(273)                  H   5C   3O   2     G   100.000  5000.000 1108.69      1
+ 8.91550933E+00 1.73718848E-02-6.96734425E-06 1.27825507E-09-8.84897706E-14    2
+-1.57285450E+04-1.58774162E+01 2.28483498E+00 3.25728511E-02-1.57336444E-05    3
+-5.45807118E-10 1.92275038E-12-1.37222448E+04 1.92132904E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+S(312)                  H   5C   3O   2     G   100.000  5000.000 1195.87      1
+ 8.31108590E+00 1.90268807E-02-8.00638833E-06 1.48968940E-09-1.03158494E-13    2
+-1.69017493E+04-1.28745617E+01 2.39994946E+00 3.02032212E-02-1.12435640E-05    3
+-2.71608755E-09 2.03256863E-12-1.48733373E+04 1.92703742E+01                   4
+
+! Thermo group additivity estimation: group(O2s-CsCs) + group(Cs-CsOsHH) + group(Cs-(Cds-O2d)OsHH) + group(Cs-CsHHH) + group(Cds-OdCsH) +
+! radical(CCsJOCs)
+S(466)                  H   7C   4O   2     G   100.000  5000.000 1237.22      1
+ 1.16582424E+01 2.39991598E-02-1.01646683E-05 1.89048428E-09-1.30869759E-13    2
+-2.16463791E+04-2.98295761E+01 1.31059925E+00 5.74539418E-02-5.07254424E-05    3
+ 2.37465378E-08-4.54727103E-12-1.90859387E+04 2.22944032E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H2O(489)              H   2C   2O   1     G   100.000  5000.000  954.86      1
+ 5.88243859E+00 5.80175566E-03-1.91267533E-06 3.35921266E-10-2.37401198E-14    2
+-8.11472313E+03-6.74191744E+00 3.48302343E+00 8.32983690E-03 5.93440370E-06    3
+-1.33942492E-08 5.73146817E-12-7.31353185E+03 6.51896483E+00                   4
+
+! Thermo library: DFT_QCI_thermo
+C2H3O(515)              H   3C   2O   1     G   100.000  5000.000  942.76      1
+ 7.32951588E+00 5.62532609E-03-1.20645522E-06 2.33257119E-10-2.12863584E-14    2
+ 1.70160336E+04-1.46094566E+01 3.78047153E+00-5.30933183E-03 5.75476837E-05    3
+-7.05591377E-08 2.65064410E-11 1.88403289E+04 8.42967755E+00                   4
+
+! Thermo group additivity estimation: group(O2s-CsH) + group(Cs-CsCsOsH) + group(Cs-(Cds-O2d)CsHH) + group(Cs-CsHHH) + group(Cds-OdCsH) +
+! radical(CC(C)OJ)
+S(564)                  H   7C   4O   2     G   100.000  5000.000 1260.63      1
+ 7.62967059E+00 3.05138371E-02-1.35885541E-05 2.57258311E-09-1.79176902E-13    2
+-2.17217866E+04-7.62268842E+00 1.90571535E+00 4.86759527E-02-3.51992080E-05    3
+ 1.40010208E-08-2.44557964E-12-2.02786215E+04 2.13178496E+01                   4
+
+! Thermo group additivity estimation: group(O2s-O2s(Cds-O2d)) + group(O2s-OsH) + group(Cs-(Cds-O2d)HHH) + group(Cds-OdCsOs) + radical(CJCO) +
+! radical(C(=O)OOJ)
+S(1107)                 H   2C   2O   3     G   100.000  5000.000  939.59      1
+ 1.18250034E+01 5.03488359E-03-9.43835844E-07 1.60120356E-10-1.46305015E-14    2
+-7.49970345E+03-3.07442256E+01 2.64676529E+00 2.03583806E-02 1.25081483E-05    3
+-3.62861250E-08 1.68405260E-11-4.72658630E+03 1.85423606E+01                   4
+
+! Thermo group additivity estimation: group(O2s-OsCs) + group(O2s-O2s(Cds-O2d)) + group(Cs-(Cds-O2d)OsHH) + group(Cds-OdCsOs) + ring(Cyclobutane)
+S(1252)                 H   2C   2O   3     G   100.000  5000.000  945.79      1
+ 1.60493338E+01 2.91974431E-04 1.63971479E-06-1.77655240E-10-4.76670078E-15    2
+-3.69352758E+04-6.30421710E+01 3.37357161E+00-1.19252126E-02 1.25415634E-04    3
+-1.61014185E-07 6.19610546E-11-3.15934267E+04 1.29690076E+01                   4
+
+! Thermo library: DFT_QCI_thermo
+S(2009)                 H   7C   3O   2     G   100.000  5000.000 1072.55      1
+ 8.78441945E+00 2.27415494E-02-9.09062812E-06 1.67579308E-09-1.16717402E-13    2
+-9.18416058E+03-1.60885837E+01 2.15076653E+00 3.41093359E-02-6.28775206E-06    3
+-1.16904738E-08 5.70826225E-12-6.99204396E+03 1.99650972E+01                   4
+
 END
 
 
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #17
+! Reaction index: Chemkin #1; RMG #19
+! Template reaction: R_Recombination
+! Flux pairs: CH3(10), CH4(2); H(12), CH4(2); 
+! Matched reaction 57 H + CH3 <=> CH4 in R_Recombination/training
+! This reaction matched rate rule [C_methyl;H_rad]
+! family: R_Recombination
+CH3(10)+H(12)=CH4(2)                                1.930000e+14 0.000     0.270    
+
+! Reaction index: Chemkin #2; RMG #21
+! Template reaction: R_Recombination
+! Flux pairs: OH(17), H2O(5); H(12), H2O(5); 
+! Matched reaction 64 H + OH <=> H2O in R_Recombination/training
+! This reaction matched rate rule [O_pri_rad;H_rad]
+! family: R_Recombination
+H(12)+OH(17)=H2O(5)                                 1.620000e+14 0.000     0.150    
+
+! Reaction index: Chemkin #3; RMG #22
+! Template reaction: R_Recombination
+! Flux pairs: H(12), H2(6); H(12), H2(6); 
+! Matched reaction 56 H + H <=> H2 in R_Recombination/training
+! This reaction matched rate rule [H_rad;H_rad]
+! family: R_Recombination
+H(12)+H(12)=H2(6)                                   5.450000e+10 0.000     1.500    
+
+! Reaction index: Chemkin #4; RMG #23
+! Template reaction: R_Recombination
+! Flux pairs: CH3(10), C2H6(8); CH3(10), C2H6(8); 
+! Matched reaction 9 CH3 + CH3 <=> C2H6 in R_Recombination/training
+! This reaction matched rate rule [C_methyl;C_methyl]
+! family: R_Recombination
+CH3(10)+CH3(10)=C2H6(8)                             9.450000e+14 -0.538    0.135    
+
+! Reaction index: Chemkin #5; RMG #24
+! Template reaction: R_Recombination
+! Flux pairs: C2H5(13), C2H6(8); H(12), C2H6(8); 
+! Matched reaction 58 H + C2H5 <=> C2H6-2 in R_Recombination/training
+! This reaction matched rate rule [C_rad/H2/Cs;H_rad]
+! family: R_Recombination
+H(12)+C2H5(13)=C2H6(8)                              1.000000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #6; RMG #26
+! Template reaction: R_Recombination
+! Flux pairs: HCO(15), CH2O(9); H(12), CH2O(9); 
+! Matched reaction 63 H + CHO <=> CH2O in R_Recombination/training
+! This reaction matched rate rule [CO_pri_rad;H_rad]
+! family: R_Recombination
+H(12)+HCO(15)=CH2O(9)                               4.680000e+10 0.000     -4.530   
+
+! Reaction index: Chemkin #7; RMG #27
 ! Template reaction: 1,2_Insertion_CO
 ! Flux pairs: CO(7), CH2O(9); H2(6), CH2O(9); 
-! Exact match found for rate rule [CO;H2]
-! Euclidian distance = 0
+! Matched reaction 2 H2 + CO <=> CH2O in 1,2_Insertion_CO/training
+! This reaction matched rate rule [CO;H2]
 ! family: 1,2_Insertion_CO
 H2(6)+CO(7)=CH2O(9)                                 2.890000e+09 1.160     82.100   
 
-! Reaction index: Chemkin #2; RMG #24
+! Reaction index: Chemkin #8; RMG #29
+! Template reaction: R_Recombination
+! Flux pairs: C2H5(13), C3H8(11); CH3(10), C3H8(11); 
+! Matched reaction 10 CH3 + C2H5 <=> C3H8 in R_Recombination/training
+! This reaction matched rate rule [C_rad/H2/Cs;C_methyl]
+! family: R_Recombination
+CH3(10)+C2H5(13)=C3H8(11)                           1.230000e+15 -0.562    0.021    
+
+! Reaction index: Chemkin #9; RMG #34
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: C2H4(18), C2H5(13); H(12), C2H5(13); 
+! Matched reaction 2541 H + C2H4 <=> C2H5-2 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Cds-HH_Cds-HH;HJ]
+! family: R_Addition_MultipleBond
+H(12)+C2H4(18)=C2H5(13)                             4.620000e+08 1.640     1.010    
+
+! Reaction index: Chemkin #10; RMG #38
+! Template reaction: R_Recombination
+! Flux pairs: OH(17), CH3OH(14); CH3(10), CH3OH(14); 
+! Matched reaction 73 CH3 + OH <=> CH4O in R_Recombination/training
+! This reaction matched rate rule [O_pri_rad;C_methyl]
+! family: R_Recombination
+CH3(10)+OH(17)=CH3OH(14)                            6.030000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #11; RMG #42
+! Template reaction: R_Addition_COm
+! Flux pairs: CO(7), HCO(15); H(12), HCO(15); 
+! Matched reaction 4 H + CO <=> CHO in R_Addition_COm/training
+! This reaction matched rate rule [COm;H_rad]
+! family: R_Addition_COm
+CO(7)+H(12)=HCO(15)                                 1.180000e+11 0.000     2.720    
+
+! Reaction index: Chemkin #12; RMG #44
+! Template reaction: R_Recombination
+! Flux pairs: HCO(15), CH3CHO(16); CH3(10), CH3CHO(16); 
+! Matched reaction 71 CH3 + CHO <=> C2H4O in R_Recombination/training
+! This reaction matched rate rule [CO_pri_rad;C_methyl]
+! family: R_Recombination
+CH3(10)+HCO(15)=CH3CHO(16)                          1.810000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #13; RMG #48
 ! Template reaction: 1,2_Insertion_CO
 ! Flux pairs: CO(7), CH3CHO(16); CH4(2), CH3CHO(16); 
-! Exact match found for rate rule [CO;C_methane]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 4.0
+! Matched reaction 3 CH4 + CO <=> C2H4O in 1,2_Insertion_CO/training
+! This reaction matched rate rule [CO;C_methane]
 ! family: 1,2_Insertion_CO
 CH4(2)+CO(7)=CH3CHO(16)                             6.560000e+04 2.860     86.900   
 
-! Reaction index: Chemkin #3; RMG #61
+! Reaction index: Chemkin #14; RMG #86
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: CH3(10), CH4(2); HCO(15), CO(7); 
-! Matched reaction 4 HCO + CH3 <=> CO + CH4 in CO_Disproportionation/training
+! Matched reaction 3 HCO + CH3 <=> CO + CH4 in CO_Disproportionation/training
 ! This reaction matched rate rule [C_methyl;HCO]
 ! family: CO_Disproportionation
 CH3(10)+HCO(15)=CH4(2)+CO(7)                        4.000000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #4; RMG #64
+! Reaction index: Chemkin #15; RMG #89
 ! Template reaction: H_Abstraction
-! Flux pairs: CH4(2), CH3(10); H(12), H2(6); 
-! Matched reaction 1500 CH4b + H <=> CH3_p1 + H2_p in H_Abstraction/training
+! Flux pairs: H(12), H2(6); CH4(2), CH3(10); 
+! Matched reaction 186 CH4b + H <=> CH3_p1 + H2_p in H_Abstraction/training
 ! This reaction matched rate rule [C_methane;H_rad]
 ! family: H_Abstraction
 CH4(2)+H(12)=H2(6)+CH3(10)                          4.100000e+03 3.156     8.755    
 
-! Reaction index: Chemkin #5; RMG #65
+! Reaction index: Chemkin #16; RMG #90
 ! Template reaction: H_Abstraction
-! Flux pairs: CH3(10), CH4(2); C2H6(8), C2H5(13); 
-! Matched reaction 1529 C2H6 + CH3_r3 <=> C2H5b + CH4 in H_Abstraction/training
+! Flux pairs: C2H6(8), C2H5(13); CH3(10), CH4(2); 
+! Matched reaction 215 C2H6 + CH3_r3 <=> C2H5b + CH4 in H_Abstraction/training
 ! This reaction matched rate rule [C_methane;C_rad/H2/Cs\H3]
 ! family: H_Abstraction
 C2H6(8)+CH3(10)=CH4(2)+C2H5(13)                     3.500000e+01 3.440     10.384   
 
-! Reaction index: Chemkin #6; RMG #66
+! Reaction index: Chemkin #17; RMG #92
 ! Template reaction: H_Abstraction
-! Flux pairs: CH3(10), CH4(2); CH2O(9), HCO(15); 
-! Exact match found for rate rule [CO_pri;C_methyl]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 2.0
+! Flux pairs: HCO(15), CH2O(9); CH4(2), CH3(10); 
+! Matched reaction 319 HCO_r3 + CH4b <=> CH2O + CH3_p1 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;CO_pri_rad]
 ! family: H_Abstraction
-CH2O(9)+CH3(10)=CH4(2)+HCO(15)                      7.780000e-08 6.100     1.970    
+CH4(2)+HCO(15)=CH2O(9)+CH3(10)                      7.280000e+03 2.850     34.250   
 
-! Reaction index: Chemkin #7; RMG #69
+! Reaction index: Chemkin #18; RMG #95
 ! Template reaction: H_Abstraction
-! Flux pairs: CH4(2), CH3(10); OH(17), H2O(5); 
-! Matched reaction 1502 CH4b + OH <=> CH3_p1 + H2O_p in H_Abstraction/training
+! Flux pairs: OH(17), H2O(5); CH4(2), CH3(10); 
+! Matched reaction 188 CH4b + OH <=> CH3_p1 + H2O_p in H_Abstraction/training
 ! This reaction matched rate rule [C_methane;O_pri_rad]
 ! family: H_Abstraction
 CH4(2)+OH(17)=H2O(5)+CH3(10)                        1.000000e+06 2.182     2.506    
 
-! Reaction index: Chemkin #8; RMG #70
+! Reaction index: Chemkin #19; RMG #96
 ! Template reaction: Disproportionation
 ! Flux pairs: CH3(10), CH4(2); C2H5(13), C2H4(18); 
-! Exact match found for rate rule [C_methyl;Cmethyl_Csrad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 3.0
+! Matched reaction 5 CH3 + C2H5 <=> CH4 + C2H4 in Disproportionation/training
+! This reaction matched rate rule [C_methyl;Cmethyl_Csrad]
 ! family: Disproportionation
 CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    6.570000e+14 -0.680    0.000    
 
-! Reaction index: Chemkin #9; RMG #145
+! Reaction index: Chemkin #20; RMG #199
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: OH(17), H2O(5); HCO(15), CO(7); 
 ! Estimated using template [O_rad;HCO] for rate rule [O_pri_rad;HCO]
@@ -252,118 +586,3058 @@ CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    6.570000e+14 -0.680    0.000
 ! family: CO_Disproportionation
 HCO(15)+OH(17)=H2O(5)+CO(7)                         1.240000e+23 -3.290    2.355    
 
-! Reaction index: Chemkin #10; RMG #149
+! Reaction index: Chemkin #21; RMG #203
 ! Template reaction: H_Abstraction
-! Flux pairs: OH(17), H2O(5); H2(6), H(12); 
-! Exact match found for rate rule [H2;O_pri_rad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 2.0
+! Flux pairs: H2(6), H(12); OH(17), H2O(5); 
+! Matched reaction 312 H2 + OH <=> H2O_p + H_p in H_Abstraction/training
+! This reaction matched rate rule [O_pri;H_rad]
 ! family: H_Abstraction
-H2(6)+OH(17)=H2O(5)+H(12)                           1.820000e+09 1.210     4.710    
+H2(6)+OH(17)=H2O(5)+H(12)                           1.820000e+09 1.210     20.070   
 
-! Reaction index: Chemkin #11; RMG #150
+! Reaction index: Chemkin #22; RMG #204
 ! Template reaction: H_Abstraction
-! Flux pairs: OH(17), H2O(5); C2H6(8), C2H5(13); 
-! Matched reaction 1526 C2H6 + OH <=> C2H5b + H2O_p in H_Abstraction/training
+! Flux pairs: C2H6(8), C2H5(13); OH(17), H2O(5); 
+! Matched reaction 212 C2H6 + OH <=> C2H5b + H2O_p in H_Abstraction/training
 ! This reaction matched rate rule [O_pri;C_rad/H2/Cs\H3]
 ! family: H_Abstraction
 C2H6(8)+OH(17)=H2O(5)+C2H5(13)                      1.610000e+06 2.224     0.741    
 
-! Reaction index: Chemkin #12; RMG #151
+! Reaction index: Chemkin #23; RMG #206
 ! Template reaction: H_Abstraction
-! Flux pairs: OH(17), H2O(5); CH2O(9), HCO(15); 
-! Exact match found for rate rule [CO_pri;O_pri_rad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 2.0
+! Flux pairs: CH2O(9), HCO(15); OH(17), H2O(5); 
+! Matched reaction 368 OH_p23 + CH2O <=> H2O + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [O_pri;CO_pri_rad]
 ! family: H_Abstraction
 CH2O(9)+OH(17)=H2O(5)+HCO(15)                       3.440000e+09 1.180     -0.450   
 
-! Reaction index: Chemkin #13; RMG #154
+! Reaction index: Chemkin #24; RMG #209
 ! Template reaction: Disproportionation
 ! Flux pairs: OH(17), H2O(5); C2H5(13), C2H4(18); 
-! Exact match found for rate rule [O_pri_rad;Cmethyl_Csrad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 3.0
+! Matched reaction 13 HO + C2H5 <=> H2O + C2H4 in Disproportionation/training
+! This reaction matched rate rule [O_pri_rad;Cmethyl_Csrad]
 ! family: Disproportionation
 C2H5(13)+OH(17)=H2O(5)+C2H4(18)                     7.230000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #14; RMG #156
+! Reaction index: Chemkin #25; RMG #211
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: H(12), H2(6); HCO(15), CO(7); 
-! Matched reaction 1 HCO + H <=> CO + H2 in CO_Disproportionation/training
+! Matched reaction 0 HCO + H <=> CO + H2 in CO_Disproportionation/training
 ! This reaction matched rate rule [H_rad;HCO]
 ! family: CO_Disproportionation
 H(12)+HCO(15)=H2(6)+CO(7)                           9.030000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #15; RMG #159
+! Reaction index: Chemkin #26; RMG #214
 ! Template reaction: H_Abstraction
-! Flux pairs: H(12), H2(6); C2H6(8), C2H5(13); 
-! Matched reaction 1524 C2H6 + H <=> C2H5b + H2_p in H_Abstraction/training
+! Flux pairs: C2H6(8), C2H5(13); H(12), H2(6); 
+! Matched reaction 210 C2H6 + H <=> C2H5b + H2_p in H_Abstraction/training
 ! This reaction matched rate rule [H2;C_rad/H2/Cs\H3]
 ! family: H_Abstraction
 C2H6(8)+H(12)=H2(6)+C2H5(13)                        1.150000e+08 1.900     7.530    
 
-! Reaction index: Chemkin #16; RMG #160
+! Reaction index: Chemkin #27; RMG #216
 ! Template reaction: H_Abstraction
-! Flux pairs: H2(6), H(12); HCO(15), CH2O(9); 
-! Exact match found for rate rule [H2;CO_pri_rad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 2.0
+! Flux pairs: HCO(15), CH2O(9); H2(6), H(12); 
+! Matched reaction 310 H2 + HCO_r3 <=> CH2O + H in H_Abstraction/training
+! This reaction matched rate rule [H2;CO_pri_rad]
 ! family: H_Abstraction
-H2(6)+HCO(15)=CH2O(9)+H(12)                         1.800000e+06 2.000     17.830   
+H2(6)+HCO(15)=CH2O(9)+H(12)                         1.800000e+06 2.000     48.940   
 
-! Reaction index: Chemkin #17; RMG #163
+! Reaction index: Chemkin #28; RMG #219
 ! Template reaction: Disproportionation
 ! Flux pairs: H(12), H2(6); C2H5(13), C2H4(18); 
-! Exact match found for rate rule [H_rad;Cmethyl_Csrad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 3.0
+! Matched reaction 4 H + C2H5 <=> H2 + C2H4 in Disproportionation/training
+! This reaction matched rate rule [H_rad;Cmethyl_Csrad]
 ! family: Disproportionation
 H(12)+C2H5(13)=H2(6)+C2H4(18)                       1.083000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #18; RMG #164
+! Reaction index: Chemkin #29; RMG #220
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: C2H5(13), C2H6(8); HCO(15), CO(7); 
-! Matched reaction 13 C2H5 + HCO <=> C2H6 + CO in CO_Disproportionation/training
+! Matched reaction 12 C2H5 + HCO <=> C2H6 + CO in CO_Disproportionation/training
 ! This reaction matched rate rule [C_rad/H2/Cs;HCO]
 ! family: CO_Disproportionation
 C2H5(13)+HCO(15)=CO(7)+C2H6(8)                      4.300000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #19; RMG #167
+! Reaction index: Chemkin #30; RMG #223
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: HCO(15), CH2O(9); HCO(15), CO(7); 
-! Matched reaction 6 HCO + HCO_Y <=> CO + CH2O in CO_Disproportionation/training
+! Matched reaction 5 HCO + HCO_Y <=> CO + CH2O in CO_Disproportionation/training
 ! This reaction matched rate rule [CO_pri_rad;HCO]
 ! family: CO_Disproportionation
 HCO(15)+HCO(15)=CO(7)+CH2O(9)                       1.800000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #20; RMG #188
+! Reaction index: Chemkin #31; RMG #251
 ! Template reaction: H_Abstraction
-! Flux pairs: C2H5(13), C2H6(8); CH2O(9), HCO(15); 
-! Estimated using template [CO_pri;C_rad/H2/Cs] for rate rule [CO_pri;C_rad/H2/Cs\H3]
-! Euclidian distance = 1.0
-! Multiplied by reaction path degeneracy 2.0
+! Flux pairs: HCO(15), CH2O(9); C2H6(8), C2H5(13); 
+! Matched reaction 326 HCO_r3 + C2H6 <=> CH2O + C2H5 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/Cs\H3;CO_pri_rad]
 ! family: H_Abstraction
-CH2O(9)+C2H5(13)=C2H6(8)+HCO(15)                    5.500000e+03 2.810     5.860    
+C2H6(8)+HCO(15)=CH2O(9)+C2H5(13)                    4.692000e+04 2.720     38.240   
 
-! Reaction index: Chemkin #21; RMG #191
+! Reaction index: Chemkin #32; RMG #254
 ! Template reaction: Disproportionation
 ! Flux pairs: C2H5(13), C2H6(8); C2H5(13), C2H4(18); 
-! Exact match found for rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
-! Euclidian distance = 0
-! Multiplied by reaction path degeneracy 3.0
+! Matched reaction 6 C2H5 + C2H5-2 <=> C2H6 + C2H4 in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
 ! family: Disproportionation
 C2H5(13)+C2H5(13)=C2H6(8)+C2H4(18)                  6.900000e+13 -0.350    0.000    
 
-! Reaction index: Chemkin #22; RMG #225
+! Reaction index: Chemkin #33; RMG #303
 ! Template reaction: Disproportionation
 ! Flux pairs: HCO(15), C2H4(18); C2H5(13), CH2O(9); 
 ! Estimated using average of templates [Y_rad;Cmethyl_Csrad] + [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_Csrad]
 ! Euclidian distance = 2.0
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Disproportionation
-! Ea raised from -0.0 to -0.0 kJ/mol.
-C2H5(13)+HCO(15)=CH2O(9)+C2H4(18)                   9.517315e+13 -0.096    -0.001   
+C2H5(13)+HCO(15)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
+
+! Reaction index: Chemkin #34; RMG #106
+! Template reaction: R_Recombination
+! Flux pairs: CH3OO(75), CH3(10); CH3OO(75), O2(3); 
+! Matched reaction 0 CH3O2 <=> O2 + CH3 in R_Recombination/training
+! This reaction matched rate rule [C_methyl;O2_birad]
+! family: R_Recombination
+CH3OO(75)=O2(3)+CH3(10)                             1.090000e+14 0.250     33.300   
+
+! Reaction index: Chemkin #35; RMG #301
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: OH(17), CH3O2(149); CH2O(9), CH3O2(149); 
+! Estimated using template [Od_CO-HH;YJ] for rate rule [Od_CO-HH;OJ_pri]
+! Euclidian distance = 2.0
+! family: R_Addition_MultipleBond
+! Ea raised from 140.4 to 146.2 kJ/mol to match endothermicity of reaction.
+CH2O(9)+OH(17)=CH3O2(149)                           2.330000e+03 3.170     34.939   
+
+! Reaction index: Chemkin #36; RMG #448
+! Template reaction: intra_H_migration
+! Flux pairs: CH3OO(75), CH3O2(149); 
+! Matched reaction 240 CH3O2 <=> CH3O2-2 in intra_H_migration/training
+! This reaction matched rate rule [R3H_SS_O;O_rad_out;Cs_H_out_2H]
+! family: intra_H_migration
+CH3OO(75)=CH3O2(149)                                4.710000e+08 1.450     42.270   
+
+! Reaction index: Chemkin #37; RMG #81
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); CH4(2), CH3(10); 
+! Matched reaction 190 CH4b + O2 <=> CH3_p1 + HO2 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;O2b]
+! family: H_Abstraction
+! Ea raised from 216.4 to 231.5 kJ/mol to match endothermicity of reaction.
+CH4(2)+O2(3)=CH3(10)+HO2(63)                        2.030000e+05 2.745     55.339   
+
+! Reaction index: Chemkin #38; RMG #99
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); H2O(5), OH(17); 
+! Matched reaction 379 H2O + O2 <=> HO2_r12 + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [O_pri;O2b]
+! family: H_Abstraction
+O2(3)+H2O(5)=OH(17)+HO2(63)                         9.300000e+12 0.000     74.120   
+
+! Reaction index: Chemkin #39; RMG #100
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); H2(6), H(12); 
+! Matched reaction 306 H2 + O2 <=> HO2_r12 + H in H_Abstraction/training
+! This reaction matched rate rule [H2;O2b]
+! family: H_Abstraction
+O2(3)+H2(6)=H(12)+HO2(63)                           2.900000e+14 0.000     56.640   
+
+! Reaction index: Chemkin #40; RMG #101
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); C2H6(8), C2H5(13); 
+! Matched reaction 214 C2H6 + O2 <=> C2H5b + HO2 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/Cs\H3;O2b]
+! family: H_Abstraction
+! Ea raised from 207.3 to 215.7 kJ/mol to match endothermicity of reaction.
+O2(3)+C2H6(8)=C2H5(13)+HO2(63)                      2.920000e+07 1.900     51.557   
+
+! Reaction index: Chemkin #41; RMG #104
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); CH2O(9), HCO(15); 
+! Matched reaction 359 CH2O + O2 <=> HO2_r12 + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [CO_pri;O2b]
+! family: H_Abstraction
+! Ea raised from 158.7 to 162.5 kJ/mol to match endothermicity of reaction.
+O2(3)+CH2O(9)=HCO(15)+HO2(63)                       9.360000e+07 2.050     38.837   
+
+! Reaction index: Chemkin #42; RMG #109
+! Template reaction: R_Recombination
+! Flux pairs: H(12), HO2(63); O2(3), HO2(63); 
+! Matched reaction 104 O2 + H <=> HO2-2 in R_Recombination/training
+! This reaction matched rate rule [H_rad;O2_birad]
+! family: R_Recombination
+O2(3)+H(12)=HO2(63)                                 8.790000e+10 1.000     0.450    
+
+! Reaction index: Chemkin #43; RMG #110
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); O2(3), HO2(63); 
+! Matched reaction 2 C2H5 + O2 <=> HO2 + C2H4 in Disproportionation/training
+! This reaction matched rate rule [O2b;Cmethyl_Csrad]
+! family: Disproportionation
+O2(3)+C2H5(13)=C2H4(18)+HO2(63)                     4.338000e+13 0.000     15.990   
+
+! Reaction index: Chemkin #44; RMG #115
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); O2(3), HO2(63); 
+! Matched reaction 2 HCO + O2 <=> CO + HO2 in CO_Disproportionation/training
+! This reaction matched rate rule [O2b;HCO]
+! family: CO_Disproportionation
+O2(3)+HCO(15)=CO(7)+HO2(63)                         5.120000e+13 0.000     1.690    
+
+! Reaction index: Chemkin #45; RMG #454
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OO(75), CH4O2(183); CH4(2), CH3(10); 
+! Matched reaction 209 CH3O2 + CH4b <=> CH3OOH_p + CH3_p1 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;OOC]
+! family: H_Abstraction
+CH4(2)+CH3OO(75)=CH3(10)+CH4O2(183)                 4.450000e-03 4.691     19.868   
+
+! Reaction index: Chemkin #46; RMG #463
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); OH(17), H2O(5); 
+! Matched reaction 206 CH4O2 + OH <=> CH3OO_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [O_pri;OOC]
+! family: H_Abstraction
+OH(17)+CH4O2(183)=H2O(5)+CH3OO(75)                  1.100000e+12 0.000     -0.437   
+
+! Reaction index: Chemkin #47; RMG #464
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); H(12), H2(6); 
+! Matched reaction 203 CH4O2 + H <=> CH3OO_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [H2;OOC]
+! family: H_Abstraction
+H(12)+CH4O2(183)=H2(6)+CH3OO(75)                    5.400000e+10 0.000     1.860    
+
+! Reaction index: Chemkin #48; RMG #468
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OO(75), CH4O2(183); C2H6(8), C2H5(13); 
+! Matched reaction 216 CH3O2 + C2H6 <=> CH3OOH_p + C2H5b in H_Abstraction/training
+! This reaction matched rate rule [C/H3/Cs\H3;OOC]
+! family: H_Abstraction
+C2H6(8)+CH3OO(75)=C2H5(13)+CH4O2(183)               1.900000e+01 3.640     17.100   
+
+! Reaction index: Chemkin #49; RMG #473
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); HCO(15), CH2O(9); 
+! Estimated using template [O/H/NonDeO;CO_rad] for rate rule [O/H/NonDeO;CO_pri_rad]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+HCO(15)+CH4O2(183)=CH2O(9)+CH3OO(75)                1.582731e-04 4.663     41.320   
+
+! Reaction index: Chemkin #50; RMG #480
+! Template reaction: R_Recombination
+! Flux pairs: CH3OO(75), CH4O2(183); H(12), CH4O2(183); 
+! Estimated using average of templates [O_sec_rad;H_rad] + [O_rad/NonDe;Y_rad] for rate rule [O_rad/NonDe;H_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+CH3OO(75)=CH4O2(183)                          4.611506e+12 0.184     -0.181   
+
+! Reaction index: Chemkin #51; RMG #481
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); CH3OO(75), CH4O2(183); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH3OO(75)=C2H4(18)+CH4O2(183)              3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #52; RMG #488
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); CH3OO(75), CH4O2(183); 
+! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/NonDeO;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+CH3OO(75)=CO(7)+CH4O2(183)                  1.240000e+23 -3.290    2.355    
+
+! Reaction index: Chemkin #53; RMG #524
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); CH3(10), CH4(2); 
+! From training reaction 201 used for C/H3/O;C_methyl
+! Exact match found for rate rule [C/H3/O;C_methyl]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3(10)+CH4O2(183)=CH4(2)+CH3O2(149)                2.190000e-07 5.580     3.896    
+
+! Reaction index: Chemkin #54; RMG #534
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); OH(17), H2O(5); 
+! Matched reaction 207 CH3OOH_rC + OH <=> CH2OOH_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [O_pri;C_rad/H2/O]
+! family: H_Abstraction
+OH(17)+CH4O2(183)=H2O(5)+CH3O2(149)                 7.200000e+11 0.000     -0.258   
+
+! Reaction index: Chemkin #55; RMG #535
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); H(12), H2(6); 
+! Matched reaction 202 CH3OOH_rC + H <=> CH2OOH_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [H2;C_rad/H2/O]
+! family: H_Abstraction
+H(12)+CH4O2(183)=H2(6)+CH3O2(149)                   5.400000e+10 0.000     1.860    
+
+! Reaction index: Chemkin #56; RMG #540
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); C2H5(13), C2H6(8); 
+! Estimated using template [C_pri;C_rad/H2/Cs\H3] for rate rule [C/H3/O;C_rad/H2/Cs\H3]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+C2H5(13)+CH4O2(183)=C2H6(8)+CH3O2(149)              1.291012e-03 4.340     7.025    
+
+! Reaction index: Chemkin #57; RMG #547
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O2(149), CH4O2(183); CH2O(9), HCO(15); 
+! Estimated using template [CO_pri;C_pri_rad] for rate rule [CO_pri;C_rad/H2/O]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+CH3O2(149)=HCO(15)+CH4O2(183)               1.298364e+01 3.380     9.040    
+
+! Reaction index: Chemkin #58; RMG #556
+! Template reaction: R_Recombination
+! Flux pairs: CH3O2(149), CH4O2(183); H(12), CH4O2(183); 
+! Estimated using template [C_pri_rad;H_rad] for rate rule [C_rad/H2/O;H_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+CH3O2(149)=CH4O2(183)                         8.836478e+12 0.331     -0.445   
+
+! Reaction index: Chemkin #59; RMG #557
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); CH3O2(149), CH4O2(183); 
+! From training reaction 8 used for C_rad/H2/O;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/O;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH3O2(149)=C2H4(18)+CH4O2(183)             8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #60; RMG #566
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); CH3O2(149), CH4O2(183); 
+! From training reaction 11 used for C_rad/H2/O;HCO
+! Exact match found for rate rule [C_rad/H2/O;HCO]
+! Euclidian distance = 0
+! family: CO_Disproportionation
+HCO(15)+CH3O2(149)=CO(7)+CH4O2(183)                 1.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #61; RMG #615
+! Template reaction: R_Recombination
+! Flux pairs: HO2(63), CH4O2(183); CH3(10), CH4O2(183); 
+! From training reaction 74 used for C_methyl;O_rad/NonDe
+! Exact match found for rate rule [O_rad/NonDe;C_methyl]
+! Euclidian distance = 0
+! family: R_Recombination
+CH3(10)+HO2(63)=CH4O2(183)                          1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #62; RMG #641
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OO(75), CH4O2(183); HO2(63), O2(3); 
+! From training reaction 244 used for Orad_O_H;OOC
+! Exact match found for rate rule [Orad_O_H;OOC]
+! Euclidian distance = 0
+! family: H_Abstraction
+! Ea raised from -8.2 to -8.2 kJ/mol.
+CH3OO(75)+HO2(63)=O2(3)+CH4O2(183)                  1.200000e+11 0.000     -1.950   
+
+! Reaction index: Chemkin #63; RMG #645
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); O2(3), HO2(63); 
+! From training reaction 199 used for C/H3/O;O2b
+! Exact match found for rate rule [C/H3/O;O2b]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+O2(3)+CH4O2(183)=HO2(63)+CH3O2(149)                 3.600000e+05 2.270     49.658   
+
+! Reaction index: Chemkin #64; RMG #689
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); CH3O2(149), CH4O2(183); 
+! Estimated using template [O/H/NonDeO;C_pri_rad] for rate rule [O/H/NonDeO;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH4O2(183)+CH3O2(149)=CH4O2(183)+CH3OO(75)          8.479371e-07 5.286     0.124    
+
+! Reaction index: Chemkin #65; RMG #39
+! Template reaction: R_Recombination
+! Flux pairs: H(12), CH3OH(14); CH3O(35), CH3OH(14); 
+! Estimated using average of templates [Y_rad;O_rad/NonDe] + [H_rad;O_sec_rad] for rate rule [H_rad;O_rad/NonDe]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+CH3O(35)=CH3OH(14)                            4.611506e+12 0.184     -0.181   
+
+! Reaction index: Chemkin #66; RMG #88
+! Template reaction: Disproportionation
+! Flux pairs: CH3(10), CH4(2); CH3O(35), CH2O(9); 
+! Estimated using template [Cs_rad;Cmethyl_Rrad] for rate rule [C_methyl;Cmethyl_Orad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3(10)+CH3O(35)=CH4(2)+CH2O(9)                     7.571738e+13 -0.509    -0.014   
+
+! Reaction index: Chemkin #67; RMG #113
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), O2(3); CH3O(35), CH3OH(14); 
+! Matched reaction 200 CH3O-2 + HO2_r12 <=> CH3OH_p + O2 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;O2b]
+! family: H_Abstraction
+HO2(63)+CH3O(35)=O2(3)+CH3OH(14)                    1.400000e+11 0.000     0.000    
+
+! Reaction index: Chemkin #68; RMG #202
+! Template reaction: Disproportionation
+! Flux pairs: OH(17), H2O(5); CH3O(35), CH2O(9); 
+! Estimated using template [O_pri_rad;Cmethyl_Rrad] for rate rule [O_pri_rad;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+OH(17)+CH3O(35)=H2O(5)+CH2O(9)                      2.794351e+10 1.000     -0.595   
+
+! Reaction index: Chemkin #69; RMG #213
+! Template reaction: Disproportionation
+! Flux pairs: H(12), H2(6); CH3O(35), CH2O(9); 
+! Matched reaction 14 H + CH3O-3 <=> H2 + CH2O-2 in Disproportionation/training
+! This reaction matched rate rule [H_rad;Cmethyl_Orad]
+! family: Disproportionation
+H(12)+CH3O(35)=H2(6)+CH2O(9)                        5.430000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #70; RMG #235
+! Template reaction: CO_Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); HCO(15), CO(7); 
+! Matched reaction 4 HCO + CH3O <=> CO + CH3OH in CO_Disproportionation/training
+! This reaction matched rate rule [O_rad/NonDeC;HCO]
+! family: CO_Disproportionation
+HCO(15)+CH3O(35)=CO(7)+CH3OH(14)                    9.030000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #71; RMG #249
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H6(8); CH3O(35), CH2O(9); 
+! Estimated using template [C_rad/H2/Cs;Cmethyl_Rrad] for rate rule [C_rad/H2/Cs;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH3O(35)=C2H6(8)+CH2O(9)                   6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #72; RMG #256
+! Template reaction: Disproportionation
+! Flux pairs: HCO(15), CH2O(9); CH3O(35), CH2O(9); 
+! Estimated using average of templates [Y_rad;Cmethyl_Orad] + [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HCO(15)+CH3O(35)=CH2O(9)+CH2O(9)                    1.717117e+14 0.000     0.000    
+
+! Reaction index: Chemkin #73; RMG #271
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: H(12), CH3O(35); CH2O(9), CH3O(35); 
+! Matched reaction 2820 H + CH2O <=> CH3O-3 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [CO-HH_O;HJ]
+! family: R_Addition_MultipleBond
+CH2O(9)+H(12)=CH3O(35)                              6.310000e+07 1.800     4.000    
+
+! Reaction index: Chemkin #74; RMG #281
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); CH3O(35), CH2O(9); 
+! Estimated using template [O_rad/NonDeC;XH_s_Rrad] for rate rule [O_rad/NonDeC;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+CH3O(35)=CH2O(9)+CH3OH(14)                 7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #75; RMG #315
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); CH3O(35), CH3OH(14); 
+! Matched reaction 322 CH3O-2 + CH4b <=> CH4O-2 + CH3_p1 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;C_methyl]
+! family: H_Abstraction
+CH4(2)+CH3O(35)=CH3(10)+CH3OH(14)                   6.200000e-04 5.000     5.580    
+
+! Reaction index: Chemkin #76; RMG #348
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); CH3OH(14), CH3O(35); 
+! Matched reaction 192 CH4O-2 + H <=> CH3O_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;H_rad]
+! family: H_Abstraction
+H(12)+CH3OH(14)=H2(6)+CH3O(35)                      4.100000e+04 2.658     9.221    
+
+! Reaction index: Chemkin #77; RMG #359
+! Template reaction: H_Abstraction
+! Flux pairs: C2H5(13), C2H6(8); CH3OH(14), CH3O(35); 
+! Matched reaction 390 CH4O-2 + C2H5 <=> C2H6 + CH3O-2 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;C_rad/H2/Cs\H3]
+! family: H_Abstraction
+C2H5(13)+CH3OH(14)=C2H6(8)+CH3O(35)                 1.440000e+01 3.100     8.940    
+
+! Reaction index: Chemkin #78; RMG #383
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); CH3O(35), CH3OH(14); 
+! Matched reaction 369 CH2O + CH3O-2 <=> CH4O-2 + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;CO_pri_rad]
+! family: H_Abstraction
+CH2O(9)+CH3O(35)=CH3OH(14)+HCO(15)                  1.020000e+11 0.000     2.980    
+
+! Reaction index: Chemkin #79; RMG #389
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH3OH(14), CH3O(35); 
+! Matched reaction 196 CH4O-2 + OH <=> CH3O_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;O_pri_rad]
+! family: H_Abstraction
+CH3OH(14)+OH(17)=H2O(5)+CH3O(35)                    2.700000e+07 1.443     0.113    
+
+! Reaction index: Chemkin #80; RMG #392
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); C2H5(13), C2H4(18); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeC;XH_s_Rrad] for rate rule [O_rad/NonDeC;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH3O(35)=CH3OH(14)+C2H4(18)                7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #81; RMG #485
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); CH3O(35), CH3OH(14); 
+! Estimated using template [O/H/NonDeO;O_sec_rad] for rate rule [O/H/NonDeO;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH4O2(183)+CH3O(35)=CH3OH(14)+CH3OO(75)             4.331279e+00 3.368     14.279   
+
+! Reaction index: Chemkin #82; RMG #562
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); CH3O(35), CH3OH(14); 
+! Estimated using average of templates [C_pri;O_rad/NonDeC] + [C/H3/O;O_sec_rad] for rate rule [C/H3/O;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH4O2(183)+CH3O(35)=CH3OH(14)+CH3O2(149)            7.528910e-02 4.133     6.554    
+
+! Reaction index: Chemkin #83; RMG #609
+! Template reaction: Disproportionation
+! Flux pairs: O2(3), HO2(63); CH3O(35), CH2O(9); 
+! Estimated using template [O2b;Cmethyl_Rrad] for rate rule [O2b;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: Disproportionation
+O2(3)+CH3O(35)=CH2O(9)+HO2(63)                      4.338000e+13 0.000     15.990   
+
+! Reaction index: Chemkin #84; RMG #667
+! Template reaction: R_Recombination
+! Flux pairs: OH(17), CH4O2(183); CH3O(35), CH4O2(183); 
+! Matched reaction 103 OH + CH3O <=> CH4O2 in R_Recombination/training
+! This reaction matched rate rule [O_pri_rad;O_rad/NonDe]
+! family: R_Recombination
+OH(17)+CH3O(35)=CH4O2(183)                          2.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #85; RMG #681
+! Template reaction: Disproportionation
+! Flux pairs: CH3O2(149), CH4O2(183); CH3O(35), CH2O(9); 
+! Estimated using template [C_rad/H2/O;Cmethyl_Rrad] for rate rule [C_rad/H2/O;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O2(149)+CH3O(35)=CH2O(9)+CH4O2(183)              8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #86; RMG #682
+! Template reaction: Disproportionation
+! Flux pairs: CH3OO(75), CH4O2(183); CH3O(35), CH2O(9); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3OO(75)+CH3O(35)=CH2O(9)+CH4O2(183)               1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #87; RMG #476
+! Template reaction: R_Recombination
+! Flux pairs: CH3OO(75), S(193); CH3(10), S(193); 
+! From training reaction 74 used for C_methyl;O_rad/NonDe
+! Exact match found for rate rule [O_rad/NonDe;C_methyl]
+! Euclidian distance = 0
+! family: R_Recombination
+CH3(10)+CH3OO(75)=S(193)                            1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #88; RMG #736
+! Template reaction: R_Recombination
+! Flux pairs: CH3O(35), S(193); CH3O(35), S(193); 
+! Matched reaction 97 CH3O + CH3O <=> C2H6O2 in R_Recombination/training
+! This reaction matched rate rule [O_rad/NonDe;O_rad/NonDe]
+! family: R_Recombination
+CH3O(35)+CH3O(35)=S(193)                            9.050000e+11 0.000     0.000    
+
+! Reaction index: Chemkin #89; RMG #437
+! Template reaction: R_Recombination
+! Flux pairs: OH(17), OO(175); OH(17), OO(175); 
+! Matched reaction 96 OH + OH <=> H2O2 in R_Recombination/training
+! This reaction matched rate rule [O_pri_rad;O_pri_rad]
+! family: R_Recombination
+OH(17)+OH(17)=OO(175)                               7.850000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #90; RMG #596
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH4(2), CH3(10); 
+! Matched reaction 189 CH4b + HO2_r3 <=> CH3_p1 + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;O_rad/NonDeO]
+! family: H_Abstraction
+CH4(2)+HO2(63)=CH3(10)+OO(175)                      4.700000e+04 2.500     21.000   
+
+! Reaction index: Chemkin #91; RMG #603
+! Template reaction: H_Abstraction
+! Flux pairs: OO(175), HO2(63); OH(17), H2O(5); 
+! Estimated using average of templates [O/H/NonDeO;O_pri_rad] + [H2O2;O_rad] for rate rule [H2O2;O_pri_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+OH(17)+OO(175)=H2O(5)+HO2(63)                       4.994995e+05 1.927     6.325    
+
+! Reaction index: Chemkin #92; RMG #604
+! Template reaction: H_Abstraction
+! Flux pairs: OO(175), HO2(63); H(12), H2(6); 
+! Estimated using average of templates [O/H/NonDeO;H_rad] + [H2O2;Y_rad] for rate rule [H2O2;H_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+H(12)+OO(175)=H2(6)+HO2(63)                         1.235020e+06 1.634     6.086    
+
+! Reaction index: Chemkin #93; RMG #607
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); C2H6(8), C2H5(13); 
+! Matched reaction 213 C2H6 + HO2_r3 <=> C2H5b + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/Cs\H3;O_rad/NonDeO]
+! family: H_Abstraction
+C2H6(8)+HO2(63)=C2H5(13)+OO(175)                    2.600000e+01 3.370     15.900   
+
+! Reaction index: Chemkin #94; RMG #612
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH2O(9), HCO(15); 
+! Matched reaction 370 HO2_r3 + CH2O <=> H2O2 + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [CO_pri;O_rad/NonDeO]
+! family: H_Abstraction
+CH2O(9)+HO2(63)=HCO(15)+OO(175)                     4.120000e+04 2.500     10.210   
+
+! Reaction index: Chemkin #95; RMG #618
+! Template reaction: R_Recombination
+! Flux pairs: HO2(63), OO(175); H(12), OO(175); 
+! Estimated using average of templates [O_sec_rad;H_rad] + [O_rad/NonDe;Y_rad] for rate rule [O_rad/NonDe;H_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+HO2(63)=OO(175)                               4.611506e+12 0.184     -0.181   
+
+! Reaction index: Chemkin #96; RMG #619
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); HO2(63), OO(175); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+HO2(63)=C2H4(18)+OO(175)                   3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #97; RMG #622
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH3OH(14), CH3O(35); 
+! Matched reaction 198 CH4O-2 + HO2_r3 <=> CH3O_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeC;O_rad/NonDeO]
+! family: H_Abstraction
+! Ea raised from 66.2 to 73.7 kJ/mol to match endothermicity of reaction.
+CH3OH(14)+HO2(63)=OO(175)+CH3O(35)                  1.500000e-03 4.610     17.624   
+
+! Reaction index: Chemkin #98; RMG #625
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); HO2(63), OO(175); 
+! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/NonDeO;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+HO2(63)=CO(7)+OO(175)                       1.240000e+23 -3.290    2.355    
+
+! Reaction index: Chemkin #99; RMG #647
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); HO2(63), O2(3); 
+! Matched reaction 405 HO2_r3 + HO2_r12 <=> H2O2 + O2 in H_Abstraction/training
+! This reaction matched rate rule [Orad_O_H;O_rad/NonDeO]
+! family: H_Abstraction
+HO2(63)+HO2(63)=O2(3)+OO(175)                       1.750000e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #100; RMG #690
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH4O2(183), CH3OO(75); 
+! Matched reaction 208 CH4O2 + HO2_r3 <=> CH3OO_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [O/H/NonDeO;O_rad/NonDeO]
+! family: H_Abstraction
+CH4O2(183)+HO2(63)=CH3OO(75)+OO(175)                4.100000e+04 2.500     10.206   
+
+! Reaction index: Chemkin #101; RMG #691
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH4O2(183), CH3O2(149); 
+! From training reaction 197 used for C/H3/O;O_rad/NonDeO
+! Exact match found for rate rule [C/H3/O;O_rad/NonDeO]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH4O2(183)+HO2(63)=CH3O2(149)+OO(175)               3.500000e-04 4.850     11.377   
+
+! Reaction index: Chemkin #102; RMG #734
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH2O(9); HO2(63), OO(175); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Orad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HO2(63)+CH3O(35)=CH2O(9)+OO(175)                    1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #103; RMG #264
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3(10), C2H5O(138); CH2O(9), C2H5O(138); 
+! Estimated using average of templates [R_R;CsJ-HHH] + [Od_CO-HH;YJ] for rate rule [Od_CO-HH;CsJ-HHH]
+! Euclidian distance = 3.0
+! family: R_Addition_MultipleBond
+CH2O(9)+CH3(10)=C2H5O(138)                          5.220794e+03 2.853     7.164    
+
+! Reaction index: Chemkin #104; RMG #40
+! Template reaction: R_Recombination
+! Flux pairs: CH2OH(36), CH3OH(14); H(12), CH3OH(14); 
+! Estimated using template [C_pri_rad;H_rad] for rate rule [C_rad/H2/O;H_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+CH2OH(36)=CH3OH(14)                           8.836478e+12 0.331     -0.445   
+
+! Reaction index: Chemkin #105; RMG #87
+! Template reaction: Disproportionation
+! Flux pairs: CH3(10), CH4(2); CH2OH(36), CH2O(9); 
+! Matched reaction 57 CH3O + CH3 <=> CH4 + CH2O in Disproportionation/training
+! This reaction matched rate rule [C_methyl;O_Csrad]
+! family: Disproportionation
+CH3(10)+CH2OH(36)=CH4(2)+CH2O(9)                    8.490000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #106; RMG #114
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); CH3OH(14), CH2OH(36); 
+! Matched reaction 199 CH4O + O2 <=> CH2OH_p + HO2 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;O2b]
+! family: H_Abstraction
+! Ea raised from 178.9 to 195.8 kJ/mol to match endothermicity of reaction.
+O2(3)+CH3OH(14)=HO2(63)+CH2OH(36)                   3.600000e+05 2.270     46.801   
+
+! Reaction index: Chemkin #107; RMG #201
+! Template reaction: Disproportionation
+! Flux pairs: OH(17), H2O(5); CH2OH(36), CH2O(9); 
+! Matched reaction 65 HO + CH3O <=> H2O + CH2O in Disproportionation/training
+! This reaction matched rate rule [O_pri_rad;O_Csrad]
+! family: Disproportionation
+OH(17)+CH2OH(36)=H2O(5)+CH2O(9)                     2.410000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #108; RMG #212
+! Template reaction: Disproportionation
+! Flux pairs: H(12), H2(6); CH2OH(36), CH2O(9); 
+! Matched reaction 56 H + CH3O <=> H2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [H_rad;O_Csrad]
+! family: Disproportionation
+H(12)+CH2OH(36)=H2(6)+CH2O(9)                       2.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #109; RMG #236
+! Template reaction: CO_Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); HCO(15), CO(7); 
+! Matched reaction 11 CH2OH + HCO <=> CH3OH + CO in CO_Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/O;HCO]
+! family: CO_Disproportionation
+HCO(15)+CH2OH(36)=CO(7)+CH3OH(14)                   1.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #110; RMG #248
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H6(8); CH2OH(36), CH2O(9); 
+! Matched reaction 58 CH3O + C2H5-2 <=> C2H6 + CH2O in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/Cs;O_Csrad]
+! family: Disproportionation
+C2H5(13)+CH2OH(36)=C2H6(8)+CH2O(9)                  2.410000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #111; RMG #255
+! Template reaction: Disproportionation
+! Flux pairs: HCO(15), CH2O(9); CH2OH(36), CH2O(9); 
+! Matched reaction 64 CHO + CH3O <=> CH2O-3 + CH2O in Disproportionation/training
+! This reaction matched rate rule [CO_pri_rad;O_Csrad]
+! family: Disproportionation
+HCO(15)+CH2OH(36)=CH2O(9)+CH2O(9)                   1.810000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #112; RMG #270
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: H(12), CH2OH(36); CH2O(9), CH2OH(36); 
+! Matched reaction 2831 H + CH2O-2 <=> CH3O-4 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Od_CO-HH;HJ]
+! family: R_Addition_MultipleBond
+CH2O(9)+H(12)=CH2OH(36)                             2.330000e+03 3.170     6.700    
+
+! Reaction index: Chemkin #113; RMG #278
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); CH2OH(36), CH2O(9); 
+! Matched reaction 60 CH3O-2 + CH3O <=> CH4O + CH2O in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/O;O_Csrad]
+! family: Disproportionation
+CH2OH(36)+CH2OH(36)=CH2O(9)+CH3OH(14)               4.820000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #114; RMG #279
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); CH2OH(36), CH2O(9); 
+! Matched reaction 66 CH3O + CH3O-4 <=> CH4O-2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [O_rad/NonDeC;O_Csrad]
+! family: Disproportionation
+CH3O(35)+CH2OH(36)=CH2O(9)+CH3OH(14)                2.410000e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #115; RMG #280
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); CH3O(35), CH2O(9); 
+! Matched reaction 66 CH3O + CH3O-4 <=> CH4O-2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/O;Cmethyl_Orad]
+! family: Disproportionation
+CH3O(35)+CH2OH(36)=CH2O(9)+CH3OH(14)                2.410000e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #116; RMG #316
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); CH3OH(14), CH2OH(36); 
+! Matched reaction 201 CH4O + CH3_r3 <=> CH2OH_p + CH4 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;C_methyl]
+! family: H_Abstraction
+CH3(10)+CH3OH(14)=CH4(2)+CH2OH(36)                  2.190000e-07 5.580     3.896    
+
+! Reaction index: Chemkin #117; RMG #349
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); CH3OH(14), CH2OH(36); 
+! Matched reaction 191 CH4O + H <=> CH2OH_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;H_rad]
+! family: H_Abstraction
+H(12)+CH3OH(14)=H2(6)+CH2OH(36)                     6.600000e+04 2.728     4.449    
+
+! Reaction index: Chemkin #118; RMG #360
+! Template reaction: H_Abstraction
+! Flux pairs: C2H5(13), C2H6(8); CH3OH(14), CH2OH(36); 
+! Estimated using template [C_pri;C_rad/H2/Cs\H3] for rate rule [C/H3/O;C_rad/H2/Cs\H3]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+C2H5(13)+CH3OH(14)=C2H6(8)+CH2OH(36)                1.291012e-03 4.340     7.025    
+
+! Reaction index: Chemkin #119; RMG #384
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); CH2OH(36), CH3OH(14); 
+! Estimated using template [CO_pri;C_pri_rad] for rate rule [CO_pri;C_rad/H2/O]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+CH2OH(36)=CH3OH(14)+HCO(15)                 1.298364e+01 3.380     9.040    
+
+! Reaction index: Chemkin #120; RMG #390
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH3OH(14), CH2OH(36); 
+! Matched reaction 195 CH4O + OH <=> CH2OH_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;O_pri_rad]
+! family: H_Abstraction
+CH3OH(14)+OH(17)=H2O(5)+CH2OH(36)                   1.500000e+08 1.443     0.113    
+
+! Reaction index: Chemkin #121; RMG #391
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); C2H5(13), C2H4(18); 
+! Matched reaction 8 CH3O-2 + C2H5 <=> CH4O + C2H4 in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/O;Cmethyl_Csrad]
+! family: Disproportionation
+C2H5(13)+CH2OH(36)=CH3OH(14)+C2H4(18)               8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #122; RMG #486
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); CH2OH(36), CH3OH(14); 
+! Estimated using template [O/H/NonDeO;C_pri_rad] for rate rule [O/H/NonDeO;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH4O2(183)+CH2OH(36)=CH3OH(14)+CH3OO(75)            8.479371e-07 5.286     0.124    
+
+! Reaction index: Chemkin #123; RMG #563
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O2(149), CH4O2(183); CH3OH(14), CH2OH(36); 
+! Estimated using template [C_pri;C_pri_rad] for rate rule [C/H3/O;C_rad/H2/O]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3OH(14)+CH3O2(149)=CH4O2(183)+CH2OH(36)           4.194233e-03 4.381     13.317   
+
+! Reaction index: Chemkin #124; RMG #608
+! Template reaction: Disproportionation
+! Flux pairs: O2(3), HO2(63); CH2OH(36), CH2O(9); 
+! Matched reaction 53 CH3O + O2 <=> HO2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [O2b;O_Csrad]
+! family: Disproportionation
+O2(3)+CH2OH(36)=CH2O(9)+HO2(63)                     1.144180e+13 0.000     0.000    
+
+! Reaction index: Chemkin #125; RMG #623
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH3OH(14), CH2OH(36); 
+! Matched reaction 197 CH4O + HO2_r3 <=> CH2OH_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/O;O_rad/NonDeO]
+! family: H_Abstraction
+CH3OH(14)+HO2(63)=OO(175)+CH2OH(36)                 3.500000e-04 4.850     10.346   
+
+! Reaction index: Chemkin #126; RMG #679
+! Template reaction: Disproportionation
+! Flux pairs: CH3O2(149), CH4O2(183); CH2OH(36), CH2O(9); 
+! From training reaction 60 used for C_rad/H2/O;O_Csrad
+! Exact match found for rate rule [C_rad/H2/O;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH3O2(149)+CH2OH(36)=CH2O(9)+CH4O2(183)             4.820000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #127; RMG #680
+! Template reaction: Disproportionation
+! Flux pairs: CH3OO(75), CH4O2(183); CH2OH(36), CH2O(9); 
+! From training reaction 67 used for O_rad/NonDeO;O_Csrad
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH3OO(75)+CH2OH(36)=CH2O(9)+CH4O2(183)              1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #128; RMG #692
+! Template reaction: intra_H_migration
+! Flux pairs: CH2OH(36), CH3O(35); 
+! Matched reaction 345 CH3O <=> CH3O-2 in intra_H_migration/training
+! This reaction matched rate rule [R2H_S;O_rad_out;Cs_H_out_2H]
+! family: intra_H_migration
+CH2OH(36)=CH3O(35)                                  2.560000e+04 2.360     33.100   
+
+! Reaction index: Chemkin #129; RMG #715
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O(35), CH3OH(14); CH3OH(14), CH2OH(36); 
+! Estimated using average of templates [C_pri;O_rad/NonDeC] + [C/H3/O;O_sec_rad] for rate rule [C/H3/O;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3OH(14)+CH3O(35)=CH3OH(14)+CH2OH(36)              7.528910e-02 4.133     6.554    
+
+! Reaction index: Chemkin #130; RMG #767
+! Template reaction: Disproportionation
+! Flux pairs: HO2(63), OO(175); CH2OH(36), CH2O(9); 
+! Matched reaction 67 HO2-2 + CH3O <=> H2O2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [O_rad/NonDeO;O_Csrad]
+! family: Disproportionation
+HO2(63)+CH2OH(36)=CH2O(9)+OO(175)                   1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #131; RMG #927
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH2O(9); CH3O(35), CH3OH(14); 
+! Matched reaction 66 CH3O + CH3O-4 <=> CH4O-2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [O_rad/NonDeC;O_Csrad]
+! family: Disproportionation
+CH3O(35)+CH2OH(36)=CH2O(9)+CH3OH(14)                2.410000e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #132; RMG #928
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH2O(9); CH2OH(36), CH3OH(14); 
+! Matched reaction 66 CH3O + CH3O-4 <=> CH4O-2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/O;Cmethyl_Orad]
+! family: Disproportionation
+CH3O(35)+CH2OH(36)=CH2O(9)+CH3OH(14)                2.410000e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #133; RMG #94
+! Template reaction: Disproportionation
+! Flux pairs: CH3(10), CH4(2); C2H5O(70), CH3CHO(16); 
+! Estimated using template [Cs_rad;C/H2/Nd_Rrad] for rate rule [C_methyl;C/H2/Nd_Orad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+CH3(10)+C2H5O(70)=CH4(2)+CH3CHO(16)                 4.326064e+11 0.133     0.055    
+
+! Reaction index: Chemkin #134; RMG #208
+! Template reaction: Disproportionation
+! Flux pairs: OH(17), H2O(5); C2H5O(70), CH3CHO(16); 
+! Estimated using template [O_pri_rad;C/H2/Nd_Rrad] for rate rule [O_pri_rad;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+OH(17)+C2H5O(70)=H2O(5)+CH3CHO(16)                  4.820000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #135; RMG #218
+! Template reaction: Disproportionation
+! Flux pairs: H(12), H2(6); C2H5O(70), CH3CHO(16); 
+! Estimated using template [H_rad;C/H2/Nd_Rrad] for rate rule [H_rad;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+H(12)+C2H5O(70)=H2(6)+CH3CHO(16)                    3.620000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #136; RMG #253
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H6(8); C2H5O(70), CH3CHO(16); 
+! Estimated using template [C_rad/H2/Cs;C/H2/Nd_Rrad] for rate rule [C_rad/H2/Cs;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5(13)+C2H5O(70)=C2H6(8)+CH3CHO(16)               2.900000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #137; RMG #265
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3(10), C2H5O(70); CH2O(9), C2H5O(70); 
+! Matched reaction 2817 CH2O + CH3 <=> C2H5O-2 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [CO-HH_O;CsJ-HHH]
+! family: R_Addition_MultipleBond
+CH2O(9)+CH3(10)=C2H5O(70)                           2.160000e+02 2.970     3.800    
+
+! Reaction index: Chemkin #138; RMG #288
+! Template reaction: Disproportionation
+! Flux pairs: HCO(15), CH3CHO(16); C2H5O(70), CH2O(9); 
+! Estimated using template [Y_rad;C/H2/Nd_Rrad] for rate rule [CO_pri_rad;C/H2/Nd_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+HCO(15)+C2H5O(70)=CH2O(9)+CH3CHO(16)                8.573997e+11 0.200     -0.100   
+
+! Reaction index: Chemkin #139; RMG #352
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: H(12), C2H5O(70); CH3CHO(16), C2H5O(70); 
+! Matched reaction 2782 H + C2H4O <=> C2H5O-3 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [CO-CsH_O;HJ]
+! family: R_Addition_MultipleBond
+H(12)+CH3CHO(16)=C2H5O(70)                          9.600000e+09 0.935     4.170    
+
+! Reaction index: Chemkin #140; RMG #386
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); C2H5O(70), CH3CHO(16); 
+! Estimated using template [C_rad/H2/O;C/H2/Nd_Rrad] for rate rule [C_rad/H2/O;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+CH2OH(36)=CH3OH(14)+CH3CHO(16)            9.640000e+11 0.000     0.000    
+
+! Reaction index: Chemkin #141; RMG #388
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); C2H5O(70), CH3CHO(16); 
+! Estimated using template [O_rad;C/H2/Nd_Rrad] for rate rule [O_rad/NonDeC;C/H2/Nd_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+CH3O(35)+C2H5O(70)=CH3OH(14)+CH3CHO(16)             4.820000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #142; RMG #629
+! Template reaction: Disproportionation
+! Flux pairs: O2(3), HO2(63); C2H5O(70), CH3CHO(16); 
+! Estimated using template [O2b;C/H2/Nd_Rrad] for rate rule [O2b;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 4.0
+! family: Disproportionation
+O2(3)+C2H5O(70)=CH3CHO(16)+HO2(63)                  1.833000e+13 0.000     14.850   
+
+! Reaction index: Chemkin #143; RMG #687
+! Template reaction: Disproportionation
+! Flux pairs: CH3O2(149), CH4O2(183); C2H5O(70), CH3CHO(16); 
+! Estimated using template [C_rad/H2/O;C/H2/Nd_Rrad] for rate rule [C_rad/H2/O;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+CH3O2(149)+C2H5O(70)=CH3CHO(16)+CH4O2(183)          9.640000e+11 0.000     0.000    
+
+! Reaction index: Chemkin #144; RMG #688
+! Template reaction: Disproportionation
+! Flux pairs: CH3OO(75), CH4O2(183); C2H5O(70), CH3CHO(16); 
+! Estimated using template [O_rad;C/H2/Nd_Rrad] for rate rule [O_rad/NonDeO;C/H2/Nd_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+CH3OO(75)+C2H5O(70)=CH3CHO(16)+CH4O2(183)           4.820000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #145; RMG #770
+! Template reaction: Disproportionation
+! Flux pairs: HO2(63), OO(175); C2H5O(70), CH3CHO(16); 
+! Estimated using template [O_rad;C/H2/Nd_Rrad] for rate rule [O_rad/NonDeO;C/H2/Nd_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+HO2(63)+C2H5O(70)=CH3CHO(16)+OO(175)                4.820000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #146; RMG #112
+! Template reaction: R_Recombination
+! Flux pairs: C2H5O2(76), C2H5(13); C2H5O2(76), O2(3); 
+! Matched reaction 1 C2H5O2 <=> O2 + C2H5 in R_Recombination/training
+! This reaction matched rate rule [C_rad/H2/Cs;O2_birad]
+! family: R_Recombination
+C2H5O2(76)=O2(3)+C2H5(13)                           9.490000e+21 -2.410    35.800   
+
+! Reaction index: Chemkin #147; RMG #639
+! Template reaction: HO2_Elimination_from_PeroxyRadical
+! Flux pairs: C2H5O2(76), HO2(63); C2H5O2(76), C2H4(18); 
+! Matched reaction 2 C2H5O2 <=> C2H4 + HO2 in HO2_Elimination_from_PeroxyRadical/training
+! This reaction matched rate rule [R2OO_2H_2H]
+! family: HO2_Elimination_from_PeroxyRadical
+C2H5O2(76)=C2H4(18)+HO2(63)                         4.680000e+07 1.690     29.800   
+
+! Reaction index: Chemkin #148; RMG #52
+! Template reaction: Singlet_Carbene_Intra_Disproportionation
+! Flux pairs: C2H4(44), C2H4(18); 
+! Estimated using template [CsJ2-C;singletcarbene;CH] for rate rule [CsJ2-C;CsJ2H;CH3]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Singlet_Carbene_Intra_Disproportionation
+C2H4(44)=C2H4(18)                                   3.095473e+20 -1.240    17.990   
+
+! Reaction index: Chemkin #149; RMG #50
+! Template reaction: Birad_R_Recombination
+! Flux pairs: H(12), OH(17); O(T)(42), OH(17); 
+! Matched reaction 4 H + O <=> HO in Birad_R_Recombination/training
+! This reaction matched rate rule [H_rad;O_birad]
+! family: Birad_R_Recombination
+H(12)+O(T)(42)=OH(17)                               1.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #150; RMG #122
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), O2(3); O(T)(42), OH(17); 
+! Estimated using average of templates [X_H;O_atom_triplet] + [Orad_O_H;Y_rad_birad_trirad_quadrad] for rate rule [Orad_O_H;O_atom_triplet]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+HO2(63)+O(T)(42)=O2(3)+OH(17)                       3.680392e+09 0.678     5.899    
+
+! Reaction index: Chemkin #151; RMG #244
+! Template reaction: CO_Disproportionation
+! Flux pairs: O(T)(42), OH(17); HCO(15), CO(7); 
+! Matched reaction 1 HCO + O <=> CO + OH in CO_Disproportionation/training
+! This reaction matched rate rule [O_atom_triplet;HCO]
+! family: CO_Disproportionation
+HCO(15)+O(T)(42)=CO(7)+OH(17)                       3.010000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #152; RMG #299
+! Template reaction: Disproportionation
+! Flux pairs: O(T)(42), OH(17); CH2OH(36), CH2O(9); 
+! Matched reaction 54 CH3O + O <=> HO-2 + CH2O in Disproportionation/training
+! This reaction matched rate rule [O_atom_triplet;O_Csrad]
+! family: Disproportionation
+O(T)(42)+CH2OH(36)=CH2O(9)+OH(17)                   9.040000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #153; RMG #300
+! Template reaction: Disproportionation
+! Flux pairs: O(T)(42), OH(17); CH3O(35), CH2O(9); 
+! Estimated using template [O_atom_triplet;Cmethyl_Rrad] for rate rule [O_atom_triplet;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+O(T)(42)+CH3O(35)=CH2O(9)+OH(17)                    1.500000e+09 1.500     -0.890   
+
+! Reaction index: Chemkin #154; RMG #327
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); O(T)(42), OH(17); 
+! Matched reaction 187 CH4b + O_rad <=> CH3_p1 + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_methyl]
+! family: H_Abstraction
+CH4(2)+O(T)(42)=CH3(10)+OH(17)                      4.400000e+05 2.500     6.577    
+
+! Reaction index: Chemkin #155; RMG #355
+! Template reaction: H_Abstraction
+! Flux pairs: H2(6), H(12); O(T)(42), OH(17); 
+! Matched reaction 285 H2 + O_rad <=> HO + H in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;H_rad]
+! family: H_Abstraction
+H2(6)+O(T)(42)=H(12)+OH(17)                         3.400000e+08 1.500     22.950   
+
+! Reaction index: Chemkin #156; RMG #375
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); O(T)(42), OH(17); 
+! Matched reaction 211 C2H6 + O_rad <=> C2H5b + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_rad/H2/Cs\H3]
+! family: H_Abstraction
+C2H6(8)+O(T)(42)=C2H5(13)+OH(17)                    1.800000e+05 2.800     5.800    
+
+! Reaction index: Chemkin #157; RMG #408
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); O(T)(42), OH(17); 
+! Matched reaction 360 CH2O + O_rad <=> HO + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;CO_pri_rad]
+! family: H_Abstraction
+CH2O(9)+O(T)(42)=HCO(15)+OH(17)                     4.160000e+11 0.570     2.760    
+
+! Reaction index: Chemkin #158; RMG #424
+! Template reaction: Disproportionation
+! Flux pairs: O(T)(42), OH(17); C2H5O(70), CH3CHO(16); 
+! Estimated using template [Y_1centerbirad;C/H2/Nd_Rrad] for rate rule [O_atom_triplet;C/H2/Nd_Orad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+O(T)(42)+C2H5O(70)=CH3CHO(16)+OH(17)                3.620000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #159; RMG #436
+! Template reaction: H_Abstraction
+! Flux pairs: H2O(5), OH(17); O(T)(42), OH(17); 
+! Matched reaction 380 H2O + O_rad <=> HO + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;O_pri_rad]
+! family: H_Abstraction
+H2O(5)+O(T)(42)=OH(17)+OH(17)                       5.260000e+09 1.200     17.830   
+
+! Reaction index: Chemkin #160; RMG #438
+! Template reaction: Disproportionation
+! Flux pairs: O(T)(42), OH(17); C2H5(13), C2H4(18); 
+! Estimated using average of templates [Y_1centerbirad;Cmethyl_Csrad] + [O_atom_triplet;Cmethyl_Rrad] for rate rule [O_atom_triplet;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+O(T)(42)=OH(17)+C2H4(18)                   3.680353e+11 0.750     -0.445   
+
+! Reaction index: Chemkin #161; RMG #451
+! Template reaction: Birad_R_Recombination
+! Flux pairs: CH3O(35), CH3OO(75); O(T)(42), CH3OO(75); 
+! From training reaction 3 used for O_rad/NonDe;O_birad
+! Exact match found for rate rule [O_rad/NonDe;O_birad]
+! Euclidian distance = 0
+! family: Birad_R_Recombination
+O(T)(42)+CH3O(35)=CH3OO(75)                         3.467074e+10 0.968     -0.479   
+
+! Reaction index: Chemkin #162; RMG #498
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); O(T)(42), OH(17); 
+! Matched reaction 205 CH4O2 + O_rad <=> CH3OO_p + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;OOC]
+! family: H_Abstraction
+CH4O2(183)+O(T)(42)=OH(17)+CH3OO(75)                8.700000e+12 0.000     4.750    
+
+! Reaction index: Chemkin #163; RMG #579
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); O(T)(42), OH(17); 
+! Matched reaction 204 CH3OOH_rC + O_rad <=> CH2OOH_p + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_rad/H2/O]
+! family: H_Abstraction
+CH4O2(183)+O(T)(42)=OH(17)+CH3O2(149)               1.600000e+13 0.000     4.750    
+
+! Reaction index: Chemkin #164; RMG #594
+! Template reaction: Birad_R_Recombination
+! Flux pairs: OH(17), HO2(63); O(T)(42), HO2(63); 
+! Estimated using template [O_rad;O_birad] for rate rule [O_pri_rad;O_birad]
+! Euclidian distance = 1.0
+! family: Birad_R_Recombination
+OH(17)+O(T)(42)=HO2(63)                             3.467074e+10 0.968     -0.479   
+
+! Reaction index: Chemkin #165; RMG #635
+! Template reaction: H_Abstraction
+! Flux pairs: OO(175), HO2(63); O(T)(42), OH(17); 
+! Estimated using template [O/H/NonDeO;O_atom_triplet] for rate rule [H2O2;O_atom_triplet]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+OO(175)+O(T)(42)=OH(17)+HO2(63)                     1.740000e+13 0.000     4.750    
+
+! Reaction index: Chemkin #166; RMG #694
+! Template reaction: Birad_R_Recombination
+! Flux pairs: CH3(10), CH3O(35); O(T)(42), CH3O(35); 
+! Estimated using template [Y_rad;O_birad] for rate rule [C_methyl;O_birad]
+! Euclidian distance = 2.0
+! family: Birad_R_Recombination
+CH3(10)+O(T)(42)=CH3O(35)                           4.695411e+09 1.126     -1.983   
+
+! Reaction index: Chemkin #167; RMG #725
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH3O(35); O(T)(42), OH(17); 
+! Matched reaction 194 CH4O-2 + O_rad <=> CH3O_p + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;O_rad/NonDeC]
+! family: H_Abstraction
+CH3OH(14)+O(T)(42)=OH(17)+CH3O(35)                  3.700000e+12 0.000     5.305    
+
+! Reaction index: Chemkin #168; RMG #911
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH2OH(36); O(T)(42), OH(17); 
+! Matched reaction 193 CH4O + O_rad <=> CH2OH_p + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_rad/H2/O]
+! family: H_Abstraction
+CH3OH(14)+O(T)(42)=OH(17)+CH2OH(36)                 2.100000e+13 0.000     5.305    
+
+! Reaction index: Chemkin #169; RMG #945
+! Template reaction: Birad_R_Recombination
+! Flux pairs: C2H5(13), C2H5O(70); O(T)(42), C2H5O(70); 
+! Estimated using template [Y_rad;O_birad] for rate rule [C_rad/H2/Cs;O_birad]
+! Euclidian distance = 3.0
+! family: Birad_R_Recombination
+C2H5(13)+O(T)(42)=C2H5O(70)                         4.695411e+09 1.126     -1.983   
+
+! Reaction index: Chemkin #170; RMG #1048
+! Template reaction: Birad_R_Recombination
+! Flux pairs: C2H5O2(76), C2H5O(70); C2H5O2(76), O(T)(42); 
+! Matched reaction 3 CH3CH2OO = CH3CH2O + O in Birad_R_Recombination/training
+! This reaction matched rate rule [O_rad/NonDe;O_birad]
+! family: Birad_R_Recombination
+C2H5O2(76)=O(T)(42)+C2H5O(70)                       2.980000e+15 -0.090    61.600   
+
+! Reaction index: Chemkin #171; RMG #117
+! Template reaction: R_Recombination
+! Flux pairs: HCO(15), CHO3(77); O2(3), CHO3(77); 
+! Matched reaction 119 O2 + CHO <=> CHO3 in R_Recombination/training
+! This reaction matched rate rule [CO_pri_rad;O2_birad]
+! family: R_Recombination
+O2(3)+HCO(15)=CHO3(77)                              7.000000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #172; RMG #605
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: HO2(63), CHO3(77); CO(7), CHO3(77); 
+! Estimated using an average for rate rule [CO;R_H]
+! Euclidian distance = 0
+! family: 1,2_Insertion_CO
+CO(7)+HO2(63)=CHO3(77)                              5.919848e+04 2.368     72.970   
+
+! Reaction index: Chemkin #173; RMG #322
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3(10), C3H7O(154); CH3CHO(16), C3H7O(154); 
+! Estimated using template [Od_CO-CsH;YJ] for rate rule [Od_CO-CsH;CsJ-HHH]
+! Euclidian distance = 3.0
+! family: R_Addition_MultipleBond
+CH3(10)+CH3CHO(16)=C3H7O(154)                       4.000000e+09 1.390     8.577    
+
+! Reaction index: Chemkin #174; RMG #46
+! Template reaction: R_Recombination
+! Flux pairs: H(12), CH3CHO(16); acetyl(39), CH3CHO(16); 
+! Estimated using template [Y_rad;CO_rad/NonDe] for rate rule [H_rad;CO_rad/NonDe]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+acetyl(39)=CH3CHO(16)                         1.531072e+13 -0.133    0.000    
+
+! Reaction index: Chemkin #175; RMG #121
+! Template reaction: H_Abstraction
+! Flux pairs: O2(3), HO2(63); CH3CHO(16), acetyl(39); 
+! Matched reaction 241 C2H4O + O2 <=> CH3CO_p + HO2 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;O2b]
+! family: H_Abstraction
+! Ea raised from 157.1 to 167.1 kJ/mol to match endothermicity of reaction.
+O2(3)+CH3CHO(16)=HO2(63)+acetyl(39)                 1.200000e+05 2.500     39.942   
+
+! Reaction index: Chemkin #176; RMG #225
+! Template reaction: R_Addition_COm
+! Flux pairs: CH3(10), acetyl(39); CO(7), acetyl(39); 
+! Matched reaction 0 CH3 + CO <=> C2H3O in R_Addition_COm/training
+! This reaction matched rate rule [COm;C_methyl]
+! family: R_Addition_COm
+CO(7)+CH3(10)=acetyl(39)                            2.634000e+07 1.512     6.013    
+
+! Reaction index: Chemkin #177; RMG #242
+! Template reaction: CO_Disproportionation
+! Flux pairs: acetyl(39), CH3CHO(16); HCO(15), CO(7); 
+! Estimated using template [CO_rad;HCO] for rate rule [CO_rad/NonDe;HCO]
+! Euclidian distance = 2.0
+! family: CO_Disproportionation
+HCO(15)+acetyl(39)=CO(7)+CH3CHO(16)                 1.800000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #178; RMG #290
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), CH3CHO(16); CH2OH(36), CH2O(9); 
+! Estimated using template [CO_rad;O_Csrad] for rate rule [CO_rad/NonDe;O_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+CH2OH(36)+acetyl(39)=CH2O(9)+CH3CHO(16)             1.810000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #179; RMG #292
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), CH3CHO(16); CH3O(35), CH2O(9); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;Cmethyl_Orad]
+! Euclidian distance = 2.82842712475
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+acetyl(39)=CH2O(9)+CH3CHO(16)              5.430000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #180; RMG #325
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); CH3CHO(16), acetyl(39); 
+! Matched reaction 242 C2H4O + CH3_r3 <=> CH3CO_p + CH4 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;C_methyl]
+! family: H_Abstraction
+CH3(10)+CH3CHO(16)=CH4(2)+acetyl(39)                3.500000e-08 6.210     1.629    
+
+! Reaction index: Chemkin #181; RMG #354
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); CH3CHO(16), acetyl(39); 
+! Matched reaction 234 C2H4O + H <=> CH3CO_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;H_rad]
+! family: H_Abstraction
+H(12)+CH3CHO(16)=H2(6)+acetyl(39)                   1.300000e+05 2.580     1.219    
+
+! Reaction index: Chemkin #182; RMG #373
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); acetyl(39), CH3CHO(16); 
+! Matched reaction 327 C2H3O + C2H6 <=> C2H4O + C2H5 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;C_rad/H2/Cs\H3]
+! family: H_Abstraction
+C2H6(8)+acetyl(39)=C2H5(13)+CH3CHO(16)              1.812000e+04 2.750     41.233   
+
+! Reaction index: Chemkin #183; RMG #405
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); acetyl(39), CH3CHO(16); 
+! Matched reaction 367 CH2O + C2H3O <=> C2H4O + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;CO_pri_rad]
+! family: H_Abstraction
+CH2O(9)+acetyl(39)=HCO(15)+CH3CHO(16)               1.810000e+11 0.000     12.920   
+
+! Reaction index: Chemkin #184; RMG #417
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), CH3CHO(16); C2H5O(70), CH3CHO(16); 
+! Estimated using template [Y_rad;C/H2/Nd_Rrad] for rate rule [CO_rad/NonDe;C/H2/Nd_Orad]
+! Euclidian distance = 3.16227766017
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+acetyl(39)=CH3CHO(16)+CH3CHO(16)          8.573997e+11 0.200     -0.100   
+
+! Reaction index: Chemkin #185; RMG #428
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH3CHO(16), acetyl(39); 
+! Matched reaction 237 C2H4O + OH <=> CH3CO_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;O_pri_rad]
+! family: H_Abstraction
+CH3CHO(16)+OH(17)=H2O(5)+acetyl(39)                 2.800000e+12 0.000     -0.709   
+
+! Reaction index: Chemkin #186; RMG #430
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H4(18); C2H5(13), CH3CHO(16); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;Cmethyl_Csrad]
+! Euclidian distance = 2.82842712475
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+acetyl(39)=CH3CHO(16)+C2H4(18)             5.430000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #187; RMG #497
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); acetyl(39), CH3CHO(16); 
+! Estimated using an average for rate rule [O/H/NonDeO;CO_rad/Cs]
+! Euclidian distance = 0
+! family: H_Abstraction
+CH4O2(183)+acetyl(39)=CH3CHO(16)+CH3OO(75)          1.582731e-04 4.663     41.320   
+
+! Reaction index: Chemkin #188; RMG #578
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O2(149), CH4O2(183); CH3CHO(16), acetyl(39); 
+! Estimated using template [CO/H/Cs;C_pri_rad] for rate rule [CO/H/Cs;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3CHO(16)+CH3O2(149)=CH4O2(183)+acetyl(39)         3.800000e+11 0.000     7.210    
+
+! Reaction index: Chemkin #189; RMG #633
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH3CHO(16), acetyl(39); 
+! Matched reaction 239 C2H4O + HO2_r3 <=> CH3CO_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;O_rad/NonDeO]
+! family: H_Abstraction
+CH3CHO(16)+HO2(63)=OO(175)+acetyl(39)               1.700000e+13 0.000     16.293   
+
+! Reaction index: Chemkin #190; RMG #724
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O(35), CH3OH(14); CH3CHO(16), acetyl(39); 
+! Estimated using template [CO/H/Cs;O_sec_rad] for rate rule [CO/H/Cs;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3CHO(16)+CH3O(35)=CH3OH(14)+acetyl(39)            5.698245e+04 2.125     8.551    
+
+! Reaction index: Chemkin #191; RMG #910
+! Template reaction: H_Abstraction
+! Flux pairs: CH2OH(36), CH3OH(14); CH3CHO(16), acetyl(39); 
+! Estimated using template [CO/H/Cs;C_pri_rad] for rate rule [CO/H/Cs;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3CHO(16)+CH2OH(36)=CH3OH(14)+acetyl(39)           3.800000e+11 0.000     7.210    
+
+! Reaction index: Chemkin #192; RMG #1188
+! Template reaction: H_Abstraction
+! Flux pairs: O(T)(42), OH(17); CH3CHO(16), acetyl(39); 
+! Matched reaction 236 C2H4O + O_rad <=> CH3CO_p + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [CO/H/Cs;O_atom_triplet]
+! family: H_Abstraction
+CH3CHO(16)+O(T)(42)=OH(17)+acetyl(39)               5.800000e+12 0.000     1.808    
+
+! Reaction index: Chemkin #193; RMG #45
+! Template reaction: R_Recombination
+! Flux pairs: vinoxy(38), CH3CHO(16); H(12), CH3CHO(16); 
+! Estimated using template [C_pri_rad;H_rad] for rate rule [C_rad/H2/CO;H_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+H(12)+vinoxy(38)=CH3CHO(16)                         8.836478e+12 0.331     -0.445   
+
+! Reaction index: Chemkin #194; RMG #120
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), O2(3); vinoxy(38), CH3CHO(16); 
+! Estimated using template [X_H;C_rad/H2/CO] for rate rule [Orad_O_H;C_rad/H2/CO]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+HO2(63)+vinoxy(38)=O2(3)+CH3CHO(16)                 1.730000e-10 6.300     -2.140   
+
+! Reaction index: Chemkin #195; RMG #241
+! Template reaction: CO_Disproportionation
+! Flux pairs: vinoxy(38), CH3CHO(16); HCO(15), CO(7); 
+! Estimated using template [C_pri_rad;HCO] for rate rule [C_rad/H2/CO;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+vinoxy(38)=CO(7)+CH3CHO(16)                 2.073644e+13 0.000     0.000    
+
+! Reaction index: Chemkin #196; RMG #289
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), CH3CHO(16); CH2OH(36), CH2O(9); 
+! Estimated using template [C_pri_rad;O_Csrad] for rate rule [C_rad/H2/CO;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+CH2OH(36)+vinoxy(38)=CH2O(9)+CH3CHO(16)             5.946310e+12 0.000     0.000    
+
+! Reaction index: Chemkin #197; RMG #291
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), CH3CHO(16); CH3O(35), CH2O(9); 
+! Estimated using template [C_pri_rad;Cmethyl_Rrad] for rate rule [C_rad/H2/CO;Cmethyl_Orad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+vinoxy(38)=CH2O(9)+CH3CHO(16)              3.450974e+13 -0.233    -0.043   
+
+! Reaction index: Chemkin #198; RMG #324
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); CH3CHO(16), vinoxy(38); 
+! Estimated using template [C/H3/OneDe;C_methyl] for rate rule [C/H3/CO;C_methyl]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3(10)+CH3CHO(16)=CH4(2)+vinoxy(38)                1.925841e+00 3.800     5.267    
+
+! Reaction index: Chemkin #199; RMG #353
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); CH3CHO(16), vinoxy(38); 
+! Matched reaction 235 CH3CHO_r1 + H <=> CH2CHO_p + H2_p in H_Abstraction/training
+! This reaction matched rate rule [C/H3/CO;H_rad]
+! family: H_Abstraction
+H(12)+CH3CHO(16)=H2(6)+vinoxy(38)                   2.700000e+03 3.100     5.203    
+
+! Reaction index: Chemkin #200; RMG #372
+! Template reaction: H_Abstraction
+! Flux pairs: C2H5(13), C2H6(8); CH3CHO(16), vinoxy(38); 
+! Estimated using template [C/H3/OneDe;C_rad/H2/Cs\H3] for rate rule [C/H3/CO;C_rad/H2/Cs\H3]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+C2H5(13)+CH3CHO(16)=C2H6(8)+vinoxy(38)              1.192077e-03 4.340     5.475    
+
+! Reaction index: Chemkin #201; RMG #404
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); vinoxy(38), CH3CHO(16); 
+! Estimated using template [CO_pri;C_pri_rad] for rate rule [CO_pri;C_rad/H2/CO]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+vinoxy(38)=HCO(15)+CH3CHO(16)               1.298364e+01 3.380     9.040    
+
+! Reaction index: Chemkin #202; RMG #415
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), CH3CHO(16); C2H5O(70), CH3CHO(16); 
+! Estimated using template [C_pri_rad;C/H2/Nd_Rrad] for rate rule [C_rad/H2/CO;C/H2/Nd_Orad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+vinoxy(38)=CH3CHO(16)+CH3CHO(16)          2.008897e+12 0.000     -0.043   
+
+! Reaction index: Chemkin #203; RMG #427
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); CH3CHO(16), vinoxy(38); 
+! Matched reaction 238 CH3CHO_r1 + OH <=> CH2CHO_p + H2O_p in H_Abstraction/training
+! This reaction matched rate rule [C/H3/CO;O_pri_rad]
+! family: H_Abstraction
+CH3CHO(16)+OH(17)=H2O(5)+vinoxy(38)                 8.500000e+13 0.000     5.313    
+
+! Reaction index: Chemkin #204; RMG #429
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H4(18); C2H5(13), CH3CHO(16); 
+! Estimated using template [C_pri_rad;Cmethyl_Csrad] for rate rule [C_rad/H2/CO;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+vinoxy(38)=CH3CHO(16)+C2H4(18)             3.450974e+13 -0.233    -0.043   
+
+! Reaction index: Chemkin #205; RMG #496
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); vinoxy(38), CH3CHO(16); 
+! Estimated using an average for rate rule [O/H/NonDeO;C_rad/H2/CO]
+! Euclidian distance = 0
+! family: H_Abstraction
+CH4O2(183)+vinoxy(38)=CH3CHO(16)+CH3OO(75)          1.730000e-10 6.300     -2.140   
+
+! Reaction index: Chemkin #206; RMG #577
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O2(149), CH4O2(183); CH3CHO(16), vinoxy(38); 
+! Estimated using template [C/H3/OneDe;C_pri_rad] for rate rule [C/H3/CO;C_rad/H2/O]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3CHO(16)+CH3O2(149)=CH4O2(183)+vinoxy(38)         2.845679e-03 4.364     11.386   
+
+! Reaction index: Chemkin #207; RMG #632
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), OO(175); CH3CHO(16), vinoxy(38); 
+! Matched reaction 240 CH3CHO_r1 + HO2_r3 <=> CH2CHO_p + H2O2_p13 in H_Abstraction/training
+! This reaction matched rate rule [C/H3/CO;O_rad/NonDeO]
+! family: H_Abstraction
+CH3CHO(16)+HO2(63)=OO(175)+vinoxy(38)               1.100000e+13 0.000     23.248   
+
+! Reaction index: Chemkin #208; RMG #723
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O(35), CH3OH(14); CH3CHO(16), vinoxy(38); 
+! Estimated using average of templates [C/H3/OneDe;O_rad/NonDeC] + [C/H3/CO;O_sec_rad] for rate rule [C/H3/CO;O_rad/NonDeC]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3CHO(16)+CH3O(35)=CH3OH(14)+vinoxy(38)            2.948227e+06 1.910     12.439   
+
+! Reaction index: Chemkin #209; RMG #909
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH2OH(36); vinoxy(38), CH3CHO(16); 
+! Estimated using template [C_pri;C_pri_rad] for rate rule [C/H3/O;C_rad/H2/CO]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3OH(14)+vinoxy(38)=CH3CHO(16)+CH2OH(36)           4.194233e-03 4.381     13.317   
+
+! Reaction index: Chemkin #210; RMG #1187
+! Template reaction: H_Abstraction
+! Flux pairs: O(T)(42), OH(17); CH3CHO(16), vinoxy(38); 
+! Estimated using template [C/H3/OneDe;O_atom_triplet] for rate rule [C/H3/CO;O_atom_triplet]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3CHO(16)+O(T)(42)=OH(17)+vinoxy(38)               7.880000e-03 4.293     11.251   
+
+! Reaction index: Chemkin #211; RMG #1593
+! Template reaction: intra_H_migration
+! Flux pairs: vinoxy(38), acetyl(39); 
+! Estimated using template [R2H_S;C_rad_out_2H;XH_out] for rate rule [R2H_S;C_rad_out_2H;CO_H_out]
+! Euclidian distance = 1.0
+! family: intra_H_migration
+vinoxy(38)=acetyl(39)                               1.748116e+04 2.561     33.816   
+
+! Reaction index: Chemkin #212; RMG #1644
+! Template reaction: H_Abstraction
+! Flux pairs: CH3CHO(16), acetyl(39); vinoxy(38), CH3CHO(16); 
+! Estimated using template [CO/H/Cs;C_pri_rad] for rate rule [CO/H/Cs;C_rad/H2/CO]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3CHO(16)+vinoxy(38)=CH3CHO(16)+acetyl(39)         3.800000e+11 0.000     7.210    
+
+! Reaction index: Chemkin #213; RMG #466
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: CH3OO(75), S(189); CO(7), S(189); 
+! Estimated using template [CO;C_pri] for rate rule [CO;C_pri/NonDeO]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: 1,2_Insertion_CO
+CO(7)+CH3OO(75)=S(189)                              2.742000e+05 2.530     85.500   
+
+! Reaction index: Chemkin #214; RMG #1735
+! Template reaction: R_Recombination
+! Flux pairs: vinoxy(38), S(189); O2(3), S(189); 
+! Estimated using template [C_pri_rad;O2_birad] for rate rule [C_rad/H2/CO;O2_birad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: R_Recombination
+O2(3)+vinoxy(38)=S(189)                             7.013067e+09 0.636     0.166    
+
+! Reaction index: Chemkin #215; RMG #967
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: C2H5O(70), S(312); CO(7), S(312); 
+! From training reaction 4 used for CO;C_pri/NonDeC
+! Exact match found for rate rule [CO;C_pri/NonDeC]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: 1,2_Insertion_CO
+CO(7)+C2H5O(70)=S(312)                              2.742000e+05 2.530     85.500   
+
+! Reaction index: Chemkin #216; RMG #1781
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: vinoxy(38), S(312); CH2O(9), S(312); 
+! From training reaction 2 used for CO-HH_O;CsJ-COHH
+! Exact match found for rate rule [CO-HH_O;CsJ-COHH]
+! Euclidian distance = 0
+! family: R_Addition_MultipleBond
+CH2O(9)+vinoxy(38)=S(312)                           5.432140e+01 3.009     6.589    
+
+! Reaction index: Chemkin #217; RMG #794
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: C2H5O(138), S(273); CO(7), S(273); 
+! Estimated using template [CO;C_pri] for rate rule [CO;C_pri/NonDeO]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: 1,2_Insertion_CO
+CO(7)+C2H5O(138)=S(273)                             2.742000e+05 2.530     85.500   
+
+! Reaction index: Chemkin #218; RMG #1780
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: vinoxy(38), S(273); CH2O(9), S(273); 
+! Estimated using template [R_R;CsJ-COHH] for rate rule [Od_CO-HH;CsJ-COHH]
+! Euclidian distance = 3.0
+! family: R_Addition_MultipleBond
+CH2O(9)+vinoxy(38)=S(273)                           5.432140e+01 3.009     6.589    
+
+! Reaction index: Chemkin #219; RMG #1592
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: C2H2O(489), acetyl(39); H(12), acetyl(39); 
+! Matched reaction 186 H + C2H2O-2 <=> C2H3O in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Cds-HH_Ck;HJ]
+! family: R_Addition_MultipleBond
+H(12)+C2H2O(489)=acetyl(39)                         3.820000e-16 1.610     2.627    
+
+! Reaction index: Chemkin #220; RMG #1598
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); O2(3), HO2(63); 
+! Estimated using template [O2b;Cmethyl_Rrad] for rate rule [O2b;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: Disproportionation
+O2(3)+acetyl(39)=HO2(63)+C2H2O(489)                 4.338000e+13 0.000     15.990   
+
+! Reaction index: Chemkin #221; RMG #1617
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); CH3(10), CH4(2); 
+! Estimated using template [Cs_rad;Cmethyl_Rrad] for rate rule [C_methyl;Cmethyl_COrad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3(10)+acetyl(39)=CH4(2)+C2H2O(489)                7.571738e+13 -0.509    -0.014   
+
+! Reaction index: Chemkin #222; RMG #1625
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); H(12), H2(6); 
+! Estimated using template [H_rad;Cmethyl_Rrad] for rate rule [H_rad;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+H(12)+acetyl(39)=H2(6)+C2H2O(489)                   1.082997e+12 0.500     -0.297   
+
+! Reaction index: Chemkin #223; RMG #1626
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); C2H5(13), C2H6(8); 
+! Estimated using template [C_rad/H2/Cs;Cmethyl_Rrad] for rate rule [C_rad/H2/Cs;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+acetyl(39)=C2H6(8)+C2H2O(489)              6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #224; RMG #1633
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); HCO(15), CH2O(9); 
+! Estimated using template [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_COrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HCO(15)+acetyl(39)=CH2O(9)+C2H2O(489)               5.430000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #225; RMG #1645
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); OH(17), H2O(5); 
+! Estimated using template [O_pri_rad;Cmethyl_Rrad] for rate rule [O_pri_rad;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+OH(17)+acetyl(39)=H2O(5)+C2H2O(489)                 2.794351e+10 1.000     -0.595   
+
+! Reaction index: Chemkin #226; RMG #1652
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); CH3OO(75), CH4O2(183); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_COrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3OO(75)+acetyl(39)=CH4O2(183)+C2H2O(489)          1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #227; RMG #1656
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); CH3O2(149), CH4O2(183); 
+! Estimated using template [C_rad/H2/O;Cmethyl_Rrad] for rate rule [C_rad/H2/O;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O2(149)+acetyl(39)=CH4O2(183)+C2H2O(489)         8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #228; RMG #1662
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); HO2(63), OO(175); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_COrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HO2(63)+acetyl(39)=OO(175)+C2H2O(489)               1.247681e+07 2.018     -1.200   
+
+! Reaction index: Chemkin #229; RMG #1667
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); CH3O(35), CH3OH(14); 
+! Estimated using template [O_rad/NonDeC;XH_s_Rrad] for rate rule [O_rad/NonDeC;Cmethyl_COrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+acetyl(39)=CH3OH(14)+C2H2O(489)            7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #230; RMG #1679
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); CH2OH(36), CH3OH(14); 
+! Estimated using template [C_rad/H2/O;Cmethyl_Rrad] for rate rule [C_rad/H2/O;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH2OH(36)+acetyl(39)=CH3OH(14)+C2H2O(489)           8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #231; RMG #1695
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); O(T)(42), OH(17); 
+! Estimated using template [O_atom_triplet;Cmethyl_Rrad] for rate rule [O_atom_triplet;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+O(T)(42)+acetyl(39)=OH(17)+C2H2O(489)               1.500000e+09 1.500     -0.890   
+
+! Reaction index: Chemkin #232; RMG #1713
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); acetyl(39), CH3CHO(16); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;Cmethyl_COrad]
+! Euclidian distance = 2.82842712475
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+acetyl(39)+acetyl(39)=CH3CHO(16)+C2H2O(489)         5.430000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #233; RMG #1716
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: C2H2O(489), vinoxy(38); H(12), vinoxy(38); 
+! Matched reaction 187 H + C2H2O <=> C2H3O-2 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Ck_Cds-HH;HJ]
+! family: R_Addition_MultipleBond
+H(12)+C2H2O(489)=vinoxy(38)                         3.300000e-15 1.430     6.051    
+
+! Reaction index: Chemkin #234; RMG #1731
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); O2(3), HO2(63); 
+! Estimated using template [O2b;XH_s_Rrad] for rate rule [O2b;COpri_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+O2(3)+vinoxy(38)=HO2(63)+C2H2O(489)                 1.126662e+12 0.000     7.393    
+
+! Reaction index: Chemkin #235; RMG #1796
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); CH3(10), CH4(2); 
+! Estimated using template [Cs_rad;XH_s_Rrad] for rate rule [C_methyl;COpri_Csrad]
+! Euclidian distance = 2.2360679775
+! family: Disproportionation
+CH3(10)+vinoxy(38)=CH4(2)+C2H2O(489)                3.397145e+12 -0.157    1.146    
+
+! Reaction index: Chemkin #236; RMG #1818
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); H(12), H2(6); 
+! Estimated using template [H_rad;XH_s_Rrad] for rate rule [H_rad;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+H(12)+vinoxy(38)=H2(6)+C2H2O(489)                   1.157174e+11 0.550     0.023    
+
+! Reaction index: Chemkin #237; RMG #1824
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); C2H5(13), C2H6(8); 
+! Estimated using template [C_rad/H2/Cs;XH_s_Rrad] for rate rule [C_rad/H2/Cs;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+C2H5(13)+vinoxy(38)=C2H6(8)+C2H2O(489)              2.306766e+12 -0.070    1.200    
+
+! Reaction index: Chemkin #238; RMG #1848
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); HCO(15), CH2O(9); 
+! Estimated using template [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+HCO(15)+vinoxy(38)=CH2O(9)+C2H2O(489)               1.810000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #239; RMG #1889
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); OH(17), H2O(5); 
+! Estimated using template [O_pri_rad;XH_s_Rrad] for rate rule [O_pri_rad;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+OH(17)+vinoxy(38)=H2O(5)+C2H2O(489)                 7.868228e+10 0.667     0.603    
+
+! Reaction index: Chemkin #240; RMG #1916
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); CH3OO(75), CH4O2(183); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+CH3OO(75)+vinoxy(38)=CH4O2(183)+C2H2O(489)          4.158935e+06 2.018     -1.200   
+
+! Reaction index: Chemkin #241; RMG #1928
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); CH3O2(149), CH4O2(183); 
+! Estimated using template [C_rad/H2/O;XH_s_Rrad] for rate rule [C_rad/H2/O;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+CH3O2(149)+vinoxy(38)=CH4O2(183)+C2H2O(489)         1.127852e+12 0.000     0.000    
+
+! Reaction index: Chemkin #242; RMG #1945
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); HO2(63), OO(175); 
+! Estimated using template [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+HO2(63)+vinoxy(38)=OO(175)+C2H2O(489)               4.158935e+06 2.018     -1.200   
+
+! Reaction index: Chemkin #243; RMG #1967
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); CH3O(35), CH3OH(14); 
+! Estimated using template [O_rad/NonDeC;XH_s_Rrad] for rate rule [O_rad/NonDeC;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+CH3O(35)+vinoxy(38)=CH3OH(14)+C2H2O(489)            2.410000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #244; RMG #2004
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); CH2OH(36), CH3OH(14); 
+! Estimated using template [C_rad/H2/O;XH_s_Rrad] for rate rule [C_rad/H2/O;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+CH2OH(36)+vinoxy(38)=CH3OH(14)+C2H2O(489)           1.127852e+12 0.000     0.000    
+
+! Reaction index: Chemkin #245; RMG #2055
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); O(T)(42), OH(17); 
+! Estimated using template [O_atom_triplet;XH_s_Rrad] for rate rule [O_atom_triplet;COpri_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+O(T)(42)+vinoxy(38)=OH(17)+C2H2O(489)               2.837491e+09 1.250     -0.473   
+
+! Reaction index: Chemkin #246; RMG #2114
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); acetyl(39), CH3CHO(16); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;COpri_Csrad]
+! Euclidian distance = 2.82842712475
+! family: Disproportionation
+vinoxy(38)+acetyl(39)=CH3CHO(16)+C2H2O(489)         1.810000e+14 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #247; RMG #2115
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); vinoxy(38), CH3CHO(16); 
+! Estimated using template [C_pri_rad;Cmethyl_Rrad] for rate rule [C_rad/H2/CO;Cmethyl_COrad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+vinoxy(38)+acetyl(39)=CH3CHO(16)+C2H2O(489)         3.450974e+13 -0.233    -0.043   
+DUPLICATE
+
+! Reaction index: Chemkin #248; RMG #2128
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); vinoxy(38), CH3CHO(16); 
+! Estimated using template [C_pri_rad;XH_s_Rrad] for rate rule [C_rad/H2/CO;COpri_Csrad]
+! Euclidian distance = 2.2360679775
+! family: Disproportionation
+vinoxy(38)+vinoxy(38)=CH3CHO(16)+C2H2O(489)         1.659953e+12 -0.047    1.024    
+
+! Reaction index: Chemkin #249; RMG #2167
+! Template reaction: HO2_Elimination_from_PeroxyRadical
+! Flux pairs: S(189), C2H2O(489); S(189), HO2(63); 
+! Estimated using an average for rate rule [R2OO]
+! Euclidian distance = 0
+! family: HO2_Elimination_from_PeroxyRadical
+S(189)=HO2(63)+C2H2O(489)                           9.581740e+10 0.573     33.310   
+
+! Reaction index: Chemkin #250; RMG #3417
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); acetyl(39), CH3CHO(16); 
+! Estimated using template [C_pri_rad;Cmethyl_Rrad] for rate rule [C_rad/H2/CO;Cmethyl_COrad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+vinoxy(38)+acetyl(39)=CH3CHO(16)+C2H2O(489)         3.450974e+13 -0.233    -0.043   
+DUPLICATE
+
+! Reaction index: Chemkin #251; RMG #3419
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); vinoxy(38), CH3CHO(16); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;Cdpri_Orad]
+! Euclidian distance = 2.82842712475
+! family: Disproportionation
+vinoxy(38)+acetyl(39)=CH3CHO(16)+C2H2O(489)         1.810000e+14 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #252; RMG #3347
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: O2(3), S(1107); C2H2O(489), S(1107); 
+! Estimated using average of templates [Cd_R;O2b] + [Ck_O;YJ] for rate rule [Ck_O;O2b]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 2.0
+! family: R_Addition_MultipleBond
+O2(3)+C2H2O(489)=S(1107)                            2.551913e+07 1.802     19.196   
+
+! Reaction index: Chemkin #253; RMG #3678
+! Template reaction: Birad_recombination
+! Flux pairs: S(1107), S(1252); 
+! Estimated using template [R4_SSS;Y_rad_out;Cpri_rad_out_2H] for rate rule [R4_SSS;O_rad;Cpri_rad_out_2H]
+! Euclidian distance = 1.0
+! family: Birad_recombination
+S(1107)=S(1252)                                     1.620000e+12 -0.305    1.980    
+
+! Reaction index: Chemkin #254; RMG #141
+! Template reaction: 1,4_Linear_birad_scission
+! Flux pairs: C2H2O3(89), CH2O(9); C2H2O3(89), CO2(4); 
+! Exact match found for rate rule [RJJ]
+! Euclidian distance = 0
+! family: 1,4_Linear_birad_scission
+C2H2O3(89)=CO2(4)+CH2O(9)                           5.000000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #255; RMG #4395
+! Template reaction: Birad_recombination
+! Flux pairs: C2H2O3(89), S(1252); 
+! Estimated using template [R4_SSS;Y_rad_out;Ypri_rad_out] for rate rule [R4_SSS;O_rad;Opri_rad]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 2.0
+! family: Birad_recombination
+C2H2O3(89)=S(1252)                                  3.240000e+12 -0.305    1.980    
+
+! Reaction index: Chemkin #256; RMG #517
+! Template reaction: R_Recombination
+! Flux pairs: OH(17), CH3O2(149); CH2O(204), CH3O2(149); 
+! Estimated using an average for rate rule [O_pri_rad;Y_rad]
+! Euclidian distance = 0
+! family: R_Recombination
+OH(17)+CH2O(204)=CH3O2(149)                         3.051663e+13 0.045     0.025    
+
+! Reaction index: Chemkin #257; RMG #693
+! Template reaction: R_Recombination
+! Flux pairs: CH2O(204), CH3O(35); H(12), CH3O(35); 
+! Estimated using an average for rate rule [Y_rad;H_rad]
+! Euclidian distance = 0
+! family: R_Recombination
+H(12)+CH2O(204)=CH3O(35)                            2.164334e+12 0.280     -0.325   
+
+! Reaction index: Chemkin #258; RMG #702
+! Template reaction: CO_Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); HCO(15), CO(7); 
+! Estimated using an average for rate rule [Y_rad;HCO]
+! Euclidian distance = 0
+! family: CO_Disproportionation
+HCO(15)+CH2O(204)=CO(7)+CH3O(35)                    1.347651e+15 -0.548    0.393    
+
+! Reaction index: Chemkin #259; RMG #705
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); CH2OH(36), CH2O(9); 
+! From training reaction 57 used for Y_rad;O_Csrad
+! Exact match found for rate rule [Y_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH2OH(36)+CH2O(204)=CH2O(9)+CH3O(35)                8.490000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #260; RMG #706
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); CH3O(35), CH2O(9); 
+! Estimated using an average for rate rule [Y_rad;Cmethyl_Orad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+CH2O(204)=CH2O(9)+CH3O(35)                 5.430000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #261; RMG #720
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); C2H5O(70), CH3CHO(16); 
+! Estimated using template [Y_rad;C/H2/Nd_Rrad] for rate rule [Y_rad;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+CH2O(204)=CH3CHO(16)+CH3O(35)             8.573997e+11 0.200     -0.100   
+
+! Reaction index: Chemkin #262; RMG #726
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); C2H5(13), C2H4(18); 
+! From training reaction 5 used for Y_rad;Cmethyl_Csrad
+! Exact match found for rate rule [Y_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH2O(204)=C2H4(18)+CH3O(35)                6.570000e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #263; RMG #771
+! Template reaction: R_Recombination
+! Flux pairs: CH2O(204), C2H5O(138); CH3(10), C2H5O(138); 
+! Estimated using an average for rate rule [Y_rad;C_methyl]
+! Euclidian distance = 0
+! family: R_Recombination
+CH3(10)+CH2O(204)=C2H5O(138)                        1.791921e+12 0.161     -0.186   
+
+! Reaction index: Chemkin #264; RMG #867
+! Template reaction: R_Recombination
+! Flux pairs: H(12), CH2OH(36); CH2O(204), CH2OH(36); 
+! Estimated using an average for rate rule [H_rad;Y_rad]
+! Euclidian distance = 0
+! family: R_Recombination
+H(12)+CH2O(204)=CH2OH(36)                           2.164334e+12 0.280     -0.325   
+
+! Reaction index: Chemkin #265; RMG #880
+! Template reaction: CO_Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); HCO(15), CO(7); 
+! Estimated using an average for rate rule [Y_rad;HCO]
+! Euclidian distance = 0
+! family: CO_Disproportionation
+HCO(15)+CH2O(204)=CO(7)+CH2OH(36)                   1.347651e+15 -0.548    0.393    
+
+! Reaction index: Chemkin #266; RMG #884
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); CH2OH(36), CH2O(9); 
+! From training reaction 57 used for Y_rad;O_Csrad
+! Exact match found for rate rule [Y_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH2OH(36)+CH2O(204)=CH2O(9)+CH2OH(36)               8.490000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #267; RMG #886
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); CH3O(35), CH2O(9); 
+! Estimated using an average for rate rule [Y_rad;Cmethyl_Orad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+CH2O(204)=CH2O(9)+CH2OH(36)                5.430000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #268; RMG #906
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); C2H5O(70), CH3CHO(16); 
+! Estimated using template [Y_rad;C/H2/Nd_Rrad] for rate rule [Y_rad;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+CH2O(204)=CH3CHO(16)+CH2OH(36)            8.573997e+11 0.200     -0.100   
+
+! Reaction index: Chemkin #269; RMG #915
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); C2H5(13), C2H4(18); 
+! From training reaction 5 used for Y_rad;Cmethyl_Csrad
+! Exact match found for rate rule [Y_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+CH2O(204)=C2H4(18)+CH2OH(36)               6.570000e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #270; RMG #941
+! Template reaction: R_Recombination
+! Flux pairs: CH2O(204), C2H5O(70); CH3(10), C2H5O(70); 
+! Estimated using an average for rate rule [Y_rad;C_methyl]
+! Euclidian distance = 0
+! family: R_Recombination
+CH3(10)+CH2O(204)=C2H5O(70)                         1.791921e+12 0.161     -0.186   
+
+! Reaction index: Chemkin #271; RMG #2502
+! Template reaction: R_Recombination
+! Flux pairs: vinoxy(38), S(312); CH2O(204), S(312); 
+! Estimated using template [C_pri_rad;Y_rad] for rate rule [C_rad/H2/CO;Y_rad]
+! Euclidian distance = 1.0
+! family: R_Recombination
+vinoxy(38)+CH2O(204)=S(312)                         9.777871e+12 0.032     -0.148   
+
+! Reaction index: Chemkin #272; RMG #2910
+! Template reaction: R_Recombination
+! Flux pairs: CH2O(204), S(273); vinoxy(38), S(273); 
+! Estimated using template [Y_rad;C_pri_rad] for rate rule [Y_rad;C_rad/H2/CO]
+! Euclidian distance = 1.0
+! family: R_Recombination
+vinoxy(38)+CH2O(204)=S(273)                         9.777871e+12 0.032     -0.148   
+
+! Reaction index: Chemkin #273; RMG #3471
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); acetyl(39), C2H2O(489); 
+! Estimated using template [Y_rad;Cmethyl_Rrad] for rate rule [Y_rad;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+acetyl(39)+CH2O(204)=CH3O(35)+C2H2O(489)            2.753723e+12 0.148     -0.202   
+
+! Reaction index: Chemkin #274; RMG #3472
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); vinoxy(38), C2H2O(489); 
+! Estimated using template [Y_rad;Cdpri_Rrad] for rate rule [Y_rad;Cdpri_Orad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+vinoxy(38)+CH2O(204)=CH3O(35)+C2H2O(489)            3.480312e+12 0.000     6.000    
+
+! Reaction index: Chemkin #275; RMG #3495
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); acetyl(39), C2H2O(489); 
+! Estimated using template [Y_rad;Cmethyl_Rrad] for rate rule [Y_rad;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+acetyl(39)+CH2O(204)=CH2OH(36)+C2H2O(489)           2.753723e+12 0.148     -0.202   
+
+! Reaction index: Chemkin #276; RMG #3496
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); vinoxy(38), C2H2O(489); 
+! Estimated using template [Y_rad;Cdpri_Rrad] for rate rule [Y_rad;Cdpri_Orad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+vinoxy(38)+CH2O(204)=CH2OH(36)+C2H2O(489)           3.480312e+12 0.000     6.000    
+
+! Reaction index: Chemkin #277; RMG #4750
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CO2(4), C2H2O3(89); CH2O(204), C2H2O3(89); 
+! Estimated using template [Cdd_Od;CJ] for rate rule [CO2;CJ]
+! Euclidian distance = 1.0
+! family: R_Addition_MultipleBond
+! Ea raised from 86.4 to 91.6 kJ/mol to match endothermicity of reaction.
+CO2(4)+CH2O(204)=C2H2O3(89)                         8.040000e+06 1.680     21.885   
+
+! Reaction index: Chemkin #278; RMG #5294
+! Template reaction: 1,2-Birad_to_alkene
+! Flux pairs: CH2O(204), CH2O(9); 
+! Estimated using an average for rate rule [NOS]
+! Euclidian distance = 0
+! family: 1,2-Birad_to_alkene
+CH2O(204)=>CH2O(9)                                  1.000000e+10 0.000     0.000    
+
+! Reaction index: Chemkin #279; RMG #31
+! Template reaction: R_Recombination
+! Flux pairs: C3H7(32), C3H8(11); H(12), C3H8(11); 
+! From training reaction 18 used for C_rad/H2/Cs;H_rad
+! Exact match found for rate rule [C_rad/H2/Cs;H_rad]
+! Euclidian distance = 0
+! family: R_Recombination
+H(12)+C3H7(32)=C3H8(11)                             3.486770e-12 0.600     -0.800   
+
+! Reaction index: Chemkin #280; RMG #108
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(63), O2(3); C3H7(32), C3H8(11); 
+! Estimated using template [X_H;C_rad/H2/Cs] for rate rule [Orad_O_H;C_rad/H2/Cs]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+HO2(63)+C3H7(32)=O2(3)+C3H8(11)                     3.062323e+00 3.295     9.354    
+
+! Reaction index: Chemkin #281; RMG #227
+! Template reaction: CO_Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); HCO(15), CO(7); 
+! Matched reaction 7 HCO + nC3H7 <=> CO + C3H8_n in CO_Disproportionation/training
+! This reaction matched rate rule [C_rad/H2/Cs;HCO]
+! family: CO_Disproportionation
+HCO(15)+C3H7(32)=CO(7)+C3H8(11)                     6.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #282; RMG #267
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); CH2OH(36), CH2O(9); 
+! From training reaction 58 used for C_rad/H2/Cs;O_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH2OH(36)+C3H7(32)=CH2O(9)+C3H8(11)                 2.410000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #283; RMG #269
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); CH3O(35), CH2O(9); 
+! Estimated using template [C_rad/H2/Cs;Cmethyl_Rrad] for rate rule [C_rad/H2/Cs;Cmethyl_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+C3H7(32)=CH2O(9)+C3H8(11)                  6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #284; RMG #311
+! Template reaction: H_Abstraction
+! Flux pairs: CH3(10), CH4(2); C3H8(11), C3H7(32); 
+! Estimated using template [C/H3/Cs\OneNonDe;C_methyl] for rate rule [C/H3/Cs\H2\Cs;C_methyl]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+CH3(10)+C3H8(11)=CH4(2)+C3H7(32)                    4.000000e+00 3.570     7.717    
+
+! Reaction index: Chemkin #285; RMG #329
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3(10), C3H7(32); C2H4(18), C3H7(32); 
+! Matched reaction 219 CH3 + C2H4 <=> C3H7 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Cds-HH_Cds-HH;CsJ-HHH]
+! family: R_Addition_MultipleBond
+CH3(10)+C2H4(18)=C3H7(32)                           4.180000e+04 2.410     5.630    
+
+! Reaction index: Chemkin #286; RMG #332
+! Template reaction: H_Abstraction
+! Flux pairs: H(12), H2(6); C3H8(11), C3H7(32); 
+! Estimated using average of templates [C/H3/Cs\OneNonDe;H_rad] + [C/H3/Cs\H2\Cs;Y_rad] for rate rule [C/H3/Cs\H2\Cs;H_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C3H8(11)+H(12)=H2(6)+C3H7(32)                       1.663824e+04 2.718     6.496    
+
+! Reaction index: Chemkin #287; RMG #334
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); C3H7(32), C3H8(11); 
+! Estimated using an average for rate rule [C/H3/Cs\H3;C_rad/H2/Cs]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C2H6(8)+C3H7(32)=C3H8(11)+C2H5(13)                  3.260601e-04 4.810     8.490    
+
+! Reaction index: Chemkin #288; RMG #338
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); C3H7(32), C3H8(11); 
+! Estimated using an average for rate rule [CO_pri;C_rad/H2/Cs]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+CH2O(9)+C3H7(32)=C3H8(11)+HCO(15)                   5.500000e+03 2.810     5.860    
+
+! Reaction index: Chemkin #289; RMG #342
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); C2H5O(70), CH3CHO(16); 
+! Estimated using template [C_rad/H2/Cs;C/H2/Nd_Rrad] for rate rule [C_rad/H2/Cs;C/H2/Nd_Orad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+C3H7(32)=C3H8(11)+CH3CHO(16)              2.900000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #290; RMG #344
+! Template reaction: H_Abstraction
+! Flux pairs: OH(17), H2O(5); C3H8(11), C3H7(32); 
+! Estimated using template [C/H3/Cs\OneNonDe;O_pri_rad] for rate rule [C/H3/Cs\H2\Cs;O_pri_rad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C3H8(11)+OH(17)=H2O(5)+C3H7(32)                     1.880000e+04 2.670     -1.004   
+
+! Reaction index: Chemkin #291; RMG #346
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); C2H5(13), C2H4(18); 
+! From training reaction 6 used for C_rad/H2/Cs;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+C3H7(32)=C3H8(11)+C2H4(18)                 6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #292; RMG #478
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3OO(75); C3H7(32), C3H8(11); 
+! Estimated using an average for rate rule [O/H/NonDeO;C_rad/H2/Cs]
+! Euclidian distance = 0
+! family: H_Abstraction
+! Ea raised from -7.3 to -7.3 kJ/mol.
+CH4O2(183)+C3H7(32)=C3H8(11)+CH3OO(75)              6.391396e-04 4.352     -1.737   
+
+! Reaction index: Chemkin #293; RMG #553
+! Template reaction: H_Abstraction
+! Flux pairs: CH4O2(183), CH3O2(149); C3H7(32), C3H8(11); 
+! Estimated using template [C_pri;C_rad/H2/Cs] for rate rule [C/H3/O;C_rad/H2/Cs]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH4O2(183)+C3H7(32)=C3H8(11)+CH3O2(149)             2.746363e-04 4.602     6.621    
+
+! Reaction index: Chemkin #294; RMG #617
+! Template reaction: H_Abstraction
+! Flux pairs: OO(175), HO2(63); C3H7(32), C3H8(11); 
+! Estimated using an average for rate rule [H2O2;C_rad/H2/Cs]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: H_Abstraction
+OO(175)+C3H7(32)=C3H8(11)+HO2(63)                   1.773899e+00 3.328     1.143    
+
+! Reaction index: Chemkin #295; RMG #712
+! Template reaction: H_Abstraction
+! Flux pairs: CH3O(35), CH3OH(14); C3H8(11), C3H7(32); 
+! Estimated using template [C/H3/Cs\OneNonDe;O_sec_rad] for rate rule [C/H3/Cs\H2\Cs;O_rad/NonDeC]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C3H8(11)+CH3O(35)=CH3OH(14)+C3H7(32)                2.400000e+04 2.550     15.750   
+
+! Reaction index: Chemkin #296; RMG #893
+! Template reaction: H_Abstraction
+! Flux pairs: CH3OH(14), CH2OH(36); C3H7(32), C3H8(11); 
+! Estimated using template [C_pri;C_rad/H2/Cs] for rate rule [C/H3/O;C_rad/H2/Cs]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3OH(14)+C3H7(32)=C3H8(11)+CH2OH(36)               2.746363e-04 4.602     6.621    
+
+! Reaction index: Chemkin #297; RMG #1181
+! Template reaction: H_Abstraction
+! Flux pairs: O(T)(42), OH(17); C3H8(11), C3H7(32); 
+! Estimated using template [C/H3/Cs\OneNonDe;O_atom_triplet] for rate rule [C/H3/Cs\H2\Cs;O_atom_triplet]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 6.0
+! family: H_Abstraction
+C3H8(11)+O(T)(42)=OH(17)+C3H7(32)                   1.940000e+03 3.230     4.660    
+
+! Reaction index: Chemkin #298; RMG #1624
+! Template reaction: H_Abstraction
+! Flux pairs: CH3CHO(16), acetyl(39); C3H7(32), C3H8(11); 
+! Estimated using template [CO/H/Cs;C_pri_rad] for rate rule [CO/H/Cs;C_rad/H2/Cs]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3CHO(16)+C3H7(32)=C3H8(11)+acetyl(39)             3.800000e+11 0.000     7.210    
+
+! Reaction index: Chemkin #299; RMG #1813
+! Template reaction: H_Abstraction
+! Flux pairs: CH3CHO(16), vinoxy(38); C3H7(32), C3H8(11); 
+! Estimated using template [C/H3/OneDe;C_rad/H2/Cs] for rate rule [C/H3/CO;C_rad/H2/Cs]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: H_Abstraction
+CH3CHO(16)+C3H7(32)=C3H8(11)+vinoxy(38)             5.153650e-04 4.471     5.188    
+
+! Reaction index: Chemkin #300; RMG #3388
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); acetyl(39), C2H2O(489); 
+! Estimated using template [C_rad/H2/Cs;Cmethyl_Rrad] for rate rule [C_rad/H2/Cs;Cmethyl_COrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+acetyl(39)+C3H7(32)=C3H8(11)+C2H2O(489)             6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #301; RMG #3389
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); vinoxy(38), C2H2O(489); 
+! Estimated using template [C_rad/H2/Cs;Cdpri_Rrad] for rate rule [C_rad/H2/Cs;Cdpri_Orad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+vinoxy(38)+C3H7(32)=C3H8(11)+C2H2O(489)             9.640000e+11 0.000     6.000    
+
+! Reaction index: Chemkin #302; RMG #1872
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: vinoxy(38), S(564); CH3CHO(16), S(564); 
+! Estimated using template [CO_O;CsJ-COHH] for rate rule [CO-CsH_O;CsJ-COHH]
+! Euclidian distance = 2.0
+! family: R_Addition_MultipleBond
+CH3CHO(16)+vinoxy(38)=S(564)                        5.432140e+01 3.009     6.589    
+
+! Reaction index: Chemkin #303; RMG #1462
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: C3H7O(154), S(466); CO(7), S(466); 
+! Estimated using template [CO;C_pri] for rate rule [CO;C_pri/NonDeO]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: 1,2_Insertion_CO
+CO(7)+C3H7O(154)=S(466)                             2.742000e+05 2.530     85.500   
+
+! Reaction index: Chemkin #304; RMG #1871
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: vinoxy(38), S(466); CH3CHO(16), S(466); 
+! Estimated using template [R_R;CsJ-COHH] for rate rule [Od_CO-CsH;CsJ-COHH]
+! Euclidian distance = 4.0
+! family: R_Addition_MultipleBond
+CH3CHO(16)+vinoxy(38)=S(466)                        5.432140e+01 3.009     6.589    
+
+! Reaction index: Chemkin #305; RMG #1718
+! Template reaction: Intra_R_Add_Endocyclic
+! Flux pairs: vinoxy(38), C2H3O(515); 
+! Estimated using template [R3_linear;multiplebond_intra;radadd_intra_cs2H] for rate rule [R3_CO;carbonyl_intra_H;radadd_intra_cs2H]
+! Euclidian distance = 2.2360679775
+! family: Intra_R_Add_Endocyclic
+! Ea raised from 148.7 to 150.0 kJ/mol to match endothermicity of reaction.
+vinoxy(38)=C2H3O(515)                               3.953611e+10 0.550     35.844   
+
+! Reaction index: Chemkin #306; RMG #613
+! Template reaction: HO2_Elimination_from_PeroxyRadical
+! Flux pairs: CH3O3(230), HO2(63); CH3O3(230), CH2O(9); 
+! Matched reaction 14 CH3O3 <=> CH2O + HO2 in HO2_Elimination_from_PeroxyRadical/training
+! This reaction matched rate rule [R2OO_O]
+! family: HO2_Elimination_from_PeroxyRadical
+CH3O3(230)=CH2O(9)+HO2(63)                          6.380000e+12 0.000     29.450   
+
+! Reaction index: Chemkin #307; RMG #872
+! Template reaction: R_Recombination
+! Flux pairs: CH2OH(36), CH3O3(230); O2(3), CH3O3(230); 
+! Estimated using template [C_pri_rad;O2_birad] for rate rule [C_rad/H2/O;O2_birad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 2.0
+! family: R_Recombination
+O2(3)+CH2OH(36)=CH3O3(230)                          7.013067e+09 0.636     0.166    
+
+! Reaction index: Chemkin #308; RMG #93
+! Template reaction: Disproportionation
+! Flux pairs: CH3(10), CH4(2); C2H5O(69), CH3CHO(16); 
+! Estimated using template [Cs_rad;O_Csrad] for rate rule [C_methyl;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+CH3(10)+C2H5O(69)=CH4(2)+CH3CHO(16)                 1.692576e+13 -0.250    0.000    
+
+! Reaction index: Chemkin #309; RMG #207
+! Template reaction: Disproportionation
+! Flux pairs: OH(17), H2O(5); C2H5O(69), CH3CHO(16); 
+! From training reaction 65 used for O_pri_rad;O_Csrad
+! Exact match found for rate rule [O_pri_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+OH(17)+C2H5O(69)=H2O(5)+CH3CHO(16)                  2.410000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #310; RMG #217
+! Template reaction: Disproportionation
+! Flux pairs: H(12), H2(6); C2H5O(69), CH3CHO(16); 
+! From training reaction 56 used for H_rad;O_Csrad
+! Exact match found for rate rule [H_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+H(12)+C2H5O(69)=H2(6)+CH3CHO(16)                    2.000000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #311; RMG #252
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H6(8); C2H5O(69), CH3CHO(16); 
+! From training reaction 58 used for C_rad/H2/Cs;O_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5(13)+C2H5O(69)=C2H6(8)+CH3CHO(16)               2.410000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #312; RMG #287
+! Template reaction: Disproportionation
+! Flux pairs: HCO(15), CH3CHO(16); C2H5O(69), CH2O(9); 
+! From training reaction 64 used for CO_pri_rad;O_Csrad
+! Exact match found for rate rule [CO_pri_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+HCO(15)+C2H5O(69)=CH2O(9)+CH3CHO(16)                1.810000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #313; RMG #341
+! Template reaction: Disproportionation
+! Flux pairs: C3H7(32), C3H8(11); C2H5O(69), CH3CHO(16); 
+! From training reaction 58 used for C_rad/H2/Cs;O_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+C3H7(32)=C3H8(11)+CH3CHO(16)              2.410000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #314; RMG #351
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: H(12), C2H5O(69); CH3CHO(16), C2H5O(69); 
+! Matched reaction 2818 H + C2H4O-5 <=> C2H5O-5 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Od_CO-CsH;HJ]
+! family: R_Addition_MultipleBond
+H(12)+CH3CHO(16)=C2H5O(69)                          4.000000e+09 1.390     8.577    
+
+! Reaction index: Chemkin #315; RMG #385
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH3OH(14); C2H5O(69), CH3CHO(16); 
+! From training reaction 60 used for C_rad/H2/O;O_Csrad
+! Exact match found for rate rule [C_rad/H2/O;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+CH2OH(36)=CH3OH(14)+CH3CHO(16)            4.820000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #316; RMG #387
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH3OH(14); C2H5O(69), CH3CHO(16); 
+! From training reaction 66 used for O_rad/NonDeC;O_Csrad
+! Exact match found for rate rule [O_rad/NonDeC;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+CH3O(35)=CH3OH(14)+CH3CHO(16)             2.410000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #317; RMG #414
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), CH3CHO(16); C2H5O(69), CH3CHO(16); 
+! Estimated using template [C_pri_rad;O_Csrad] for rate rule [C_rad/H2/CO;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=CH3CHO(16)+CH3CHO(16)          5.946310e+12 0.000     0.000    
+
+! Reaction index: Chemkin #318; RMG #416
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), CH3CHO(16); C2H5O(69), CH3CHO(16); 
+! Estimated using template [CO_rad;O_Csrad] for rate rule [CO_rad/NonDe;O_Csrad]
+! Euclidian distance = 2.0
+! family: Disproportionation
+C2H5O(69)+acetyl(39)=CH3CHO(16)+CH3CHO(16)          1.810000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #319; RMG #423
+! Template reaction: Disproportionation
+! Flux pairs: O(T)(42), OH(17); C2H5O(69), CH3CHO(16); 
+! From training reaction 54 used for O_atom_triplet;O_Csrad
+! Exact match found for rate rule [O_atom_triplet;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+O(T)(42)=CH3CHO(16)+OH(17)                9.040000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #320; RMG #628
+! Template reaction: Disproportionation
+! Flux pairs: O2(3), HO2(63); C2H5O(69), CH3CHO(16); 
+! From training reaction 53 used for O2b;O_Csrad
+! Exact match found for rate rule [O2b;O_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+O2(3)+C2H5O(69)=CH3CHO(16)+HO2(63)                  1.144180e+13 0.000     0.000    
+
+! Reaction index: Chemkin #321; RMG #685
+! Template reaction: Disproportionation
+! Flux pairs: CH3O2(149), CH4O2(183); C2H5O(69), CH3CHO(16); 
+! From training reaction 60 used for C_rad/H2/O;O_Csrad
+! Exact match found for rate rule [C_rad/H2/O;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH3O2(149)+C2H5O(69)=CH3CHO(16)+CH4O2(183)          4.820000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #322; RMG #686
+! Template reaction: Disproportionation
+! Flux pairs: CH3OO(75), CH4O2(183); C2H5O(69), CH3CHO(16); 
+! From training reaction 67 used for O_rad/NonDeO;O_Csrad
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+CH3OO(75)+C2H5O(69)=CH3CHO(16)+CH4O2(183)           1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #323; RMG #719
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH3O(35); C2H5O(69), CH3CHO(16); 
+! From training reaction 57 used for Y_rad;O_Csrad
+! Exact match found for rate rule [Y_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+CH2O(204)=CH3CHO(16)+CH3O(35)             8.490000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #324; RMG #769
+! Template reaction: Disproportionation
+! Flux pairs: HO2(63), OO(175); C2H5O(69), CH3CHO(16); 
+! From training reaction 67 used for O_rad/NonDeO;O_Csrad
+! Exact match found for rate rule [O_rad/NonDeO;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+HO2(63)+C2H5O(69)=CH3CHO(16)+OO(175)                1.210000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #325; RMG #904
+! Template reaction: Disproportionation
+! Flux pairs: CH2O(204), CH2OH(36); C2H5O(69), CH3CHO(16); 
+! From training reaction 57 used for Y_rad;O_Csrad
+! Exact match found for rate rule [Y_rad;O_Csrad]
+! Euclidian distance = 0
+! family: Disproportionation
+C2H5O(69)+CH2O(204)=CH3CHO(16)+CH2OH(36)            8.490000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #326; RMG #939
+! Template reaction: intra_H_migration
+! Flux pairs: C2H5O(69), C2H5O(70); 
+! Matched reaction 322 C2H5O <=> C2H5O-2 in intra_H_migration/training
+! This reaction matched rate rule [R2H_S;O_rad_out;Cs_H_out_H/NonDeC]
+! family: intra_H_migration
+C2H5O(69)=C2H5O(70)                                 4.500000e+03 2.620     30.900   
+
+! Reaction index: Chemkin #327; RMG #5459
+! Template reaction: R_Recombination
+! Flux pairs: S(2009), C3H7(32); S(2009), O2(3); 
+! Matched reaction 2 C3H7O2 <=> O2 + C3H7 in R_Recombination/training
+! This reaction matched rate rule [C_rad/H2/Cs;O2_birad]
+! family: R_Recombination
+S(2009)=O2(3)+C3H7(32)                              1.520000e+23 -2.710    36.400   
+
+! Reaction index: Chemkin #328; RMG #585
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3O2(149), S(221); C2H4(18), S(221); 
+! From training reaction 2750 used for Cds-HH_Cds-HH;CsJ-OsHH
+! Exact match found for rate rule [Cds-HH_Cds-HH;CsJ-OsHH]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 2.0
+! family: R_Addition_MultipleBond
+C2H4(18)+CH3O2(149)=S(221)                          4.820000e+10 0.000     6.960    
+
+! Reaction index: Chemkin #329; RMG #8046
+! Template reaction: intra_H_migration
+! Flux pairs: S(2009), S(221); 
+! Matched reaction 255 C3H7O2-9 <=> C3H7O2-10 in intra_H_migration/training
+! This reaction matched rate rule [R5H_SSSS_OCC;O_rad_out;Cs_H_out_2H]
+! family: intra_H_migration
+S(2009)=S(221)                                      5.070000e+06 1.550     21.020   
+
+! Reaction index: Chemkin #330; RMG #49
+! Template reaction: ketoenol
+! Flux pairs: C2H4O(41), CH3CHO(16); 
+! Matched reaction 3 C2H4O <=> C2H4O-2 in ketoenol/training
+! This reaction matched rate rule [R_ROR;R1_doublebond_CH2;R2_doublebond_H;R_O_H]
+! family: ketoenol
+C2H4O(41)=CH3CHO(16)                                7.040000e+03 2.660     48.800   
+
+! Reaction index: Chemkin #331; RMG #1730
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); CH3(10), CH4(2); 
+! Matched reaction 694 C2H4O-2 + CH3_r3 <=> CH4p + C2H3O-3 in H_Abstraction/training
+! This reaction matched rate rule [C_methane;O_rad/Cd\H_Cd\H2]
+! family: H_Abstraction
+CH3(10)+C2H4O(41)=CH4(2)+vinoxy(38)                 8.200000e+05 1.870     6.620    
+
+! Reaction index: Chemkin #332; RMG #1759
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); OH(17), H2O(5); 
+! Matched reaction 693 OH + C2H4O-2 <=> H2O_p + C2H3O-3 in H_Abstraction/training
+! This reaction matched rate rule [O_pri;O_rad/Cd\H_Cd\H2]
+! family: H_Abstraction
+OH(17)+C2H4O(41)=H2O(5)+vinoxy(38)                  1.200000e+06 2.000     -0.250   
+
+! Reaction index: Chemkin #333; RMG #1763
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); H(12), H2(6); 
+! Matched reaction 691 H + C2H4O-2 <=> H2 + C2H3O-3 in H_Abstraction/training
+! This reaction matched rate rule [H2;O_rad/Cd\H_Cd\H2]
+! family: H_Abstraction
+H(12)+C2H4O(41)=H2(6)+vinoxy(38)                    2.400000e+08 1.500     6.620    
+
+! Reaction index: Chemkin #334; RMG #1773
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); C2H5(13), C2H6(8); 
+! Estimated using average of templates [O_sec;C_rad/H2/Cs\H3] + [O/H/OneDeC;C_pri_rad] for rate rule [O/H/OneDeC;C_rad/H2/Cs\H3]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+C2H5(13)+C2H4O(41)=C2H6(8)+vinoxy(38)               2.779717e-03 4.299     4.489    
+
+! Reaction index: Chemkin #335; RMG #1791
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); HCO(15), CH2O(9); 
+! Estimated using template [O/H/OneDeC;Y_rad] for rate rule [O/H/OneDeC;CO_pri_rad]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+HCO(15)+C2H4O(41)=CH2O(9)+vinoxy(38)                5.435682e+03 2.704     5.226    
+
+! Reaction index: Chemkin #336; RMG #1817
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); C3H7(32), C3H8(11); 
+! Estimated using template [O/H/OneDeC;C_pri_rad] for rate rule [O/H/OneDeC;C_rad/H2/Cs]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+C2H4O(41)+C3H7(32)=C3H8(11)+vinoxy(38)              6.500000e-03 4.245     7.200    
+
+! Reaction index: Chemkin #337; RMG #1823
+! Template reaction: R_Recombination
+! Flux pairs: vinoxy(38), C2H4O(41); H(12), C2H4O(41); 
+! From training reaction 25 used for H_rad;O_rad/OneDe
+! Exact match found for rate rule [O_rad/OneDe;H_rad]
+! Euclidian distance = 0
+! family: R_Recombination
+H(12)+vinoxy(38)=C2H4O(41)                          7.000000e+11 0.493     -0.294   
+
+! Reaction index: Chemkin #338; RMG #1834
+! Template reaction: Disproportionation
+! Flux pairs: C2H5(13), C2H4(18); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_rad;Cmethyl_Csrad] for rate rule [O_rad/OneDe;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+vinoxy(38)=C2H4(18)+C2H4O(41)              7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #339; RMG #1846
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); CH3O(35), CH3OH(14); 
+! Estimated using template [O/H/OneDeC;O_rad] for rate rule [O/H/OneDeC;O_rad/NonDeC]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+C2H4O(41)+CH3O(35)=CH3OH(14)+vinoxy(38)             1.200000e+06 2.000     -0.250   
+
+! Reaction index: Chemkin #340; RMG #1847
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); CH2OH(36), CH3OH(14); 
+! Estimated using template [O/H/OneDeC;C_pri_rad] for rate rule [O/H/OneDeC;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+C2H4O(41)+CH2OH(36)=CH3OH(14)+vinoxy(38)            6.500000e-03 4.245     7.200    
+
+! Reaction index: Chemkin #341; RMG #1859
+! Template reaction: CO_Disproportionation
+! Flux pairs: HCO(15), CO(7); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/OneDe;HCO]
+! Euclidian distance = 1.0
+! family: CO_Disproportionation
+HCO(15)+vinoxy(38)=CO(7)+C2H4O(41)                  1.240000e+23 -3.290    2.355    
+
+! Reaction index: Chemkin #342; RMG #1883
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); vinoxy(38), CH3CHO(16); 
+! Estimated using template [O/H/OneDeC;C_pri_rad] for rate rule [O/H/OneDeC;C_rad/H2/CO]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+C2H4O(41)+vinoxy(38)=CH3CHO(16)+vinoxy(38)          6.500000e-03 4.245     7.200    
+
+! Reaction index: Chemkin #343; RMG #1884
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); acetyl(39), CH3CHO(16); 
+! Estimated using template [O_sec;CO_rad/Cs] for rate rule [O/H/OneDeC;CO_rad/Cs]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+C2H4O(41)+acetyl(39)=CH3CHO(16)+vinoxy(38)          1.582731e-04 4.663     41.320   
+
+! Reaction index: Chemkin #344; RMG #1898
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); O(T)(42), OH(17); 
+! Matched reaction 692 C2H4O-2 + O_rad <=> HO + C2H3O-3 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;O_rad/Cd\H_Cd\H2]
+! family: H_Abstraction
+C2H4O(41)+O(T)(42)=OH(17)+vinoxy(38)                1.700000e+08 1.500     4.130    
+
+! Reaction index: Chemkin #345; RMG #1955
+! Template reaction: H_Abstraction
+! Flux pairs: vinoxy(38), C2H4O(41); HO2(63), O2(3); 
+! Estimated using template [X_H;O_rad/Cd\H_Cd\H2] for rate rule [Orad_O_H;O_rad/Cd\H_Cd\H2]
+! Euclidian distance = 2.0
+! family: H_Abstraction
+HO2(63)+vinoxy(38)=O2(3)+C2H4O(41)                  8.567088e-03 4.055     26.439   
+
+! Reaction index: Chemkin #346; RMG #1965
+! Template reaction: H_Abstraction
+! Flux pairs: vinoxy(38), C2H4O(41); CH4O2(183), CH3OO(75); 
+! Estimated using an average for rate rule [O/H/NonDeO;O_rad/Cd\H_Cd\H2]
+! Euclidian distance = 0
+! family: H_Abstraction
+CH4O2(183)+vinoxy(38)=CH3OO(75)+C2H4O(41)           3.495000e-02 3.750     28.199   
+
+! Reaction index: Chemkin #347; RMG #1966
+! Template reaction: H_Abstraction
+! Flux pairs: C2H4O(41), vinoxy(38); CH3O2(149), CH4O2(183); 
+! Estimated using template [O/H/OneDeC;C_pri_rad] for rate rule [O/H/OneDeC;C_rad/H2/O]
+! Euclidian distance = 1.0
+! family: H_Abstraction
+CH3O2(149)+C2H4O(41)=CH4O2(183)+vinoxy(38)          6.500000e-03 4.245     7.200    
+
+! Reaction index: Chemkin #348; RMG #1974
+! Template reaction: Disproportionation
+! Flux pairs: CH3O(35), CH2O(9); vinoxy(38), C2H4O(41); 
+! Estimated using average of templates [O_rad;Cmethyl_Rrad] + [O_sec_rad;XH_s_Rrad] for rate rule [O_rad/OneDe;Cmethyl_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O(35)+vinoxy(38)=CH2O(9)+C2H4O(41)               1.470052e+09 1.397     -0.831   
+
+! Reaction index: Chemkin #349; RMG #1986
+! Template reaction: H_Abstraction
+! Flux pairs: vinoxy(38), C2H4O(41); OO(175), HO2(63); 
+! Matched reaction 439 H2O2 + C2H3O-3 <=> C2H4O-2 + HO2_r3 in H_Abstraction/training
+! This reaction matched rate rule [H2O2;O_rad/Cd\H_Cd\H2]
+! family: H_Abstraction
+OO(175)+vinoxy(38)=HO2(63)+C2H4O(41)                6.990000e-02 3.750     28.199   
+
+! Reaction index: Chemkin #350; RMG #2014
+! Template reaction: Disproportionation
+! Flux pairs: CH2OH(36), CH2O(9); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_sec_rad;O_Csrad] for rate rule [O_rad/OneDe;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+CH2OH(36)+vinoxy(38)=CH2O(9)+C2H4O(41)              1.707659e+13 0.000     0.000    
+
+! Reaction index: Chemkin #351; RMG #2030
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(70), CH3CHO(16); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_rad;C/H2/Nd_Rrad] for rate rule [O_rad/OneDe;C/H2/Nd_Orad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 2.0
+! family: Disproportionation
+C2H5O(70)+vinoxy(38)=CH3CHO(16)+C2H4O(41)           4.820000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #352; RMG #2124
+! Template reaction: Disproportionation
+! Flux pairs: acetyl(39), C2H2O(489); vinoxy(38), C2H4O(41); 
+! Estimated using average of templates [O_rad;Cmethyl_Rrad] + [O_sec_rad;XH_s_Rrad] for rate rule [O_rad/OneDe;Cmethyl_COrad]
+! Euclidian distance = 2.2360679775
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+vinoxy(38)+acetyl(39)=C2H4O(41)+C2H2O(489)          1.470052e+09 1.397     -0.831   
+
+! Reaction index: Chemkin #353; RMG #2142
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H2O(489); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_sec_rad;XH_s_Rrad] for rate rule [O_rad/OneDe;COpri_Csrad]
+! Euclidian distance = 2.2360679775
+! family: Disproportionation
+vinoxy(38)+vinoxy(38)=C2H4O(41)+C2H2O(489)          2.577884e+07 1.793     -1.067   
+
+! Reaction index: Chemkin #354; RMG #7699
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: C2H4O(41), C2H5O(69); H(12), C2H5O(69); 
+! Matched reaction 2816 H + C2H4O-2 <=> C2H5O-4 in R_Addition_MultipleBond/training
+! This reaction matched rate rule [Cds-HH_Cds-OsH;HJ]
+! family: R_Addition_MultipleBond
+H(12)+C2H4O(41)=C2H5O(69)                           6.670000e+12 0.100     1.544    
+
+! Reaction index: Chemkin #355; RMG #7708
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); O2(3), HO2(63); 
+! From training reaction 2 used for O2b;Cmethyl_Csrad
+! Exact match found for rate rule [O2b;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: Disproportionation
+O2(3)+C2H5O(69)=HO2(63)+C2H4O(41)                   4.338000e+13 0.000     15.990   
+
+! Reaction index: Chemkin #356; RMG #7739
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH3(10), CH4(2); 
+! Estimated using template [Cs_rad;Cmethyl_Csrad] for rate rule [C_methyl;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3(10)+C2H5O(69)=CH4(2)+C2H4O(41)                  1.811391e+13 -0.392    -0.011   
+
+! Reaction index: Chemkin #357; RMG #7745
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); H(12), H2(6); 
+! From training reaction 4 used for H_rad;Cmethyl_Csrad
+! Exact match found for rate rule [H_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+H(12)+C2H5O(69)=H2(6)+C2H4O(41)                     1.083000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #358; RMG #7748
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); C2H5(13), C2H6(8); 
+! From training reaction 6 used for C_rad/H2/Cs;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+C2H5O(69)=C2H6(8)+C2H4O(41)                6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #359; RMG #7755
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); HCO(15), CH2O(9); 
+! Estimated using average of templates [Y_rad;Cmethyl_Csrad] + [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HCO(15)+C2H5O(69)=CH2O(9)+C2H4O(41)                 5.972864e+14 -0.340    0.000    
+
+! Reaction index: Chemkin #360; RMG #7773
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); OH(17), H2O(5); 
+! From training reaction 13 used for O_pri_rad;Cmethyl_Csrad
+! Exact match found for rate rule [O_pri_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+OH(17)+C2H5O(69)=H2O(5)+C2H4O(41)                   7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #361; RMG #7782
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH3OO(75), CH4O2(183); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3OO(75)+C2H5O(69)=CH4O2(183)+C2H4O(41)            3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #362; RMG #7786
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH3O2(149), CH4O2(183); 
+! From training reaction 8 used for C_rad/H2/O;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/O;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+CH3O2(149)+C2H5O(69)=CH4O2(183)+C2H4O(41)           8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #363; RMG #7791
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); HO2(63), OO(175); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+HO2(63)+C2H5O(69)=OO(175)+C2H4O(41)                 3.003453e+10 1.009     -0.600   
+
+! Reaction index: Chemkin #364; RMG #7797
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH3O(35), CH3OH(14); 
+! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeC;XH_s_Rrad] for rate rule [O_rad/NonDeC;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+CH3O(35)=CH3OH(14)+C2H4O(41)              7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #365; RMG #7809
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH2OH(36), CH3OH(14); 
+! From training reaction 8 used for C_rad/H2/O;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/O;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+CH2OH(36)=CH3OH(14)+C2H4O(41)             8.670000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #366; RMG #7826
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); O(T)(42), OH(17); 
+! Estimated using average of templates [Y_1centerbirad;Cmethyl_Csrad] + [O_atom_triplet;Cmethyl_Rrad] for rate rule [O_atom_triplet;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+O(T)(42)=OH(17)+C2H4O(41)                 3.680353e+11 0.750     -0.445   
+
+! Reaction index: Chemkin #367; RMG #7849
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); acetyl(39), CH3CHO(16); 
+! Estimated using template [CO_rad;XH_s_Rrad] for rate rule [CO_rad/NonDe;Cmethyl_Csrad]
+! Euclidian distance = 2.82842712475
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+acetyl(39)=CH3CHO(16)+C2H4O(41)           5.430000e+14 0.000     0.000    
+
+! Reaction index: Chemkin #368; RMG #7856
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); vinoxy(38), CH3CHO(16); 
+! Estimated using template [C_pri_rad;Cmethyl_Csrad] for rate rule [C_rad/H2/CO;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=CH3CHO(16)+C2H4O(41)           3.450974e+13 -0.233    -0.043   
+DUPLICATE
+
+! Reaction index: Chemkin #369; RMG #7869
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), CH3CHO(16); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_sec_rad;O_Csrad] for rate rule [O_rad/OneDe;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=CH3CHO(16)+C2H4O(41)           1.707659e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #370; RMG #7870
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); vinoxy(38), C2H4O(41); 
+! Estimated using template [O_rad;Cmethyl_Csrad] for rate rule [O_rad/OneDe;Cmethyl_Csrad]
+! Euclidian distance = 2.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=C2H4O(41)+C2H4O(41)            7.230000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #371; RMG #7985
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH2O(204), CH2OH(36); 
+! From training reaction 5 used for Y_rad;Cmethyl_Csrad
+! Exact match found for rate rule [Y_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+CH2O(204)=C2H4O(41)+CH2OH(36)             6.570000e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #372; RMG #7986
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); CH2O(204), CH3O(35); 
+! From training reaction 5 used for Y_rad;Cmethyl_Csrad
+! Exact match found for rate rule [Y_rad;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+CH2O(204)=C2H4O(41)+CH3O(35)              6.570000e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #373; RMG #7990
+! Template reaction: Disproportionation
+! Flux pairs: C2H5O(69), C2H4O(41); C3H7(32), C3H8(11); 
+! From training reaction 6 used for C_rad/H2/Cs;Cmethyl_Csrad
+! Exact match found for rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+C3H7(32)=C3H8(11)+C2H4O(41)               6.900000e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #374; RMG #8976
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H4O(41); C2H5O(69), CH3CHO(16); 
+! Estimated using template [C_pri_rad;Cmethyl_Csrad] for rate rule [C_rad/H2/CO;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=CH3CHO(16)+C2H4O(41)           3.450974e+13 -0.233    -0.043   
+DUPLICATE
+
+! Reaction index: Chemkin #375; RMG #8980
+! Template reaction: Disproportionation
+! Flux pairs: vinoxy(38), C2H4O(41); C2H5O(69), CH3CHO(16); 
+! Estimated using template [O_sec_rad;O_Csrad] for rate rule [O_rad/OneDe;O_Csrad]
+! Euclidian distance = 1.0
+! family: Disproportionation
+C2H5O(69)+vinoxy(38)=CH3CHO(16)+C2H4O(41)           1.707659e+13 0.000     0.000    
+DUPLICATE
+
+! Reaction index: Chemkin #376; RMG #323
+! Template reaction: R_Addition_MultipleBond
+! Flux pairs: CH3(10), C3H7O(155); CH3CHO(16), C3H7O(155); 
+! Estimated using template [CO_O;CsJ-HHH] for rate rule [CO-CsH_O;CsJ-HHH]
+! Euclidian distance = 2.0
+! family: R_Addition_MultipleBond
+CH3(10)+CH3CHO(16)=C3H7O(155)                       2.612585e+06 1.485     7.655    
+
+! Reaction index: Chemkin #377; RMG #5760
+! Template reaction: 1,2_Insertion_CO
+! Flux pairs: CO(7), S(564); C3H7O(155), S(564); 
+! From training reaction 4 used for CO;C_pri/NonDeC
+! Exact match found for rate rule [CO;C_pri/NonDeC]
+! Euclidian distance = 0
+! Multiplied by reaction path degeneracy 6.0
+! family: 1,2_Insertion_CO
+CO(7)+C3H7O(155)=S(564)                             5.484000e+05 2.530     85.500   
 
 END
 
