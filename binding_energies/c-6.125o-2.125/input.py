@@ -1,10 +1,10 @@
 # Data sources
 database(
-    thermoLibraries=['surfaceThermo', 'primaryThermoLibrary', 'thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo'],
-    reactionLibraries = [('Deutschmann_Ni', False)],
+    thermoLibraries=['surfaceThermoPt', 'primaryThermoLibrary', 'thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo'],
+    reactionLibraries = [('CPOX_Pt/Deutschmann2006', True)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies = 'default',
+    kineticsFamilies =['surface','default'],
     kineticsEstimator = 'rate rules',
     bindingEnergies = { # default values for Ni(111)
                        'C':(-6.125000, 'eV/molecule'),
