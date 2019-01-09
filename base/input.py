@@ -6,10 +6,10 @@ database(
     kineticsDepositories = ['training'],
     kineticsFamilies =['surface','default'],
     kineticsEstimator = 'rate rules',
-    bindingEnergies = { # default values for Ni(111)
-                       'C':(-6.364, 'eV/molecule'),
-                       'H':(-2.778, 'eV/molecule'),
-                       'O':(-3.481, 'eV/molecule'),
+    bindingEnergies = { # default values for Pt(111)
+                       'C':(-6.750, 'eV/molecule'),
+                       'H':(-0.240, 'eV/molecule'),
+                       'O':(-1.030, 'eV/molecule'),
                        }
 )
 
@@ -146,9 +146,9 @@ surfaceReactor(
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
-#    terminationConversion = { "CH4":0.9,},
+    terminationConversion = { "CH4":0.9,},
     terminationTime=(1000., 's'),
-    terminationConversion={'O2': 0.99,}
+#    terminationConversion={'O2': 0.99,}
 )
 
 simulator(
