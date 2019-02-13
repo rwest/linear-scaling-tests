@@ -168,6 +168,6 @@ options(
     saveRestartPeriod=None,
     generateOutputHTML=True,
     generatePlots=False,
-    saveEdgeSpecies=True,
+    saveEdgeSpecies=False,
     saveSimulationProfiles=True,
 )
