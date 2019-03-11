@@ -8,8 +8,9 @@ database(
     kineticsEstimator = 'rate rules',
     bindingEnergies = { # default values for Pt(111)
                        'C':(-2.687500, 'eV/molecule'),
-                       'H':(-0.240, 'eV/molecule'),
+                       'H':(-2.479, 'eV/molecule'),
                        'O':(-2.750000, 'eV/molecule'),
+                       'N':(-4.352, 'eV/molecule'),
                        }
 )
 
@@ -158,7 +159,7 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-4,
+    toleranceMoveToCore=1e-8,
     toleranceInterruptSimulation=0.1,
     maximumEdgeSpecies=100000
 )
@@ -171,3 +172,7 @@ options(
     saveEdgeSpecies=False,
     saveSimulationProfiles=True,
 )
+
+#generatedSpeciesConstraints(
+#    allowed=['input species','reaction libraries'],
+#)
