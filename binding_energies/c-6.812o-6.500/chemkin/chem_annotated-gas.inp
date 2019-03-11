@@ -38,9 +38,6 @@ SPECIES
     CH3CHO(16)          ! CH3CHO(16)
     OH(17)              ! OH(17)
     C2H4(18)            ! C2H4(18)
-    HO2(63)             ! HO2(63)
-    CH3OO(75)           ! CH3OO(75)
-    OO(175)             ! OO(175)
 END
 
 
@@ -174,24 +171,6 @@ C2H4(18)                H   4C   2          G   100.000  5000.000  979.36      1
  4.32046489E+03 2.17719479E+00 3.97471606E+00-4.75844285E-03 4.16783770E-05    3
 -4.51392516E-08 1.54224761E-11 4.91540746E+03 3.62430844E+00                   4
 
-! Thermo library: thermo_DFT_CCSDTF12_BAC
-HO2(63)                 H   1O   2          G   100.000  5000.000 1000.25      1
- 3.62868258E+00 3.05387401E-03-1.21130686E-06 2.29639000E-10-1.65061502E-14    2
- 1.57925751E+02 5.82954238E+00 4.02425547E+00-1.64545752E-03 1.05109441E-05    3
--1.06991604E-08 3.49380097E-12 2.34740074E+02 4.70058405E+00                   4
-
-! Thermo library: thermo_DFT_CCSDTF12_BAC
-CH3OO(75)               H   3C   1O   2     G   100.000  5000.000 1031.35      1
- 4.35022282E+00 1.07183275E-02-4.26215078E-06 7.89578335E-10-5.53846326E-14    2
--3.09810145E+02 4.08928223E+00 3.58600855E+00 6.15348645E-03 1.33269290E-05    3
--1.76581521E-08 6.13210932E-12 2.48233564E+02 9.74096027E+00                   4
-
-! Thermo library: thermo_DFT_CCSDTF12_BAC
-OO(175)                 H   2O   2          G   100.000  5000.000 1005.78      1
- 4.14711917E+00 4.72694898E-03-1.79320499E-06 3.26120398E-10-2.27309864E-14    2
--1.79271299E+04 2.95240617E+00 3.81666060E+00 2.71177103E-03 6.17757060E-06    3
--8.24839330E-09 2.92664300E-12-1.76922539E+04 5.38575095E+00                   4
-
 END
 
 
@@ -252,7 +231,7 @@ H(12)+HCO(15)=CH2O(9)                               4.680000e+10 0.000     -4.53
 ! Matched reaction 2 H2 + CO <=> CH2O in 1,2_Insertion_CO/training
 ! This reaction matched rate rule [CO;H2]
 ! family: 1,2_Insertion_CO
-H2(6)+CO(7)=CH2O(9)                                 2.890000e+09 1.160     82.100   
+CO(7)+H2(6)=CH2O(9)                                 2.890000e+09 1.160     82.100   
 
 ! Reaction index: Chemkin #8; RMG #29
 ! Template reaction: R_Recombination
@@ -356,7 +335,7 @@ CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    6.570000e+14 -0.680    0.000
 ! Estimated using template [O_rad;HCO] for rate rule [O_pri_rad;HCO]
 ! Euclidian distance = 1.0
 ! family: CO_Disproportionation
-HCO(15)+OH(17)=H2O(5)+CO(7)                         1.240000e+23 -3.290    2.355    
+HCO(15)+OH(17)=CO(7)+H2O(5)                         1.240000e+23 -3.290    2.355    
 
 ! Reaction index: Chemkin #21; RMG #203
 ! Template reaction: H_Abstraction
@@ -396,7 +375,7 @@ C2H5(13)+OH(17)=H2O(5)+C2H4(18)                     7.230000e+13 0.000     0.000
 ! Matched reaction 0 HCO + H <=> CO + H2 in CO_Disproportionation/training
 ! This reaction matched rate rule [H_rad;HCO]
 ! family: CO_Disproportionation
-H(12)+HCO(15)=H2(6)+CO(7)                           9.030000e+13 0.000     0.000    
+H(12)+HCO(15)=CO(7)+H2(6)                           9.030000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #26; RMG #214
 ! Template reaction: H_Abstraction
@@ -462,164 +441,6 @@ C2H5(13)+C2H5(13)=C2H6(8)+C2H4(18)                  6.900000e+13 -0.350    0.000
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Disproportionation
 C2H5(13)+HCO(15)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
-
-! Reaction index: Chemkin #34; RMG #106
-! Template reaction: R_Recombination
-! Flux pairs: CH3OO(75), CH3(10); CH3OO(75), O2(3); 
-! Matched reaction 0 CH3O2 <=> O2 + CH3 in R_Recombination/training
-! This reaction matched rate rule [C_methyl;O2_birad]
-! family: R_Recombination
-CH3OO(75)=O2(3)+CH3(10)                             1.090000e+14 0.250     33.300   
-
-! Reaction index: Chemkin #35; RMG #81
-! Template reaction: H_Abstraction
-! Flux pairs: O2(3), HO2(63); CH4(2), CH3(10); 
-! Matched reaction 190 CH4b + O2 <=> CH3_p1 + HO2 in H_Abstraction/training
-! This reaction matched rate rule [C_methane;O2b]
-! family: H_Abstraction
-! Ea raised from 216.4 to 231.5 kJ/mol to match endothermicity of reaction.
-CH4(2)+O2(3)=CH3(10)+HO2(63)                        2.030000e+05 2.745     55.339   
-
-! Reaction index: Chemkin #36; RMG #99
-! Template reaction: H_Abstraction
-! Flux pairs: O2(3), HO2(63); H2O(5), OH(17); 
-! Matched reaction 379 H2O + O2 <=> HO2_r12 + OH_p23 in H_Abstraction/training
-! This reaction matched rate rule [O_pri;O2b]
-! family: H_Abstraction
-O2(3)+H2O(5)=OH(17)+HO2(63)                         9.300000e+12 0.000     74.120   
-
-! Reaction index: Chemkin #37; RMG #100
-! Template reaction: H_Abstraction
-! Flux pairs: O2(3), HO2(63); H2(6), H(12); 
-! Matched reaction 306 H2 + O2 <=> HO2_r12 + H in H_Abstraction/training
-! This reaction matched rate rule [H2;O2b]
-! family: H_Abstraction
-O2(3)+H2(6)=H(12)+HO2(63)                           2.900000e+14 0.000     56.640   
-
-! Reaction index: Chemkin #38; RMG #101
-! Template reaction: H_Abstraction
-! Flux pairs: O2(3), HO2(63); C2H6(8), C2H5(13); 
-! Matched reaction 214 C2H6 + O2 <=> C2H5b + HO2 in H_Abstraction/training
-! This reaction matched rate rule [C/H3/Cs\H3;O2b]
-! family: H_Abstraction
-! Ea raised from 207.3 to 215.7 kJ/mol to match endothermicity of reaction.
-O2(3)+C2H6(8)=C2H5(13)+HO2(63)                      2.920000e+07 1.900     51.557   
-
-! Reaction index: Chemkin #39; RMG #104
-! Template reaction: H_Abstraction
-! Flux pairs: O2(3), HO2(63); CH2O(9), HCO(15); 
-! Matched reaction 359 CH2O + O2 <=> HO2_r12 + HCO_r3 in H_Abstraction/training
-! This reaction matched rate rule [CO_pri;O2b]
-! family: H_Abstraction
-! Ea raised from 158.7 to 162.5 kJ/mol to match endothermicity of reaction.
-O2(3)+CH2O(9)=HCO(15)+HO2(63)                       9.360000e+07 2.050     38.837   
-
-! Reaction index: Chemkin #40; RMG #109
-! Template reaction: R_Recombination
-! Flux pairs: H(12), HO2(63); O2(3), HO2(63); 
-! Matched reaction 104 O2 + H <=> HO2-2 in R_Recombination/training
-! This reaction matched rate rule [H_rad;O2_birad]
-! family: R_Recombination
-O2(3)+H(12)=HO2(63)                                 8.790000e+10 1.000     0.450    
-
-! Reaction index: Chemkin #41; RMG #110
-! Template reaction: Disproportionation
-! Flux pairs: C2H5(13), C2H4(18); O2(3), HO2(63); 
-! Matched reaction 2 C2H5 + O2 <=> HO2 + C2H4 in Disproportionation/training
-! This reaction matched rate rule [O2b;Cmethyl_Csrad]
-! family: Disproportionation
-O2(3)+C2H5(13)=C2H4(18)+HO2(63)                     4.338000e+13 0.000     15.990   
-
-! Reaction index: Chemkin #42; RMG #115
-! Template reaction: CO_Disproportionation
-! Flux pairs: HCO(15), CO(7); O2(3), HO2(63); 
-! Matched reaction 2 HCO + O2 <=> CO + HO2 in CO_Disproportionation/training
-! This reaction matched rate rule [O2b;HCO]
-! family: CO_Disproportionation
-O2(3)+HCO(15)=CO(7)+HO2(63)                         5.120000e+13 0.000     1.690    
-
-! Reaction index: Chemkin #43; RMG #437
-! Template reaction: R_Recombination
-! Flux pairs: OH(17), OO(175); OH(17), OO(175); 
-! Matched reaction 96 OH + OH <=> H2O2 in R_Recombination/training
-! This reaction matched rate rule [O_pri_rad;O_pri_rad]
-! family: R_Recombination
-OH(17)+OH(17)=OO(175)                               7.850000e+12 0.000     0.000    
-
-! Reaction index: Chemkin #44; RMG #533
-! Template reaction: H_Abstraction
-! Flux pairs: HO2(63), OO(175); CH4(2), CH3(10); 
-! Matched reaction 189 CH4b + HO2_r3 <=> CH3_p1 + H2O2_p13 in H_Abstraction/training
-! This reaction matched rate rule [C_methane;O_rad/NonDeO]
-! family: H_Abstraction
-CH4(2)+HO2(63)=CH3(10)+OO(175)                      4.700000e+04 2.500     21.000   
-
-! Reaction index: Chemkin #45; RMG #540
-! Template reaction: H_Abstraction
-! Flux pairs: OO(175), HO2(63); OH(17), H2O(5); 
-! Estimated using average of templates [O/H/NonDeO;O_pri_rad] + [H2O2;O_rad] for rate rule [H2O2;O_pri_rad]
-! Euclidian distance = 1.0
-! Multiplied by reaction path degeneracy 2.0
-! family: H_Abstraction
-OH(17)+OO(175)=H2O(5)+HO2(63)                       4.994995e+05 1.927     6.325    
-
-! Reaction index: Chemkin #46; RMG #541
-! Template reaction: H_Abstraction
-! Flux pairs: OO(175), HO2(63); H(12), H2(6); 
-! Estimated using average of templates [O/H/NonDeO;H_rad] + [H2O2;Y_rad] for rate rule [H2O2;H_rad]
-! Euclidian distance = 1.0
-! Multiplied by reaction path degeneracy 2.0
-! family: H_Abstraction
-H(12)+OO(175)=H2(6)+HO2(63)                         1.235020e+06 1.634     6.086    
-
-! Reaction index: Chemkin #47; RMG #544
-! Template reaction: H_Abstraction
-! Flux pairs: HO2(63), OO(175); C2H6(8), C2H5(13); 
-! Matched reaction 213 C2H6 + HO2_r3 <=> C2H5b + H2O2_p13 in H_Abstraction/training
-! This reaction matched rate rule [C/H3/Cs\H3;O_rad/NonDeO]
-! family: H_Abstraction
-C2H6(8)+HO2(63)=C2H5(13)+OO(175)                    2.600000e+01 3.370     15.900   
-
-! Reaction index: Chemkin #48; RMG #549
-! Template reaction: H_Abstraction
-! Flux pairs: HO2(63), OO(175); CH2O(9), HCO(15); 
-! Matched reaction 370 HO2_r3 + CH2O <=> H2O2 + HCO_r3 in H_Abstraction/training
-! This reaction matched rate rule [CO_pri;O_rad/NonDeO]
-! family: H_Abstraction
-CH2O(9)+HO2(63)=HCO(15)+OO(175)                     4.120000e+04 2.500     10.210   
-
-! Reaction index: Chemkin #49; RMG #555
-! Template reaction: R_Recombination
-! Flux pairs: HO2(63), OO(175); H(12), OO(175); 
-! Estimated using average of templates [O_sec_rad;H_rad] + [O_rad/NonDe;Y_rad] for rate rule [O_rad/NonDe;H_rad]
-! Euclidian distance = 1.0
-! family: R_Recombination
-H(12)+HO2(63)=OO(175)                               4.611506e+12 0.184     -0.181   
-
-! Reaction index: Chemkin #50; RMG #556
-! Template reaction: Disproportionation
-! Flux pairs: C2H5(13), C2H4(18); HO2(63), OO(175); 
-! Estimated using average of templates [O_rad;Cmethyl_Csrad] + [O_rad/NonDeO;XH_s_Rrad] for rate rule [O_rad/NonDeO;Cmethyl_Csrad]
-! Euclidian distance = 2.0
-! Multiplied by reaction path degeneracy 3.0
-! family: Disproportionation
-C2H5(13)+HO2(63)=C2H4(18)+OO(175)                   3.003453e+10 1.009     -0.600   
-
-! Reaction index: Chemkin #51; RMG #562
-! Template reaction: CO_Disproportionation
-! Flux pairs: HCO(15), CO(7); HO2(63), OO(175); 
-! Estimated using template [O_sec_rad;HCO] for rate rule [O_rad/NonDeO;HCO]
-! Euclidian distance = 1.0
-! family: CO_Disproportionation
-HCO(15)+HO2(63)=CO(7)+OO(175)                       1.240000e+23 -3.290    2.355    
-
-! Reaction index: Chemkin #52; RMG #580
-! Template reaction: H_Abstraction
-! Flux pairs: HO2(63), OO(175); HO2(63), O2(3); 
-! Matched reaction 405 HO2_r3 + HO2_r12 <=> H2O2 + O2 in H_Abstraction/training
-! This reaction matched rate rule [Orad_O_H;O_rad/NonDeO]
-! family: H_Abstraction
-HO2(63)+HO2(63)=O2(3)+OO(175)                       1.750000e+10 0.000     -3.275   
 
 END
 

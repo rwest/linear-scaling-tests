@@ -38,9 +38,6 @@ SPECIES
     CH3CHO(16)          ! CH3CHO(16)
     OH(17)              ! OH(17)
     C2H4(18)            ! C2H4(18)
-    CH3OO(75)           ! CH3OO(75)
-    C2H6O(121)          ! ethanol(121)
-    DME(215)            ! DME(215)
 END
 
 
@@ -174,24 +171,6 @@ C2H4(18)                H   4C   2          G   100.000  5000.000  979.36      1
  4.32046489E+03 2.17719479E+00 3.97471606E+00-4.75844285E-03 4.16783770E-05    3
 -4.51392516E-08 1.54224761E-11 4.91540746E+03 3.62430844E+00                   4
 
-! Thermo library: thermo_DFT_CCSDTF12_BAC
-CH3OO(75)               H   3C   1O   2     G   100.000  5000.000 1031.35      1
- 4.35022282E+00 1.07183275E-02-4.26215078E-06 7.89578335E-10-5.53846326E-14    2
--3.09810145E+02 4.08928223E+00 3.58600855E+00 6.15348645E-03 1.33269290E-05    3
--1.76581521E-08 6.13210932E-12 2.48233564E+02 9.74096027E+00                   4
-
-! Thermo library: DFT_QCI_thermo
-C2H6O(121)              H   6C   2O   1     G   100.000  5000.000  984.00      1
- 5.68494415E+00 1.61313246E-02-5.96365484E-06 1.08897147E-09-7.69620396E-14    2
--3.12258222E+04-4.44490663E+00 3.24025884E+00 1.04859660E-02 2.63967401E-05    3
--3.69293176E-08 1.36710427E-11-2.99902844E+04 1.11433043E+01                   4
-
-! Thermo library: DFT_QCI_thermo
-DME(215)                H   6C   2O   1     G   100.000  5000.000 1170.37      1
- 3.88833805E+00 1.97268017E-02-8.07487162E-06 1.47701003E-09-1.01103290E-13    2
--2.44479488E+04 3.63023535E+00 3.24109495E+00 1.38083961E-02 9.93079309E-06    3
--1.47150011E-08 4.62551994E-12-2.37395984E+04 9.23356479E+00                   4
-
 END
 
 
@@ -252,7 +231,7 @@ H(12)+HCO(15)=CH2O(9)                               4.680000e+10 0.000     -4.53
 ! Matched reaction 2 H2 + CO <=> CH2O in 1,2_Insertion_CO/training
 ! This reaction matched rate rule [CO;H2]
 ! family: 1,2_Insertion_CO
-H2(6)+CO(7)=CH2O(9)                                 2.890000e+09 1.160     82.100   
+CO(7)+H2(6)=CH2O(9)                                 2.890000e+09 1.160     82.100   
 
 ! Reaction index: Chemkin #8; RMG #29
 ! Template reaction: R_Recombination
@@ -356,7 +335,7 @@ CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    6.570000e+14 -0.680    0.000
 ! Estimated using template [O_rad;HCO] for rate rule [O_pri_rad;HCO]
 ! Euclidian distance = 1.0
 ! family: CO_Disproportionation
-HCO(15)+OH(17)=H2O(5)+CO(7)                         1.240000e+23 -3.290    2.355    
+HCO(15)+OH(17)=CO(7)+H2O(5)                         1.240000e+23 -3.290    2.355    
 
 ! Reaction index: Chemkin #21; RMG #203
 ! Template reaction: H_Abstraction
@@ -396,7 +375,7 @@ C2H5(13)+OH(17)=H2O(5)+C2H4(18)                     7.230000e+13 0.000     0.000
 ! Matched reaction 0 HCO + H <=> CO + H2 in CO_Disproportionation/training
 ! This reaction matched rate rule [H_rad;HCO]
 ! family: CO_Disproportionation
-H(12)+HCO(15)=H2(6)+CO(7)                           9.030000e+13 0.000     0.000    
+H(12)+HCO(15)=CO(7)+H2(6)                           9.030000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #26; RMG #214
 ! Template reaction: H_Abstraction
@@ -462,30 +441,6 @@ C2H5(13)+C2H5(13)=C2H6(8)+C2H4(18)                  6.900000e+13 -0.350    0.000
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Disproportionation
 C2H5(13)+HCO(15)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
-
-! Reaction index: Chemkin #34; RMG #106
-! Template reaction: R_Recombination
-! Flux pairs: CH3OO(75), CH3(10); CH3OO(75), O2(3); 
-! Matched reaction 0 CH3O2 <=> O2 + CH3 in R_Recombination/training
-! This reaction matched rate rule [C_methyl;O2_birad]
-! family: R_Recombination
-CH3OO(75)=O2(3)+CH3(10)                             1.090000e+14 0.250     33.300   
-
-! Reaction index: Chemkin #35; RMG #210
-! Template reaction: 1,3_Insertion_ROR
-! Flux pairs: H2O(5), C2H6O(121); C2H4(18), C2H6O(121); 
-! Matched reaction 7 H2O + C2H4 <=> C2H6O in 1,3_Insertion_ROR/training
-! This reaction matched rate rule [Cd/unsub_Cd/unsub;H_OH]
-! family: 1,3_Insertion_ROR
-H2O(5)+C2H4(18)=C2H6O(121)                          5.880000e+02 2.940     53.100   
-
-! Reaction index: Chemkin #36; RMG #376
-! Template reaction: R_Recombination
-! Flux pairs: OH(17), C2H6O(121); C2H5(13), C2H6O(121); 
-! Matched reaction 80 C2H5 + OH <=> C2H6O-2 in R_Recombination/training
-! This reaction matched rate rule [O_pri_rad;C_rad/H2/Cs]
-! family: R_Recombination
-C2H5(13)+OH(17)=C2H6O(121)                          7.700000e+13 0.000     0.000    
 
 END
 
