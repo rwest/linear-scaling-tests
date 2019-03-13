@@ -3,7 +3,7 @@
 #SBATCH --error=error.log
 #SBATCH --output=output.log
 #SBATCH -n1
-#SBATCH --mem=50Gb
+#SBATCH --mem=120Gb
 #SBATCH --time=24:00:00
 
 echo $RMGpy
