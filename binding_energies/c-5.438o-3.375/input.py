@@ -1,7 +1,7 @@
 # Data sources
 database(
     thermoLibraries=['surfaceThermoPt', 'primaryThermoLibrary', 'thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo'],
-    reactionLibraries = [('Surface/CPOX_Pt/Deutschmann2006', True)],
+    reactionLibraries = [('Surface/CPOX_Pt/Deutschmann2006', True),'ERC-FoundationFuelv0.9','BurkeH2O2inN2'],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies =['surface','default'],
@@ -135,7 +135,7 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(800,'K'),
+    temperature=(1000,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
         "CH4": 0.1,
@@ -147,7 +147,7 @@ surfaceReactor(
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
-    terminationConversion = { "CH4":0.9,},
+    terminationConversion = { "CH4":0.95,},
     terminationTime=(1000., 's'),
 #    terminationConversion={'O2': 0.99,}
 )
@@ -159,7 +159,7 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-4,
+    toleranceMoveToCore=1e-3,
     toleranceInterruptSimulation=0.1,
     maximumEdgeSpecies=100000
 )
@@ -173,6 +173,6 @@ options(
     saveSimulationProfiles=True,
 )
 
-#generatedSpeciesConstraints(
-#    allowed=['input species','reaction libraries'],
-#)
+generatedSpeciesConstraints(
+    allowed=['input species','reaction libraries'],
+)
