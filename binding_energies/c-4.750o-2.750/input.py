@@ -135,7 +135,7 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(1000,'K'),
+    temperature=(800,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
         "CH4": 0.1,
@@ -147,8 +147,8 @@ surfaceReactor(
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
-    terminationConversion = { "CH4":0.95,},
-    terminationTime=(1000., 's'),
+    terminationConversion = { "CH4":0.9,},
+    terminationTime=(100., 's'),
 #    terminationConversion={'O2': 0.99,}
 )
 
