@@ -135,10 +135,10 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(800,'K'),
+    temperature=(700,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.1,
+        "CH4": 0.2,
         "O2": 0.1,
         "N2": 0.8,
     },
@@ -147,8 +147,26 @@ surfaceReactor(
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
-    terminationConversion = { "CH4":0.9,},
-    terminationTime=(100., 's'),
+    terminationConversion = { "CH4":0.95,},
+    terminationTime=(10., 's'),
+#    terminationConversion={'O2': 0.99,}
+)
+
+surfaceReactor(
+    temperature=(1200,'K'),
+    initialPressure=(1.0, 'bar'),
+    initialGasMoleFractions={
+        "CH4": 0.2,
+        "O2": 0.1,
+        "N2": 0.8,
+    },
+    initialSurfaceCoverages={
+        "X": 1.0,
+    },
+    surfaceVolumeRatio=(1.e5, 'm^-1'),
+    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
+    terminationConversion = { "CH4":0.95,},
+    terminationTime=(10., 's'),
 #    terminationConversion={'O2': 0.99,}
 )
 
@@ -160,8 +178,18 @@ simulator(
 model(
     toleranceKeepInEdge=0.0,
     toleranceMoveToCore=1e-1,
-    toleranceInterruptSimulation=0.1,
-    maximumEdgeSpecies=100000
+# inturrupt tolerance was 0.1 wout pruning, 1e8 w pruning on
+    toleranceInterruptSimulation=1e8,
+    maximumEdgeSpecies=50000,
+# PRUNING: uncomment to prune
+    minCoreSizeForPrune=50,
+# prune before simulation based on thermo
+    toleranceThermoKeepSpeciesInEdge=0.5,
+# prune rxns from edge that dont move into core
+    minSpeciesExistIterationsForPrune=2,
+# FILTERING: set so threshold is slightly larger than max rate constants
+#    filterReactions=True,
+#    filterThreshold=5e8, # default value
 )
 
 options(
