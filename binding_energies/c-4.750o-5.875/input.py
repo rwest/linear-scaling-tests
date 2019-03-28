@@ -138,7 +138,7 @@ surfaceReactor(
     temperature=(700,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.2,
+        "CH4": 0.1,
         "O2": 0.1,
         "N2": 0.8,
     },
@@ -148,7 +148,7 @@ surfaceReactor(
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
-    terminationTime=(10., 's'),
+    terminationTime=(3., 's'),
 #    terminationConversion={'O2': 0.99,}
 )
 
@@ -156,7 +156,7 @@ surfaceReactor(
     temperature=(1200,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.2,
+        "CH4": 0.1,
         "O2": 0.1,
         "N2": 0.8,
     },
@@ -166,7 +166,7 @@ surfaceReactor(
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
-    terminationTime=(10., 's'),
+    terminationTime=(3., 's'),
 #    terminationConversion={'O2': 0.99,}
 )
 
