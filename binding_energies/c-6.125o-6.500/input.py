@@ -148,8 +148,9 @@ surfaceReactor(
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
-    terminationTime=(3., 's'),
-#    terminationConversion={'O2': 0.99,}
+    terminationTime=(10., 's'),
+#    terminationConversion={'O2': 0.99,},
+    terminationRateRatio=0.01
 )
 
 surfaceReactor(
@@ -166,8 +167,9 @@ surfaceReactor(
     surfaceVolumeRatio=(1.e5, 'm^-1'),
     surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
-    terminationTime=(3., 's'),
-#    terminationConversion={'O2': 0.99,}
+    terminationTime=(10., 's'),
+#    terminationConversion={'O2': 0.99,},
+    terminationRateRatio=0.01
 )
 
 simulator(
