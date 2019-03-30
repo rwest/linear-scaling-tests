@@ -18,8 +18,6 @@ END
 
 SPECIES
     N2                  ! N2
-    Ar                  ! Ar
-    He                  ! He
     Ne                  ! Ne
     CH4(2)              ! CH4(2)
     O2(3)               ! O2(3)
@@ -50,18 +48,6 @@ N2                      N   2               G   200.000  6000.000 1000.00      1
  2.95258000E+00 1.39690000E-03-4.92632000E-07 7.86010000E-11-4.60755000E-15    2
 -9.23949000E+02 5.87189000E+00 3.53101000E+00-1.23661000E-04-5.02999000E-07    3
  2.43531000E-09-1.40881000E-12-1.04698000E+03 2.96747000E+00                   4
-
-! Thermo library: primaryThermoLibrary
-Ar                      Ar  1               G   200.000  6000.000 1000.00      1
- 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
--7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
- 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
-
-! Thermo library: primaryThermoLibrary
-He                      He  1               G   200.000  6000.000 1000.00      1
- 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
--7.45375000E+02 9.28724000E-01 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
- 0.00000000E+00 0.00000000E+00-7.45375000E+02 9.28724000E-01                   4
 
 ! Thermo library: primaryThermoLibrary
 Ne                      Ne  1               G   200.000  6000.000 1000.00      1
@@ -177,63 +163,212 @@ END
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #19
-! Template reaction: R_Recombination
-! Flux pairs: CH3(10), CH4(2); H(12), CH4(2); 
-! Matched reaction 57 H + CH3 <=> CH4 in R_Recombination/training
-! This reaction matched rate rule [C_methyl;H_rad]
-! family: R_Recombination
-CH3(10)+H(12)=CH4(2)                                1.930000e+14 0.000     0.270    
+! Reaction index: Chemkin #1; RMG #242
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH2O(9), CO(7); CH2O(9), H2(6); 
+CH2O(9)(+M)=CO(7)+H2(6)(+M)                         3.700e+13 0.000     71.976   
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 4.400e+38 -6.100    94.000   /
+    TROE/ 9.320e-01 197       1.54e+03  1.03e+04 /
 
-! Reaction index: Chemkin #2; RMG #21
-! Template reaction: R_Recombination
-! Flux pairs: OH(17), H2O(5); H(12), H2O(5); 
-! Matched reaction 64 H + OH <=> H2O in R_Recombination/training
-! This reaction matched rate rule [O_pri_rad;H_rad]
-! family: R_Recombination
-H(12)+OH(17)=H2O(5)                                 1.620000e+14 0.000     0.150    
-
-! Reaction index: Chemkin #3; RMG #22
-! Template reaction: R_Recombination
-! Flux pairs: H(12), H2(6); H(12), H2(6); 
-! Matched reaction 56 H + H <=> H2 in R_Recombination/training
-! This reaction matched rate rule [H_rad;H_rad]
-! family: R_Recombination
-H(12)+H(12)=H2(6)                                   5.450000e+10 0.000     1.500    
-
-! Reaction index: Chemkin #4; RMG #23
-! Template reaction: R_Recombination
+! Reaction index: Chemkin #2; RMG #245
+! Library reaction: ERC-FoundationFuelv0.9
 ! Flux pairs: CH3(10), C2H6(8); CH3(10), C2H6(8); 
-! Matched reaction 9 CH3 + CH3 <=> C2H6 in R_Recombination/training
-! This reaction matched rate rule [C_methyl;C_methyl]
-! family: R_Recombination
-CH3(10)+CH3(10)=C2H6(8)                             9.450000e+14 -0.538    0.135    
+CH3(10)+CH3(10)(+M)=C2H6(8)(+M)                     2.120e+16 -0.970    0.620    
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 1.770e+50 -9.670    6.220    /
+    TROE/ 5.325e-01 151       1.04e+03  4.97e+03 /
 
-! Reaction index: Chemkin #5; RMG #24
-! Template reaction: R_Recombination
-! Flux pairs: C2H5(13), C2H6(8); H(12), C2H6(8); 
-! Matched reaction 58 H + C2H5 <=> C2H6-2 in R_Recombination/training
-! This reaction matched rate rule [C_rad/H2/Cs;H_rad]
-! family: R_Recombination
-H(12)+C2H5(13)=C2H6(8)                              1.000000e+14 0.000     0.000    
+! Reaction index: Chemkin #3; RMG #119
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH4(2), CH3(10); H(12), H2(6); 
+CH4(2)+H(12)=H2(6)+CH3(10)                          4.973400e+05 2.500     9.588    
 
-! Reaction index: Chemkin #6; RMG #26
-! Template reaction: R_Recombination
+! Reaction index: Chemkin #4; RMG #229
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: H2(6), H(12); H2(6), H(12); 
+H2(6)+M=H(12)+H(12)+M                               3.843e+19 -1.400    104.390  
+CO2(4)/3.80/ H2O(5)/12.00/ H2(6)/2.50/ 
+
+! Reaction index: Chemkin #5; RMG #243
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3(10), CH4(2); H(12), CH4(2); 
+CH3(10)+H(12)(+M)=CH4(2)(+M)                        1.245e+14 0.000     0.000    
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 4.679e+24 -2.170    0.000    /
+    TROE/ 1.240e-01 1.8e+03   33.1      9e+04    /
+
+! Reaction index: Chemkin #6; RMG #100
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3(10), C2H5(13); CH3(10), H(12); 
+CH3(10)+CH3(10)=H(12)+C2H5(13)                      7.845000e+12 0.100     10.600   
+
+! Reaction index: Chemkin #7; RMG #223
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: C2H6(8), C2H5(13); H(12), H2(6); 
+C2H6(8)+H(12)=H2(6)+C2H5(13)                        1.135100e+08 1.900     7.530    
+
+! Reaction index: Chemkin #8; RMG #228
+! Library reaction: ERC-FoundationFuelv0.9
+C2H6(8)+CH3(10)=CH4(2)+C2H5(13)                     5.600000e+10 0.000     9.420    
+DUPLICATE
+! Reaction index: Chemkin #9; RMG #228
+! Library reaction: ERC-FoundationFuelv0.9
+C2H6(8)+CH3(10)=CH4(2)+C2H5(13)                     8.817800e+14 0.000     22.260   
+DUPLICATE
+
+
+! Reaction index: Chemkin #10; RMG #263
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: H(12), C2H6(8); C2H5(13), C2H6(8); 
+H(12)+C2H5(13)(+M)=C2H6(8)(+M)                      5.210e+17 -0.990    1.580    
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 1.990e+41 -7.080    6.685    /
+    TROE/ 8.420e-01 125       2.22e+03  6.88e+03 /
+
+! Reaction index: Chemkin #11; RMG #37
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: HCO(15), CO(7); H(12), H2(6); 
+HCO(15)+H(12)=CO(7)+H2(6)                           9.030000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #12; RMG #77
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH2O(9), HCO(15); H(12), H2(6); 
+CH2O(9)+H(12)=HCO(15)+H2(6)                         6.193500e+07 1.900     2.742    
+
+! Reaction index: Chemkin #13; RMG #101
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: HCO(15), CO(7); CH3(10), CH4(2); 
+HCO(15)+CH3(10)=CH4(2)+CO(7)                        5.300000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #14; RMG #102
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH2O(9), HCO(15); CH3(10), CH4(2); 
+CH2O(9)+CH3(10)=CH4(2)+HCO(15)                      3.301600e+01 3.360     4.310    
+
+! Reaction index: Chemkin #15; RMG #221
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: C2H5(13), C2H6(8); CH2O(9), HCO(15); 
+CH2O(9)+C2H5(13)=HCO(15)+C2H6(8)                    5.500000e+03 2.810     5.860    
+
+! Reaction index: Chemkin #16; RMG #236
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: HCO(15), CO(7); HCO(15), H(12); 
+HCO(15)+M=CO(7)+H(12)+M                             5.059e+17 -1.200    17.734   
+C2H6(8)/3.00/ H2O(5)/9.55/ CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ 
+
+! Reaction index: Chemkin #17; RMG #241
+! Library reaction: ERC-FoundationFuelv0.9
 ! Flux pairs: HCO(15), CH2O(9); H(12), CH2O(9); 
-! Matched reaction 63 H + CHO <=> CH2O in R_Recombination/training
-! This reaction matched rate rule [CO_pri_rad;H_rad]
-! family: R_Recombination
-H(12)+HCO(15)=CH2O(9)                               4.680000e+10 0.000     -4.530   
+HCO(15)+H(12)(+M)=CH2O(9)(+M)                       3.084e+14 -0.033    -0.142   
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 6.947e+34 -5.533    6.128    /
+    TROE/ 7.820e-01 271       2.76e+03  6.57e+03 /
 
-! Reaction index: Chemkin #7; RMG #27
-! Template reaction: 1,2_Insertion_CO
-! Flux pairs: CO(7), CH2O(9); H2(6), CH2O(9); 
-! Matched reaction 2 H2 + CO <=> CH2O in 1,2_Insertion_CO/training
-! This reaction matched rate rule [CO;H2]
-! family: 1,2_Insertion_CO
-CO(7)+H2(6)=CH2O(9)                                 2.890000e+09 1.160     82.100   
+! Reaction index: Chemkin #18; RMG #259
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3CHO(16), CH4(2); CH3CHO(16), CO(7); 
+CH3CHO(16)(+M)=CH4(2)+CO(7)(+M)                     5.440e+21 -1.740    86.364   
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ C2H4(18)/3.00/ H2(6)/2.00/ H2O(5)/6.00/ 
+    LOW/ 2.290e+58 -11.300   95.922   /
+    TROE/ 9.200e-01 5e+04     10        8.2e+03  /
 
-! Reaction index: Chemkin #8; RMG #29
+! Reaction index: Chemkin #19; RMG #260
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3CHO(16), HCO(15); CH3CHO(16), CH3(10); 
+CH3CHO(16)(+M)=HCO(15)+CH3(10)(+M)                  2.180e+22 -1.740    86.364   
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ C2H4(18)/3.00/ H2(6)/2.00/ H2O(5)/6.00/ 
+    LOW/ 9.150e+58 -11.300   95.922   /
+    TROE/ 9.200e-01 5e+04     10        8.2e+03  /
+
+! Reaction index: Chemkin #20; RMG #21
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: OH(17), H2O(5); H2(6), H(12); 
+H2(6)+OH(17)=H2O(5)+H(12)                           2.067100e+08 1.510     3.437    
+
+! Reaction index: Chemkin #21; RMG #23
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: H2O(5), OH(17); H2O(5), H(12); H2O(5), H2O(5); 
+H2O(5)+H2O(5)=H2O(5)+H(12)+OH(17)                   4.171300e+25 -2.440    120.200  
+
+! Reaction index: Chemkin #22; RMG #35
+! Library reaction: ERC-FoundationFuelv0.9
+CO(7)+OH(17)=CO2(4)+H(12)                           6.542400e+04 2.053     -0.356   
+DUPLICATE
+! Reaction index: Chemkin #23; RMG #35
+! Library reaction: ERC-FoundationFuelv0.9
+CO(7)+OH(17)=CO2(4)+H(12)                           5.356800e+12 -0.664    0.332    
+DUPLICATE
+
+
+! Reaction index: Chemkin #24; RMG #40
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: HCO(15), CO(7); OH(17), H2O(5); 
+HCO(15)+OH(17)=CO(7)+H2O(5)                         1.165300e+14 0.000     0.000    
+
+! Reaction index: Chemkin #25; RMG #79
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH2O(9), HCO(15); OH(17), H2O(5); 
+CH2O(9)+OH(17)=HCO(15)+H2O(5)                       7.655800e+07 1.630     -1.055   
+
+! Reaction index: Chemkin #26; RMG #91
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3(10), CH2O(9); OH(17), H2(6); 
+CH3(10)+OH(17)=H2(6)+CH2O(9)                        8.272000e+09 0.500     -1.755   
+
+! Reaction index: Chemkin #27; RMG #95
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3(10), CH2O(9); O2(3), OH(17); 
+O2(3)+CH3(10)=CH2O(9)+OH(17)                        1.124400e+02 2.860     9.768    
+
+! Reaction index: Chemkin #28; RMG #121
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH4(2), CH3(10); OH(17), H2O(5); 
+CH4(2)+OH(17)=H2O(5)+CH3(10)                        9.680000e+05 2.182     2.446    
+
+! Reaction index: Chemkin #29; RMG #225
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: C2H6(8), C2H5(13); OH(17), H2O(5); 
+C2H6(8)+OH(17)=H2O(5)+C2H5(13)                      9.543500e+06 2.000     0.994    
+
+! Reaction index: Chemkin #30; RMG #232
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: H2O(5), H(12); H2O(5), OH(17); 
+H2O(5)+M=H(12)+OH(17)+M                             1.450e+28 -3.322    120.800  
+H2(6)/3.00/ O2(3)/1.50/ N2/2.00/ CO2(4)/3.80/ H2O(5)/0.00/ 
+
+! Reaction index: Chemkin #31; RMG #244
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: CH3(10), CH3OH(14); OH(17), CH3OH(14); 
+CH3(10)+OH(17)(+M)=CH3OH(14)(+M)                    3.365e+18 -1.430    1.330    
+CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ CH2O(9)/2.50/ 
+    LOW/ 4.824e+36 -5.920    3.140    /
+    TROE/ 4.120e-01 195       5.9e+03   6.39e+03 /
+
+! Reaction index: Chemkin #32; RMG #269
+! Library reaction: BurkeH2O2inN2
+! Flux pairs: OH(17), O2(3); OH(17), H2(6); 
+OH(17)+OH(17)=O2(3)+H2(6)                           2.000000e+11 0.510     50.500   
+
+! Reaction index: Chemkin #33; RMG #215
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: C2H5(13), C2H4(18); H(12), H2(6); 
+H(12)+C2H5(13)=H2(6)+C2H4(18)                       1.810000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #34; RMG #220
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: C2H5(13), C2H4(18); CH3(10), CH4(2); 
+CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    9.000000e+11 0.000     0.000    
+
+! Reaction index: Chemkin #35; RMG #262
+! Library reaction: ERC-FoundationFuelv0.9
+! Flux pairs: H(12), C2H5(13); C2H4(18), C2H5(13); 
+H(12)+C2H4(18)(+M)=C2H5(13)(+M)                     7.193e+08 1.463     1.355    
+CH2O(9)/2.50/ CH4(2)/2.00/ CH3OH(14)/3.00/ CO2(4)/2.00/ C2H6(8)/3.00/ H2O(5)/6.00/ 
+    LOW/ 1.523e+39 -6.642    5.769    /
+    TROE/ 1.569e+00 -9.15e+03 299       152      /
+
+! Reaction index: Chemkin #36; RMG #275
 ! Template reaction: R_Recombination
 ! Flux pairs: C2H5(13), C3H8(11); CH3(10), C3H8(11); 
 ! Matched reaction 10 CH3 + C2H5 <=> C3H8 in R_Recombination/training
@@ -241,127 +376,7 @@ CO(7)+H2(6)=CH2O(9)                                 2.890000e+09 1.160     82.10
 ! family: R_Recombination
 CH3(10)+C2H5(13)=C3H8(11)                           1.230000e+15 -0.562    0.021    
 
-! Reaction index: Chemkin #9; RMG #34
-! Template reaction: R_Addition_MultipleBond
-! Flux pairs: C2H4(18), C2H5(13); H(12), C2H5(13); 
-! Matched reaction 2541 H + C2H4 <=> C2H5-2 in R_Addition_MultipleBond/training
-! This reaction matched rate rule [Cds-HH_Cds-HH;HJ]
-! family: R_Addition_MultipleBond
-H(12)+C2H4(18)=C2H5(13)                             4.620000e+08 1.640     1.010    
-
-! Reaction index: Chemkin #10; RMG #38
-! Template reaction: R_Recombination
-! Flux pairs: OH(17), CH3OH(14); CH3(10), CH3OH(14); 
-! Matched reaction 73 CH3 + OH <=> CH4O in R_Recombination/training
-! This reaction matched rate rule [O_pri_rad;C_methyl]
-! family: R_Recombination
-CH3(10)+OH(17)=CH3OH(14)                            6.030000e+13 0.000     0.000    
-
-! Reaction index: Chemkin #11; RMG #42
-! Template reaction: R_Addition_COm
-! Flux pairs: CO(7), HCO(15); H(12), HCO(15); 
-! Matched reaction 4 H + CO <=> CHO in R_Addition_COm/training
-! This reaction matched rate rule [COm;H_rad]
-! family: R_Addition_COm
-CO(7)+H(12)=HCO(15)                                 1.180000e+11 0.000     2.720    
-
-! Reaction index: Chemkin #12; RMG #44
-! Template reaction: R_Recombination
-! Flux pairs: HCO(15), CH3CHO(16); CH3(10), CH3CHO(16); 
-! Matched reaction 71 CH3 + CHO <=> C2H4O in R_Recombination/training
-! This reaction matched rate rule [CO_pri_rad;C_methyl]
-! family: R_Recombination
-CH3(10)+HCO(15)=CH3CHO(16)                          1.810000e+13 0.000     0.000    
-
-! Reaction index: Chemkin #13; RMG #48
-! Template reaction: 1,2_Insertion_CO
-! Flux pairs: CO(7), CH3CHO(16); CH4(2), CH3CHO(16); 
-! Matched reaction 3 CH4 + CO <=> C2H4O in 1,2_Insertion_CO/training
-! This reaction matched rate rule [CO;C_methane]
-! family: 1,2_Insertion_CO
-CH4(2)+CO(7)=CH3CHO(16)                             6.560000e+04 2.860     86.900   
-
-! Reaction index: Chemkin #14; RMG #86
-! Template reaction: CO_Disproportionation
-! Flux pairs: CH3(10), CH4(2); HCO(15), CO(7); 
-! Matched reaction 3 HCO + CH3 <=> CO + CH4 in CO_Disproportionation/training
-! This reaction matched rate rule [C_methyl;HCO]
-! family: CO_Disproportionation
-CH3(10)+HCO(15)=CH4(2)+CO(7)                        4.000000e+13 0.000     0.000    
-
-! Reaction index: Chemkin #15; RMG #89
-! Template reaction: H_Abstraction
-! Flux pairs: H(12), H2(6); CH4(2), CH3(10); 
-! Matched reaction 186 CH4b + H <=> CH3_p1 + H2_p in H_Abstraction/training
-! This reaction matched rate rule [C_methane;H_rad]
-! family: H_Abstraction
-CH4(2)+H(12)=H2(6)+CH3(10)                          4.100000e+03 3.156     8.755    
-
-! Reaction index: Chemkin #16; RMG #90
-! Template reaction: H_Abstraction
-! Flux pairs: C2H6(8), C2H5(13); CH3(10), CH4(2); 
-! Matched reaction 215 C2H6 + CH3_r3 <=> C2H5b + CH4 in H_Abstraction/training
-! This reaction matched rate rule [C_methane;C_rad/H2/Cs\H3]
-! family: H_Abstraction
-C2H6(8)+CH3(10)=CH4(2)+C2H5(13)                     3.500000e+01 3.440     10.384   
-
-! Reaction index: Chemkin #17; RMG #92
-! Template reaction: H_Abstraction
-! Flux pairs: HCO(15), CH2O(9); CH4(2), CH3(10); 
-! Matched reaction 319 HCO_r3 + CH4b <=> CH2O + CH3_p1 in H_Abstraction/training
-! This reaction matched rate rule [C_methane;CO_pri_rad]
-! family: H_Abstraction
-CH4(2)+HCO(15)=CH2O(9)+CH3(10)                      7.280000e+03 2.850     34.250   
-
-! Reaction index: Chemkin #18; RMG #95
-! Template reaction: H_Abstraction
-! Flux pairs: OH(17), H2O(5); CH4(2), CH3(10); 
-! Matched reaction 188 CH4b + OH <=> CH3_p1 + H2O_p in H_Abstraction/training
-! This reaction matched rate rule [C_methane;O_pri_rad]
-! family: H_Abstraction
-CH4(2)+OH(17)=H2O(5)+CH3(10)                        1.000000e+06 2.182     2.506    
-
-! Reaction index: Chemkin #19; RMG #96
-! Template reaction: Disproportionation
-! Flux pairs: CH3(10), CH4(2); C2H5(13), C2H4(18); 
-! Matched reaction 5 CH3 + C2H5 <=> CH4 + C2H4 in Disproportionation/training
-! This reaction matched rate rule [C_methyl;Cmethyl_Csrad]
-! family: Disproportionation
-CH3(10)+C2H5(13)=CH4(2)+C2H4(18)                    6.570000e+14 -0.680    0.000    
-
-! Reaction index: Chemkin #20; RMG #199
-! Template reaction: CO_Disproportionation
-! Flux pairs: OH(17), H2O(5); HCO(15), CO(7); 
-! Estimated using template [O_rad;HCO] for rate rule [O_pri_rad;HCO]
-! Euclidian distance = 1.0
-! family: CO_Disproportionation
-HCO(15)+OH(17)=CO(7)+H2O(5)                         1.240000e+23 -3.290    2.355    
-
-! Reaction index: Chemkin #21; RMG #203
-! Template reaction: H_Abstraction
-! Flux pairs: H2(6), H(12); OH(17), H2O(5); 
-! Matched reaction 312 H2 + OH <=> H2O_p + H_p in H_Abstraction/training
-! This reaction matched rate rule [O_pri;H_rad]
-! family: H_Abstraction
-H2(6)+OH(17)=H2O(5)+H(12)                           1.820000e+09 1.210     20.070   
-
-! Reaction index: Chemkin #22; RMG #204
-! Template reaction: H_Abstraction
-! Flux pairs: C2H6(8), C2H5(13); OH(17), H2O(5); 
-! Matched reaction 212 C2H6 + OH <=> C2H5b + H2O_p in H_Abstraction/training
-! This reaction matched rate rule [O_pri;C_rad/H2/Cs\H3]
-! family: H_Abstraction
-C2H6(8)+OH(17)=H2O(5)+C2H5(13)                      1.610000e+06 2.224     0.741    
-
-! Reaction index: Chemkin #23; RMG #206
-! Template reaction: H_Abstraction
-! Flux pairs: CH2O(9), HCO(15); OH(17), H2O(5); 
-! Matched reaction 368 OH_p23 + CH2O <=> H2O + HCO_r3 in H_Abstraction/training
-! This reaction matched rate rule [O_pri;CO_pri_rad]
-! family: H_Abstraction
-CH2O(9)+OH(17)=H2O(5)+HCO(15)                       3.440000e+09 1.180     -0.450   
-
-! Reaction index: Chemkin #24; RMG #209
+! Reaction index: Chemkin #37; RMG #420
 ! Template reaction: Disproportionation
 ! Flux pairs: OH(17), H2O(5); C2H5(13), C2H4(18); 
 ! Matched reaction 13 HO + C2H5 <=> H2O + C2H4 in Disproportionation/training
@@ -369,47 +384,15 @@ CH2O(9)+OH(17)=H2O(5)+HCO(15)                       3.440000e+09 1.180     -0.45
 ! family: Disproportionation
 C2H5(13)+OH(17)=H2O(5)+C2H4(18)                     7.230000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #25; RMG #211
-! Template reaction: CO_Disproportionation
-! Flux pairs: H(12), H2(6); HCO(15), CO(7); 
-! Matched reaction 0 HCO + H <=> CO + H2 in CO_Disproportionation/training
-! This reaction matched rate rule [H_rad;HCO]
-! family: CO_Disproportionation
-H(12)+HCO(15)=CO(7)+H2(6)                           9.030000e+13 0.000     0.000    
-
-! Reaction index: Chemkin #26; RMG #214
-! Template reaction: H_Abstraction
-! Flux pairs: C2H6(8), C2H5(13); H(12), H2(6); 
-! Matched reaction 210 C2H6 + H <=> C2H5b + H2_p in H_Abstraction/training
-! This reaction matched rate rule [H2;C_rad/H2/Cs\H3]
-! family: H_Abstraction
-C2H6(8)+H(12)=H2(6)+C2H5(13)                        1.150000e+08 1.900     7.530    
-
-! Reaction index: Chemkin #27; RMG #216
-! Template reaction: H_Abstraction
-! Flux pairs: HCO(15), CH2O(9); H2(6), H(12); 
-! Matched reaction 310 H2 + HCO_r3 <=> CH2O + H in H_Abstraction/training
-! This reaction matched rate rule [H2;CO_pri_rad]
-! family: H_Abstraction
-H2(6)+HCO(15)=CH2O(9)+H(12)                         1.800000e+06 2.000     48.940   
-
-! Reaction index: Chemkin #28; RMG #219
-! Template reaction: Disproportionation
-! Flux pairs: H(12), H2(6); C2H5(13), C2H4(18); 
-! Matched reaction 4 H + C2H5 <=> H2 + C2H4 in Disproportionation/training
-! This reaction matched rate rule [H_rad;Cmethyl_Csrad]
-! family: Disproportionation
-H(12)+C2H5(13)=H2(6)+C2H4(18)                       1.083000e+13 0.000     0.000    
-
-! Reaction index: Chemkin #29; RMG #220
+! Reaction index: Chemkin #38; RMG #425
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: C2H5(13), C2H6(8); HCO(15), CO(7); 
 ! Matched reaction 12 C2H5 + HCO <=> C2H6 + CO in CO_Disproportionation/training
 ! This reaction matched rate rule [C_rad/H2/Cs;HCO]
 ! family: CO_Disproportionation
-C2H5(13)+HCO(15)=CO(7)+C2H6(8)                      4.300000e+13 0.000     0.000    
+HCO(15)+C2H5(13)=CO(7)+C2H6(8)                      4.300000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #30; RMG #223
+! Reaction index: Chemkin #39; RMG #428
 ! Template reaction: CO_Disproportionation
 ! Flux pairs: HCO(15), CH2O(9); HCO(15), CO(7); 
 ! Matched reaction 5 HCO + HCO_Y <=> CO + CH2O in CO_Disproportionation/training
@@ -417,15 +400,7 @@ C2H5(13)+HCO(15)=CO(7)+C2H6(8)                      4.300000e+13 0.000     0.000
 ! family: CO_Disproportionation
 HCO(15)+HCO(15)=CO(7)+CH2O(9)                       1.800000e+13 0.000     0.000    
 
-! Reaction index: Chemkin #31; RMG #251
-! Template reaction: H_Abstraction
-! Flux pairs: HCO(15), CH2O(9); C2H6(8), C2H5(13); 
-! Matched reaction 326 HCO_r3 + C2H6 <=> CH2O + C2H5 in H_Abstraction/training
-! This reaction matched rate rule [C/H3/Cs\H3;CO_pri_rad]
-! family: H_Abstraction
-C2H6(8)+HCO(15)=CH2O(9)+C2H5(13)                    4.692000e+04 2.720     38.240   
-
-! Reaction index: Chemkin #32; RMG #254
+! Reaction index: Chemkin #40; RMG #456
 ! Template reaction: Disproportionation
 ! Flux pairs: C2H5(13), C2H6(8); C2H5(13), C2H4(18); 
 ! Matched reaction 6 C2H5 + C2H5-2 <=> C2H6 + C2H4 in Disproportionation/training
@@ -433,14 +408,14 @@ C2H6(8)+HCO(15)=CH2O(9)+C2H5(13)                    4.692000e+04 2.720     38.24
 ! family: Disproportionation
 C2H5(13)+C2H5(13)=C2H6(8)+C2H4(18)                  6.900000e+13 -0.350    0.000    
 
-! Reaction index: Chemkin #33; RMG #303
+! Reaction index: Chemkin #41; RMG #501
 ! Template reaction: Disproportionation
 ! Flux pairs: HCO(15), C2H4(18); C2H5(13), CH2O(9); 
 ! Estimated using average of templates [Y_rad;Cmethyl_Csrad] + [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_Csrad]
 ! Euclidian distance = 2.0
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Disproportionation
-C2H5(13)+HCO(15)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
+HCO(15)+C2H5(13)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
 
 END
 
