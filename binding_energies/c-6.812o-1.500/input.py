@@ -135,7 +135,7 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(200,'K'),
+    temperature=(400,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
         "CH4": 0.041866,
@@ -154,7 +154,7 @@ surfaceReactor(
 )
 
 surfaceReactor(
-    temperature=(200,'K'),
+    temperature=(400,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
         "CH4": 0.108574,
