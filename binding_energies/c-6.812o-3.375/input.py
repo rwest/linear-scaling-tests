@@ -8,9 +8,9 @@ database(
     kineticsEstimator = 'rate rules',
     bindingEnergies = { # default values for Pt(111)
                        'C':(-6.812500, 'eV/molecule'),
-                       'H':(-2.479, 'eV/molecule'),
                        'O':(-3.375000, 'eV/molecule'),
                        'N':(-4.352, 'eV/molecule'),
+		       'H':(-2.479, 'eV/molecule'),
                        }
 )
 
@@ -37,9 +37,9 @@ species(
 )
 
 species(
-    label='N2',
+    label='Ar',
     reactive=False,
-    structure=SMILES("N#N"),
+    structure=SMILES("[Ar]"),
 )
 
 species(
@@ -135,12 +135,12 @@ species(
 #----------
 # Reaction systems
 surfaceReactor(
-    temperature=(700,'K'),
+    temperature=(200,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.1,
-        "O2": 0.1,
-        "N2": 0.8,
+        "CH4": 0.041866,
+        "O2": 0.03488,
+        "Ar": 0.131246,
     },
     initialSurfaceCoverages={
         "X": 1.0,
@@ -154,13 +154,51 @@ surfaceReactor(
 )
 
 surfaceReactor(
-    temperature=(1200,'K'),
+    temperature=(200,'K'),
     initialPressure=(1.0, 'bar'),
     initialGasMoleFractions={
-        "CH4": 0.1,
-        "O2": 0.1,
-        "N2": 0.8,
+        "CH4": 0.108574,
+        "O2": 0.02088,
+        "Ar": 0.78547,
     },
+    initialSurfaceCoverages={
+        "X": 1.0,
+    },
+    surfaceVolumeRatio=(1.e5, 'm^-1'),
+    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
+    terminationConversion = { "CH4":0.95,},
+    terminationTime=(10., 's'),
+#    terminationConversion={'O2': 0.99,},
+    terminationRateRatio=0.01
+)
+
+surfaceReactor(
+    temperature=(1400,'K'),
+    initialPressure=(1.0, 'bar'),
+    initialGasMoleFractions={
+        "CH4": 0.041866,
+        "O2": 0.03488,
+        "Ar": 0.131246,
+    },
+    initialSurfaceCoverages={
+        "X": 1.0,
+    },
+    surfaceVolumeRatio=(1.e5, 'm^-1'),
+    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
+    terminationConversion = { "CH4":0.95,},
+    terminationTime=(10., 's'),
+#    terminationConversion={'O2': 0.99,},
+    terminationRateRatio=0.01
+)
+    
+surfaceReactor(
+    temperature=(1400,'K'),
+    initialPressure=(1.0, 'bar'),
+    initialGasMoleFractions={
+        "CH4": 0.108574,
+        "O2": 0.02088,
+        "Ar": 0.78547,
+    },  
     initialSurfaceCoverages={
         "X": 1.0,
     },
