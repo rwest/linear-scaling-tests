@@ -10,7 +10,7 @@ SITE   SDEN/2.9E-9/
     CX(26)              ! CX(26)
     CH2X(27)            ! CH2X(27)
     CHX(28)             ! CHX(28)
-    CH4X(56)            ! C.[Ni](56)
+    CH4X(55)            ! C.[Ni](55)
 END
 
 
@@ -86,7 +86,7 @@ CHX(28)                 H   1C   1X   1     G   100.000  5000.000 1596.82      1
  8.64095972E-09-1.55501482E-12-9.88194666E+03 2.54982388E+00                   4
 
 ! Thermo library: surfaceThermoPt Binding energy corrected by LSR.
-CH4X(56)                H   4C   1X   1     G   100.000  5000.000  886.28      1
+CH4X(55)                H   4C   1X   1     G   100.000  5000.000  886.28      1
 -2.16839093E+00 1.99492654E-02-9.80004492E-06 1.83534461E-09-1.22520122E-13    2
 -9.84489084E+03 2.67913137E+01-1.38690949E+00 4.00454988E-02-8.37934254E-05    3
  8.75675578E-08-3.27887531E-11-1.09112170E+04 1.78812283E+01                   4
@@ -99,11 +99,11 @@ REACTIONS    KCAL/MOLE   MOLES
 
 ! Reaction index: Chemkin #1; RMG #288
 ! Template reaction: Surface_Adsorption_vdW
-! Flux pairs: X(1), CH4X(56); CH4(2), CH4X(56); 
+! Flux pairs: X(1), CH4X(55); CH4(2), CH4X(55); 
 ! Exact match found for rate rule [Adsorbate;VacantSite]
 ! Euclidian distance = 0
 ! family: Surface_Adsorption_vdW
-X(1)+CH4(2)=CH4X(56)                                1.000e-01 0.000     0.000    
+X(1)+CH4(2)=CH4X(55)                                1.000e-01 0.000     0.000    
     STICK
 
 ! Reaction index: Chemkin #2; RMG #2
@@ -152,24 +152,37 @@ X(1)+X(1)+CH3OH(14)=CH3X(21)+HOX(22)                1.000e-02 0.000     10.000
 X(1)+OH(17)=HOX(22)                                 1.000e-01 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #8; RMG #1
+! Reaction index: Chemkin #8; RMG #616
+! Template reaction: Surface_Abstraction
+! Flux pairs: HOX(22), CH3X(21); CH2X(27), OX(20); 
+! Matched reaction 24 CH2X_1 + HOX_3 <=> CH3X_4 + OX_5 in Surface_Abstraction/training
+! This reaction matched rate rule [Abstracting;R-H]
+! family: Surface_Abstraction
+HOX(22)+CH2X(27)=OX(20)+CH3X(21)                    1.390000e+21 0.101     4.541    
+
+! Reaction index: Chemkin #9; RMG #1
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: H2(6), HX(19); X(1), HX(19); X(1), HX(19); 
 X(1)+X(1)+H2(6)=HX(19)+HX(19)                       4.600e-02 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #9; RMG #3
+! Reaction index: Chemkin #10; RMG #3
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: CH4(2), CH3X(21); X(1), HX(19); X(1), HX(19); 
 X(1)+X(1)+CH4(2)=HX(19)+CH3X(21)                    9.000e-04 0.000     17.208   
     STICK
 
-! Reaction index: Chemkin #10; RMG #15
+! Reaction index: Chemkin #11; RMG #12
+! Library reaction: Surface/CPOX_Pt/Deutschmann2006
+! Flux pairs: CH2X(27), CH3X(21); HX(19), X(1); 
+HX(19)+CH2X(27)=X(1)+CH3X(21)                       3.090000e+22 0.000     0.000    
+
+! Reaction index: Chemkin #12; RMG #15
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: OX(20), HOX(22); HX(19), X(1); 
 HX(19)+OX(20)=X(1)+HOX(22)                          1.280000e+21 0.000     2.677    
 
-! Reaction index: Chemkin #11; RMG #289
+! Reaction index: Chemkin #13; RMG #289
 ! Template reaction: Surface_Adsorption_Dissociative
 ! Flux pairs: H2O(5), HOX(22); H2O(5), HX(19); 
 ! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
@@ -180,7 +193,7 @@ HX(19)+OX(20)=X(1)+HOX(22)                          1.280000e+21 0.000     2.677
 X(1)+X(1)+H2O(5)=HX(19)+HOX(22)                     2.000e-02 0.000     17.334   
     STICK
 
-! Reaction index: Chemkin #12; RMG #302
+! Reaction index: Chemkin #14; RMG #302
 ! Template reaction: Surface_Adsorption_Single
 ! Flux pairs: X(1), HX(19); H(12), HX(19); 
 ! Exact match found for rate rule [Adsorbate;VacantSite]
@@ -189,25 +202,12 @@ X(1)+X(1)+H2O(5)=HX(19)+HOX(22)                     2.000e-02 0.000     17.334
 X(1)+H(12)=HX(19)                                   1.000e-01 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #13; RMG #12
-! Library reaction: Surface/CPOX_Pt/Deutschmann2006
-! Flux pairs: CH2X(27), CH3X(21); HX(19), X(1); 
-HX(19)+CH2X(27)=X(1)+CH3X(21)                       3.090000e+22 0.000     0.000    
-
-! Reaction index: Chemkin #14; RMG #616
-! Template reaction: Surface_Abstraction
-! Flux pairs: HOX(22), CH3X(21); CH2X(27), OX(20); 
-! Matched reaction 24 CH2X_1 + HOX_3 <=> CH3X_4 + OX_5 in Surface_Abstraction/training
-! This reaction matched rate rule [Abstracting;R-H]
-! family: Surface_Abstraction
-HOX(22)+CH2X(27)=OX(20)+CH3X(21)                    1.390000e+21 0.101     4.541    
-
 ! Reaction index: Chemkin #15; RMG #13
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: CHX(28), CH2X(27); HX(19), X(1); 
 HX(19)+CHX(28)=X(1)+CH2X(27)                        3.090000e+22 0.000     0.000    
 
-! Reaction index: Chemkin #16; RMG #620
+! Reaction index: Chemkin #16; RMG #618
 ! Template reaction: Surface_Abstraction
 ! Flux pairs: HOX(22), CH2X(27); CHX(28), OX(20); 
 ! Matched reaction 26 CHX_1 + HOX_3 <=> CH2X_4 + OX_5 in Surface_Abstraction/training
@@ -216,7 +216,7 @@ HX(19)+CHX(28)=X(1)+CH2X(27)                        3.090000e+22 0.000     0.000
 ! Ea raised from 42.4 to 70.9 kJ/mol to match endothermicity of reaction.
 HOX(22)+CHX(28)=OX(20)+CH2X(27)                     4.400000e+22 0.101     16.946   
 
-! Reaction index: Chemkin #17; RMG #623
+! Reaction index: Chemkin #17; RMG #620
 ! Template reaction: Surface_Abstraction
 ! Flux pairs: CH2X(27), CH3X(21); CH2X(27), CHX(28); 
 ! Exact match found for rate rule [Abstracting;R-H]
@@ -244,7 +244,7 @@ H2(6)+CX(26)=CH2X(27)                               4.000e-02 0.000     7.098
 ! family: Surface_Abstraction
 HOX(22)+CX(26)=OX(20)+CHX(28)                       2.430000e+21 -0.312    28.418   
 
-! Reaction index: Chemkin #21; RMG #627
+! Reaction index: Chemkin #21; RMG #626
 ! Template reaction: Surface_Abstraction
 ! Flux pairs: CH3X(21), CHX(28); CX(26), CH2X(27); 
 ! Exact match found for rate rule [Abstracting;R-H]
@@ -262,38 +262,38 @@ CH3X(21)+CX(26)=CH2X(27)+CHX(28)                    1.500000e+22 0.000     9.560
 ! family: Surface_Abstraction
 CX(26)+CH2X(27)=CHX(28)+CHX(28)                     1.000000e+22 0.000     9.560    
 
-! Reaction index: Chemkin #23; RMG #5
-! Library reaction: Surface/CPOX_Pt/Deutschmann2006
-! Flux pairs: CH4(2), CH3X(21); X(1), H2OX(23); HOX(22), H2OX(23); 
-X(1)+CH4(2)+HOX(22)=CH3X(21)+H2OX(23)               1.000e+00 0.000     2.390    
-    STICK
-
-! Reaction index: Chemkin #24; RMG #6
-! Library reaction: Surface/CPOX_Pt/Deutschmann2006
-! Flux pairs: X(1), H2OX(23); H2O(5), H2OX(23); 
-X(1)+H2O(5)=H2OX(23)                                7.500e-01 0.000     0.000    
-    STICK
-
-! Reaction index: Chemkin #25; RMG #16
-! Library reaction: Surface/CPOX_Pt/Deutschmann2006
-! Flux pairs: H2OX(23), HOX(22); OX(20), HOX(22); 
-OX(20)+H2OX(23)=HOX(22)+HOX(22)                     1.000000e+20 0.000     10.301   
-
-! Reaction index: Chemkin #26; RMG #18
-! Library reaction: Surface/CPOX_Pt/Deutschmann2006
-! Flux pairs: HOX(22), H2OX(23); HX(19), X(1); 
-HX(19)+HOX(22)=X(1)+H2OX(23)                        2.040000e+21 0.000     15.827   
-
-! Reaction index: Chemkin #27; RMG #8
+! Reaction index: Chemkin #23; RMG #8
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: X(1), OCX(25); CO(7), OCX(25); 
 X(1)+CO(7)=OCX(25)                                  8.400e-01 0.000     0.000    
     STICK
 
-! Reaction index: Chemkin #28; RMG #9
+! Reaction index: Chemkin #24; RMG #9
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
 ! Flux pairs: CX(26), OCX(25); OX(20), X(1); 
 OX(20)+CX(26)=X(1)+OCX(25)                          3.700000e+19 0.000     0.000    
+
+! Reaction index: Chemkin #25; RMG #5
+! Library reaction: Surface/CPOX_Pt/Deutschmann2006
+! Flux pairs: CH4(2), CH3X(21); X(1), H2OX(23); HOX(22), H2OX(23); 
+X(1)+CH4(2)+HOX(22)=CH3X(21)+H2OX(23)               1.000e+00 0.000     2.390    
+    STICK
+
+! Reaction index: Chemkin #26; RMG #6
+! Library reaction: Surface/CPOX_Pt/Deutschmann2006
+! Flux pairs: X(1), H2OX(23); H2O(5), H2OX(23); 
+X(1)+H2O(5)=H2OX(23)                                7.500e-01 0.000     0.000    
+    STICK
+
+! Reaction index: Chemkin #27; RMG #16
+! Library reaction: Surface/CPOX_Pt/Deutschmann2006
+! Flux pairs: H2OX(23), HOX(22); OX(20), HOX(22); 
+OX(20)+H2OX(23)=HOX(22)+HOX(22)                     1.000000e+20 0.000     10.301   
+
+! Reaction index: Chemkin #28; RMG #18
+! Library reaction: Surface/CPOX_Pt/Deutschmann2006
+! Flux pairs: HOX(22), H2OX(23); HX(19), X(1); 
+HX(19)+HOX(22)=X(1)+H2OX(23)                        2.040000e+21 0.000     15.827   
 
 ! Reaction index: Chemkin #29; RMG #7
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006

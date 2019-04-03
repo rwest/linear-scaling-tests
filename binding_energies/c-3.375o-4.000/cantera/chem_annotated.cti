@@ -2,20 +2,22 @@ units(length='cm', time='s', quantity='mol', act_energy='kcal/mol')
 
 ideal_gas(name='gas',
           elements="H D T C Ci O Oi N Ne Ar He Si S Cl X",
-          species="""N2          Ne          CH4(2)      O2(3)
-                     CO2(4)      H2O(5)      H2(6)       CO(7)
-                     C2H6(8)     CH2O(9)     CH3(10)     C3H8(11)
-                     H(12)       C2H5(13)    CH3OH(14)   HCO(15)
-                     CH3CHO(16)  OH(17)      C2H4(18)    CH3OO(85)""",
+          species="""Ar          Ne          N2          CH4(2)
+                     O2(3)       CO2(4)      H2O(5)      H2(6)
+                     CO(7)       C2H6(8)     CH2O(9)     CH3(10)
+                     C3H8(11)    H(12)       C2H5(13)    CH3OH(14)
+                     HCO(15)     CH3CHO(16)  OH(17)      C2H4(18)
+                     CH3OO(84)""",
           reactions='gas-*',
           transport='Mix',
           initial_state=state(temperature=300.0, pressure=OneAtm))
 
 ideal_interface(name='surface1',
                 elements="H D T C Ci O Oi N Ne Ar He Si S Cl X",
-                species="""X(1)      HX(19)    OX(20)    CH3X(21)  HOX(22)
-                          H2OX(23)  CO2X(24)  OCX(25)   CX(26)    CH2X(27)
-                          CHX(28)   CH4X(56)""",
+                species="""X(1)       HX(19)     OX(20)     CH3X(21)
+                          HOX(22)    H2OX(23)   CO2X(24)   OCX(25)
+                          CX(26)     CH2X(27)   CHX(28)    CH4X(55)
+                          C2H6X(59)""",
                 site_density=2.9e-09,
                 phases="gas",
           reactions='surface1-*',
@@ -34,6 +36,34 @@ element(symbol=u'T', atomic_mass=3.016)
 # Species data
 #-------------------------------------------------------------------------------
 
+species(name=u'Ar',
+        atoms='Ar:1',
+        thermo=(NASA([200.00, 1000.00],
+                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
+                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
+                       4.37967000E+00]),
+                NASA([1000.00, 6000.00],
+                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
+                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
+                       4.37967000E+00])),
+        transport=gas_transport(geom='atom',
+                                diam=3.33,
+                                well_depth=136.5))
+
+species(name=u'Ne',
+        atoms='Ne:1',
+        thermo=(NASA([200.00, 1000.00],
+                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
+                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
+                       3.35532000E+00]),
+                NASA([1000.00, 6000.00],
+                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
+                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
+                       3.35532000E+00])),
+        transport=gas_transport(geom='atom',
+                                diam=3.758,
+                                well_depth=148.6))
+
 species(name=u'N2',
         atoms='N:2',
         thermo=(NASA([200.00, 1000.00],
@@ -49,20 +79,6 @@ species(name=u'N2',
                                 well_depth=97.53,
                                 polar=1.76,
                                 rot_relax=4.0))
-
-species(name=u'Ne',
-        atoms='Ne:1',
-        thermo=(NASA([200.00, 1000.00],
-                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
-                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
-                       3.35532000E+00]),
-                NASA([1000.00, 6000.00],
-                     [ 2.50000000E+00,  0.00000000E+00,  0.00000000E+00,
-                       0.00000000E+00,  0.00000000E+00, -7.45375000E+02,
-                       3.35532000E+00])),
-        transport=gas_transport(geom='atom',
-                                diam=3.758,
-                                well_depth=148.6))
 
 species(name=u'CH4(2)',
         atoms='H:4 C:1',
@@ -315,7 +331,7 @@ species(name=u'C2H4(18)',
                                 well_depth=280.8,
                                 rot_relax=1.5))
 
-species(name=u'CH3OO(85)',
+species(name=u'CH3OO(84)',
         atoms='H:3 C:1 O:2',
         thermo=(NASA([100.00, 1031.34],
                      [ 3.58601552E+00,  6.15340415E-03,  1.33272153E-05,
@@ -452,7 +468,7 @@ species(name=u'CHX(28)',
                       -1.20801040E-10,  8.35333025E-15,  2.47626783E+04,
                       -2.36254728E+01])))
 
-species(name=u'CH4X(56)',
+species(name=u'CH4X(55)',
         atoms='H:4 C:1 X:1',
         thermo=(NASA([100.00, 886.28],
                      [-1.38690949E+00,  4.00454988E-02, -8.37934254E-05,
@@ -462,6 +478,17 @@ species(name=u'CH4X(56)',
                      [-2.16839093E+00,  1.99492654E-02, -9.80004492E-06,
                        1.83534461E-09, -1.22520122E-13, -9.84489084E+03,
                        2.67913137E+01])))
+
+species(name=u'C2H6X(59)',
+        atoms='H:6 C:2 X:1',
+        thermo=(NASA([100.00, 826.24],
+                     [-1.73426428E+00,  4.32689702E-02, -6.15059592E-05,
+                       5.72992790E-08, -2.14162386E-11, -1.40653296E+04,
+                       1.90797877E+01]),
+                NASA([826.24, 5000.00],
+                     [-4.52002447E-01,  2.66243113E-02, -1.23405581E-05,
+                       2.34092022E-09, -1.61301921E-13, -1.39209692E+04,
+                       1.52942205E+01])))
 
 #-------------------------------------------------------------------------------
 # Reaction data
@@ -474,7 +501,7 @@ species(name=u'CH4X(56)',
 falloff_reaction('CH2O(9) (+ M) <=> CO(7) + H2(6) (+ M)',
                  kf=[3.700000e+13, 0.0, 71.976],
                  kf0=[4.400000e+38, -6.1, 94.0],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=0.932, T3=197.0, T1=1540.0, T2=10300.0),
                  id='gas-1')
 #  Reaction index: Chemkin #2; RMG #245
@@ -485,7 +512,7 @@ falloff_reaction('CH2O(9) (+ M) <=> CO(7) + H2(6) (+ M)',
 falloff_reaction('CH3(10) + CH3(10) (+ M) <=> C2H6(8) (+ M)',
                  kf=[2.120000e+16, -0.97, 0.62],
                  kf0=[1.770000e+50, -9.67, 6.22],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=0.5325, T3=151.0, T1=1040.0, T2=4970.0),
                  id='gas-2')
 #  Reaction index: Chemkin #3; RMG #119
@@ -501,7 +528,7 @@ reaction('CH4(2) + H(12) <=> H2(6) + CH3(10)', [4.973400e+05, 2.5, 9.588],
 
 # Reaction 4
 three_body_reaction('H2(6) + M <=> H(12) + H(12) + M', [3.843000e+19, -1.4, 104.39],
-                    efficiencies='H2(6):2.5 CO2(4):3.8 H2O(5):12.0',
+                    efficiencies='H2(6):2.5 CO2(4):3.8 H2O(5):12.0 Ar:0.0',
                     id='gas-4')
 #  Reaction index: Chemkin #5; RMG #243
 #  Library reaction: ERC-FoundationFuelv0.9
@@ -511,296 +538,303 @@ three_body_reaction('H2(6) + M <=> H(12) + H(12) + M', [3.843000e+19, -1.4, 104.
 falloff_reaction('CH3(10) + H(12) (+ M) <=> CH4(2) (+ M)',
                  kf=[1.245000e+14, 0.0, 0.0],
                  kf0=[4.679000e+24, -2.17, 0.0],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=0.124, T3=1800.0, T1=33.1, T2=90000.0),
                  id='gas-5')
-#  Reaction index: Chemkin #6; RMG #100
+#  Reaction index: Chemkin #6; RMG #264
+#  Library reaction: BurkeH2O2inN2
+#  Flux pairs: H2(6), H(12); Ar, Ar; Ar, H(12);
+
+# Reaction 6
+reaction('Ar + H2(6) <=> Ar + H(12) + H(12)', [5.840000e+18, -1.1, 104.38],
+         id='gas-6')
+#  Reaction index: Chemkin #7; RMG #100
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3(10), C2H5(13); CH3(10), H(12);
 
-# Reaction 6
+# Reaction 7
 reaction('CH3(10) + CH3(10) <=> H(12) + C2H5(13)', [7.845000e+12, 0.1, 10.6],
-         id='gas-6')
-#  Reaction index: Chemkin #7; RMG #223
+         id='gas-7')
+#  Reaction index: Chemkin #8; RMG #223
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: C2H6(8), C2H5(13); H(12), H2(6);
 
-# Reaction 7
-reaction('C2H6(8) + H(12) <=> H2(6) + C2H5(13)', [1.135100e+08, 1.9, 7.53],
-         id='gas-7')
-#  Reaction index: Chemkin #8; RMG #228
-#  Library reaction: ERC-FoundationFuelv0.9
-
 # Reaction 8
-reaction('C2H6(8) + CH3(10) <=> CH4(2) + C2H5(13)', [5.600000e+10, 0.0, 9.42],
-         options='duplicate',
+reaction('C2H6(8) + H(12) <=> H2(6) + C2H5(13)', [1.135100e+08, 1.9, 7.53],
          id='gas-8')
 #  Reaction index: Chemkin #9; RMG #228
 #  Library reaction: ERC-FoundationFuelv0.9
 
 # Reaction 9
-reaction('C2H6(8) + CH3(10) <=> CH4(2) + C2H5(13)', [8.817800e+14, 0.0, 22.26],
+reaction('C2H6(8) + CH3(10) <=> CH4(2) + C2H5(13)', [5.600000e+10, 0.0, 9.42],
          options='duplicate',
          id='gas-9')
-#  Reaction index: Chemkin #10; RMG #263
+#  Reaction index: Chemkin #10; RMG #228
+#  Library reaction: ERC-FoundationFuelv0.9
+
+# Reaction 10
+reaction('C2H6(8) + CH3(10) <=> CH4(2) + C2H5(13)', [8.817800e+14, 0.0, 22.26],
+         options='duplicate',
+         id='gas-10')
+#  Reaction index: Chemkin #11; RMG #263
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: H(12), C2H6(8); C2H5(13), C2H6(8);
 
-# Reaction 10
+# Reaction 11
 falloff_reaction('H(12) + C2H5(13) (+ M) <=> C2H6(8) (+ M)',
                  kf=[5.210000e+17, -0.99, 1.58],
                  kf0=[1.990000e+41, -7.08, 6.685],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=0.842, T3=125.0, T1=2220.0, T2=6880.0),
-                 id='gas-10')
-#  Reaction index: Chemkin #11; RMG #37
+                 id='gas-11')
+#  Reaction index: Chemkin #12; RMG #37
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: HCO(15), CO(7); H(12), H2(6);
 
-# Reaction 11
+# Reaction 12
 reaction('HCO(15) + H(12) <=> CO(7) + H2(6)', [9.030000e+13, 0.0, 0.0],
-         id='gas-11')
-#  Reaction index: Chemkin #12; RMG #77
+         id='gas-12')
+#  Reaction index: Chemkin #13; RMG #77
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH2O(9), HCO(15); H(12), H2(6);
 
-# Reaction 12
+# Reaction 13
 reaction('CH2O(9) + H(12) <=> HCO(15) + H2(6)', [6.193500e+07, 1.9, 2.742],
-         id='gas-12')
-#  Reaction index: Chemkin #13; RMG #101
+         id='gas-13')
+#  Reaction index: Chemkin #14; RMG #101
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: HCO(15), CO(7); CH3(10), CH4(2);
 
-# Reaction 13
+# Reaction 14
 reaction('HCO(15) + CH3(10) <=> CH4(2) + CO(7)', [5.300000e+12, 0.0, 0.0],
-         id='gas-13')
-#  Reaction index: Chemkin #14; RMG #102
+         id='gas-14')
+#  Reaction index: Chemkin #15; RMG #102
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH2O(9), HCO(15); CH3(10), CH4(2);
 
-# Reaction 14
+# Reaction 15
 reaction('CH2O(9) + CH3(10) <=> CH4(2) + HCO(15)', [3.301600e+01, 3.36, 4.31],
-         id='gas-14')
-#  Reaction index: Chemkin #15; RMG #221
+         id='gas-15')
+#  Reaction index: Chemkin #16; RMG #221
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: C2H5(13), C2H6(8); CH2O(9), HCO(15);
 
-# Reaction 15
+# Reaction 16
 reaction('CH2O(9) + C2H5(13) <=> HCO(15) + C2H6(8)', [5.500000e+03, 2.81, 5.86],
-         id='gas-15')
-#  Reaction index: Chemkin #16; RMG #236
+         id='gas-16')
+#  Reaction index: Chemkin #17; RMG #236
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: HCO(15), CO(7); HCO(15), H(12);
 
-# Reaction 16
+# Reaction 17
 three_body_reaction('HCO(15) + M <=> CO(7) + H(12) + M', [5.059000e+17, -1.2, 17.734],
-                    efficiencies='C2H6(8):3.0 H2O(5):9.55 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
-                    id='gas-16')
-#  Reaction index: Chemkin #17; RMG #241
+                    efficiencies='C2H6(8):3.0 H2O(5):9.55 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:1.02 CH3OH(14):3.0',
+                    id='gas-17')
+#  Reaction index: Chemkin #18; RMG #241
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: HCO(15), CH2O(9); H(12), CH2O(9);
 
-# Reaction 17
+# Reaction 18
 falloff_reaction('HCO(15) + H(12) (+ M) <=> CH2O(9) (+ M)',
                  kf=[3.084000e+14, -0.033, -0.142],
                  kf0=[6.947000e+34, -5.533, 6.128],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=0.782, T3=271.0, T1=2760.0, T2=6570.0),
-                 id='gas-17')
-#  Reaction index: Chemkin #18; RMG #259
+                 id='gas-18')
+#  Reaction index: Chemkin #19; RMG #259
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3CHO(16), CH4(2); CH3CHO(16), CO(7);
 
-# Reaction 18
+# Reaction 19
 falloff_reaction('CH3CHO(16) (+ M) <=> CH4(2) + CO(7) (+ M)',
                  kf=[5.440000e+21, -1.74, 86.364],
                  kf0=[2.290000e+58, -11.3, 95.922],
                  efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 H2(6):2.0 C2H4(18):3.0 CH3OH(14):3.0',
                  falloff=Troe(A=0.92, T3=50000.0, T1=10.0, T2=8200.0),
-                 id='gas-18')
-#  Reaction index: Chemkin #19; RMG #260
+                 id='gas-19')
+#  Reaction index: Chemkin #20; RMG #260
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3CHO(16), HCO(15); CH3CHO(16), CH3(10);
 
-# Reaction 19
+# Reaction 20
 falloff_reaction('CH3CHO(16) (+ M) <=> HCO(15) + CH3(10) (+ M)',
                  kf=[2.180000e+22, -1.74, 86.364],
                  kf0=[9.150000e+58, -11.3, 95.922],
                  efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 H2(6):2.0 C2H4(18):3.0 CH3OH(14):3.0',
                  falloff=Troe(A=0.92, T3=50000.0, T1=10.0, T2=8200.0),
-                 id='gas-19')
-#  Reaction index: Chemkin #20; RMG #21
+                 id='gas-20')
+#  Reaction index: Chemkin #21; RMG #21
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: OH(17), H2O(5); H2(6), H(12);
 
-# Reaction 20
+# Reaction 21
 reaction('H2(6) + OH(17) <=> H2O(5) + H(12)', [2.067100e+08, 1.51, 3.437],
-         id='gas-20')
-#  Reaction index: Chemkin #21; RMG #23
+         id='gas-21')
+#  Reaction index: Chemkin #22; RMG #23
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: H2O(5), OH(17); H2O(5), H(12); H2O(5), H2O(5);
 
-# Reaction 21
-reaction('H2O(5) + H2O(5) <=> H2O(5) + H(12) + OH(17)', [4.171300e+25, -2.44, 120.2],
-         id='gas-21')
-#  Reaction index: Chemkin #22; RMG #35
-#  Library reaction: ERC-FoundationFuelv0.9
-
 # Reaction 22
-reaction('CO(7) + OH(17) <=> CO2(4) + H(12)', [6.542400e+04, 2.053, -0.356],
-         options='duplicate',
+reaction('H2O(5) + H2O(5) <=> H2O(5) + H(12) + OH(17)', [4.171300e+25, -2.44, 120.2],
          id='gas-22')
 #  Reaction index: Chemkin #23; RMG #35
 #  Library reaction: ERC-FoundationFuelv0.9
 
 # Reaction 23
-reaction('CO(7) + OH(17) <=> CO2(4) + H(12)', [5.356800e+12, -0.664, 0.332],
+reaction('CO(7) + OH(17) <=> CO2(4) + H(12)', [6.542400e+04, 2.053, -0.356],
          options='duplicate',
          id='gas-23')
-#  Reaction index: Chemkin #24; RMG #40
+#  Reaction index: Chemkin #24; RMG #35
+#  Library reaction: ERC-FoundationFuelv0.9
+
+# Reaction 24
+reaction('CO(7) + OH(17) <=> CO2(4) + H(12)', [5.356800e+12, -0.664, 0.332],
+         options='duplicate',
+         id='gas-24')
+#  Reaction index: Chemkin #25; RMG #40
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: HCO(15), CO(7); OH(17), H2O(5);
 
-# Reaction 24
+# Reaction 25
 reaction('HCO(15) + OH(17) <=> CO(7) + H2O(5)', [1.165300e+14, 0.0, 0.0],
-         id='gas-24')
-#  Reaction index: Chemkin #25; RMG #79
+         id='gas-25')
+#  Reaction index: Chemkin #26; RMG #79
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH2O(9), HCO(15); OH(17), H2O(5);
 
-# Reaction 25
+# Reaction 26
 reaction('CH2O(9) + OH(17) <=> HCO(15) + H2O(5)', [7.655800e+07, 1.63, -1.055],
-         id='gas-25')
-#  Reaction index: Chemkin #26; RMG #91
+         id='gas-26')
+#  Reaction index: Chemkin #27; RMG #91
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3(10), CH2O(9); OH(17), H2(6);
 
-# Reaction 26
+# Reaction 27
 reaction('CH3(10) + OH(17) <=> H2(6) + CH2O(9)', [8.272000e+09, 0.5, -1.755],
-         id='gas-26')
-#  Reaction index: Chemkin #27; RMG #95
+         id='gas-27')
+#  Reaction index: Chemkin #28; RMG #95
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3(10), CH2O(9); O2(3), OH(17);
 
-# Reaction 27
+# Reaction 28
 reaction('O2(3) + CH3(10) <=> CH2O(9) + OH(17)', [1.124400e+02, 2.86, 9.768],
-         id='gas-27')
-#  Reaction index: Chemkin #28; RMG #121
+         id='gas-28')
+#  Reaction index: Chemkin #29; RMG #121
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH4(2), CH3(10); OH(17), H2O(5);
 
-# Reaction 28
+# Reaction 29
 reaction('CH4(2) + OH(17) <=> H2O(5) + CH3(10)', [9.680000e+05, 2.182, 2.446],
-         id='gas-28')
-#  Reaction index: Chemkin #29; RMG #225
+         id='gas-29')
+#  Reaction index: Chemkin #30; RMG #225
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: C2H6(8), C2H5(13); OH(17), H2O(5);
 
-# Reaction 29
+# Reaction 30
 reaction('C2H6(8) + OH(17) <=> H2O(5) + C2H5(13)', [9.543500e+06, 2.0, 0.994],
-         id='gas-29')
-#  Reaction index: Chemkin #30; RMG #232
+         id='gas-30')
+#  Reaction index: Chemkin #31; RMG #232
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: H2O(5), H(12); H2O(5), OH(17);
 
-# Reaction 30
+# Reaction 31
 three_body_reaction('H2O(5) + M <=> H(12) + OH(17) + M', [1.450000e+28, -3.322, 120.8],
-                    efficiencies='H2(6):3.0 O2(3):1.5 N2:2.0 CO2(4):3.8 H2O(5):0.0',
-                    id='gas-30')
-#  Reaction index: Chemkin #31; RMG #244
+                    efficiencies='H2O(5):0.0 O2(3):1.5 CO2(4):3.8 H2(6):3.0 Ar:0.36 N2:2.0',
+                    id='gas-31')
+#  Reaction index: Chemkin #32; RMG #244
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: CH3(10), CH3OH(14); OH(17), CH3OH(14);
 
-# Reaction 31
+# Reaction 32
 falloff_reaction('CH3(10) + OH(17) (+ M) <=> CH3OH(14) (+ M)',
                  kf=[3.365000e+18, -1.43, 1.33],
                  kf0=[4.824000e+36, -5.92, 3.14],
                  efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
                  falloff=Troe(A=0.412, T3=195.0, T1=5900.0, T2=6390.0),
-                 id='gas-31')
-#  Reaction index: Chemkin #32; RMG #269
+                 id='gas-32')
+#  Reaction index: Chemkin #33; RMG #269
 #  Library reaction: BurkeH2O2inN2
 #  Flux pairs: OH(17), O2(3); OH(17), H2(6);
 
-# Reaction 32
+# Reaction 33
 reaction('OH(17) + OH(17) <=> O2(3) + H2(6)', [2.000000e+11, 0.51, 50.5],
-         id='gas-32')
-#  Reaction index: Chemkin #33; RMG #215
+         id='gas-33')
+#  Reaction index: Chemkin #34; RMG #215
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: C2H5(13), C2H4(18); H(12), H2(6);
 
-# Reaction 33
+# Reaction 34
 reaction('H(12) + C2H5(13) <=> H2(6) + C2H4(18)', [1.810000e+12, 0.0, 0.0],
-         id='gas-33')
-#  Reaction index: Chemkin #34; RMG #220
+         id='gas-34')
+#  Reaction index: Chemkin #35; RMG #220
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: C2H5(13), C2H4(18); CH3(10), CH4(2);
 
-# Reaction 34
+# Reaction 35
 reaction('CH3(10) + C2H5(13) <=> CH4(2) + C2H4(18)', [9.000000e+11, 0.0, 0.0],
-         id='gas-34')
-#  Reaction index: Chemkin #35; RMG #262
+         id='gas-35')
+#  Reaction index: Chemkin #36; RMG #262
 #  Library reaction: ERC-FoundationFuelv0.9
 #  Flux pairs: H(12), C2H5(13); C2H4(18), C2H5(13);
 
-# Reaction 35
+# Reaction 36
 falloff_reaction('H(12) + C2H4(18) (+ M) <=> C2H5(13) (+ M)',
                  kf=[7.193000e+08, 1.463, 1.355],
                  kf0=[1.523000e+39, -6.642, 5.769],
-                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 CH3OH(14):3.0',
+                 efficiencies='C2H6(8):3.0 H2O(5):6.0 CH2O(9):2.5 CO2(4):2.0 CH4(2):2.0 Ar:0.7 CH3OH(14):3.0',
                  falloff=Troe(A=1.569, T3=-9150.0, T1=299.0, T2=152.0),
-                 id='gas-35')
-#  Reaction index: Chemkin #36; RMG #275
+                 id='gas-36')
+#  Reaction index: Chemkin #37; RMG #275
 #  Template reaction: R_Recombination
 #  Flux pairs: C2H5(13), C3H8(11); CH3(10), C3H8(11);
 #  Matched reaction 10 CH3 + C2H5 <=> C3H8 in R_Recombination/training
 #  This reaction matched rate rule [C_rad/H2/Cs;C_methyl]
 #  family: R_Recombination
 
-# Reaction 36
+# Reaction 37
 reaction('CH3(10) + C2H5(13) <=> C3H8(11)', [1.230000e+15, -0.562, 0.021],
-         id='gas-36')
-#  Reaction index: Chemkin #37; RMG #420
+         id='gas-37')
+#  Reaction index: Chemkin #38; RMG #420
 #  Template reaction: Disproportionation
 #  Flux pairs: OH(17), H2O(5); C2H5(13), C2H4(18);
 #  Matched reaction 13 HO + C2H5 <=> H2O + C2H4 in Disproportionation/training
 #  This reaction matched rate rule [O_pri_rad;Cmethyl_Csrad]
 #  family: Disproportionation
 
-# Reaction 37
+# Reaction 38
 reaction('C2H5(13) + OH(17) <=> H2O(5) + C2H4(18)', [7.230000e+13, 0.0, 0.0],
-         id='gas-37')
-#  Reaction index: Chemkin #38; RMG #425
+         id='gas-38')
+#  Reaction index: Chemkin #39; RMG #425
 #  Template reaction: CO_Disproportionation
 #  Flux pairs: C2H5(13), C2H6(8); HCO(15), CO(7);
 #  Matched reaction 12 C2H5 + HCO <=> C2H6 + CO in CO_Disproportionation/training
 #  This reaction matched rate rule [C_rad/H2/Cs;HCO]
 #  family: CO_Disproportionation
 
-# Reaction 38
+# Reaction 39
 reaction('HCO(15) + C2H5(13) <=> CO(7) + C2H6(8)', [4.300000e+13, 0.0, 0.0],
-         id='gas-38')
-#  Reaction index: Chemkin #39; RMG #428
+         id='gas-39')
+#  Reaction index: Chemkin #40; RMG #428
 #  Template reaction: CO_Disproportionation
 #  Flux pairs: HCO(15), CH2O(9); HCO(15), CO(7);
 #  Matched reaction 5 HCO + HCO_Y <=> CO + CH2O in CO_Disproportionation/training
 #  This reaction matched rate rule [CO_pri_rad;HCO]
 #  family: CO_Disproportionation
 
-# Reaction 39
+# Reaction 40
 reaction('HCO(15) + HCO(15) <=> CO(7) + CH2O(9)', [1.800000e+13, 0.0, 0.0],
-         id='gas-39')
-#  Reaction index: Chemkin #40; RMG #456
+         id='gas-40')
+#  Reaction index: Chemkin #41; RMG #456
 #  Template reaction: Disproportionation
 #  Flux pairs: C2H5(13), C2H6(8); C2H5(13), C2H4(18);
 #  Matched reaction 6 C2H5 + C2H5-2 <=> C2H6 + C2H4 in Disproportionation/training
 #  This reaction matched rate rule [C_rad/H2/Cs;Cmethyl_Csrad]
 #  family: Disproportionation
 
-# Reaction 40
+# Reaction 41
 reaction('C2H5(13) + C2H5(13) <=> C2H6(8) + C2H4(18)', [6.900000e+13, -0.35, 0.0],
-         id='gas-40')
-#  Reaction index: Chemkin #41; RMG #501
+         id='gas-41')
+#  Reaction index: Chemkin #42; RMG #501
 #  Template reaction: Disproportionation
 #  Flux pairs: HCO(15), C2H4(18); C2H5(13), CH2O(9);
 #  Estimated using average of templates [Y_rad;Cmethyl_Csrad] + [CO_pri_rad;XH_s_Rrad] for rate rule [CO_pri_rad;Cmethyl_Csrad]
@@ -808,28 +842,28 @@ reaction('C2H5(13) + C2H5(13) <=> C2H6(8) + C2H4(18)', [6.900000e+13, -0.35, 0.0
 #  Multiplied by reaction path degeneracy 3.0
 #  family: Disproportionation
 
-# Reaction 41
+# Reaction 42
 reaction('HCO(15) + C2H5(13) <=> CH2O(9) + C2H4(18)', [5.972864e+14, -0.34, 0.0],
-         id='gas-41')
-#  Reaction index: Chemkin #42; RMG #329
+         id='gas-42')
+#  Reaction index: Chemkin #43; RMG #329
 #  Template reaction: R_Recombination
-#  Flux pairs: CH3OO(85), CH3(10); CH3OO(85), O2(3);
+#  Flux pairs: CH3OO(84), CH3(10); CH3OO(84), O2(3);
 #  Matched reaction 0 CH3O2 <=> O2 + CH3 in R_Recombination/training
 #  This reaction matched rate rule [C_methyl;O2_birad]
 #  family: R_Recombination
 
-# Reaction 42
-reaction('CH3OO(85) <=> O2(3) + CH3(10)', [1.090000e+14, 0.25, 33.3],
-         id='gas-42')
+# Reaction 43
+reaction('CH3OO(84) <=> O2(3) + CH3(10)', [1.090000e+14, 0.25, 33.3],
+         id='gas-43')
 #  Reaction index: Chemkin #1; RMG #288
 #  Template reaction: Surface_Adsorption_vdW
-#  Flux pairs: X(1), CH4X(56); CH4(2), CH4X(56);
+#  Flux pairs: X(1), CH4X(55); CH4(2), CH4X(55);
 #  Exact match found for rate rule [Adsorbate;VacantSite]
 #  Euclidian distance = 0
 #  family: Surface_Adsorption_vdW
 
 # surface1 Reaction 1
-surface_reaction('X(1) + CH4(2) <=> CH4X(56)', stick(1.000000e-01, 0.0, 0.0),
+surface_reaction('X(1) + CH4(2) <=> CH4X(55)', stick(1.000000e-01, 0.0, 0.0),
                  id='surface1-1')
 #  Reaction index: Chemkin #2; RMG #2
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
@@ -958,66 +992,76 @@ surface_reaction('OX(20) + H2OX(23) <=> HOX(22) + HOX(22)', [1.000000e+20, 0.0, 
 # surface1 Reaction 16
 surface_reaction('HX(19) + HOX(22) <=> X(1) + H2OX(23)', [2.040000e+21, 0.0, 15.827],
                  id='surface1-16')
-#  Reaction index: Chemkin #17; RMG #7
+#  Reaction index: Chemkin #17; RMG #294
+#  Template reaction: Surface_Adsorption_vdW
+#  Flux pairs: X(1), C2H6X(59); C2H6(8), C2H6X(59);
+#  Exact match found for rate rule [Adsorbate;VacantSite]
+#  Euclidian distance = 0
+#  family: Surface_Adsorption_vdW
+
+# surface1 Reaction 17
+surface_reaction('X(1) + C2H6(8) <=> C2H6X(59)', stick(1.000000e-01, 0.0, 0.0),
+                 id='surface1-17')
+#  Reaction index: Chemkin #18; RMG #7
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: X(1), CO2X(24); CO2(4), CO2X(24);
 
-# surface1 Reaction 17
+# surface1 Reaction 18
 surface_reaction('X(1) + CO2(4) <=> CO2X(24)', stick(5.000000e-03, 0.0, 0.0),
-                 id='surface1-17')
-#  Reaction index: Chemkin #18; RMG #8
+                 id='surface1-18')
+#  Reaction index: Chemkin #19; RMG #8
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: X(1), OCX(25); CO(7), OCX(25);
 
-# surface1 Reaction 18
+# surface1 Reaction 19
 surface_reaction('X(1) + CO(7) <=> OCX(25)', stick(8.400000e-01, 0.0, 0.0),
-                 id='surface1-18')
-#  Reaction index: Chemkin #19; RMG #9
+                 id='surface1-19')
+#  Reaction index: Chemkin #20; RMG #9
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: CX(26), OCX(25); OX(20), X(1);
 
-# surface1 Reaction 19
+# surface1 Reaction 20
 surface_reaction('OX(20) + CX(26) <=> X(1) + OCX(25)', [3.700000e+19, 0.0, 0.0],
-                 id='surface1-19')
-#  Reaction index: Chemkin #20; RMG #10
+                 id='surface1-20')
+#  Reaction index: Chemkin #21; RMG #10
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: OCX(25), CO2X(24); OX(20), X(1);
 
-# surface1 Reaction 20
+# surface1 Reaction 21
 surface_reaction('OX(20) + OCX(25) <=> X(1) + CO2X(24)', [3.700000e+21, 0.0, 28.107],
-                 id='surface1-20')
-#  Reaction index: Chemkin #21; RMG #11
+                 id='surface1-21')
+#  Reaction index: Chemkin #22; RMG #11
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: CO2X(24), OCX(25); HX(19), HOX(22);
 
-# surface1 Reaction 21
+# surface1 Reaction 22
 surface_reaction('HX(19) + CO2X(24) <=> HOX(22) + OCX(25)', [1.000000e+19, 0.0, 2.008],
-                 id='surface1-21')
-#  Reaction index: Chemkin #22; RMG #12
+                 id='surface1-22')
+#  Reaction index: Chemkin #23; RMG #12
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: CH2X(27), CH3X(21); HX(19), X(1);
 
-# surface1 Reaction 22
+# surface1 Reaction 23
 surface_reaction('HX(19) + CH2X(27) <=> X(1) + CH3X(21)', [3.090000e+22, 0.0, 0.0],
-                 id='surface1-22')
-#  Reaction index: Chemkin #23; RMG #13
+                 id='surface1-23')
+#  Reaction index: Chemkin #24; RMG #13
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: CHX(28), CH2X(27); HX(19), X(1);
 
-# surface1 Reaction 23
+# surface1 Reaction 24
 surface_reaction('HX(19) + CHX(28) <=> X(1) + CH2X(27)', [3.090000e+22, 0.0, 0.0],
-                 id='surface1-23')
-#  Reaction index: Chemkin #24; RMG #14
+                 id='surface1-24')
+#  Reaction index: Chemkin #25; RMG #14
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: CHX(28), CX(26); X(1), HX(19);
 
-# surface1 Reaction 24
+# surface1 Reaction 25
 surface_reaction('X(1) + CHX(28) <=> HX(19) + CX(26)', [3.090000e+22, 0.0, 0.0],
-                 id='surface1-24')
-#  Reaction index: Chemkin #25; RMG #17
+                 id='surface1-25')
+#  Reaction index: Chemkin #26; RMG #17
 #  Library reaction: Surface/CPOX_Pt/Deutschmann2006
 #  Flux pairs: H2(6), CH2X(27); CX(26), CH2X(27);
 
-# surface1 Reaction 25
+# surface1 Reaction 26
 surface_reaction('H2(6) + CX(26) <=> CH2X(27)', stick(4.000000e-02, 0.0, 7.098),
-                 id='surface1-25')
+                 id='surface1-26')
