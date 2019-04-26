@@ -6,12 +6,15 @@ database(
     kineticsDepositories = ['training'],
     kineticsFamilies =['surface','default'],
     kineticsEstimator = 'rate rules',
+)
+catalystProperties(
     bindingEnergies = { # default values for Pt(111)
                        'C':(-6.750, 'eV/molecule'),
                        'O':(-3.586, 'eV/molecule'),
                        'N':(-4.352, 'eV/molecule'),
 		       'H':(-2.479, 'eV/molecule'),
-                       }
+                       },
+    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
 )
 
 # List of species
@@ -146,7 +149,6 @@ surfaceReactor(
         "X": 1.0,
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
-    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
     terminationTime=(10., 's'),
 #    terminationConversion={'O2': 0.99,},
@@ -165,7 +167,6 @@ surfaceReactor(
         "X": 1.0,
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
-    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
     terminationTime=(10., 's'),
 #    terminationConversion={'O2': 0.99,},
@@ -184,7 +185,6 @@ surfaceReactor(
         "X": 1.0,
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
-    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
     terminationTime=(10., 's'),
 #    terminationConversion={'O2': 0.99,},
@@ -203,7 +203,6 @@ surfaceReactor(
         "X": 1.0,
     },
     surfaceVolumeRatio=(1.e5, 'm^-1'),
-    surfaceSiteDensity=(2.9e-9, 'mol/cm^2'),
     terminationConversion = { "CH4":0.95,},
     terminationTime=(10., 's'),
 #    terminationConversion={'O2': 0.99,},
