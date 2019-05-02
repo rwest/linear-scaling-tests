@@ -1,4 +1,4 @@
-SITE   SDEN/2.9E-9/
+SITE   SDEN/2.9000E-09/ ! mol/cm^2
     X(1)                ! X(1)
     HX(19)              ! HX(19)
     OX(20)              ! OX(20)
@@ -10,10 +10,10 @@ SITE   SDEN/2.9E-9/
     CX(26)              ! CX(26)
     CH2X(27)            ! CH2X(27)
     CHX(28)             ! CHX(28)
-    CH4X(48)            ! C.[Ni](48)
-    H2X(49)             ! [H][H].[Ni](49)
+    CH4X(48)            ! C.[Pt](48)
+    H2X(49)             ! [H][H].[Pt](49)
     COX(50)             ! COX(50)
-    CHOX(53)            ! O=C[Ni](53)
+    CHOX(53)            ! O=C[Pt](53)
 END
 
 
@@ -189,7 +189,7 @@ HX(19)+CHX(28)=X(1)+CH2X(27)                        3.090000e+22 0.000     0.000
 ! Euclidian distance = 0
 ! Multiplied by reaction path degeneracy 2.0
 ! family: Surface_Abstraction
-CH2X(27)+CH2X(27)=CHX(28)+CH3X(21)                  1.000000e+22 0.000     9.560    
+CH2X(27)+CH2X(27)=CH3X(21)+CHX(28)                  1.000000e+22 0.000     9.560    
 
 ! Reaction index: Chemkin #11; RMG #14
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
@@ -209,7 +209,7 @@ H2(6)+CX(26)=CH2X(27)                               4.000e-02 0.000     7.098
 ! Euclidian distance = 0
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Surface_Abstraction
-CH3X(21)+CX(26)=CHX(28)+CH2X(27)                    1.500000e+22 0.000     9.560    
+CH3X(21)+CX(26)=CH2X(27)+CHX(28)                    1.500000e+22 0.000     9.560    
 
 ! Reaction index: Chemkin #14; RMG #471
 ! Template reaction: Surface_Abstraction
@@ -272,7 +272,7 @@ HOX(22)+CH2X(27)=OX(20)+CH3X(21)                    1.390000e+21 0.101     4.541
 ! Matched reaction 26 CHX_1 + HOX_3 <=> CH2X_4 + OX_5 in Surface_Abstraction/training
 ! This reaction matched rate rule [Abstracting;R-H]
 ! family: Surface_Abstraction
-CHX(28)+HOX(22)=OX(20)+CH2X(27)                     4.400000e+22 0.101     10.134   
+HOX(22)+CHX(28)=OX(20)+CH2X(27)                     4.400000e+22 0.101     10.134   
 
 ! Reaction index: Chemkin #22; RMG #468
 ! Template reaction: Surface_Abstraction
@@ -280,7 +280,7 @@ CHX(28)+HOX(22)=OX(20)+CH2X(27)                     4.400000e+22 0.101     10.13
 ! Matched reaction 28 HOX_3 + CX_1 <=> OX_5 + CHX_4  in Surface_Abstraction/training
 ! This reaction matched rate rule [Abstracting;R-H]
 ! family: Surface_Abstraction
-HOX(22)+CX(26)=CHX(28)+OX(20)                       2.430000e+21 -0.312    28.418   
+HOX(22)+CX(26)=OX(20)+CHX(28)                       2.430000e+21 -0.312    28.418   
 
 ! Reaction index: Chemkin #23; RMG #8
 ! Library reaction: Surface/CPOX_Pt/Deutschmann2006
@@ -325,7 +325,7 @@ HX(19)+CO2X(24)=HOX(22)+OCX(25)                     1.000000e+19 0.000     2.008
 ! Euclidian distance = 0
 ! Multiplied by reaction path degeneracy 2.0
 ! family: Surface_Adsorption_Dissociative
-X(1)+X(1)+CH2O(9)=HX(19)+CHOX(53)                   2.000e-02 0.000     10.000   
+X(1)+X(1)+CH2O(9)=CHOX(53)+HX(19)                   2.000e-02 0.000     10.000   
     STICK
 
 ! Reaction index: Chemkin #30; RMG #100
@@ -343,7 +343,7 @@ X(1)+HCO(15)=CHOX(53)                               1.000e-01 0.000     0.000
 ! Exact match found for rate rule [Adsorbate;VacantSite1;VacantSite2]
 ! Euclidian distance = 0
 ! family: Surface_Adsorption_Dissociative
-X(1)+X(1)+CH3CHO(16)=CH3X(21)+CHOX(53)              1.000e-02 0.000     10.000   
+X(1)+X(1)+CH3CHO(16)=CHOX(53)+CH3X(21)              1.000e-02 0.000     10.000   
     STICK
 
 ! Reaction index: Chemkin #32; RMG #478
@@ -352,7 +352,7 @@ X(1)+X(1)+CH3CHO(16)=CH3X(21)+CHOX(53)              1.000e-02 0.000     10.000
 ! Exact match found for rate rule [Abstracting;R-H]
 ! Euclidian distance = 0
 ! family: Surface_Abstraction
-CH2X(27)+CHOX(53)=CH3X(21)+OCX(25)                  5.000000e+21 0.000     9.560    
+CHOX(53)+CH2X(27)=CH3X(21)+OCX(25)                  5.000000e+21 0.000     9.560    
 
 ! Reaction index: Chemkin #33; RMG #480
 ! Template reaction: Surface_Dissociation
@@ -368,7 +368,7 @@ X(1)+CHOX(53)=HX(19)+OCX(25)                        3.710000e+21 0.000     0.000
 ! Exact match found for rate rule [Abstracting;R-H]
 ! Euclidian distance = 0
 ! family: Surface_Abstraction
-CHX(28)+CHOX(53)=OCX(25)+CH2X(27)                   5.000000e+21 0.000     9.560    
+CHOX(53)+CHX(28)=OCX(25)+CH2X(27)                   5.000000e+21 0.000     9.560    
 
 ! Reaction index: Chemkin #35; RMG #482
 ! Template reaction: Surface_Abstraction
@@ -376,7 +376,7 @@ CHX(28)+CHOX(53)=OCX(25)+CH2X(27)                   5.000000e+21 0.000     9.560
 ! Exact match found for rate rule [Abstracting;R-H]
 ! Euclidian distance = 0
 ! family: Surface_Abstraction
-CX(26)+CHOX(53)=CHX(28)+OCX(25)                     5.000000e+21 0.000     9.560    
+CHOX(53)+CX(26)=OCX(25)+CHX(28)                     5.000000e+21 0.000     9.560    
 
 ! Reaction index: Chemkin #36; RMG #483
 ! Template reaction: Surface_Abstraction
@@ -384,7 +384,7 @@ CX(26)+CHOX(53)=CHX(28)+OCX(25)                     5.000000e+21 0.000     9.560
 ! Exact match found for rate rule [Abstracting;R-H]
 ! Euclidian distance = 0
 ! family: Surface_Abstraction
-OX(20)+CHOX(53)=HOX(22)+OCX(25)                     5.000000e+21 0.000     9.560    
+CHOX(53)+OX(20)=HOX(22)+OCX(25)                     5.000000e+21 0.000     9.560    
 
 ! Reaction index: Chemkin #37; RMG #83
 ! Template reaction: Surface_Adsorption_vdW
