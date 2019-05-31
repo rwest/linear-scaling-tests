@@ -37,6 +37,9 @@ SPECIES
     CH3CHO(16)          ! CH3CHO(16)
     OH(17)              ! OH(17)
     C2H4(18)            ! C2H4(18)
+    O(29)               ! O(29)
+    C2H4(47)            ! CHCH3(S)(47)
+    CH3OO(77)           ! CH3OO(77)
 END
 
 
@@ -164,6 +167,24 @@ C2H4(18)                H   4C   2          G   100.000  5000.000  979.36      1
  4.32046489E+03 2.17719479E+00 3.97471606E+00-4.75844285E-03 4.16783770E-05    3
 -4.51392516E-08 1.54224761E-11 4.91540746E+03 3.62430844E+00                   4
 
+! Thermo library: primaryThermoLibrary
+O(29)                   O   1               G   100.000  5000.000 3459.60      1
+ 2.49999999E+00 9.20455546E-12-3.58608293E-15 6.15198922E-19-3.92041801E-23    2
+ 2.92302441E+04 4.09104291E+00 2.50000000E+00 9.24384602E-15-1.36779837E-17    3
+ 6.66184769E-21-1.00106912E-24 2.92302441E+04 4.09104286E+00                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+C2H4(47)                H   4C   2          G   100.000  5000.000  846.11      1
+ 2.62344910E+00 1.38429140E-02-6.25541075E-06 1.16703453E-09-7.95359410E-14    2
+ 4.32128675E+04 2.66158079E+01 3.36869114E+00 1.64232504E-02-2.16503709E-05    3
+ 2.18227984E-08-8.70182877E-12 4.28682838E+04 2.18539333E+01                   4
+
+! Thermo library: thermo_DFT_CCSDTF12_BAC
+CH3OO(77)               H   3C   1O   2     G   100.000  5000.000 1031.35      1
+ 4.35022282E+00 1.07183275E-02-4.26215078E-06 7.89578335E-10-5.53846326E-14    2
+-3.09810145E+02 4.08928223E+00 3.58600855E+00 6.15348645E-03 1.33269290E-05    3
+-1.76581521E-08 6.13210932E-12 2.48233564E+02 9.74096027E+00                   4
+
 END
 
 
@@ -171,34 +192,34 @@ END
 REACTIONS    KCAL/MOLE   MOLES
 
 ! Reaction index: Chemkin #1; RMG #23
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: H2(6), H(12); H2(6), H(12); 
 H2(6)+M=H(12)+H(12)+M                               4.577e+19 -1.400    104.380  
 CO2(4)/3.80/ H2O(5)/12.00/ H2(6)/2.50/ CO(7)/1.90/ Ar/0.00/ 
 
 ! Reaction index: Chemkin #2; RMG #24
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: H2(6), H(12); Ar, Ar; Ar, H(12); 
 Ar+H2(6)=Ar+H(12)+H(12)                             5.840000e+18 -1.100    104.380  
 
 ! Reaction index: Chemkin #3; RMG #21
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: OH(17), H2O(5); H2(6), H(12); 
 H2(6)+OH(17)=H2O(5)+H(12)                           2.160000e+08 1.510     3.430    
 
 ! Reaction index: Chemkin #4; RMG #30
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: H2O(5), H(12); H2O(5), OH(17); 
 H2O(5)+M=H(12)+OH(17)+M                             6.064e+27 -3.322    120.790  
 CO2(4)/3.80/ H2O(5)/0.00/ H2(6)/3.00/ O2(3)/1.50/ N2/2.00/ CO(7)/1.90/ 
 
 ! Reaction index: Chemkin #5; RMG #31
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: H2O(5), OH(17); H2O(5), H(12); H2O(5), H2O(5); 
 H2O(5)+H2O(5)=H2O(5)+H(12)+OH(17)                   1.006000e+26 -2.440    120.180  
 
 ! Reaction index: Chemkin #6; RMG #45
-! Library reaction: BurkeH2O2inN2
+! Library reaction: BurkeH2O2inArHe
 ! Flux pairs: OH(17), O2(3); OH(17), H2(6); 
 OH(17)+OH(17)=O2(3)+H2(6)                           2.000000e+11 0.510     50.500   
 
@@ -442,6 +463,106 @@ C2H5(13)+C2H5(13)=C2H6(8)+C2H4(18)                  6.900000e+13 -0.350    0.000
 ! Multiplied by reaction path degeneracy 3.0
 ! family: Disproportionation
 HCO(15)+C2H5(13)=CH2O(9)+C2H4(18)                   5.972864e+14 -0.340    0.000    
+
+! Reaction index: Chemkin #37; RMG #131
+! Template reaction: R_Recombination
+! Flux pairs: CH3OO(77), CH3(10); CH3OO(77), O2(3); 
+! Matched reaction 0 CH3O2 <=> O2 + CH3 in R_Recombination/training
+! This reaction matched rate rule [C_methyl;O2_birad]
+! family: R_Recombination
+CH3OO(77)=O2(3)+CH3(10)                             1.090000e+14 0.250     33.300   
+
+! Reaction index: Chemkin #38; RMG #79
+! Template reaction: Singlet_Carbene_Intra_Disproportionation
+! Flux pairs: C2H4(47), C2H4(18); 
+! Estimated using template [CsJ2-C;singletcarbene;CH] for rate rule [CsJ2-C;CsJ2H;CH3]
+! Euclidian distance = 1.41421356237
+! Multiplied by reaction path degeneracy 3.0
+! family: Singlet_Carbene_Intra_Disproportionation
+C2H4(47)=C2H4(18)                                   1.843941e+15 -1.078    13.587   
+
+! Reaction index: Chemkin #39; RMG #19
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: O2(3), O(29); H(12), OH(17); 
+O2(3)+H(12)=OH(17)+O(29)                            1.040000e+14 0.000     15.286   
+
+! Reaction index: Chemkin #40; RMG #20
+! Library reaction: BurkeH2O2inArHe
+H2(6)+O(29)=H(12)+OH(17)                            3.818000e+12 0.000     7.948    
+DUPLICATE
+! Reaction index: Chemkin #41; RMG #20
+! Library reaction: BurkeH2O2inArHe
+H2(6)+O(29)=H(12)+OH(17)                            8.792000e+14 0.000     19.170   
+DUPLICATE
+
+
+! Reaction index: Chemkin #42; RMG #22
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: OH(17), O(29); OH(17), H2O(5); 
+OH(17)+OH(17)=H2O(5)+O(29)                          3.340000e+04 2.420     -1.930   
+
+! Reaction index: Chemkin #43; RMG #26
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: O(29), O2(3); O(29), O2(3); 
+O(29)+O(29)+M=O2(3)+M                               6.165e+15 -0.500    0.000    
+CO2(4)/3.80/ H2O(5)/12.00/ H2(6)/2.50/ CO(7)/1.90/ Ar/0.00/ 
+
+! Reaction index: Chemkin #44; RMG #27
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: O(29), O2(3); Ar, Ar; O(29), Ar; 
+Ar+O(29)+O(29)=O2(3)+Ar                             1.886000e+13 0.000     -1.788   
+
+! Reaction index: Chemkin #45; RMG #29
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: H(12), OH(17); O(29), OH(17); 
+H(12)+O(29)+M=OH(17)+M                              4.714e+18 -1.000    0.000    
+CO2(4)/3.80/ H2O(5)/12.00/ H2(6)/2.50/ CO(7)/1.90/ Ar/0.75/ 
+
+! Reaction index: Chemkin #46; RMG #46
+! Library reaction: BurkeH2O2inArHe
+! Flux pairs: O(29), O2(3); H2O(5), H2(6); 
+H2O(5)+O(29)=O2(3)+H2(6)                            1.070000e+10 0.970     68.700   
+
+! Reaction index: Chemkin #47; RMG #266
+! Template reaction: CO_Disproportionation
+! Flux pairs: O(29), OH(17); HCO(15), CO(7); 
+! Matched reaction 1 HCO + O <=> CO + OH in CO_Disproportionation/training
+! This reaction matched rate rule [O_atom_triplet;HCO]
+! family: CO_Disproportionation
+HCO(15)+O(29)=CO(7)+OH(17)                          3.010000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #48; RMG #349
+! Template reaction: H_Abstraction
+! Flux pairs: CH4(2), CH3(10); O(29), OH(17); 
+! Matched reaction 187 CH4b + O_rad <=> CH3_p1 + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_methyl]
+! family: H_Abstraction
+CH4(2)+O(29)=CH3(10)+OH(17)                         4.400000e+05 2.500     6.577    
+
+! Reaction index: Chemkin #49; RMG #396
+! Template reaction: H_Abstraction
+! Flux pairs: C2H6(8), C2H5(13); O(29), OH(17); 
+! Matched reaction 211 C2H6 + O_rad <=> C2H5b + OH_p23 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;C_rad/H2/Cs\H3]
+! family: H_Abstraction
+C2H6(8)+O(29)=C2H5(13)+OH(17)                       1.800000e+05 2.800     5.800    
+
+! Reaction index: Chemkin #50; RMG #429
+! Template reaction: H_Abstraction
+! Flux pairs: CH2O(9), HCO(15); O(29), OH(17); 
+! Matched reaction 360 CH2O + O_rad <=> HO + HCO_r3 in H_Abstraction/training
+! This reaction matched rate rule [OH_rad_H;CO_pri_rad]
+! family: H_Abstraction
+CH2O(9)+O(29)=HCO(15)+OH(17)                        4.160000e+11 0.570     2.760    
+
+! Reaction index: Chemkin #51; RMG #457
+! Template reaction: Disproportionation
+! Flux pairs: O(29), OH(17); C2H5(13), C2H4(18); 
+! Estimated using average of templates [Y_1centerbirad;Cmethyl_Csrad] + [O_atom_triplet;Cmethyl_Rrad] for rate rule [O_atom_triplet;Cmethyl_Csrad]
+! Euclidian distance = 1.0
+! Multiplied by reaction path degeneracy 3.0
+! family: Disproportionation
+C2H5(13)+O(29)=OH(17)+C2H4(18)                      3.680353e+11 0.750     -0.445   
 
 END
 
